@@ -1,0 +1,525 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF991C183AE8005D35A1 /* AppDelegate.swift */; };
+		1180DF9C1C183AE8005D35A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF9B1C183AE8005D35A1 /* ViewController.swift */; };
+		1180DF9F1C183AE8005D35A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DF9D1C183AE8005D35A1 /* Main.storyboard */; };
+		1180DFA21C183AE8005D35A1 /* Pancake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */; };
+		1180DFA41C183AE8005D35A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA31C183AE8005D35A1 /* Assets.xcassets */; };
+		1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */; };
+		1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFB11C183AE8005D35A1 /* PancakeTests.swift */; };
+		1180DFBD1C183AE8005D35A1 /* PancakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1180DFAE1C183AE8005D35A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1180DF8E1C183AE8005D35A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1180DF951C183AE8005D35A1;
+			remoteInfo = Pancake;
+		};
+		1180DFB91C183AE8005D35A1 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1180DF8E1C183AE8005D35A1 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1180DF951C183AE8005D35A1;
+			remoteInfo = Pancake;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1180DF961C183AE8005D35A1 /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1180DF991C183AE8005D35A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1180DF9B1C183AE8005D35A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		1180DF9E1C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pancake.xcdatamodel; sourceTree = "<group>"; };
+		1180DFA31C183AE8005D35A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1180DFA61C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1180DFA81C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1180DFB11C183AE8005D35A1 /* PancakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeTests.swift; sourceTree = "<group>"; };
+		1180DFB31C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
+		1180DFBE1C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1180DF931C183AE8005D35A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFAA1C183AE8005D35A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFB51C183AE8005D35A1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1180DF8D1C183AE8005D35A1 = {
+			isa = PBXGroup;
+			children = (
+				1180DF981C183AE8005D35A1 /* Pancake */,
+				1180DFB01C183AE8005D35A1 /* PancakeTests */,
+				1180DFBB1C183AE8005D35A1 /* PancakeUITests */,
+				1180DF971C183AE8005D35A1 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		1180DF971C183AE8005D35A1 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1180DF961C183AE8005D35A1 /* Pancake.app */,
+				1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */,
+				1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1180DF981C183AE8005D35A1 /* Pancake */ = {
+			isa = PBXGroup;
+			children = (
+				1180DF991C183AE8005D35A1 /* AppDelegate.swift */,
+				1180DF9B1C183AE8005D35A1 /* ViewController.swift */,
+				1180DF9D1C183AE8005D35A1 /* Main.storyboard */,
+				1180DFA31C183AE8005D35A1 /* Assets.xcassets */,
+				1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */,
+				1180DFA81C183AE8005D35A1 /* Info.plist */,
+				1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */,
+			);
+			path = Pancake;
+			sourceTree = "<group>";
+		};
+		1180DFB01C183AE8005D35A1 /* PancakeTests */ = {
+			isa = PBXGroup;
+			children = (
+				1180DFB11C183AE8005D35A1 /* PancakeTests.swift */,
+				1180DFB31C183AE8005D35A1 /* Info.plist */,
+			);
+			path = PancakeTests;
+			sourceTree = "<group>";
+		};
+		1180DFBB1C183AE8005D35A1 /* PancakeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */,
+				1180DFBE1C183AE8005D35A1 /* Info.plist */,
+			);
+			path = PancakeUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1180DF951C183AE8005D35A1 /* Pancake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1180DFC11C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "Pancake" */;
+			buildPhases = (
+				1180DF921C183AE8005D35A1 /* Sources */,
+				1180DF931C183AE8005D35A1 /* Frameworks */,
+				1180DF941C183AE8005D35A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pancake;
+			productName = Pancake;
+			productReference = 1180DF961C183AE8005D35A1 /* Pancake.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1180DFAC1C183AE8005D35A1 /* PancakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1180DFC41C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeTests" */;
+			buildPhases = (
+				1180DFA91C183AE8005D35A1 /* Sources */,
+				1180DFAA1C183AE8005D35A1 /* Frameworks */,
+				1180DFAB1C183AE8005D35A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1180DFAF1C183AE8005D35A1 /* PBXTargetDependency */,
+			);
+			name = PancakeTests;
+			productName = PancakeTests;
+			productReference = 1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		1180DFB71C183AE8005D35A1 /* PancakeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1180DFC71C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeUITests" */;
+			buildPhases = (
+				1180DFB41C183AE8005D35A1 /* Sources */,
+				1180DFB51C183AE8005D35A1 /* Frameworks */,
+				1180DFB61C183AE8005D35A1 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1180DFBA1C183AE8005D35A1 /* PBXTargetDependency */,
+			);
+			name = PancakeUITests;
+			productName = PancakeUITests;
+			productReference = 1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1180DF8E1C183AE8005D35A1 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0710;
+				LastUpgradeCheck = 0710;
+				ORGANIZATIONNAME = "Rudy Rosciglione";
+				TargetAttributes = {
+					1180DF951C183AE8005D35A1 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9689ADQMZP;
+					};
+					1180DFAC1C183AE8005D35A1 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9689ADQMZP;
+						TestTargetID = 1180DF951C183AE8005D35A1;
+					};
+					1180DFB71C183AE8005D35A1 = {
+						CreatedOnToolsVersion = 7.1.1;
+						DevelopmentTeam = 9689ADQMZP;
+						TestTargetID = 1180DF951C183AE8005D35A1;
+					};
+				};
+			};
+			buildConfigurationList = 1180DF911C183AE8005D35A1 /* Build configuration list for PBXProject "Pancake" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1180DF8D1C183AE8005D35A1;
+			productRefGroup = 1180DF971C183AE8005D35A1 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1180DF951C183AE8005D35A1 /* Pancake */,
+				1180DFAC1C183AE8005D35A1 /* PancakeTests */,
+				1180DFB71C183AE8005D35A1 /* PancakeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1180DF941C183AE8005D35A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */,
+				1180DFA41C183AE8005D35A1 /* Assets.xcassets in Resources */,
+				1180DF9F1C183AE8005D35A1 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFAB1C183AE8005D35A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFB61C183AE8005D35A1 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1180DF921C183AE8005D35A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1180DF9C1C183AE8005D35A1 /* ViewController.swift in Sources */,
+				1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */,
+				1180DFA21C183AE8005D35A1 /* Pancake.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFA91C183AE8005D35A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1180DFB41C183AE8005D35A1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1180DFBD1C183AE8005D35A1 /* PancakeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1180DFAF1C183AE8005D35A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1180DF951C183AE8005D35A1 /* Pancake */;
+			targetProxy = 1180DFAE1C183AE8005D35A1 /* PBXContainerItemProxy */;
+		};
+		1180DFBA1C183AE8005D35A1 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1180DF951C183AE8005D35A1 /* Pancake */;
+			targetProxy = 1180DFB91C183AE8005D35A1 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1180DF9D1C183AE8005D35A1 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1180DF9E1C183AE8005D35A1 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1180DFA61C183AE8005D35A1 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1180DFBF1C183AE8005D35A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		1180DFC01C183AE8005D35A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1180DFC21C183AE8005D35A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pancake/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1180DFC31C183AE8005D35A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Pancake/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		1180DFC51C183AE8005D35A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PancakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pancake.app/Pancake";
+			};
+			name = Debug;
+		};
+		1180DFC61C183AE8005D35A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PancakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pancake.app/Pancake";
+			};
+			name = Release;
+		};
+		1180DFC81C183AE8005D35A1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PancakeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pancake;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		1180DFC91C183AE8005D35A1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PancakeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pancake;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1180DF911C183AE8005D35A1 /* Build configuration list for PBXProject "Pancake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1180DFBF1C183AE8005D35A1 /* Debug */,
+				1180DFC01C183AE8005D35A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1180DFC11C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "Pancake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1180DFC21C183AE8005D35A1 /* Debug */,
+				1180DFC31C183AE8005D35A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1180DFC41C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1180DFC51C183AE8005D35A1 /* Debug */,
+				1180DFC61C183AE8005D35A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		1180DFC71C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1180DFC81C183AE8005D35A1 /* Debug */,
+				1180DFC91C183AE8005D35A1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */,
+			);
+			currentVersion = 1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */;
+			path = Pancake.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 1180DF8E1C183AE8005D35A1 /* Project object */;
+}
