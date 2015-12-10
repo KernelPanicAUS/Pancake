@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		1113011C1C18E62100F264FD /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1113011B1C18E62100F264FD /* Spotify.framework */; };
-		11211AFC1C18F18D00E54CB5 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 11211AFB1C18F18D00E54CB5 /* AppDelegate.m */; };
 		114213EF1C18E938007A1C1F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114213EE1C18E938007A1C1F /* AVFoundation.framework */; };
 		114213F11C18E976007A1C1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114213F01C18E976007A1C1F /* SystemConfiguration.framework */; };
 		116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5B1C18A3EB00361664 /* AsyncButton.swift */; };
@@ -69,11 +68,9 @@
 
 /* Begin PBXFileReference section */
 		1113011B1C18E62100F264FD /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		11211AFA1C18F13900E54CB5 /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
-		11211AFB1C18F18D00E54CB5 /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		113C58201C18F2880006EACF /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		114213EE1C18E938007A1C1F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		114213F01C18E976007A1C1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		11638A6F1C19C1BD005CF4FF /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
 		116D3D5B1C18A3EB00361664 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		116D3D5D1C18A3EB00361664 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -227,9 +224,7 @@
 				1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */,
 				1180DFA81C183AE8005D35A1 /* Info.plist */,
 				1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */,
-				11211AFA1C18F13900E54CB5 /* Pancake-Bridging-Header.h */,
-				11211AFB1C18F18D00E54CB5 /* AppDelegate.m */,
-				113C58201C18F2880006EACF /* AppDelegate.h */,
+				11638A6F1C19C1BD005CF4FF /* Pancake-Bridging-Header.h */,
 			);
 			path = Pancake;
 			sourceTree = "<group>";
@@ -414,7 +409,6 @@
 				116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */,
 				116D3D7A1C18A3EB00361664 /* AsyncImageView.swift in Sources */,
 				116D3D821C18A3EB00361664 /* DesignableTextView.swift in Sources */,
-				11211AFC1C18F18D00E54CB5 /* AppDelegate.m in Sources */,
 				116D3D921C18A3EB00361664 /* SpringView.swift in Sources */,
 				116D3D911C18A3EB00361664 /* SpringTextView.swift in Sources */,
 				116D3D861C18A3EB00361664 /* KeyboardLayoutConstraint.swift in Sources */,

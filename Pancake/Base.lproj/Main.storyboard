@@ -162,26 +162,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" image="Tree-FrantzouFleurine" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-cv-gN9">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Tree-FrantzouFleurine" translatesAutoresizingMaskIntoConstraints="NO" id="0ck-cv-gN9">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <animations/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Woken up friends" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sa8-6C-RVe">
-                                <rect key="frame" x="10" y="470" width="280" height="35"/>
+                                <rect key="frame" x="11" y="470" width="280" height="35"/>
                                 <animations/>
                                 <accessibility key="accessibilityConfiguration">
                                     <accessibilityTraits key="traits" staticText="YES" notEnabled="YES"/>
                                 </accessibility>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="35" id="DVu-ZJ-3IX"/>
-                                    <constraint firstAttribute="width" constant="280" id="T0J-wm-zxY"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lue-VK-u4i">
-                                <rect key="frame" x="10" y="15" width="31" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lue-VK-u4i">
+                                <rect key="frame" x="6" y="15" width="31" height="31"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="889-0Q-fhD"/>
@@ -208,8 +204,8 @@
                                     <segue destination="V3P-UN-peU" kind="presentation" id="etM-00-Td1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-cP-dOG">
-                                <rect key="frame" x="279" y="15" width="31" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7VR-cP-dOG">
+                                <rect key="frame" x="283" y="15" width="31" height="31"/>
                                 <animations/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="31" id="9Sn-zB-pfC"/>
@@ -286,6 +282,11 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BqR-2e-5Xk">
+                                <rect key="frame" x="10" y="504" width="300" height="50"/>
+                                <animations/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -300,6 +301,7 @@
                             <constraint firstItem="xmQ-2D-fzw" firstAttribute="top" secondItem="Ezn-UV-W7G" secondAttribute="bottom" constant="8" id="JUF-kJ-7Go"/>
                             <constraint firstItem="7VR-cP-dOG" firstAttribute="top" secondItem="tev-c0-29n" secondAttribute="bottom" constant="15" id="O5L-ol-vur"/>
                             <constraint firstItem="Lue-VK-u4i" firstAttribute="top" secondItem="tev-c0-29n" secondAttribute="bottom" constant="15" id="PAE-Dc-iIJ"/>
+                            <constraint firstItem="Sa8-6C-RVe" firstAttribute="leading" secondItem="hyu-OV-so5" secondAttribute="leadingMargin" constant="-5" id="RVq-n5-ix9"/>
                             <constraint firstItem="Xa9-Cc-nVA" firstAttribute="leading" secondItem="Ezn-UV-W7G" secondAttribute="trailing" constant="-10" id="RVx-cx-kWA"/>
                             <constraint firstItem="Ezn-UV-W7G" firstAttribute="leading" secondItem="hyu-OV-so5" secondAttribute="leadingMargin" constant="-10" id="SKQ-oR-HVt"/>
                             <constraint firstItem="Lue-VK-u4i" firstAttribute="leading" secondItem="hyu-OV-so5" secondAttribute="leadingMargin" constant="-10" id="Xt7-Rv-Qz9"/>
@@ -324,7 +326,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pXf-sI-iAS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="387"/>
+            <point key="canvasLocation" x="1051" y="394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ALl-od-GQB">
@@ -338,17 +340,25 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyL-sd-RQq">
-                                <rect key="frame" x="10" y="15" width="31" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RyL-sd-RQq">
+                                <rect key="frame" x="6" y="15" width="31" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="Far-ZP-kJl"/>
+                                    <constraint firstAttribute="width" constant="31" id="KUh-jV-1OQ"/>
+                                </constraints>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" image="Btn-Close-white">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00v-iK-jqL">
-                                <rect key="frame" x="279" y="15" width="31" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="00v-iK-jqL">
+                                <rect key="frame" x="283" y="15" width="31" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="04S-wf-72n"/>
+                                    <constraint firstAttribute="width" constant="31" id="rNY-l7-h53"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Btn-Create-new"/>
                                 <connections>
@@ -358,6 +368,12 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="00v-iK-jqL" firstAttribute="top" secondItem="e9U-ay-99O" secondAttribute="bottom" constant="15" id="Xwj-9k-P5a"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="00v-iK-jqL" secondAttribute="trailing" constant="-10" id="iRF-CR-Obz"/>
+                            <constraint firstItem="RyL-sd-RQq" firstAttribute="top" secondItem="e9U-ay-99O" secondAttribute="bottom" constant="15" id="yzI-Fe-5cm"/>
+                            <constraint firstItem="RyL-sd-RQq" firstAttribute="leading" secondItem="wx7-rJ-Q4H" secondAttribute="leadingMargin" constant="-10" id="z3Z-Y6-P5P"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -365,7 +381,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DOJ-lZ-ck0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779" y="379"/>
+            <point key="canvasLocation" x="1534" y="394"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="7Lv-Ji-wPf">
@@ -379,120 +395,351 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kru-dg-hWj">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aWS-YI-3YI">
+                                <rect key="frame" x="-4" y="0.0" width="328" height="568"/>
                                 <animations/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
-                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <inset key="titleEdgeInsets" minX="-70" minY="-100" maxX="0.0" maxY="0.0"/>
-                                <inset key="imageEdgeInsets" minX="152" minY="-196" maxX="0.0" maxY="0.0"/>
-                                <state key="normal" title="Tap to add a photo" image="Icon-tapetoadd">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-lf-5OF">
-                                <rect key="frame" x="10" y="15" width="31" height="31"/>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" alpha="0.5" contentMode="center" image="Icon-tapetoadd" translatesAutoresizingMaskIntoConstraints="NO" id="AV4-kK-Vqw">
+                                <rect key="frame" x="126" y="210" width="69" height="48"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="48" id="2gN-oA-3vO"/>
+                                    <constraint firstAttribute="width" constant="69" id="GbD-en-TKI"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yEi-Qt-Ye9">
+                                <rect key="frame" x="92.5" y="269" width="135.5" height="18.5"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" name="GeezaPro-Bold" family="Geeza Pro" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5E-lf-5OF">
+                                <rect key="frame" x="6" y="15" width="31" height="31"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="Cf3-LP-uFP"/>
+                                    <constraint firstAttribute="height" constant="31" id="ER1-5I-GTH"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Btn-Close-white"/>
                             </button>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-9Z-6lE">
-                                <rect key="frame" x="279" y="15" width="31" height="31"/>
+                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3YY-9Z-6lE">
+                                <rect key="frame" x="283" y="15" width="31" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="IMX-j9-SjL"/>
+                                    <constraint firstAttribute="height" constant="31" id="bwm-vN-3FI"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Btn-Next-white"/>
                                 <connections>
                                     <segue destination="h1x-vr-CFw" kind="presentation" id="77A-kB-3X7"/>
                                 </connections>
                             </button>
-                            <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsR-bO-iHu">
-                                <rect key="frame" x="20" y="470" width="280" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-hs-kKv">
+                                <rect key="frame" x="6" y="429" width="240" height="78"/>
                                 <animations/>
-                                <accessibility key="accessibilityConfiguration" hint="" label="Add alarm title"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="08:30" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S4h-hs-kKv">
-                                <rect key="frame" x="20" y="506" width="240" height="78"/>
-                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Uer-g4-tjG"/>
+                                    <constraint firstAttribute="height" constant="78" id="ql3-7n-fjg"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="PingFangSC-Thin" family="PingFang SC" pointSize="88"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbN-hQ-HHJ">
-                                <rect key="frame" x="259" y="557" width="35" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="pm" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CbN-hQ-HHJ">
+                                <rect key="frame" x="238" y="479" width="35" height="35"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="35" id="Fw7-br-i7e"/>
+                                    <constraint firstAttribute="width" constant="35" id="dhD-WS-bPm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8e-mR-bqJ">
-                                <rect key="frame" x="20" y="506" width="42" height="42"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="1xJ-iM-7s2">
+                                <rect key="frame" x="10" y="515" width="300" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" placeholderIntrinsicWidth="40" placeholderIntrinsicHeight="40" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n8e-mR-bqJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="42" id="Q1o-cI-Yhw"/>
+                                            <constraint firstAttribute="width" constant="40" id="X1P-nR-9JR"/>
+                                            <constraint firstAttribute="width" constant="42" id="dBa-Ko-RNi"/>
+                                            <constraint firstAttribute="height" constant="40" id="tEI-zl-YMG"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="MON">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Q1o-cI-Yhw"/>
+                                                <exclude reference="dBa-Ko-RNi"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-Z8-l1y" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="43" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4MI-31-pXr"/>
+                                            <constraint firstAttribute="height" constant="40" id="Knn-eQ-aRR"/>
+                                            <constraint firstAttribute="width" constant="40" id="fgE-of-MLy"/>
+                                            <constraint firstAttribute="width" constant="40" id="kfJ-ye-v7B"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="TUE">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Knn-eQ-aRR"/>
+                                                <exclude reference="fgE-of-MLy"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyL-y2-WRI" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="86" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="2jg-YT-iCS"/>
+                                            <constraint firstAttribute="width" constant="40" id="6Ih-hx-A3s"/>
+                                            <constraint firstAttribute="height" constant="40" id="8pr-bp-zRk"/>
+                                            <constraint firstAttribute="width" constant="40" id="ORn-90-cMX"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="THU">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="2jg-YT-iCS"/>
+                                                <exclude reference="ORn-90-cMX"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07u-xg-sXP" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Eqw-aV-XVj"/>
+                                            <constraint firstAttribute="width" constant="40" id="QoW-Ee-FVD"/>
+                                            <constraint firstAttribute="width" constant="40" id="Qs3-KR-a9C"/>
+                                            <constraint firstAttribute="height" constant="40" id="dFr-0g-8TM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="FRI">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Eqw-aV-XVj"/>
+                                                <exclude reference="Qs3-KR-a9C"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVJ-oL-eWW" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="173" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Hxh-oP-bkZ"/>
+                                            <constraint firstAttribute="width" constant="40" id="IBq-e7-ceg"/>
+                                            <constraint firstAttribute="height" constant="40" id="ioP-OS-NQ0"/>
+                                            <constraint firstAttribute="width" constant="40" id="njg-Uh-22E"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="SAT">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="Hxh-oP-bkZ"/>
+                                                <exclude reference="njg-Uh-22E"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-Pq-o2T" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="216" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="40" id="af7-7d-gmf"/>
+                                            <constraint firstAttribute="height" constant="40" id="q5B-53-lXc"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="SUN">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAk-dN-22n" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="260" y="0.0" width="40" height="40"/>
+                                        <animations/>
+                                        <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="4af-Ij-Eds"/>
+                                            <constraint firstAttribute="height" constant="40" id="NoC-a4-zSm"/>
+                                            <constraint firstAttribute="width" constant="40" id="dbR-BV-bOO"/>
+                                            <constraint firstAttribute="width" constant="40" id="ro1-wk-pcI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="13"/>
+                                        <inset key="contentEdgeInsets" minX="0.0" minY="3" maxX="0.0" maxY="0.0"/>
+                                        <state key="normal" title="WED">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="20"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="NoC-a4-zSm"/>
+                                                <exclude reference="ro1-wk-pcI"/>
+                                            </mask>
+                                        </variation>
+                                    </button>
+                                </subviews>
                                 <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="MON">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eyb-Z8-l1y">
-                                <rect key="frame" x="69" y="509" width="42" height="42"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </stackView>
+                            <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="JsR-bO-iHu">
+                                <rect key="frame" x="6" y="393" width="300" height="35"/>
                                 <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="TUE">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NAk-dN-22n">
-                                <rect key="frame" x="118" y="509" width="42" height="42"/>
-                                <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="WED">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VyL-y2-WRI">
-                                <rect key="frame" x="167" y="509" width="42" height="42"/>
-                                <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="THU">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="07u-xg-sXP">
-                                <rect key="frame" x="216" y="509" width="42" height="42"/>
-                                <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="FRI">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YVJ-oL-eWW">
-                                <rect key="frame" x="265" y="509" width="42" height="42"/>
-                                <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="SAT">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4dQ-Pq-o2T">
-                                <rect key="frame" x="314" y="506" width="42" height="42"/>
-                                <animations/>
-                                <rect key="contentStretch" x="0.0" y="0.0" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="15"/>
-                                <state key="normal" title="SUN">
-                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                            </button>
+                                <accessibility key="accessibilityConfiguration" hint="" label="Add alarm title"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="300" id="Ex2-7y-sOM"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="300" id="TGE-n1-ThC"/>
+                                    <constraint firstAttribute="height" constant="35" id="rDt-Vp-0fW"/>
+                                </constraints>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <fontDescription key="fontDescription" name="GeezaPro" family="Geeza Pro" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="AV4-kK-Vqw" firstAttribute="centerX" secondItem="Bgi-3U-gBJ" secondAttribute="centerX" id="1yd-ln-YS8"/>
+                            <constraint firstItem="yEi-Qt-Ye9" firstAttribute="centerX" secondItem="Bgi-3U-gBJ" secondAttribute="centerX" id="4sn-fw-gTi"/>
+                            <constraint firstItem="cZY-y7-BDu" firstAttribute="top" secondItem="1xJ-iM-7s2" secondAttribute="bottom" constant="13" id="9Nd-z3-ag4"/>
+                            <constraint firstItem="1xJ-iM-7s2" firstAttribute="leading" secondItem="Bgi-3U-gBJ" secondAttribute="leadingMargin" constant="-6" id="AaC-Yk-mRy"/>
+                            <constraint firstItem="yEi-Qt-Ye9" firstAttribute="top" secondItem="AV4-kK-Vqw" secondAttribute="bottom" constant="11" id="BHF-5Z-wxO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1xJ-iM-7s2" secondAttribute="trailing" constant="-6" id="F9g-sL-sL2"/>
+                            <constraint firstItem="c5E-lf-5OF" firstAttribute="top" secondItem="ZxY-3p-AEF" secondAttribute="bottom" constant="15" id="Fto-U9-jR3"/>
+                            <constraint firstItem="c5E-lf-5OF" firstAttribute="leading" secondItem="Bgi-3U-gBJ" secondAttribute="leadingMargin" constant="-10" id="Gp3-0n-7qf"/>
+                            <constraint firstItem="CbN-hQ-HHJ" firstAttribute="leading" secondItem="S4h-hs-kKv" secondAttribute="trailing" constant="-8" id="I55-9K-QHK"/>
+                            <constraint firstItem="S4h-hs-kKv" firstAttribute="top" secondItem="JsR-bO-iHu" secondAttribute="bottom" constant="1" id="Jc0-IV-Uie"/>
+                            <constraint firstItem="AV4-kK-Vqw" firstAttribute="centerX" secondItem="Bgi-3U-gBJ" secondAttribute="centerX" id="Kxq-0D-XJs"/>
+                            <constraint firstItem="JsR-bO-iHu" firstAttribute="leading" secondItem="Bgi-3U-gBJ" secondAttribute="leadingMargin" constant="-10" id="Nxt-tg-OXB"/>
+                            <constraint firstItem="yEi-Qt-Ye9" firstAttribute="top" secondItem="AV4-kK-Vqw" secondAttribute="bottom" constant="11" id="cpN-7S-r1d"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="aWS-YI-3YI" secondAttribute="trailing" constant="-20" id="fq2-3E-Scl"/>
+                            <constraint firstItem="AV4-kK-Vqw" firstAttribute="top" secondItem="ZxY-3p-AEF" secondAttribute="bottom" constant="210" id="gfN-hf-vp1"/>
+                            <constraint firstItem="AV4-kK-Vqw" firstAttribute="centerY" secondItem="Bgi-3U-gBJ" secondAttribute="centerY" id="ieO-Ih-hLz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3YY-9Z-6lE" secondAttribute="trailing" constant="-10" id="inE-Pl-bFj"/>
+                            <constraint firstItem="3YY-9Z-6lE" firstAttribute="top" secondItem="ZxY-3p-AEF" secondAttribute="bottom" constant="15" id="jW1-oR-q2q"/>
+                            <constraint firstItem="aWS-YI-3YI" firstAttribute="leading" secondItem="Bgi-3U-gBJ" secondAttribute="leadingMargin" constant="-20" id="kI0-Sl-3im"/>
+                            <constraint firstItem="1xJ-iM-7s2" firstAttribute="top" secondItem="S4h-hs-kKv" secondAttribute="bottom" constant="8" id="o4I-57-s9B"/>
+                            <constraint firstItem="cZY-y7-BDu" firstAttribute="top" secondItem="aWS-YI-3YI" secondAttribute="bottom" id="qTj-Xg-W9N"/>
+                            <constraint firstItem="S4h-hs-kKv" firstAttribute="leading" secondItem="Bgi-3U-gBJ" secondAttribute="leadingMargin" constant="-10" id="stL-XB-tPw"/>
+                            <constraint firstItem="aWS-YI-3YI" firstAttribute="top" secondItem="ZxY-3p-AEF" secondAttribute="bottom" id="vQC-xm-aK8"/>
+                            <constraint firstItem="1xJ-iM-7s2" firstAttribute="top" secondItem="CbN-hQ-HHJ" secondAttribute="bottom" constant="1" id="yYI-nO-smP"/>
+                            <constraint firstItem="yEi-Qt-Ye9" firstAttribute="centerX" secondItem="Bgi-3U-gBJ" secondAttribute="centerX" id="yaB-eu-qDd"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Kxq-0D-XJs"/>
+                                <exclude reference="ieO-Ih-hLz"/>
+                                <exclude reference="cpN-7S-r1d"/>
+                                <exclude reference="yaB-eu-qDd"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -500,7 +747,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="42F-0c-Xyu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779" y="1220"/>
+            <point key="canvasLocation" x="1270" y="1142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="CJz-O7-CKX">
@@ -540,7 +787,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sof-DF-EHF">
-                                        <rect key="frame" x="20" y="86" width="280" height="35"/>
+                                        <rect key="frame" x="10" y="83" width="300" height="35"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="" label="Add alarm title"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -561,7 +808,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VHy-4x-eML" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2295" y="1214"/>
+            <point key="canvasLocation" x="1768" y="1142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Uej-iu-eru">
@@ -598,7 +845,7 @@
                                         </connections>
                                     </button>
                                     <textField opaque="NO" clipsSubviews="YES" alpha="0.5" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="noX-S5-tDd">
-                                        <rect key="frame" x="20" y="86" width="280" height="35"/>
+                                        <rect key="frame" x="10" y="86" width="300" height="35"/>
                                         <animations/>
                                         <accessibility key="accessibilityConfiguration" hint="" label="Add alarm title"/>
                                         <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -619,7 +866,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AE3-9Z-x26" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2810" y="1214"/>
+            <point key="canvasLocation" x="2216" y="1142"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Sto-uQ-yq1">
@@ -641,7 +888,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nYq-du-WkN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1332.1875" y="1310.3873239436618"/>
+            <point key="canvasLocation" x="745" y="1890"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="pxJ-5g-l1M">
@@ -655,9 +902,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAq-1j-gSq">
-                                <rect key="frame" x="10" y="15" width="31" height="31"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LAq-1j-gSq">
+                                <rect key="frame" x="6" y="15" width="31" height="31"/>
                                 <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="31" id="vqX-XE-UxC"/>
+                                    <constraint firstAttribute="height" constant="31" id="yIJ-vA-kTL"/>
+                                </constraints>
                                 <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <state key="normal" image="Btn-Close-white">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -666,6 +917,10 @@
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" red="0.16862745583057404" green="0.16862745583057404" blue="0.16862745583057404" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="LAq-1j-gSq" firstAttribute="leading" secondItem="IT9-4T-hfe" secondAttribute="leadingMargin" constant="-10" id="0QH-or-Myj"/>
+                            <constraint firstItem="LAq-1j-gSq" firstAttribute="top" secondItem="3Ft-xn-QKG" secondAttribute="bottom" constant="15" id="7FQ-Dt-BdS"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
@@ -673,7 +928,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="L5q-PC-axV" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1779" y="-292"/>
+            <point key="canvasLocation" x="1534" y="-235"/>
         </scene>
     </scenes>
     <resources>
@@ -689,7 +944,7 @@
         <image name="Tree-FrantzouFleurine" width="2000" height="2482"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="sIu-eq-X2f"/>
         <segue reference="77A-kB-3X7"/>
+        <segue reference="sIu-eq-X2f"/>
     </inferredMetricsTieBreakers>
 </document>
