@@ -7,10 +7,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="S7r-Oq-mv6"/>
                         <viewControllerLayoutGuide type="bottom" id="XLL-CZ-gup"/>
@@ -64,8 +64,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="QfC-T2-mcf"/>
-                                    <segue destination="D78-NB-tqb" kind="presentation" modalTransitionStyle="crossDissolve" id="TqE-T7-EOg"/>
+                                    <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="5hi-4G-SvX"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -95,12 +94,12 @@
                     <simulatedOrientationMetrics key="simulatedOrientationMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
-                        <outlet property="loginButton" destination="x3W-WH-nt3" id="15P-ej-fh4"/>
+                        <outlet property="loginButton" destination="x3W-WH-nt3" id="DIa-cK-78a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="615" y="394"/>
+            <point key="canvasLocation" x="642" y="383"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="N4t-Vp-ivx">

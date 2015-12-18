@@ -45,6 +45,7 @@
 		1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */; };
 		1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFB11C183AE8005D35A1 /* PancakeTests.swift */; };
 		1180DFBD1C183AE8005D35A1 /* PancakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */; };
+		11CB9E361C248A70006197A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB9E351C248A70006197A2 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -111,6 +112,7 @@
 		1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
 		1180DFBE1C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
+		11CB9E351C248A70006197A2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -205,6 +207,7 @@
 				116D3D5A1C18A3EB00361664 /* Spring */,
 				1180DF991C183AE8005D35A1 /* AppDelegate.swift */,
 				1180DF9B1C183AE8005D35A1 /* ViewController.swift */,
+				11CB9E351C248A70006197A2 /* LoginViewController.swift */,
 				11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */,
 				1180DF9D1C183AE8005D35A1 /* Main.storyboard */,
 				1180DFA31C183AE8005D35A1 /* Assets.xcassets */,
@@ -389,6 +392,7 @@
 				1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */,
 				116D3D941C18A3EB00361664 /* TransitionZoom.swift in Sources */,
 				116D3D811C18A3EB00361664 /* DesignableTextField.swift in Sources */,
+				11CB9E361C248A70006197A2 /* LoginViewController.swift in Sources */,
 				116D3D931C18A3EB00361664 /* TransitionManager.swift in Sources */,
 				116D3D8F1C18A3EB00361664 /* SpringLabel.swift in Sources */,
 				116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */,
