@@ -7,9 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1113011C1C18E62100F264FD /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1113011B1C18E62100F264FD /* Spotify.framework */; };
-		114213EF1C18E938007A1C1F /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114213EE1C18E938007A1C1F /* AVFoundation.framework */; };
-		114213F11C18E976007A1C1F /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 114213F01C18E976007A1C1F /* SystemConfiguration.framework */; };
+		1105A5DD1C2326A000452AB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105A5DC1C2326A000452AB3 /* AVFoundation.framework */; };
+		113BC7AC1C23272300ED5D24 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113BC7AB1C23272300ED5D24 /* Spotify.framework */; };
 		116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5B1C18A3EB00361664 /* AsyncButton.swift */; };
 		116D3D7A1C18A3EB00361664 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */; };
 		116D3D7B1C18A3EB00361664 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5D1C18A3EB00361664 /* AutoTextView.swift */; };
@@ -42,7 +41,6 @@
 		1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF991C183AE8005D35A1 /* AppDelegate.swift */; };
 		1180DF9C1C183AE8005D35A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF9B1C183AE8005D35A1 /* ViewController.swift */; };
 		1180DF9F1C183AE8005D35A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DF9D1C183AE8005D35A1 /* Main.storyboard */; };
-		1180DFA21C183AE8005D35A1 /* Pancake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */; };
 		1180DFA41C183AE8005D35A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA31C183AE8005D35A1 /* Assets.xcassets */; };
 		1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */; };
 		1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFB11C183AE8005D35A1 /* PancakeTests.swift */; };
@@ -67,10 +65,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1113011B1C18E62100F264FD /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		114213EE1C18E938007A1C1F /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		114213F01C18E976007A1C1F /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		11638A6F1C19C1BD005CF4FF /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
+		1105A5DC1C2326A000452AB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		113BC7AB1C23272300ED5D24 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		116D3D5B1C18A3EB00361664 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		116D3D5D1C18A3EB00361664 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -105,7 +101,6 @@
 		1180DF991C183AE8005D35A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1180DF9B1C183AE8005D35A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1180DF9E1C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pancake.xcdatamodel; sourceTree = "<group>"; };
 		1180DFA31C183AE8005D35A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1180DFA61C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1180DFA81C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -115,6 +110,7 @@
 		1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
 		1180DFBE1C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +118,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				114213F11C18E976007A1C1F /* SystemConfiguration.framework in Frameworks */,
-				114213EF1C18E938007A1C1F /* AVFoundation.framework in Frameworks */,
-				1113011C1C18E62100F264FD /* Spotify.framework in Frameworks */,
+				1105A5DD1C2326A000452AB3 /* AVFoundation.framework in Frameworks */,
+				113BC7AC1C23272300ED5D24 /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -145,16 +140,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1113011A1C18E60E00F264FD /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				114213F01C18E976007A1C1F /* SystemConfiguration.framework */,
-				114213EE1C18E938007A1C1F /* AVFoundation.framework */,
-				1113011B1C18E62100F264FD /* Spotify.framework */,
-			);
-			path = Frameworks;
-			sourceTree = "<group>";
-		};
 		116D3D5A1C18A3EB00361664 /* Spring */ = {
 			isa = PBXGroup;
 			children = (
@@ -195,7 +180,7 @@
 		1180DF8D1C183AE8005D35A1 = {
 			isa = PBXGroup;
 			children = (
-				1113011A1C18E60E00F264FD /* Frameworks */,
+				1105A5DC1C2326A000452AB3 /* AVFoundation.framework */,
 				1180DF981C183AE8005D35A1 /* Pancake */,
 				1180DFB01C183AE8005D35A1 /* PancakeTests */,
 				1180DFBB1C183AE8005D35A1 /* PancakeUITests */,
@@ -216,15 +201,15 @@
 		1180DF981C183AE8005D35A1 /* Pancake */ = {
 			isa = PBXGroup;
 			children = (
+				113BC7AB1C23272300ED5D24 /* Spotify.framework */,
 				116D3D5A1C18A3EB00361664 /* Spring */,
 				1180DF991C183AE8005D35A1 /* AppDelegate.swift */,
 				1180DF9B1C183AE8005D35A1 /* ViewController.swift */,
+				11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */,
 				1180DF9D1C183AE8005D35A1 /* Main.storyboard */,
 				1180DFA31C183AE8005D35A1 /* Assets.xcassets */,
 				1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */,
 				1180DFA81C183AE8005D35A1 /* Info.plist */,
-				1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */,
-				11638A6F1C19C1BD005CF4FF /* Pancake-Bridging-Header.h */,
 			);
 			path = Pancake;
 			sourceTree = "<group>";
@@ -415,7 +400,6 @@
 				116D3D8D1C18A3EB00361664 /* SpringButton.swift in Sources */,
 				116D3D8C1C18A3EB00361664 /* SpringAnimation.swift in Sources */,
 				116D3D7E1C18A3EB00361664 /* DesignableImageView.swift in Sources */,
-				1180DFA21C183AE8005D35A1 /* Pancake.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -559,10 +543,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Pancake",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
@@ -578,10 +564,12 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Frameworks",
+					"$(PROJECT_DIR)/Pancake",
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				"OTHER_LDFLAGS[arch=*]" = "-ObjC";
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
@@ -676,19 +664,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		1180DFA01C183AE8005D35A1 /* Pancake.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */,
-			);
-			currentVersion = 1180DFA11C183AE8005D35A1 /* Pancake.xcdatamodel */;
-			path = Pancake.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 1180DF8E1C183AE8005D35A1 /* Project object */;
 }
