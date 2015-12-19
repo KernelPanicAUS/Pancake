@@ -10,47 +10,39 @@ import UIKit
 import CoreData
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {    
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let kClientID = "e644c0618991483d831ad1e34d037f7b"
-    let kCallbackURL = "pancake-app://callback/"
+    let kClientID = "57fba5f8821f41cfa5bbae644ad46ce7"
+    let kCallbackURL = "pancakeapp://returnAfterLogin"
     let kTokenSwapURL = "http://localhost:1234/swap"
     let kTokenRefreshServiceURL = "http://localhost:1234/refresh"
 
-
     var window: UIWindow?
-
-
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
-        return true
-    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         
-        if SPTAuth.defaultInstance().canHandleURL(url, withDeclaredRedirectURL: NSURL(string: kCallbackURL)) {
-            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, tokenSwapServiceEndpointAtURL: NSURL(string: kTokenSwapURL), callback: { (error:NSError!, session:SPTSession!) -> Void in
-                if error != nil {
-                    print("AUTHENTICATION ERROR")
-                    return
-                }
+            if SPTAuth.defaultInstance().canHandleURL(url){
+                SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
                 
-                let userDefaults = NSUserDefaults.standardUserDefaults()
-                
-                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-                
-                userDefaults.setObject(sessionData, forKey: "SpotifySession")
-                
-                userDefaults.synchronize()
-                
-                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessfull", object: nil)
-                
-                
+                    if error != nil {
+                        print("AUNTHENTIFICATION ERROR")
+                        return
+                    }
+                    
+                    let userDefaults = NSUserDefaults.standardUserDefaults()
+                    
+                    let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                    
+                    userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                    
+                    userDefaults.synchronize()
+                    
+                    NSNotificationCenter.defaultCenter().postNotificationName("LoginSuccessFull", object: nil)
+                    
             })
         }
         
         return false
-        
     }
 
     func applicationWillResignActive(application: UIApplication) {

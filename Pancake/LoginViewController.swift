@@ -10,8 +10,8 @@ import UIKit
 
 class LoginViewController: UIViewController {
     
-    let kClientID = "e644c0618991483d831ad1e34d037f7b"
-    let kCallbackURL = "pancake-app://callback/"
+    let kClientID = "57fba5f8821f41cfa5bbae644ad46ce7"
+    let kCallbackURL = "pancakeapp://returnAfterLogin"
     let kTokenSwapURL = "http://localhost:1234/swap"
     let kTokenRefreshServiceURL = "http://localhost:1234/refresh"
 
@@ -19,14 +19,30 @@ class LoginViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        loginButton.hidden = true
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "LoginSuccessFull", object: nil)
 
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        
+        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") { // Session Avaible
+        
+        }else{
+            loginButton.hidden = false
+        }
+
+        
         // Do any additional setup after loading the view.
+    }
+    
+    func updateAfterFirstLogin(){
+        loginButton.hidden = true
     }
 
     @IBAction func loginWithSpotify(sender: AnyObject) {
         let auth = SPTAuth.defaultInstance()
         
-        let loginURL = auth.loginURLForClientId(kClientID, declaredRedirectURL: NSURL(string: kCallbackURL), scopes: [SPTAuthStreamingScope])
+        let loginURL = auth.loginURL
         
         UIApplication.sharedApplication().openURL(loginURL)
     

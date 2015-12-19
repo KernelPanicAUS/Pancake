@@ -26,10 +26,10 @@
 			<key>CFBundleURLIconFile</key>
 			<string></string>
 			<key>CFBundleURLName</key>
-			<string>com.pancake-app.spotify-auth</string>
+			<string>eu.rudyrosciglione.spotify-auth</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>pancake-app</string>
+				<string>pancakeapp</string>
 			</array>
 		</dict>
 	</array>
