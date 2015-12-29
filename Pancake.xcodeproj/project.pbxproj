@@ -7,132 +7,134 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1105A5DD1C2326A000452AB3 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1105A5DC1C2326A000452AB3 /* AVFoundation.framework */; };
-		113BC7AC1C23272300ED5D24 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 113BC7AB1C23272300ED5D24 /* Spotify.framework */; };
-		116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5B1C18A3EB00361664 /* AsyncButton.swift */; };
-		116D3D7A1C18A3EB00361664 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */; };
-		116D3D7B1C18A3EB00361664 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5D1C18A3EB00361664 /* AutoTextView.swift */; };
-		116D3D7C1C18A3EB00361664 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5E1C18A3EB00361664 /* BlurView.swift */; };
-		116D3D7D1C18A3EB00361664 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D5F1C18A3EB00361664 /* DesignableButton.swift */; };
-		116D3D7E1C18A3EB00361664 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D601C18A3EB00361664 /* DesignableImageView.swift */; };
-		116D3D7F1C18A3EB00361664 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D611C18A3EB00361664 /* DesignableLabel.swift */; };
-		116D3D801C18A3EB00361664 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D621C18A3EB00361664 /* DesignableTabBarController.swift */; };
-		116D3D811C18A3EB00361664 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D631C18A3EB00361664 /* DesignableTextField.swift */; };
-		116D3D821C18A3EB00361664 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D641C18A3EB00361664 /* DesignableTextView.swift */; };
-		116D3D831C18A3EB00361664 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D651C18A3EB00361664 /* DesignableView.swift */; };
-		116D3D841C18A3EB00361664 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D661C18A3EB00361664 /* ImageLoader.swift */; };
-		116D3D851C18A3EB00361664 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 116D3D671C18A3EB00361664 /* Info.plist */; };
-		116D3D861C18A3EB00361664 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D681C18A3EB00361664 /* KeyboardLayoutConstraint.swift */; };
-		116D3D871C18A3EB00361664 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D691C18A3EB00361664 /* LoadingView.swift */; };
-		116D3D881C18A3EB00361664 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 116D3D6A1C18A3EB00361664 /* LoadingView.xib */; };
-		116D3D891C18A3EB00361664 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D6B1C18A3EB00361664 /* Misc.swift */; };
-		116D3D8A1C18A3EB00361664 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D6C1C18A3EB00361664 /* SoundPlayer.swift */; };
-		116D3D8B1C18A3EB00361664 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D6E1C18A3EB00361664 /* Spring.swift */; };
-		116D3D8C1C18A3EB00361664 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D6F1C18A3EB00361664 /* SpringAnimation.swift */; };
-		116D3D8D1C18A3EB00361664 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D701C18A3EB00361664 /* SpringButton.swift */; };
-		116D3D8E1C18A3EB00361664 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D711C18A3EB00361664 /* SpringImageView.swift */; };
-		116D3D8F1C18A3EB00361664 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D721C18A3EB00361664 /* SpringLabel.swift */; };
-		116D3D901C18A3EB00361664 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D731C18A3EB00361664 /* SpringTextField.swift */; };
-		116D3D911C18A3EB00361664 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D741C18A3EB00361664 /* SpringTextView.swift */; };
-		116D3D921C18A3EB00361664 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D751C18A3EB00361664 /* SpringView.swift */; };
-		116D3D931C18A3EB00361664 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D761C18A3EB00361664 /* TransitionManager.swift */; };
-		116D3D941C18A3EB00361664 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D771C18A3EB00361664 /* TransitionZoom.swift */; };
-		116D3D951C18A3EB00361664 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 116D3D781C18A3EB00361664 /* UnwindSegue.swift */; };
-		1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF991C183AE8005D35A1 /* AppDelegate.swift */; };
-		1180DF9C1C183AE8005D35A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DF9B1C183AE8005D35A1 /* ViewController.swift */; };
-		1180DF9F1C183AE8005D35A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DF9D1C183AE8005D35A1 /* Main.storyboard */; };
-		1180DFA41C183AE8005D35A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA31C183AE8005D35A1 /* Assets.xcassets */; };
-		1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */; };
-		1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFB11C183AE8005D35A1 /* PancakeTests.swift */; };
-		1180DFBD1C183AE8005D35A1 /* PancakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */; };
-		11CB9E361C248A70006197A2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11CB9E351C248A70006197A2 /* LoginViewController.swift */; };
+		11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C731C317E8F0010CCCB /* AppDelegate.swift */; };
+		11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C751C317E8F0010CCCB /* ViewController.swift */; };
+		11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C771C317E8F0010CCCB /* Main.storyboard */; };
+		11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */; };
+		11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C7D1C317E8F0010CCCB /* Assets.xcassets */; };
+		11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */; };
+		11A63C8C1C317E8F0010CCCB /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */; };
+		11A63C971C317E8F0010CCCB /* PancakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C961C317E8F0010CCCB /* PancakeUITests.swift */; };
+		11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A63CA51C317F0C0010CCCB /* Spotify.framework */; };
+		11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A63CA71C317F280010CCCB /* AVFoundation.framework */; };
+		11A63CAE1C3181B80010CCCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63CAD1C3181B80010CCCB /* LoginViewController.swift */; };
+		11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167211C32DB6F0033D1E3 /* AsyncButton.swift */; };
+		11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */; };
+		11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167231C32DB6F0033D1E3 /* AutoTextView.swift */; };
+		11F167421C32DB6F0033D1E3 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167241C32DB6F0033D1E3 /* BlurView.swift */; };
+		11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167251C32DB6F0033D1E3 /* DesignableButton.swift */; };
+		11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */; };
+		11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */; };
+		11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */; };
+		11F167471C32DB6F0033D1E3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */; };
+		11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */; };
+		11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */; };
+		11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */; };
+		11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F1672D1C32DB6F0033D1E3 /* Info.plist */; };
+		11F1674C1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */; };
+		11F1674D1C32DB6F0033D1E3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */; };
+		11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F167301C32DB6F0033D1E3 /* LoadingView.xib */; };
+		11F1674F1C32DB6F0033D1E3 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167311C32DB6F0033D1E3 /* Misc.swift */; };
+		11F167501C32DB6F0033D1E3 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */; };
+		11F167511C32DB6F0033D1E3 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167341C32DB6F0033D1E3 /* Spring.swift */; };
+		11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */; };
+		11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167361C32DB6F0033D1E3 /* SpringButton.swift */; };
+		11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167371C32DB6F0033D1E3 /* SpringImageView.swift */; };
+		11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167381C32DB6F0033D1E3 /* SpringLabel.swift */; };
+		11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167391C32DB6F0033D1E3 /* SpringTextField.swift */; };
+		11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */; };
+		11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673B1C32DB6F0033D1E3 /* SpringView.swift */; };
+		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
+		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
+		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1180DFAE1C183AE8005D35A1 /* PBXContainerItemProxy */ = {
+		11A63C881C317E8F0010CCCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1180DF8E1C183AE8005D35A1 /* Project object */;
+			containerPortal = 11A63C681C317E8F0010CCCB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1180DF951C183AE8005D35A1;
+			remoteGlobalIDString = 11A63C6F1C317E8F0010CCCB;
 			remoteInfo = Pancake;
 		};
-		1180DFB91C183AE8005D35A1 /* PBXContainerItemProxy */ = {
+		11A63C931C317E8F0010CCCB /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
-			containerPortal = 1180DF8E1C183AE8005D35A1 /* Project object */;
+			containerPortal = 11A63C681C317E8F0010CCCB /* Project object */;
 			proxyType = 1;
-			remoteGlobalIDString = 1180DF951C183AE8005D35A1;
+			remoteGlobalIDString = 11A63C6F1C317E8F0010CCCB;
 			remoteInfo = Pancake;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		1105A5DC1C2326A000452AB3 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
-		113BC7AB1C23272300ED5D24 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
-		116D3D5B1C18A3EB00361664 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
-		116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
-		116D3D5D1C18A3EB00361664 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
-		116D3D5E1C18A3EB00361664 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
-		116D3D5F1C18A3EB00361664 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
-		116D3D601C18A3EB00361664 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
-		116D3D611C18A3EB00361664 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
-		116D3D621C18A3EB00361664 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
-		116D3D631C18A3EB00361664 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
-		116D3D641C18A3EB00361664 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
-		116D3D651C18A3EB00361664 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
-		116D3D661C18A3EB00361664 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
-		116D3D671C18A3EB00361664 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		116D3D681C18A3EB00361664 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
-		116D3D691C18A3EB00361664 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
-		116D3D6A1C18A3EB00361664 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
-		116D3D6B1C18A3EB00361664 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
-		116D3D6C1C18A3EB00361664 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
-		116D3D6D1C18A3EB00361664 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
-		116D3D6E1C18A3EB00361664 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
-		116D3D6F1C18A3EB00361664 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
-		116D3D701C18A3EB00361664 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
-		116D3D711C18A3EB00361664 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
-		116D3D721C18A3EB00361664 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
-		116D3D731C18A3EB00361664 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
-		116D3D741C18A3EB00361664 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
-		116D3D751C18A3EB00361664 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
-		116D3D761C18A3EB00361664 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
-		116D3D771C18A3EB00361664 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
-		116D3D781C18A3EB00361664 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		1180DF961C183AE8005D35A1 /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		1180DF991C183AE8005D35A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1180DF9B1C183AE8005D35A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1180DF9E1C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		1180DFA31C183AE8005D35A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1180DFA61C183AE8005D35A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		1180DFA81C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1180DFB11C183AE8005D35A1 /* PancakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeTests.swift; sourceTree = "<group>"; };
-		1180DFB31C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
-		1180DFBE1C183AE8005D35A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
-		11CB9E351C248A70006197A2 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11A63C701C317E8F0010CCCB /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C731C317E8F0010CCCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11A63C751C317E8F0010CCCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11A63C781C317E8F0010CCCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pancake.xcdatamodel; sourceTree = "<group>"; };
+		11A63C7D1C317E8F0010CCCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11A63C801C317E8F0010CCCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11A63C821C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63C871C317E8F0010CCCB /* PancakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeTests.swift; sourceTree = "<group>"; };
+		11A63C8D1C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C961C317E8F0010CCCB /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
+		11A63C981C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63CA51C317F0C0010CCCB /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		11A63CA71C317F280010CCCB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
+		11A63CAD1C3181B80010CCCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11F167211C32DB6F0033D1E3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		11F167231C32DB6F0033D1E3 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		11F167241C32DB6F0033D1E3 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		11F167251C32DB6F0033D1E3 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		11F1672D1C32DB6F0033D1E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		11F167301C32DB6F0033D1E3 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		11F167311C32DB6F0033D1E3 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		11F167331C32DB6F0033D1E3 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		11F167341C32DB6F0033D1E3 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		11F167361C32DB6F0033D1E3 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		11F167371C32DB6F0033D1E3 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		11F167381C32DB6F0033D1E3 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		11F167391C32DB6F0033D1E3 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		11F1673B1C32DB6F0033D1E3 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		1180DF931C183AE8005D35A1 /* Frameworks */ = {
+		11A63C6D1C317E8F0010CCCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1105A5DD1C2326A000452AB3 /* AVFoundation.framework in Frameworks */,
-				113BC7AC1C23272300ED5D24 /* Spotify.framework in Frameworks */,
+				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
+				11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFAA1C183AE8005D35A1 /* Frameworks */ = {
+		11A63C841C317E8F0010CCCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFB51C183AE8005D35A1 /* Frameworks */ = {
+		11A63C8F1C317E8F0010CCCB /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -142,109 +144,118 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		116D3D5A1C18A3EB00361664 /* Spring */ = {
+		11A63C671C317E8F0010CCCB = {
 			isa = PBXGroup;
 			children = (
-				116D3D5B1C18A3EB00361664 /* AsyncButton.swift */,
-				116D3D5C1C18A3EB00361664 /* AsyncImageView.swift */,
-				116D3D5D1C18A3EB00361664 /* AutoTextView.swift */,
-				116D3D5E1C18A3EB00361664 /* BlurView.swift */,
-				116D3D5F1C18A3EB00361664 /* DesignableButton.swift */,
-				116D3D601C18A3EB00361664 /* DesignableImageView.swift */,
-				116D3D611C18A3EB00361664 /* DesignableLabel.swift */,
-				116D3D621C18A3EB00361664 /* DesignableTabBarController.swift */,
-				116D3D631C18A3EB00361664 /* DesignableTextField.swift */,
-				116D3D641C18A3EB00361664 /* DesignableTextView.swift */,
-				116D3D651C18A3EB00361664 /* DesignableView.swift */,
-				116D3D661C18A3EB00361664 /* ImageLoader.swift */,
-				116D3D671C18A3EB00361664 /* Info.plist */,
-				116D3D681C18A3EB00361664 /* KeyboardLayoutConstraint.swift */,
-				116D3D691C18A3EB00361664 /* LoadingView.swift */,
-				116D3D6A1C18A3EB00361664 /* LoadingView.xib */,
-				116D3D6B1C18A3EB00361664 /* Misc.swift */,
-				116D3D6C1C18A3EB00361664 /* SoundPlayer.swift */,
-				116D3D6D1C18A3EB00361664 /* Spring.h */,
-				116D3D6E1C18A3EB00361664 /* Spring.swift */,
-				116D3D6F1C18A3EB00361664 /* SpringAnimation.swift */,
-				116D3D701C18A3EB00361664 /* SpringButton.swift */,
-				116D3D711C18A3EB00361664 /* SpringImageView.swift */,
-				116D3D721C18A3EB00361664 /* SpringLabel.swift */,
-				116D3D731C18A3EB00361664 /* SpringTextField.swift */,
-				116D3D741C18A3EB00361664 /* SpringTextView.swift */,
-				116D3D751C18A3EB00361664 /* SpringView.swift */,
-				116D3D761C18A3EB00361664 /* TransitionManager.swift */,
-				116D3D771C18A3EB00361664 /* TransitionZoom.swift */,
-				116D3D781C18A3EB00361664 /* UnwindSegue.swift */,
-			);
-			path = Spring;
-			sourceTree = "<group>";
-		};
-		1180DF8D1C183AE8005D35A1 = {
-			isa = PBXGroup;
-			children = (
-				1105A5DC1C2326A000452AB3 /* AVFoundation.framework */,
-				1180DF981C183AE8005D35A1 /* Pancake */,
-				1180DFB01C183AE8005D35A1 /* PancakeTests */,
-				1180DFBB1C183AE8005D35A1 /* PancakeUITests */,
-				1180DF971C183AE8005D35A1 /* Products */,
+				11A63CA41C317EA00010CCCB /* Frameworks */,
+				11A63C721C317E8F0010CCCB /* Pancake */,
+				11A63C8A1C317E8F0010CCCB /* PancakeTests */,
+				11A63C951C317E8F0010CCCB /* PancakeUITests */,
+				11A63C711C317E8F0010CCCB /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		1180DF971C183AE8005D35A1 /* Products */ = {
+		11A63C711C317E8F0010CCCB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1180DF961C183AE8005D35A1 /* Pancake.app */,
-				1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */,
-				1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */,
+				11A63C701C317E8F0010CCCB /* Pancake.app */,
+				11A63C871C317E8F0010CCCB /* PancakeTests.xctest */,
+				11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1180DF981C183AE8005D35A1 /* Pancake */ = {
+		11A63C721C317E8F0010CCCB /* Pancake */ = {
 			isa = PBXGroup;
 			children = (
-				113BC7AB1C23272300ED5D24 /* Spotify.framework */,
-				116D3D5A1C18A3EB00361664 /* Spring */,
-				1180DF991C183AE8005D35A1 /* AppDelegate.swift */,
-				1180DF9B1C183AE8005D35A1 /* ViewController.swift */,
-				11CB9E351C248A70006197A2 /* LoginViewController.swift */,
-				11AFE2201C2329B60046BBB1 /* Pancake-Bridging-Header.h */,
-				1180DF9D1C183AE8005D35A1 /* Main.storyboard */,
-				1180DFA31C183AE8005D35A1 /* Assets.xcassets */,
-				1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */,
-				1180DFA81C183AE8005D35A1 /* Info.plist */,
+				11F167201C32DB6F0033D1E3 /* Spring */,
+				11A63C731C317E8F0010CCCB /* AppDelegate.swift */,
+				11A63C751C317E8F0010CCCB /* ViewController.swift */,
+				11A63CAD1C3181B80010CCCB /* LoginViewController.swift */,
+				11A63C771C317E8F0010CCCB /* Main.storyboard */,
+				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
+				11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */,
+				11A63C821C317E8F0010CCCB /* Info.plist */,
+				11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */,
+				11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */,
 			);
 			path = Pancake;
 			sourceTree = "<group>";
 		};
-		1180DFB01C183AE8005D35A1 /* PancakeTests */ = {
+		11A63C8A1C317E8F0010CCCB /* PancakeTests */ = {
 			isa = PBXGroup;
 			children = (
-				1180DFB11C183AE8005D35A1 /* PancakeTests.swift */,
-				1180DFB31C183AE8005D35A1 /* Info.plist */,
+				11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */,
+				11A63C8D1C317E8F0010CCCB /* Info.plist */,
 			);
 			path = PancakeTests;
 			sourceTree = "<group>";
 		};
-		1180DFBB1C183AE8005D35A1 /* PancakeUITests */ = {
+		11A63C951C317E8F0010CCCB /* PancakeUITests */ = {
 			isa = PBXGroup;
 			children = (
-				1180DFBC1C183AE8005D35A1 /* PancakeUITests.swift */,
-				1180DFBE1C183AE8005D35A1 /* Info.plist */,
+				11A63C961C317E8F0010CCCB /* PancakeUITests.swift */,
+				11A63C981C317E8F0010CCCB /* Info.plist */,
 			);
 			path = PancakeUITests;
+			sourceTree = "<group>";
+		};
+		11A63CA41C317EA00010CCCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				11A63CA51C317F0C0010CCCB /* Spotify.framework */,
+				11A63CA71C317F280010CCCB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11F167201C32DB6F0033D1E3 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				11F167211C32DB6F0033D1E3 /* AsyncButton.swift */,
+				11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */,
+				11F167231C32DB6F0033D1E3 /* AutoTextView.swift */,
+				11F167241C32DB6F0033D1E3 /* BlurView.swift */,
+				11F167251C32DB6F0033D1E3 /* DesignableButton.swift */,
+				11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */,
+				11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */,
+				11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */,
+				11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */,
+				11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */,
+				11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */,
+				11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */,
+				11F1672D1C32DB6F0033D1E3 /* Info.plist */,
+				11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */,
+				11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */,
+				11F167301C32DB6F0033D1E3 /* LoadingView.xib */,
+				11F167311C32DB6F0033D1E3 /* Misc.swift */,
+				11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */,
+				11F167331C32DB6F0033D1E3 /* Spring.h */,
+				11F167341C32DB6F0033D1E3 /* Spring.swift */,
+				11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */,
+				11F167361C32DB6F0033D1E3 /* SpringButton.swift */,
+				11F167371C32DB6F0033D1E3 /* SpringImageView.swift */,
+				11F167381C32DB6F0033D1E3 /* SpringLabel.swift */,
+				11F167391C32DB6F0033D1E3 /* SpringTextField.swift */,
+				11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */,
+				11F1673B1C32DB6F0033D1E3 /* SpringView.swift */,
+				11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */,
+				11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */,
+				11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */,
+			);
+			path = Spring;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		1180DF951C183AE8005D35A1 /* Pancake */ = {
+		11A63C6F1C317E8F0010CCCB /* Pancake */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1180DFC11C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "Pancake" */;
+			buildConfigurationList = 11A63C9B1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "Pancake" */;
 			buildPhases = (
-				1180DF921C183AE8005D35A1 /* Sources */,
-				1180DF931C183AE8005D35A1 /* Frameworks */,
-				1180DF941C183AE8005D35A1 /* Resources */,
+				11A63C6C1C317E8F0010CCCB /* Sources */,
+				11A63C6D1C317E8F0010CCCB /* Frameworks */,
+				11A63C6E1C317E8F0010CCCB /* Resources */,
 			);
 			buildRules = (
 			);
@@ -252,75 +263,72 @@
 			);
 			name = Pancake;
 			productName = Pancake;
-			productReference = 1180DF961C183AE8005D35A1 /* Pancake.app */;
+			productReference = 11A63C701C317E8F0010CCCB /* Pancake.app */;
 			productType = "com.apple.product-type.application";
 		};
-		1180DFAC1C183AE8005D35A1 /* PancakeTests */ = {
+		11A63C861C317E8F0010CCCB /* PancakeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1180DFC41C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeTests" */;
+			buildConfigurationList = 11A63C9E1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeTests" */;
 			buildPhases = (
-				1180DFA91C183AE8005D35A1 /* Sources */,
-				1180DFAA1C183AE8005D35A1 /* Frameworks */,
-				1180DFAB1C183AE8005D35A1 /* Resources */,
+				11A63C831C317E8F0010CCCB /* Sources */,
+				11A63C841C317E8F0010CCCB /* Frameworks */,
+				11A63C851C317E8F0010CCCB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1180DFAF1C183AE8005D35A1 /* PBXTargetDependency */,
+				11A63C891C317E8F0010CCCB /* PBXTargetDependency */,
 			);
 			name = PancakeTests;
 			productName = PancakeTests;
-			productReference = 1180DFAD1C183AE8005D35A1 /* PancakeTests.xctest */;
+			productReference = 11A63C871C317E8F0010CCCB /* PancakeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		1180DFB71C183AE8005D35A1 /* PancakeUITests */ = {
+		11A63C911C317E8F0010CCCB /* PancakeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 1180DFC71C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeUITests" */;
+			buildConfigurationList = 11A63CA11C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeUITests" */;
 			buildPhases = (
-				1180DFB41C183AE8005D35A1 /* Sources */,
-				1180DFB51C183AE8005D35A1 /* Frameworks */,
-				1180DFB61C183AE8005D35A1 /* Resources */,
+				11A63C8E1C317E8F0010CCCB /* Sources */,
+				11A63C8F1C317E8F0010CCCB /* Frameworks */,
+				11A63C901C317E8F0010CCCB /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				1180DFBA1C183AE8005D35A1 /* PBXTargetDependency */,
+				11A63C941C317E8F0010CCCB /* PBXTargetDependency */,
 			);
 			name = PancakeUITests;
 			productName = PancakeUITests;
-			productReference = 1180DFB81C183AE8005D35A1 /* PancakeUITests.xctest */;
+			productReference = 11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		1180DF8E1C183AE8005D35A1 /* Project object */ = {
+		11A63C681C317E8F0010CCCB /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				KnownAssetTags = (
-					AV,
-				);
-				LastSwiftUpdateCheck = 0710;
-				LastUpgradeCheck = 0710;
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = "Rudy Rosciglione";
 				TargetAttributes = {
-					1180DF951C183AE8005D35A1 = {
-						CreatedOnToolsVersion = 7.1.1;
+					11A63C6F1C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 9689ADQMZP;
 					};
-					1180DFAC1C183AE8005D35A1 = {
-						CreatedOnToolsVersion = 7.1.1;
+					11A63C861C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 9689ADQMZP;
-						TestTargetID = 1180DF951C183AE8005D35A1;
+						TestTargetID = 11A63C6F1C317E8F0010CCCB;
 					};
-					1180DFB71C183AE8005D35A1 = {
-						CreatedOnToolsVersion = 7.1.1;
+					11A63C911C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = 9689ADQMZP;
-						TestTargetID = 1180DF951C183AE8005D35A1;
+						TestTargetID = 11A63C6F1C317E8F0010CCCB;
 					};
 				};
 			};
-			buildConfigurationList = 1180DF911C183AE8005D35A1 /* Build configuration list for PBXProject "Pancake" */;
+			buildConfigurationList = 11A63C6B1C317E8F0010CCCB /* Build configuration list for PBXProject "Pancake" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -328,39 +336,39 @@
 				en,
 				Base,
 			);
-			mainGroup = 1180DF8D1C183AE8005D35A1;
-			productRefGroup = 1180DF971C183AE8005D35A1 /* Products */;
+			mainGroup = 11A63C671C317E8F0010CCCB;
+			productRefGroup = 11A63C711C317E8F0010CCCB /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				1180DF951C183AE8005D35A1 /* Pancake */,
-				1180DFAC1C183AE8005D35A1 /* PancakeTests */,
-				1180DFB71C183AE8005D35A1 /* PancakeUITests */,
+				11A63C6F1C317E8F0010CCCB /* Pancake */,
+				11A63C861C317E8F0010CCCB /* PancakeTests */,
+				11A63C911C317E8F0010CCCB /* PancakeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		1180DF941C183AE8005D35A1 /* Resources */ = {
+		11A63C6E1C317E8F0010CCCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116D3D851C18A3EB00361664 /* Info.plist in Resources */,
-				1180DFA71C183AE8005D35A1 /* LaunchScreen.storyboard in Resources */,
-				1180DFA41C183AE8005D35A1 /* Assets.xcassets in Resources */,
-				1180DF9F1C183AE8005D35A1 /* Main.storyboard in Resources */,
-				116D3D881C18A3EB00361664 /* LoadingView.xib in Resources */,
+				11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */,
+				11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */,
+				11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */,
+				11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */,
+				11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFAB1C183AE8005D35A1 /* Resources */ = {
+		11A63C851C317E8F0010CCCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFB61C183AE8005D35A1 /* Resources */ = {
+		11A63C901C317E8F0010CCCB /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -370,87 +378,88 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		1180DF921C183AE8005D35A1 /* Sources */ = {
+		11A63C6C1C317E8F0010CCCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				116D3D7F1C18A3EB00361664 /* DesignableLabel.swift in Sources */,
-				116D3D8E1C18A3EB00361664 /* SpringImageView.swift in Sources */,
-				116D3D7B1C18A3EB00361664 /* AutoTextView.swift in Sources */,
-				116D3D841C18A3EB00361664 /* ImageLoader.swift in Sources */,
-				116D3D891C18A3EB00361664 /* Misc.swift in Sources */,
-				116D3D7C1C18A3EB00361664 /* BlurView.swift in Sources */,
-				116D3D951C18A3EB00361664 /* UnwindSegue.swift in Sources */,
-				116D3D871C18A3EB00361664 /* LoadingView.swift in Sources */,
-				116D3D901C18A3EB00361664 /* SpringTextField.swift in Sources */,
-				116D3D8B1C18A3EB00361664 /* Spring.swift in Sources */,
-				1180DF9C1C183AE8005D35A1 /* ViewController.swift in Sources */,
-				116D3D8A1C18A3EB00361664 /* SoundPlayer.swift in Sources */,
-				116D3D831C18A3EB00361664 /* DesignableView.swift in Sources */,
-				116D3D801C18A3EB00361664 /* DesignableTabBarController.swift in Sources */,
-				116D3D7D1C18A3EB00361664 /* DesignableButton.swift in Sources */,
-				1180DF9A1C183AE8005D35A1 /* AppDelegate.swift in Sources */,
-				116D3D941C18A3EB00361664 /* TransitionZoom.swift in Sources */,
-				116D3D811C18A3EB00361664 /* DesignableTextField.swift in Sources */,
-				11CB9E361C248A70006197A2 /* LoginViewController.swift in Sources */,
-				116D3D931C18A3EB00361664 /* TransitionManager.swift in Sources */,
-				116D3D8F1C18A3EB00361664 /* SpringLabel.swift in Sources */,
-				116D3D791C18A3EB00361664 /* AsyncButton.swift in Sources */,
-				116D3D7A1C18A3EB00361664 /* AsyncImageView.swift in Sources */,
-				116D3D821C18A3EB00361664 /* DesignableTextView.swift in Sources */,
-				116D3D921C18A3EB00361664 /* SpringView.swift in Sources */,
-				116D3D911C18A3EB00361664 /* SpringTextView.swift in Sources */,
-				116D3D861C18A3EB00361664 /* KeyboardLayoutConstraint.swift in Sources */,
-				116D3D8D1C18A3EB00361664 /* SpringButton.swift in Sources */,
-				116D3D8C1C18A3EB00361664 /* SpringAnimation.swift in Sources */,
-				116D3D7E1C18A3EB00361664 /* DesignableImageView.swift in Sources */,
+				11A63CAE1C3181B80010CCCB /* LoginViewController.swift in Sources */,
+				11F167421C32DB6F0033D1E3 /* BlurView.swift in Sources */,
+				11F1674C1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift in Sources */,
+				11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */,
+				11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */,
+				11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */,
+				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
+				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
+				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,
+				11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */,
+				11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */,
+				11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */,
+				11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */,
+				11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */,
+				11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */,
+				11F167501C32DB6F0033D1E3 /* SoundPlayer.swift in Sources */,
+				11F1674F1C32DB6F0033D1E3 /* Misc.swift in Sources */,
+				11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */,
+				11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */,
+				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
+				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
+				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
+				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
+				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
+				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,
+				11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */,
+				11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */,
+				11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */,
+				11F167471C32DB6F0033D1E3 /* DesignableTextField.swift in Sources */,
+				11F1674D1C32DB6F0033D1E3 /* LoadingView.swift in Sources */,
+				11F167511C32DB6F0033D1E3 /* Spring.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFA91C183AE8005D35A1 /* Sources */ = {
+		11A63C831C317E8F0010CCCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1180DFB21C183AE8005D35A1 /* PancakeTests.swift in Sources */,
+				11A63C8C1C317E8F0010CCCB /* PancakeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		1180DFB41C183AE8005D35A1 /* Sources */ = {
+		11A63C8E1C317E8F0010CCCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1180DFBD1C183AE8005D35A1 /* PancakeUITests.swift in Sources */,
+				11A63C971C317E8F0010CCCB /* PancakeUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1180DFAF1C183AE8005D35A1 /* PBXTargetDependency */ = {
+		11A63C891C317E8F0010CCCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1180DF951C183AE8005D35A1 /* Pancake */;
-			targetProxy = 1180DFAE1C183AE8005D35A1 /* PBXContainerItemProxy */;
+			target = 11A63C6F1C317E8F0010CCCB /* Pancake */;
+			targetProxy = 11A63C881C317E8F0010CCCB /* PBXContainerItemProxy */;
 		};
-		1180DFBA1C183AE8005D35A1 /* PBXTargetDependency */ = {
+		11A63C941C317E8F0010CCCB /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 1180DF951C183AE8005D35A1 /* Pancake */;
-			targetProxy = 1180DFB91C183AE8005D35A1 /* PBXContainerItemProxy */;
+			target = 11A63C6F1C317E8F0010CCCB /* Pancake */;
+			targetProxy = 11A63C931C317E8F0010CCCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1180DF9D1C183AE8005D35A1 /* Main.storyboard */ = {
+		11A63C771C317E8F0010CCCB /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1180DF9E1C183AE8005D35A1 /* Base */,
+				11A63C781C317E8F0010CCCB /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
-		1180DFA51C183AE8005D35A1 /* LaunchScreen.storyboard */ = {
+		11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1180DFA61C183AE8005D35A1 /* Base */,
+				11A63C801C317E8F0010CCCB /* Base */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -458,7 +467,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		1180DFBF1C183AE8005D35A1 /* Debug */ = {
+		11A63C991C317E8F0010CCCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -494,15 +503,16 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
-		1180DFC01C183AE8005D35A1 /* Release */ = {
+		11A63C9A1C317E8F0010CCCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -532,22 +542,21 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
-		1180DFC21C183AE8005D35A1 /* Debug */ = {
+		11A63C9C1C317E8F0010CCCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Pancake",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
@@ -560,15 +569,13 @@
 			};
 			name = Debug;
 		};
-		1180DFC31C183AE8005D35A1 /* Release */ = {
+		11A63C9D1C317E8F0010CCCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
-					"$(PROJECT_DIR)/Frameworks",
-					"$(PROJECT_DIR)/Pancake",
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
@@ -580,7 +587,7 @@
 			};
 			name = Release;
 		};
-		1180DFC51C183AE8005D35A1 /* Debug */ = {
+		11A63C9F1C317E8F0010CCCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -592,7 +599,7 @@
 			};
 			name = Debug;
 		};
-		1180DFC61C183AE8005D35A1 /* Release */ = {
+		11A63CA01C317E8F0010CCCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -604,7 +611,7 @@
 			};
 			name = Release;
 		};
-		1180DFC81C183AE8005D35A1 /* Debug */ = {
+		11A63CA21C317E8F0010CCCB /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = PancakeUITests/Info.plist;
@@ -616,7 +623,7 @@
 			};
 			name = Debug;
 		};
-		1180DFC91C183AE8005D35A1 /* Release */ = {
+		11A63CA31C317E8F0010CCCB /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				INFOPLIST_FILE = PancakeUITests/Info.plist;
@@ -631,43 +638,56 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		1180DF911C183AE8005D35A1 /* Build configuration list for PBXProject "Pancake" */ = {
+		11A63C6B1C317E8F0010CCCB /* Build configuration list for PBXProject "Pancake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1180DFBF1C183AE8005D35A1 /* Debug */,
-				1180DFC01C183AE8005D35A1 /* Release */,
+				11A63C991C317E8F0010CCCB /* Debug */,
+				11A63C9A1C317E8F0010CCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1180DFC11C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "Pancake" */ = {
+		11A63C9B1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "Pancake" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1180DFC21C183AE8005D35A1 /* Debug */,
-				1180DFC31C183AE8005D35A1 /* Release */,
+				11A63C9C1C317E8F0010CCCB /* Debug */,
+				11A63C9D1C317E8F0010CCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1180DFC41C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeTests" */ = {
+		11A63C9E1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1180DFC51C183AE8005D35A1 /* Debug */,
-				1180DFC61C183AE8005D35A1 /* Release */,
+				11A63C9F1C317E8F0010CCCB /* Debug */,
+				11A63CA01C317E8F0010CCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		1180DFC71C183AE8005D35A1 /* Build configuration list for PBXNativeTarget "PancakeUITests" */ = {
+		11A63CA11C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				1180DFC81C183AE8005D35A1 /* Debug */,
-				1180DFC91C183AE8005D35A1 /* Release */,
+				11A63CA21C317E8F0010CCCB /* Debug */,
+				11A63CA31C317E8F0010CCCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */,
+			);
+			currentVersion = 11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */;
+			path = Pancake.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
-	rootObject = 1180DF8E1C183AE8005D35A1 /* Project object */;
+	rootObject = 11A63C681C317E8F0010CCCB /* Project object */;
 }

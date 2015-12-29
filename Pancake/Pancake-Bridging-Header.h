@@ -1,9 +1,5 @@
 //
-//  Pancake-Bridging-Header.h
-//  Pancake
-//
-//  Created by Rudy Rosciglione on 17/12/15.
-//  Copyright © 2015 Rudy Rosciglione. All rights reserved.
+//  Use this file to import your target's public headers that you would like to expose to Swift.
 //
 
 #import <Spotify/Spotify.h>

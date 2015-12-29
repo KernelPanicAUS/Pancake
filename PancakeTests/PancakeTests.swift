@@ -2,7 +2,7 @@
 //  PancakeTests.swift
 //  PancakeTests
 //
-//  Created by Rudy Rosciglione on 09/12/15.
+//  Created by Rudy Rosciglione on 28/12/15.
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
 

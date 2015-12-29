@@ -2,7 +2,7 @@
 //  AppDelegate.swift
 //  Pancake
 //
-//  Created by Rudy Rosciglione on 09/12/15.
+//  Created by Rudy Rosciglione on 28/12/15.
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
 
@@ -12,37 +12,43 @@ import CoreData
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    let kClientID = "57fba5f8821f41cfa5bbae644ad46ce7"
-    let kCallbackURL = "pancakeapp://returnAfterLogin"
-    let kTokenSwapURL = "http://localhost:1234/swap"
-    let kTokenRefreshServiceURL = "http://localhost:1234/refresh"
+    let kClientId = "eb68da6b0f3c4589a25e1c95bd3699f3"
+    let kCallbackUrl = "pancakeapp://callback"
+    let kTokenSwapUrl = "http://localhost:1234/swap"
+    let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
 
     var window: UIWindow?
+
+
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        // Override point for customization after application launch.
+        return true
+    }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
-        
-            if SPTAuth.defaultInstance().canHandleURL(url){
-                SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
+        if SPTAuth.defaultInstance().canHandleURL(url){
+            SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
+                if error != nil {
+                    print("AUTHENTICIFATION ERROR")
+                    return
+                }
                 
-                    if error != nil {
-                        print("AUNTHENTIFICATION ERROR")
-                        return
-                    }
-                    
-                    let userDefaults = NSUserDefaults.standardUserDefaults()
-                    
-                    let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
-                    
-                    userDefaults.setObject(sessionData, forKey: "SpotifySession")
-                    
-                    userDefaults.synchronize()
-                    
-                    NSNotificationCenter.defaultCenter().postNotificationName("LoginSuccessFull", object: nil)
-                    
+                let userDefaults = NSUserDefaults.standardUserDefaults()
+                
+                let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+                
+                userDefaults.setObject(sessionData, forKey: "SpotifySession")
+                
+                userDefaults.synchronize()
+                
+                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessFull", object: nil)
+                
             })
+            
         }
         
         return false
+
     }
 
     func applicationWillResignActive(application: UIApplication) {
