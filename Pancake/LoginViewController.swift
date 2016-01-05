@@ -24,9 +24,8 @@ class LoginViewController: UIViewController {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
-            
-            // Something sounds to be wrong here. 
-
+            // print session
+            print(sessionObj)
         }else{
             loginButton.hidden = false
         }
@@ -44,8 +43,8 @@ class LoginViewController: UIViewController {
         
         auth.clientID = kClientId
         auth.redirectURL = NSURL(string:kCallbackUrl)
-        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
-        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
+//        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+//        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         auth.requestedScopes = [SPTAuthStreamingScope]
         
         let loginURL = auth.loginURL
