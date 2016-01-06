@@ -15,25 +15,28 @@ class LoginViewController: UIViewController {
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
 
-    @IBOutlet weak var loginButton: UIButton!
+    @IBOutlet weak var loginButton: DesignableButton!
+    @IBOutlet var loginViewCrontoller: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.hidden = true
+        
+        loginViewCrontoller.hidden = true
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "loginSuccessFull", object: nil)
 
         let userDefaults = NSUserDefaults.standardUserDefaults()
-        
+
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
             // print session
             print(sessionObj)
         }else{
-            loginButton.hidden = false
+            loginViewCrontoller.hidden = false
         }
 
     }
     
     func updateAfterFirstLogin () {
-        loginButton.hidden = true
+        loginViewCrontoller.hidden = true
         
     }
         

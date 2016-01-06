@@ -3,7 +3,18 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+        <mutableArray key="ProximaNova-Semibold.otf">
+            <string>ProximaNova-Semibold</string>
+            <string>ProximaNova-Semibold</string>
+        </mutableArray>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -17,27 +28,129 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhG-Zr-vel">
-                                <rect key="frame" x="99" y="269" width="123" height="30"/>
-                                <state key="normal" title="Login with Spotify"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The most pleasant sensations to wake up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfX-ev-vzh">
+                                <rect key="frame" x="33.5" y="304" width="253.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open your eyes with your favorites songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hha-su-0rK">
+                                <rect key="frame" x="33" y="320" width="254.5" height="17.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Pancake-logotype" translatesAutoresizingMaskIntoConstraints="NO" id="uKs-8F-EEd" customClass="SpringImageView" customModule="Pancake" customModuleProvider="target">
+                                <rect key="frame" x="81" y="100" width="158" height="158"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uKs-8F-EEd" secondAttribute="height" multiplier="1:1" id="yOh-sB-siv"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="autostart" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="animation" value="slideDown"/>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="duration">
+                                        <real key="value" value="0.5"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pancake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-Vi-bnD">
+                                <rect key="frame" x="91" y="262" width="137" height="44"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="36"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vhG-Zr-vel" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                <rect key="frame" x="30" y="473" width="260" height="56"/>
+                                <color key="backgroundColor" red="0.01176470588" green="0.73333333329999995" blue="0.30980392159999998" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="260" id="f7H-lo-74h"/>
+                                    <constraint firstAttribute="height" constant="56" id="wSj-AX-qcH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="18"/>
+                                <color key="tintColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <inset key="contentEdgeInsets" minX="10" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="20" maxY="0.0"/>
+                                <state key="normal" title="LOGIN WITH SPOTIFY" image="Spotify-logotype">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <real key="value" value="27"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="loginWithSpotify:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rqz-C2-xgp"/>
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="vhG-Zr-vel" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="7Ce-Yy-Yrm"/>
-                            <constraint firstItem="vhG-Zr-vel" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="Cq2-hy-ah8"/>
+                            <constraint firstItem="Hha-su-0rK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="2un-km-EXx"/>
+                            <constraint firstItem="veU-Vi-bnD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="ELA-WN-D9c"/>
+                            <constraint firstItem="veU-Vi-bnD" firstAttribute="top" secondItem="uKs-8F-EEd" secondAttribute="bottom" constant="4" id="MZa-8T-9cV"/>
+                            <constraint firstItem="Hha-su-0rK" firstAttribute="leading" secondItem="EfX-ev-vzh" secondAttribute="trailing" constant="-275" id="QGp-mR-DEo"/>
+                            <constraint firstItem="uKs-8F-EEd" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="X8y-Ca-SSL"/>
+                            <constraint firstItem="EfX-ev-vzh" firstAttribute="top" secondItem="veU-Vi-bnD" secondAttribute="bottom" constant="-2" id="XYS-Gy-dXR"/>
+                            <constraint firstItem="Hha-su-0rK" firstAttribute="top" secondItem="EfX-ev-vzh" secondAttribute="bottom" constant="-1.5" id="fYS-0P-Mt9"/>
+                            <constraint firstItem="EfX-ev-vzh" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gWV-Ah-ti4"/>
+                            <constraint firstItem="vhG-Zr-vel" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gnN-zJ-tno"/>
+                            <constraint firstItem="Hha-su-0rK" firstAttribute="top" secondItem="EfX-ev-vzh" secondAttribute="bottom" constant="-6" id="oZK-ks-EcS"/>
+                            <constraint firstItem="veU-Vi-bnD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qwX-9i-gAY"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="vhG-Zr-vel" secondAttribute="bottom" constant="39" id="x3Q-6c-NwZ"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="QGp-mR-DEo"/>
+                                <exclude reference="oZK-ks-EcS"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="loginButton" destination="vhG-Zr-vel" id="rFw-L2-Tof"/>
+                        <outlet property="loginViewCrontoller" destination="8bC-Xf-vdC" id="uey-ik-ABG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="185" y="-253"/>
+        </scene>
+        <!--Dashboard View Controller-->
+        <scene sceneID="MUo-BF-M2H">
+            <objects>
+                <viewController id="iUf-Wf-7Po" customClass="DashboardViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="GV8-VD-567"/>
+                        <viewControllerLayoutGuide type="bottom" id="o3n-l7-uI4"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="cpe-LB-0mD">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Application launch properly" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N6C-5g-7lu">
+                                <rect key="frame" x="56" y="273" width="209" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="N6C-5g-7lu" firstAttribute="centerY" secondItem="cpe-LB-0mD" secondAttribute="centerY" id="5KY-Da-FVD"/>
+                            <constraint firstItem="N6C-5g-7lu" firstAttribute="centerX" secondItem="cpe-LB-0mD" secondAttribute="centerX" id="wQV-86-d5E"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WW2-Cw-po5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="185" y="390"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Pancake-logotype" width="158" height="158"/>
+        <image name="Spotify-logotype" width="32" height="32"/>
+    </resources>
 </document>
