@@ -21,25 +21,23 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        loginViewCrontoller.hidden = true
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "loginSuccessFull", object: nil)
+        // Register to be notified when the user has logged in successfully in order to dismiss the login view
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dismiss", name: "loginSuccessful", object: nil)
 
+        // If session data is available, dismiss the loginViewController
         let userDefaults = NSUserDefaults.standardUserDefaults()
-
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
             // print session
             print(sessionObj)
-        }else{
-            loginViewCrontoller.hidden = false
+            // Dismiss the login view
+            dismiss();
         }
-
     }
     
-    func updateAfterFirstLogin () {
-        loginViewCrontoller.hidden = true
-        
+    func dismiss() {
+        print("Should dismiss loginViewController");
+        self.navigationController?.popViewControllerAnimated(true);
     }
-        
 
     @IBAction func loginWithSpotify(sender: AnyObject) {
         let auth = SPTAuth.defaultInstance()

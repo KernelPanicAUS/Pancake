@@ -36,14 +36,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 }
                 
                 let userDefaults = NSUserDefaults.standardUserDefaults()
-                
                 let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
                 
                 userDefaults.setObject(sessionData, forKey: "SpotifySession")
-                
                 userDefaults.synchronize()
                 
-                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessFull", object: nil)
+                print("Login was successful");
+                // Spotifiy session data has been received
+                // Post notification to tell LoginViewController to be dismissed
+                NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object: nil)
                 
             })
             
