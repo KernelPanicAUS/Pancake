@@ -122,6 +122,47 @@
             </objects>
             <point key="canvasLocation" x="1219" y="374"/>
         </scene>
+        <!--Requests Table View Controller-->
+        <scene sceneID="RZn-ik-x55">
+            <objects>
+                <tableViewController id="GG7-hl-7dy" customClass="RequestsTableViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="FQx-yR-DPf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableFooterView" contentMode="scaleToFill" id="Pgn-u2-Dyf">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gR3-xm-yOq">
+                                    <rect key="frame" x="7" y="15" width="21" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="21" id="LiW-9m-TIF"/>
+                                        <constraint firstAttribute="height" constant="21" id="feq-9R-mwT"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="Btn-Close-white"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="gR3-xm-yOq" firstAttribute="leading" secondItem="Pgn-u2-Dyf" secondAttribute="leading" constant="7" id="PfW-Hb-hJp"/>
+                                <constraint firstItem="gR3-xm-yOq" firstAttribute="centerY" secondItem="Pgn-u2-Dyf" secondAttribute="centerY" id="wAJ-h1-X4f"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="GG7-hl-7dy" id="Tj5-OV-nlw"/>
+                            <outlet property="delegate" destination="GG7-hl-7dy" id="wWT-2E-rht"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TTj-xB-deP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1219" y="-280"/>
+        </scene>
         <!--Dashboard View Controller-->
         <scene sceneID="MUo-BF-M2H">
             <objects>
@@ -180,6 +221,9 @@
                                         <state key="normal" image="Btn-Create-new">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="poA-4a-oyA" kind="show" id="I4L-hR-9tE"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdZ-ch-2pb">
                                         <rect key="frame" x="158" y="15" width="21" height="21"/>
@@ -191,6 +235,9 @@
                                         <state key="normal" image="Btn-Request-off">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="GG7-hl-7dy" kind="show" id="mbh-tB-aBd"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-ZL-CGg">
                                         <rect key="frame" x="15" y="16" width="21" height="18"/>
@@ -202,6 +249,9 @@
                                         <state key="normal" image="Btn-List-white">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="9QF-Hg-nlk" kind="show" id="cb4-0b-9KI"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -249,6 +299,81 @@
             </objects>
             <point key="canvasLocation" x="787" y="374"/>
         </scene>
+        <!--Alarms Table View Controller-->
+        <scene sceneID="dNC-5q-qBI">
+            <objects>
+                <tableViewController id="9QF-Hg-nlk" customClass="AlarmsTableViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="7oM-DC-s8U">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="Ni2-9p-Xs5">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="51"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lpv-iF-FRO">
+                                    <rect key="frame" x="292" y="15" width="21" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="21" id="3EU-Wp-NMc"/>
+                                        <constraint firstAttribute="height" constant="21" id="O3u-ta-ssS"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="Btn-Create-new"/>
+                                    <connections>
+                                        <segue destination="poA-4a-oyA" kind="show" id="L8P-fg-C7O"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1fF-OH-EVb">
+                                    <rect key="frame" x="7" y="15" width="21" height="21"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="21" id="SHY-5m-cwh"/>
+                                        <constraint firstAttribute="height" constant="21" id="zcg-6S-Lba"/>
+                                    </constraints>
+                                    <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <state key="normal" image="Btn-Close-white"/>
+                                </button>
+                            </subviews>
+                            <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                            <constraints>
+                                <constraint firstItem="1fF-OH-EVb" firstAttribute="leading" secondItem="Ni2-9p-Xs5" secondAttribute="leading" constant="7" id="8YX-01-JXs"/>
+                                <constraint firstItem="1fF-OH-EVb" firstAttribute="centerY" secondItem="Ni2-9p-Xs5" secondAttribute="centerY" id="H3N-9h-Xja"/>
+                                <constraint firstItem="Lpv-iF-FRO" firstAttribute="centerY" secondItem="Ni2-9p-Xs5" secondAttribute="centerY" id="Xbx-gt-wIk"/>
+                                <constraint firstAttribute="trailing" secondItem="Lpv-iF-FRO" secondAttribute="trailing" constant="7" id="aM1-Ip-lXR"/>
+                            </constraints>
+                        </view>
+                        <connections>
+                            <outlet property="dataSource" destination="9QF-Hg-nlk" id="822-MY-Put"/>
+                            <outlet property="delegate" destination="9QF-Hg-nlk" id="vci-j1-NAB"/>
+                        </connections>
+                    </tableView>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzz-SU-HLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="400" y="1122"/>
+        </scene>
+        <!--Create New View Controller-->
+        <scene sceneID="6Sm-OK-b29">
+            <objects>
+                <viewController id="poA-4a-oyA" customClass="CreateNewViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="srM-xl-CMP"/>
+                        <viewControllerLayoutGuide type="bottom" id="VPT-5A-nHd"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Xt0-qK-5Ii">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="1122"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXj-IB-yWo">
             <objects>
@@ -272,10 +397,14 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Btn-Close-white" width="17" height="17"/>
         <image name="Btn-Create-new" width="21" height="21"/>
         <image name="Btn-List-white" width="21" height="17"/>
         <image name="Btn-Request-off" width="21" height="21"/>
         <image name="Pancake-logotype" width="158" height="158"/>
         <image name="Spotify-logotype" width="32" height="32"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="I4L-hR-9tE"/>
+    </inferredMetricsTieBreakers>
 </document>
