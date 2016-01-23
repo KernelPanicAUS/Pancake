@@ -27,10 +27,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
         if SPTAuth.defaultInstance().canHandleURL(url){
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
                 if error != nil {
                     print("===AUTHENTICATION ERROR===")
+                    self.showAlert()
                     print(error)
                     return
                 }
@@ -124,6 +126,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
+    
+    func showAlert() {
+        // Displays alert when there is an error
+        let authErrorAlert = JSSAlertView()
+        // Reference to LoginViewController
+        let loginViewController = self.window?.rootViewController
+        
+        // Alert setup
+        authErrorAlert.show(loginViewController!, title: "Oops...", text: "Looks like there was a login error Please try again later", buttonText: "OK", color: UIColorFromHex(0xe74c3c, alpha: 1))
+        authErrorAlert.setTextTheme(.Light)
+
+    }
 
     // MARK: - Core Data Saving support
 
