@@ -53,6 +53,7 @@
 		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
+		E7754B2B1C53358B00594766 /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7754B2A1C53358B00594766 /* JSSAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -128,6 +129,7 @@
 		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E7754B2A1C53358B00594766 /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = ../../DineroApp/DineroApp/JSSAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -207,6 +209,7 @@
 				11F167201C32DB6F0033D1E3 /* Spring */,
 				11A63C731C317E8F0010CCCB /* AppDelegate.swift */,
 				11A63C751C317E8F0010CCCB /* ViewController.swift */,
+				E7754B2C1C53359300594766 /* JSSAlertView */,
 				111A5D411C3C2C6D0080522C /* ViewControllers */,
 				11A63C771C317E8F0010CCCB /* Main.storyboard */,
 				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
@@ -289,6 +292,14 @@
 				11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */,
 			);
 			path = Spring;
+			sourceTree = "<group>";
+		};
+		E7754B2C1C53359300594766 /* JSSAlertView */ = {
+			isa = PBXGroup;
+			children = (
+				E7754B2A1C53358B00594766 /* JSSAlertView.swift */,
+			);
+			name = JSSAlertView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -438,6 +449,7 @@
 				11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */,
 				11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */,
 				11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */,
+				E7754B2B1C53358B00594766 /* JSSAlertView.swift in Sources */,
 				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
 				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
 				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,

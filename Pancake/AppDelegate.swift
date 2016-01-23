@@ -27,10 +27,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
+        
+        // Displays alert when there is an error
+        let authErrorAlert = JSSAlertView()
+        // Reference to LoginViewController
+        let loginViewController = self.window?.rootViewController
+        
         if SPTAuth.defaultInstance().canHandleURL(url){
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
                 if error != nil {
                     print("===AUTHENTICATION ERROR===")
+                    // Alert setup
+                    //authErrorAlert.show(loginViewController!, title: "Oops...", )
+                    authErrorAlert.show(loginViewController!, title: "Oops...", text: "There was an error with the login Please try again later", buttonText: "OK", color: UIColorFromHex(0x989797, alpha: 1))
+                    authErrorAlert.setTextTheme(.Light)
                     print(error)
                     return
                 }
