@@ -12,12 +12,23 @@
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
             <string>ProximaNova-Semibold</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Thin.otf">
+            <string>ProximaNovaT-Thin</string>
             <string>ProximaNovaT-Thin</string>
         </mutableArray>
     </customFonts>
@@ -365,7 +376,262 @@
                     <view key="view" contentMode="scaleToFill" id="Xt0-qK-5Ii">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon-tapetoadd" translatesAutoresizingMaskIntoConstraints="NO" id="egn-Ak-1zO">
+                                <rect key="frame" x="126" y="217" width="69" height="48"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yh-0wK">
+                                <rect key="frame" x="86" y="273" width="148.5" height="22"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhK-lw-qfa">
+                                <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <state key="normal">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2S-FS-6Ng">
+                                <rect key="frame" x="11" y="410" width="200" height="116"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="95"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-pI-P2F">
+                                <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IM4-p4-sD7">
+                                        <rect key="frame" x="300" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="4IP-xP-Tao"/>
+                                            <constraint firstAttribute="height" constant="21" id="eDT-vH-VOK"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Valide-white"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9u-26-vOo">
+                                        <rect key="frame" x="15" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="i60-dt-uwn"/>
+                                            <constraint firstAttribute="width" constant="21" id="zlF-Hh-8HZ"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Close-white"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="IM4-p4-sD7" secondAttribute="trailing" constant="15" id="BFf-xf-LBU"/>
+                                    <constraint firstItem="IM4-p4-sD7" firstAttribute="centerY" secondItem="JYU-pI-P2F" secondAttribute="centerY" id="XTX-vq-Vuu"/>
+                                    <constraint firstItem="x9u-26-vOo" firstAttribute="leading" secondItem="JYU-pI-P2F" secondAttribute="leading" constant="15" id="fAq-RE-4yg"/>
+                                    <constraint firstItem="x9u-26-vOo" firstAttribute="centerY" secondItem="JYU-pI-P2F" secondAttribute="centerY" id="uEj-f7-tQc"/>
+                                    <constraint firstAttribute="height" constant="51" id="wfT-dc-nj6"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-vV-f4r">
+                                <rect key="frame" x="11" y="519.5" width="298" height="38.5"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDS-Ru-HaD" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="38.5" height="38.5"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="PDS-Ru-HaD" secondAttribute="height" multiplier="1:1" id="jYa-tk-hgY"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="MON">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f87-Ud-UAJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="43.5" y="0.0" width="38" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="TUE">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6B-S9-peT" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="130" y="0.0" width="38" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="THU">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="748-Ph-apN" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="173" y="0.0" width="38.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="FRI">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkl-Oh-lux" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="216.5" y="0.0" width="38" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="SAT">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSe-r0-zcO" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="259.5" y="0.0" width="38.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="SUN">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-pr-glv" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
+                                        <rect key="frame" x="86.5" y="0.0" width="38.5" height="38.5"/>
+                                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
+                                        <state key="normal" title="WED">
+                                            <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                                <real key="value" value="2"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                                <real key="value" value="15"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                                <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="fkl-Oh-lux" secondAttribute="height" id="1fS-ru-zMI"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="748-Ph-apN" secondAttribute="height" id="2wc-TM-7O4"/>
+                                    <constraint firstAttribute="bottom" secondItem="f87-Ud-UAJ" secondAttribute="bottom" id="7Jl-W6-Ho5"/>
+                                    <constraint firstItem="748-Ph-apN" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="B9R-Mb-Niv"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="leading" secondItem="LtK-vV-f4r" secondAttribute="leading" id="BdC-L7-bHz"/>
+                                    <constraint firstItem="748-Ph-apN" firstAttribute="leading" secondItem="G6B-S9-peT" secondAttribute="trailing" constant="5" id="F9b-SP-9Bj"/>
+                                    <constraint firstAttribute="bottom" secondItem="748-Ph-apN" secondAttribute="bottom" id="FXY-md-GUv"/>
+                                    <constraint firstItem="fkl-Oh-lux" firstAttribute="leading" secondItem="748-Ph-apN" secondAttribute="trailing" constant="5" id="JVd-Zb-KDh"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="fkl-Oh-lux" secondAttribute="width" id="Jmu-O0-eoY"/>
+                                    <constraint firstItem="Hss-pr-glv" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="Kr6-rS-ltq"/>
+                                    <constraint firstItem="f87-Ud-UAJ" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="M5t-11-H5k"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="f87-Ud-UAJ" secondAttribute="height" id="N0O-Go-Rit"/>
+                                    <constraint firstAttribute="bottom" secondItem="FSe-r0-zcO" secondAttribute="bottom" id="NDB-Jt-gDc"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="OJ5-sg-gR3"/>
+                                    <constraint firstItem="FSe-r0-zcO" firstAttribute="leading" secondItem="fkl-Oh-lux" secondAttribute="trailing" constant="5" id="Pij-9c-CsT"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="Hss-pr-glv" secondAttribute="height" id="S4f-JG-VxZ"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="Hss-pr-glv" secondAttribute="width" id="TNP-OX-tcG"/>
+                                    <constraint firstItem="f87-Ud-UAJ" firstAttribute="leading" secondItem="PDS-Ru-HaD" secondAttribute="trailing" constant="5" id="VQm-dO-reX"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="f87-Ud-UAJ" secondAttribute="width" id="Yyd-ji-A1r"/>
+                                    <constraint firstAttribute="bottom" secondItem="Hss-pr-glv" secondAttribute="bottom" id="aOU-nj-kvu"/>
+                                    <constraint firstAttribute="bottom" secondItem="PDS-Ru-HaD" secondAttribute="bottom" id="ar3-jS-6O4"/>
+                                    <constraint firstItem="G6B-S9-peT" firstAttribute="leading" secondItem="Hss-pr-glv" secondAttribute="trailing" constant="5" id="bFC-O1-zlm"/>
+                                    <constraint firstItem="FSe-r0-zcO" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="cPA-Lm-vFv"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="FSe-r0-zcO" secondAttribute="width" id="cxc-zX-BQf"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="G6B-S9-peT" secondAttribute="width" id="d7B-8n-Wkz"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="G6B-S9-peT" secondAttribute="height" id="ds5-DF-VGZ"/>
+                                    <constraint firstItem="fkl-Oh-lux" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="f5P-jg-QnE"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="width" secondItem="748-Ph-apN" secondAttribute="width" id="gVW-nP-iKS"/>
+                                    <constraint firstAttribute="bottom" secondItem="G6B-S9-peT" secondAttribute="bottom" id="gYC-VB-Ray"/>
+                                    <constraint firstAttribute="bottom" secondItem="fkl-Oh-lux" secondAttribute="bottom" id="gwy-bp-bNQ"/>
+                                    <constraint firstItem="Hss-pr-glv" firstAttribute="leading" secondItem="f87-Ud-UAJ" secondAttribute="trailing" constant="5" id="iSQ-LY-kAP"/>
+                                    <constraint firstItem="PDS-Ru-HaD" firstAttribute="height" secondItem="FSe-r0-zcO" secondAttribute="height" id="krD-sW-tQd"/>
+                                    <constraint firstItem="G6B-S9-peT" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="top" id="pFR-a1-u5Y"/>
+                                    <constraint firstAttribute="trailing" secondItem="FSe-r0-zcO" secondAttribute="trailing" id="qNp-jn-JF9"/>
+                                </constraints>
+                            </view>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
+                                <rect key="frame" x="11" y="379" width="298" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="QDG-X4-ysR"/>
+                                </constraints>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="28"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="JYU-pI-P2F" firstAttribute="top" secondItem="srM-xl-CMP" secondAttribute="bottom" id="24H-BZ-bUi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FyI-z0-mDG" secondAttribute="trailing" constant="-5" id="4cy-js-wBe"/>
+                            <constraint firstItem="y2S-FS-6Ng" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="8C7-cR-zxG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="JYU-pI-P2F" secondAttribute="trailing" constant="-24" id="8bc-IE-iyl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="LtK-vV-f4r" secondAttribute="trailing" constant="-5" id="INK-r2-q9G"/>
+                            <constraint firstItem="1tf-yh-0wK" firstAttribute="top" secondItem="egn-Ak-1zO" secondAttribute="bottom" constant="8" id="NFC-FD-YtY"/>
+                            <constraint firstItem="y2S-FS-6Ng" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" constant="-9" id="OhR-Bg-3pM"/>
+                            <constraint firstItem="1tf-yh-0wK" firstAttribute="centerY" secondItem="Xt0-qK-5Ii" secondAttribute="centerY" id="RPp-iF-5oO"/>
+                            <constraint firstItem="egn-Ak-1zO" firstAttribute="centerX" secondItem="Xt0-qK-5Ii" secondAttribute="centerX" id="U0Q-hG-goZ"/>
+                            <constraint firstItem="1tf-yh-0wK" firstAttribute="centerX" secondItem="Xt0-qK-5Ii" secondAttribute="centerX" id="USD-nb-AbU"/>
+                            <constraint firstItem="LtK-vV-f4r" firstAttribute="top" secondItem="y2S-FS-6Ng" secondAttribute="bottom" constant="-6.5" id="V0H-8Z-Yne"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bhK-lw-qfa" secondAttribute="trailing" constant="-24" id="Zl1-eV-VVu"/>
+                            <constraint firstItem="bhK-lw-qfa" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="a5z-ic-iga"/>
+                            <constraint firstItem="VPT-5A-nHd" firstAttribute="top" secondItem="bhK-lw-qfa" secondAttribute="bottom" id="aK5-TS-JQT"/>
+                            <constraint firstItem="LtK-vV-f4r" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="bic-Rd-EKb"/>
+                            <constraint firstItem="bhK-lw-qfa" firstAttribute="top" secondItem="srM-xl-CMP" secondAttribute="bottom" id="eeh-tm-XgX"/>
+                            <constraint firstItem="FyI-z0-mDG" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="f4p-cI-8Qy"/>
+                            <constraint firstItem="JYU-pI-P2F" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="gj4-CQ-us3"/>
+                            <constraint firstItem="VPT-5A-nHd" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="bottom" constant="10" id="s5M-tE-n4P"/>
+                        </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
@@ -373,6 +639,25 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877" y="1122"/>
+        </scene>
+        <!--Set Up Time View Controller-->
+        <scene sceneID="H5Z-Kj-HcL">
+            <objects>
+                <viewController id="ITd-8v-sMt" customClass="SetUpTimeViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Bc6-Yv-x4v"/>
+                        <viewControllerLayoutGuide type="bottom" id="SUv-pg-RdW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9kq-8n-Jwi">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="NC5-3H-Fta" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="877" y="1789"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXj-IB-yWo">
@@ -401,10 +686,12 @@
         <image name="Btn-Create-new" width="21" height="21"/>
         <image name="Btn-List-white" width="21" height="17"/>
         <image name="Btn-Request-off" width="21" height="21"/>
+        <image name="Btn-Valide-white" width="20" height="14"/>
+        <image name="Icon-tapetoadd" width="69" height="48"/>
         <image name="Pancake-logotype" width="158" height="158"/>
         <image name="Spotify-logotype" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I4L-hR-9tE"/>
+        <segue reference="L8P-fg-C7O"/>
     </inferredMetricsTieBreakers>
 </document>
