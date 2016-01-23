@@ -38,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 if error != nil {
                     print("===AUTHENTICATION ERROR===")
                     // Alert setup
-                    //authErrorAlert.show(loginViewController!, title: "Oops...", )
-                    authErrorAlert.show(loginViewController!, title: "Oops...", text: "There was an error with the login Please try again later", buttonText: "OK", color: UIColorFromHex(0x989797, alpha: 1))
+                    authErrorAlert.show(loginViewController!, title: "Oops...", text: "Looks like there was a login error Please try again later", buttonText: "OK", color: UIColorFromHex(0x989797, alpha: 1))
+
                     authErrorAlert.setTextTheme(.Light)
                     print(error)
                     return
