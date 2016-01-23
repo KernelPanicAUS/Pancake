@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "DC260306E1F3BB60F2B57EEA0C49C77D11C9BECB",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "DC260306E1F3BB60F2B57EEA0C49C77D11C9BECB" : 0,
+    "6F296B3C5F128A8EA872C2A9DE8F6AB42EF85688" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "B3B931E0-A645-406D-928E-D88C6C90E2AA",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "DC260306E1F3BB60F2B57EEA0C49C77D11C9BECB" : "Pancake\/",
+    "6F296B3C5F128A8EA872C2A9DE8F6AB42EF85688" : "DineroApp\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "Pancake",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "Pancake.xcodeproj",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/avazquezpr\/DineroApp.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "6F296B3C5F128A8EA872C2A9DE8F6AB42EF85688"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/avazquezpr\/Pancake.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "DC260306E1F3BB60F2B57EEA0C49C77D11C9BECB"
+    }
+  ]
+}
