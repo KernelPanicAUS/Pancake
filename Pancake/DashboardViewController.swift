@@ -15,6 +15,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var userDailyMessage: UILabel!
     @IBOutlet weak var timeDisplay: UILabel!
     @IBOutlet weak var dateDisplay: UILabel!
+    @IBOutlet weak var meridiemDisplay: UILabel!
     
     
     override func viewDidLoad() {
@@ -28,9 +29,11 @@ class DashboardViewController: UIViewController {
         if ((timeDisplay.text?.rangeOfString("AM")) != nil) {
             // It's the morning. Give some love :)
             userDailyMessage.text = "Good Morning"
+            meridiemDisplay.text = "AM"
         } else if ((timeDisplay.text?.rangeOfString("PM")) != nil){
             // It's already evening
             userDailyMessage.text = "Good Evening"
+            meridiemDisplay.text = "PM"
         } else {
             print("Error. No time section found.")
         }

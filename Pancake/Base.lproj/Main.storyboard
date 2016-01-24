@@ -209,7 +209,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time message" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-pe-Z25">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time message" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xfx-pe-Z25">
                                 <rect key="frame" x="11" y="172" width="170" height="69"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="170" id="2Y9-1i-e2d"/>
@@ -275,6 +275,12 @@
                                     <constraint firstItem="X2F-ZL-CGg" firstAttribute="centerY" secondItem="y6n-m2-3cc" secondAttribute="centerY" id="wGO-Uk-shy"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fu-yF-jTe">
+                                <rect key="frame" x="261" y="299.5" width="34" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -282,10 +288,12 @@
                             <constraint firstAttribute="bottomMargin" secondItem="eCp-hj-KFD" secondAttribute="bottom" constant="-36" id="5NO-Z1-lwa"/>
                             <constraint firstItem="Cq2-cg-Eiy" firstAttribute="top" secondItem="2eP-Ol-c7G" secondAttribute="bottom" constant="-22" id="6d3-dj-B1L"/>
                             <constraint firstItem="2eP-Ol-c7G" firstAttribute="top" secondItem="Xfx-pe-Z25" secondAttribute="bottom" constant="-15" id="Auo-wN-3Oz"/>
+                            <constraint firstItem="8fu-yF-jTe" firstAttribute="leading" secondItem="2eP-Ol-c7G" secondAttribute="trailing" id="Dc7-4n-G83"/>
                             <constraint firstAttribute="trailingMargin" secondItem="y6n-m2-3cc" secondAttribute="trailing" constant="-24" id="F9h-7x-CXH"/>
                             <constraint firstItem="2eP-Ol-c7G" firstAttribute="leading" secondItem="cpe-LB-0mD" secondAttribute="leadingMargin" constant="-5" id="J7X-jO-uve"/>
                             <constraint firstItem="y6n-m2-3cc" firstAttribute="top" secondItem="GV8-VD-567" secondAttribute="bottom" id="QsK-HN-1hy"/>
                             <constraint firstItem="eCp-hj-KFD" firstAttribute="centerY" secondItem="cpe-LB-0mD" secondAttribute="centerY" id="RfF-w6-6xo"/>
+                            <constraint firstItem="8fu-yF-jTe" firstAttribute="bottom" secondItem="2eP-Ol-c7G" secondAttribute="bottom" id="VEg-fv-W4g"/>
                             <constraint firstItem="eCp-hj-KFD" firstAttribute="centerX" secondItem="cpe-LB-0mD" secondAttribute="centerX" id="Wgy-39-gxs"/>
                             <constraint firstItem="2eP-Ol-c7G" firstAttribute="centerY" secondItem="cpe-LB-0mD" secondAttribute="centerY" id="bfu-rs-iSh"/>
                             <constraint firstItem="eCp-hj-KFD" firstAttribute="top" secondItem="cpe-LB-0mD" secondAttribute="topMargin" constant="-36" id="hcJ-yv-jce"/>
@@ -293,7 +301,13 @@
                             <constraint firstItem="eCp-hj-KFD" firstAttribute="leading" secondItem="cpe-LB-0mD" secondAttribute="leadingMargin" constant="-50" id="lgF-B5-P4b"/>
                             <constraint firstItem="Xfx-pe-Z25" firstAttribute="leading" secondItem="cpe-LB-0mD" secondAttribute="leadingMargin" constant="-5" id="mjo-3K-crI"/>
                             <constraint firstItem="Cq2-cg-Eiy" firstAttribute="leading" secondItem="cpe-LB-0mD" secondAttribute="leadingMargin" constant="-5" id="svw-5c-OuE"/>
+                            <constraint firstItem="8fu-yF-jTe" firstAttribute="bottom" secondItem="Cq2-cg-Eiy" secondAttribute="top" id="zUg-0V-NkW"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="VEg-fv-W4g"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" id="rKT-GH-XvZ"/>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -301,6 +315,7 @@
                     <connections>
                         <outlet property="dateDisplay" destination="Cq2-cg-Eiy" id="AoE-nP-AjC"/>
                         <outlet property="imageTimeDisplay" destination="eCp-hj-KFD" id="7yL-rn-9ZA"/>
+                        <outlet property="meridiemDisplay" destination="8fu-yF-jTe" id="cQz-aU-uVI"/>
                         <outlet property="timeDisplay" destination="2eP-Ol-c7G" id="y86-kU-hFH"/>
                         <outlet property="userDailyMessage" destination="Xfx-pe-Z25" id="6Lb-Wg-XbS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="newUser" animates="NO" id="Rf9-xI-XW3"/>
