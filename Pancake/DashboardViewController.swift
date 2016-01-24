@@ -20,11 +20,24 @@ class DashboardViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        spotifyUserCheck()
         // Spotify is checking if the user is login
+        self.spotifyUserCheck()
         
-        timeDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        // Update Time Periodically
+        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
         
+
+        // Do any additional setup after loading the view.
+    }
+
+    
+    // Updates Time and all its elements
+    func timeUpdate(){
+       // Displays Time.
+        self.timeDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        
+        // Displays Date.
+        self.dateDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.FullStyle, timeStyle: NSDateFormatterStyle.NoStyle)
         // Checks if Time is AM or PM
         if ((timeDisplay.text?.rangeOfString("AM")) != nil) {
             // It's the morning. Give some love :)
@@ -38,16 +51,12 @@ class DashboardViewController: UIViewController {
             print("Error. No time section found.")
         }
         
+        // For debugging purposes onlye
+        //print(timeDisplay.text)
         
-        print(timeDisplay.text)
         
-        dateDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.FullStyle, timeStyle: NSDateFormatterStyle.NoStyle)
-        // Application track time and date from phone
-
-
-        // Do any additional setup after loading the view.
     }
-
+    
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
