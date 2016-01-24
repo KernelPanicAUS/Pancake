@@ -765,6 +765,9 @@
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="timePicker" destination="xdb-Lv-fQT" id="fxA-KY-zga"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UfD-GX-FsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

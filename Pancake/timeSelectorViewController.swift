@@ -10,10 +10,13 @@ import UIKit
 
 class timeSelectorViewController: UIViewController{
 
+    @IBOutlet weak var timePicker: UIDatePicker!
     
     override func viewDidLoad() {
         
-        self.view.tintColor = UIColor.whiteColor()
+        // Changes color of Time Picker to white
+        timePicker.setValue(UIColor.whiteColor(), forKey: "textColor")
+        
     }
     
     // Returns to Main Screen
