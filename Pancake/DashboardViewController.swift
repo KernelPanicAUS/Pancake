@@ -52,16 +52,16 @@ class DashboardViewController: UIViewController {
         if ((time.rangeOfString("AM")) != nil) {
             // It's the morning. Give some love :)
             self.userDailyMessage.text = "Good Morning"
-            self.meridiemDisplay.text = "AM"
+            self.meridiemDisplay.text = "am"
         } else if ((time.rangeOfString("PM")) != nil){
             // It's already evening
             self.userDailyMessage.text = "Good Evening"
-            self.meridiemDisplay.text = "PM"
+            self.meridiemDisplay.text = "pm"
         } else {
             print("Error. No time section found.")
         }
         
-        // Displays formatted time
+        // Display formatted time
         self.timeDisplay.text = formattedTime
         
         // For debugging purposes onlye
