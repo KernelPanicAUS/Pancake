@@ -10,6 +10,7 @@ import UIKit
 
 class AlarmsTableViewController: UITableViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +24,11 @@ class AlarmsTableViewController: UITableViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Goes back to the ViewController that presented it
+    @IBAction func cancel(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     // MARK: - Table view data source

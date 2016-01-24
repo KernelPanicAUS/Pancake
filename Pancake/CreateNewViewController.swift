@@ -10,6 +10,7 @@ import UIKit
 
 class CreateNewViewController: UIViewController {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,7 +22,10 @@ class CreateNewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    // Goes back to the ViewController that presented it
+    @IBAction func cancel(sender: AnyObject) {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
     /*
     // MARK: - Navigation
 

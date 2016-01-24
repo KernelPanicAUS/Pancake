@@ -57,6 +57,7 @@
 		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
+		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -136,6 +137,7 @@
 		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JSSAlertView.swift; path = ../../../../Desktop/JSSAlertView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -226,6 +228,7 @@
 				11A63C821C317E8F0010CCCB /* Info.plist */,
 				11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */,
 				11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */,
+				E72D5F261C545F2D00F97FDB /* Tools */,
 				111A5D391C3C02A30080522C /* Fonts */,
 			);
 			path = Pancake;
@@ -303,6 +306,14 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
+		E72D5F261C545F2D00F97FDB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -371,7 +382,6 @@
 				TargetAttributes = {
 					11A63C6F1C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = 9689ADQMZP;
 					};
 					11A63C861C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
@@ -468,6 +478,7 @@
 				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
 				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
 				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
+				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
 				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
 				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
@@ -622,6 +633,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -641,6 +653,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
