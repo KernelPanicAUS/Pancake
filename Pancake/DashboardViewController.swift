@@ -24,6 +24,20 @@ class DashboardViewController: UIViewController {
         
         timeDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         
+        // Checks if Time is AM or PM
+        if ((timeDisplay.text?.rangeOfString("AM")) != nil) {
+            // It's the morning. Give some love :)
+            userDailyMessage.text = "Good Morning"
+        } else if ((timeDisplay.text?.rangeOfString("PM")) != nil){
+            // It's already evening
+            userDailyMessage.text = "Good Evening"
+        } else {
+            print("Error. No time section found.")
+        }
+        
+        
+        print(timeDisplay.text)
+        
         dateDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.FullStyle, timeStyle: NSDateFormatterStyle.NoStyle)
         // Application track time and date from phone
 
