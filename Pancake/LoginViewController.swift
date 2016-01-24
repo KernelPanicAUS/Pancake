@@ -31,7 +31,6 @@ class LoginViewController: UIViewController {
             print(sessionObj)
             // Dismiss the login view
             dismiss();
-            
         }
     }
     
