@@ -50,7 +50,8 @@ class LoginViewController: UIViewController {
         auth.requestedScopes = [SPTAuthStreamingScope]
         
         let loginURL = auth.loginURL
-
+        print(loginURL)
+        
         UIApplication.sharedApplication().openURL(loginURL)
     }
     
