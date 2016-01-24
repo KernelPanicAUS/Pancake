@@ -46,19 +46,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="The most pleasant sensations to wake up " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EfX-ev-vzh">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The most pleasant sensations to wake up " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="EfX-ev-vzh">
                                 <rect key="frame" x="32" y="304" width="257" height="17.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Open your eyes with your favorites songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hha-su-0rK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open your eyes with your favorites songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hha-su-0rK">
                                 <rect key="frame" x="33" y="320" width="254.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" misplaced="YES" image="Pancake-logotype" translatesAutoresizingMaskIntoConstraints="NO" id="uKs-8F-EEd" customClass="SpringImageView" customModule="Pancake" customModuleProvider="target">
+                            <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Pancake-logotype" translatesAutoresizingMaskIntoConstraints="NO" id="uKs-8F-EEd" customClass="SpringImageView" customModule="Pancake" customModuleProvider="target">
                                 <rect key="frame" x="81" y="100" width="158" height="158"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="uKs-8F-EEd" secondAttribute="height" multiplier="1:1" id="yOh-sB-siv"/>
@@ -71,7 +71,7 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Pancake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-Vi-bnD">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pancake" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veU-Vi-bnD">
                                 <rect key="frame" x="91" y="262" width="137" height="44"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Semibold" family="Proxima Nova" pointSize="36"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -190,7 +190,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eCp-hj-KFD">
                                 <rect key="frame" x="-34" y="-36" width="388" height="640"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-Ol-c7G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-Ol-c7G">
                                 <rect key="frame" x="11" y="226" width="242.5" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="mFd-tq-S32"/>
@@ -278,7 +278,7 @@
                                     <constraint firstItem="X2F-ZL-CGg" firstAttribute="centerY" secondItem="y6n-m2-3cc" secondAttribute="centerY" id="wGO-Uk-shy"/>
                                 </constraints>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fu-yF-jTe">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8fu-yF-jTe">
                                 <rect key="frame" x="253.5" y="289" width="48.5" height="30.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="25"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -401,7 +401,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" image="Icon-tapetoadd" translatesAutoresizingMaskIntoConstraints="NO" id="egn-Ak-1zO">
                                 <rect key="frame" x="126" y="217" width="69" height="48"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yh-0wK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yh-0wK">
                                 <rect key="frame" x="86" y="273" width="148.5" height="22"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -414,13 +414,10 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPhoto:" destination="poA-4a-oyA" eventType="touchUpInside" id="DIs-Ih-UJN"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2S-FS-6Ng">
-                                <rect key="frame" x="11" y="410" width="200" height="116"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="95"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-pI-P2F">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
                                 <subviews>
@@ -479,7 +476,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f87-Ud-UAJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="43" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="43" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="TUE">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -497,7 +494,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6B-S9-peT" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="130" y="0.0" width="38" height="38.5"/>
+                                        <rect key="frame" x="129" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="THU">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -533,7 +530,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkl-Oh-lux" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="215.5" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="216" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="SAT">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -569,7 +566,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-pr-glv" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="87" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="86" y="0.0" width="38.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="WED">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -624,8 +621,8 @@
                                     <constraint firstAttribute="trailing" secondItem="FSe-r0-zcO" secondAttribute="trailing" id="qNp-jn-JF9"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
-                                <rect key="frame" x="11" y="379" width="298" height="40"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
+                                <rect key="frame" x="11" y="378" width="298" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QDG-X4-ysR"/>
                                 </constraints>
@@ -633,6 +630,12 @@
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2S-FS-6Ng">
+                                <rect key="frame" x="11" y="409.5" width="200" height="116"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="95"/>
+                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -663,6 +666,75 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877" y="1122"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="fdH-qL-hIJ">
+            <objects>
+                <viewController id="oR8-Wh-l6i" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K75-Tg-j41"/>
+                        <viewControllerLayoutGuide type="bottom" id="q3A-Rg-GNu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Djh-9U-ZPP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwA-vp-ZC7">
+                                <rect key="frame" x="-8" y="20" width="336" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yb-NR-5U5">
+                                        <rect key="frame" x="300" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="4ml-zV-ZOa"/>
+                                            <constraint firstAttribute="height" constant="21" id="o51-w1-oiM"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Valide-white"/>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-QH-fd0">
+                                        <rect key="frame" x="15" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="Bcb-Oc-B6g"/>
+                                            <constraint firstAttribute="height" constant="21" id="YaY-Eu-J8a"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Close-white"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="poA-4a-oyA" eventType="touchUpInside" id="TBl-X8-sAc"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Yb-NR-5U5" secondAttribute="trailing" constant="15" id="3KD-ai-BKM"/>
+                                    <constraint firstItem="9Yb-NR-5U5" firstAttribute="centerY" secondItem="pwA-vp-ZC7" secondAttribute="centerY" id="8F0-hq-Iy5"/>
+                                    <constraint firstAttribute="height" constant="51" id="PAt-r7-qQa"/>
+                                    <constraint firstItem="cjy-QH-fd0" firstAttribute="centerY" secondItem="pwA-vp-ZC7" secondAttribute="centerY" id="PMl-rn-QaE"/>
+                                    <constraint firstItem="cjy-QH-fd0" firstAttribute="leading" secondItem="pwA-vp-ZC7" secondAttribute="leading" constant="15" id="pyZ-vI-YTF"/>
+                                </constraints>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdb-Lv-fQT">
+                                <rect key="frame" x="0.0" y="71" width="320" height="497"/>
+                                <date key="date" timeIntervalSinceReferenceDate="475364392.92270899">
+                                    <!--2016-01-24 21:39:52 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xdb-Lv-fQT" firstAttribute="leading" secondItem="Djh-9U-ZPP" secondAttribute="leading" id="EK0-31-6HJ"/>
+                            <constraint firstAttribute="trailing" secondItem="xdb-Lv-fQT" secondAttribute="trailing" id="OnU-fJ-iJ0"/>
+                            <constraint firstItem="pwA-vp-ZC7" firstAttribute="leading" secondItem="Djh-9U-ZPP" secondAttribute="leadingMargin" constant="-24" id="PeI-fV-EB9"/>
+                            <constraint firstItem="xdb-Lv-fQT" firstAttribute="top" secondItem="pwA-vp-ZC7" secondAttribute="bottom" id="Taj-Vv-13P"/>
+                            <constraint firstItem="q3A-Rg-GNu" firstAttribute="top" secondItem="xdb-Lv-fQT" secondAttribute="bottom" id="ed8-gv-mwL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pwA-vp-ZC7" secondAttribute="trailing" constant="-24" id="njU-4t-Sj0"/>
+                            <constraint firstItem="pwA-vp-ZC7" firstAttribute="top" secondItem="K75-Tg-j41" secondAttribute="bottom" id="rea-Jc-T1v"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UfD-GX-FsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="1122"/>
         </scene>
         <!--Set Up Time View Controller-->
         <scene sceneID="H5Z-Kj-HcL">
