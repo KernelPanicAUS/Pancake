@@ -58,6 +58,7 @@
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
+		E78553421C558AB2007C5343 /* timeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* timeSelectorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		46C6C5D01159A89B22B3F6E7 /* Pods-Pancake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pancake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pancake/Pods-Pancake.debug.xcconfig"; sourceTree = "<group>"; };
 		78B85C520C24990F06138936 /* Pods-Pancake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pancake.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pancake/Pods-Pancake.release.xcconfig"; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E78553411C558AB2007C5343 /* timeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = timeSelectorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -191,6 +193,7 @@
 				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
 				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
 				11DB18E01C53D8FA00F9454F /* SetUpTimeViewController.swift */,
+				E78553411C558AB2007C5343 /* timeSelectorViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
 				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,
 				11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */,
+				E78553421C558AB2007C5343 /* timeSelectorViewController.swift in Sources */,
 				11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */,
 				11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */,
 				11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */,
