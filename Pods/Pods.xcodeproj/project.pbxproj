@@ -6,232 +6,43 @@
 	objectVersion = 46;
 	objects = {
 
-/* Begin PBXBuildFile section */
-		1243C5C7B416E89AE0B428C44DCB8C57 /* DropdownMenu-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0DBA8CD912F9E6BAC3B236EE843BE833 /* DropdownMenu-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		1A201A9B44DD5E07F15F964C45DC8D5E /* DropdownMenuSegue.m in Sources */ = {isa = PBXBuildFile; fileRef = A49DF6C63208040AEAA5206EB55DDF45 /* DropdownMenuSegue.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		3184B77413F6F452B6AE5F93D2A91FB4 /* DropdownMenuController.h in Headers */ = {isa = PBXBuildFile; fileRef = 70F1E4436F6B14D94463505C9836D692 /* DropdownMenuController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5344D772EC31670D9FAC4CED04D58E1F /* Pods-Pancake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */; };
-		5D0A383BA97ABEE56572B34257703FB2 /* DropdownMenuController.m in Sources */ = {isa = PBXBuildFile; fileRef = 636E0B1E91C26E4D01C39375AF6D7BD8 /* DropdownMenuController.m */; settings = {COMPILER_FLAGS = "-DOS_OBJECT_USE_OBJC=0"; }; };
-		6114BA967804C9EBE589CD0445FBC93D /* Pods-Pancake-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8830A85B5B1E33D15AB5CE11F6AC7108 /* DropdownMenuSegue.h in Headers */ = {isa = PBXBuildFile; fileRef = 31B6F31C1943766343E621EDA620B824 /* DropdownMenuSegue.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		C3F5A4A515363ED3EEA1C9F2E9ECB228 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-		F68BB6CD2ED50BA882FD8DBCDD5872E5 /* DropdownMenu-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = C2F44B6C1AAAAE93BC95387DDCA7DFED /* DropdownMenu-dummy.m */; };
-		FD98360C2F73B906AEF5BF8ED1A24C3C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		48FFE83C50CBD8EF21D1A1457D360F7F /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 50E0CB2368EEFD2C16F5447EE74A958F;
-			remoteInfo = DropdownMenu;
-		};
-/* End PBXContainerItemProxy section */
-
 /* Begin PBXFileReference section */
-		02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pancake-umbrella.h"; sourceTree = "<group>"; };
-		0DBA8CD912F9E6BAC3B236EE843BE833 /* DropdownMenu-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownMenu-umbrella.h"; sourceTree = "<group>"; };
-		1D335431D6AF007885B68F676053A863 /* Pods-Pancake-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-frameworks.sh"; sourceTree = "<group>"; };
-		31B6F31C1943766343E621EDA620B824 /* DropdownMenuSegue.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DropdownMenuSegue.h; path = DropdownMenu/DropdownMenuSegue.h; sourceTree = "<group>"; };
-		33D52E9B34E5BF89192D3685C256AE7F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.debug.xcconfig"; sourceTree = "<group>"; };
-		486C47EE00A3D2EEF3AA97E6718C17B3 /* Pods-Pancake.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Pancake.modulemap"; sourceTree = "<group>"; };
-		636E0B1E91C26E4D01C39375AF6D7BD8 /* DropdownMenuController.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DropdownMenuController.m; path = DropdownMenu/DropdownMenuController.m; sourceTree = "<group>"; };
-		70F1E4436F6B14D94463505C9836D692 /* DropdownMenuController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DropdownMenuController.h; path = DropdownMenu/DropdownMenuController.h; sourceTree = "<group>"; };
-		7BAE560001B84D882065A93710199DA1 /* DropdownMenu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DropdownMenu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8278A7A4073A28CDFCC3569FFAC4AE95 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		863611F4C8C98C93694E99FF3FF8A61A /* Pods-Pancake-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pancake-acknowledgements.plist"; sourceTree = "<group>"; };
-		8AA63C576120AACB22B743B0563CF125 /* DropdownMenu-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DropdownMenu-prefix.pch"; sourceTree = "<group>"; };
-		8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pancake-dummy.m"; sourceTree = "<group>"; };
-		A49DF6C63208040AEAA5206EB55DDF45 /* DropdownMenuSegue.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = DropdownMenuSegue.m; path = DropdownMenu/DropdownMenuSegue.m; sourceTree = "<group>"; };
-		B6A4DC929B7B7A4B5B22A1ADB862DC03 /* DropdownMenu.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DropdownMenu.modulemap; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C2F44B6C1AAAAE93BC95387DDCA7DFED /* DropdownMenu-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DropdownMenu-dummy.m"; sourceTree = "<group>"; };
-		D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.release.xcconfig"; sourceTree = "<group>"; };
-		DDA53C2E5F75C05F20BAF8CDC172A6B1 /* DropdownMenu.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DropdownMenu.xcconfig; sourceTree = "<group>"; };
-		F3D995FCDAB2B7FD54B70365AC81675F /* Pods-Pancake-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-resources.sh"; sourceTree = "<group>"; };
-		F3DB6A003DA6B1107E14271BEC5D788B /* Pods-Pancake-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pancake-acknowledgements.markdown"; sourceTree = "<group>"; };
-		FB6A8CF32C12FE33F0819A70B63D2DFC /* Pods_Pancake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pancake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
-/* Begin PBXFrameworksBuildPhase section */
-		3C0CC0D56C364AC0BF704300E3476074 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FD98360C2F73B906AEF5BF8ED1A24C3C /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		DB2E7D41DC389C57776C3EEDD6279508 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C3F5A4A515363ED3EEA1C9F2E9ECB228 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
 /* Begin PBXGroup section */
-		16A247EDF3ED3CD65BECD2057C0728D3 /* Products */ = {
+		09C5E90726D2521A760312DBF50D9358 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7BAE560001B84D882065A93710199DA1 /* DropdownMenu.framework */,
-				FB6A8CF32C12FE33F0819A70B63D2DFC /* Pods_Pancake.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		2F10CA9289E9A9F4C5196F8D466692B8 /* Support Files */ = {
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B6A4DC929B7B7A4B5B22A1ADB862DC03 /* DropdownMenu.modulemap */,
-				DDA53C2E5F75C05F20BAF8CDC172A6B1 /* DropdownMenu.xcconfig */,
-				C2F44B6C1AAAAE93BC95387DDCA7DFED /* DropdownMenu-dummy.m */,
-				8AA63C576120AACB22B743B0563CF125 /* DropdownMenu-prefix.pch */,
-				0DBA8CD912F9E6BAC3B236EE843BE833 /* DropdownMenu-umbrella.h */,
-				8278A7A4073A28CDFCC3569FFAC4AE95 /* Info.plist */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DropdownMenu";
-			sourceTree = "<group>";
-		};
-		6FA055428F9DF03806E9744A0AD020BF /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E2AB74264A595AFA43EF912E855298E6 /* Pods-Pancake */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		754472783793A685D8E30BFBF446244D /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				EEDA214D035237A2B11ABCA4173B85DA /* DropdownMenu */,
-			);
-			name = Pods;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
 			isa = PBXGroup;
 			children = (
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
-				BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */,
-				754472783793A685D8E30BFBF446244D /* Pods */,
-				16A247EDF3ED3CD65BECD2057C0728D3 /* Products */,
-				6FA055428F9DF03806E9744A0AD020BF /* Targets Support Files */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				09C5E90726D2521A760312DBF50D9358 /* Products */,
+				F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		BC3CA7F9E30CC8F7E2DD044DD34432FC /* Frameworks */ = {
+		F6CCA5D896907CE7506C37FD31FC265A /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		BF6342C8B29F4CEEA088EFF7AB4DE362 /* iOS */ = {
-			isa = PBXGroup;
-			children = (
-				3E4E89230EF59BC255123B67864ACF77 /* Foundation.framework */,
-			);
-			name = iOS;
-			sourceTree = "<group>";
-		};
-		E2AB74264A595AFA43EF912E855298E6 /* Pods-Pancake */ = {
-			isa = PBXGroup;
-			children = (
-				33D52E9B34E5BF89192D3685C256AE7F /* Info.plist */,
-				486C47EE00A3D2EEF3AA97E6718C17B3 /* Pods-Pancake.modulemap */,
-				F3DB6A003DA6B1107E14271BEC5D788B /* Pods-Pancake-acknowledgements.markdown */,
-				863611F4C8C98C93694E99FF3FF8A61A /* Pods-Pancake-acknowledgements.plist */,
-				8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */,
-				1D335431D6AF007885B68F676053A863 /* Pods-Pancake-frameworks.sh */,
-				F3D995FCDAB2B7FD54B70365AC81675F /* Pods-Pancake-resources.sh */,
-				02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */,
-				4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */,
-				D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */,
-			);
-			name = "Pods-Pancake";
-			path = "Target Support Files/Pods-Pancake";
-			sourceTree = "<group>";
-		};
-		EEDA214D035237A2B11ABCA4173B85DA /* DropdownMenu */ = {
-			isa = PBXGroup;
-			children = (
-				70F1E4436F6B14D94463505C9836D692 /* DropdownMenuController.h */,
-				636E0B1E91C26E4D01C39375AF6D7BD8 /* DropdownMenuController.m */,
-				31B6F31C1943766343E621EDA620B824 /* DropdownMenuSegue.h */,
-				A49DF6C63208040AEAA5206EB55DDF45 /* DropdownMenuSegue.m */,
-				2F10CA9289E9A9F4C5196F8D466692B8 /* Support Files */,
-			);
-			path = DropdownMenu;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
-
-/* Begin PBXHeadersBuildPhase section */
-		44A65AB8202F3ABC9F899BF8607A22B8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				1243C5C7B416E89AE0B428C44DCB8C57 /* DropdownMenu-umbrella.h in Headers */,
-				3184B77413F6F452B6AE5F93D2A91FB4 /* DropdownMenuController.h in Headers */,
-				8830A85B5B1E33D15AB5CE11F6AC7108 /* DropdownMenuSegue.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		CA106DDB39C7C3AA9207914B7CF7A6A8 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6114BA967804C9EBE589CD0445FBC93D /* Pods-Pancake-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXHeadersBuildPhase section */
-
-/* Begin PBXNativeTarget section */
-		2146A9B126E7E764A3D32700219A1A90 /* Pods-Pancake */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = E200F8AAB536BA0ABDF350B57E5F70B1 /* Build configuration list for PBXNativeTarget "Pods-Pancake" */;
-			buildPhases = (
-				7BD5D6FF3FE449CD6993427D54BC745C /* Sources */,
-				DB2E7D41DC389C57776C3EEDD6279508 /* Frameworks */,
-				CA106DDB39C7C3AA9207914B7CF7A6A8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				52DF18631EDEBB7E61B429045A5AF3A2 /* PBXTargetDependency */,
-			);
-			name = "Pods-Pancake";
-			productName = "Pods-Pancake";
-			productReference = FB6A8CF32C12FE33F0819A70B63D2DFC /* Pods_Pancake.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		50E0CB2368EEFD2C16F5447EE74A958F /* DropdownMenu */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = B957A167DBF59D12236B286192BCB24A /* Build configuration list for PBXNativeTarget "DropdownMenu" */;
-			buildPhases = (
-				FE92983A9E6BCDB751DDE7A8CC535483 /* Sources */,
-				3C0CC0D56C364AC0BF704300E3476074 /* Frameworks */,
-				44A65AB8202F3ABC9F899BF8607A22B8 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = DropdownMenu;
-			productName = DropdownMenu;
-			productReference = 7BAE560001B84D882065A93710199DA1 /* DropdownMenu.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-/* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
@@ -248,131 +59,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 16A247EDF3ED3CD65BECD2057C0728D3 /* Products */;
+			productRefGroup = 09C5E90726D2521A760312DBF50D9358 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				50E0CB2368EEFD2C16F5447EE74A958F /* DropdownMenu */,
-				2146A9B126E7E764A3D32700219A1A90 /* Pods-Pancake */,
 			);
 		};
 /* End PBXProject section */
 
-/* Begin PBXSourcesBuildPhase section */
-		7BD5D6FF3FE449CD6993427D54BC745C /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5344D772EC31670D9FAC4CED04D58E1F /* Pods-Pancake-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		FE92983A9E6BCDB751DDE7A8CC535483 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F68BB6CD2ED50BA882FD8DBCDD5872E5 /* DropdownMenu-dummy.m in Sources */,
-				5D0A383BA97ABEE56572B34257703FB2 /* DropdownMenuController.m in Sources */,
-				1A201A9B44DD5E07F15F964C45DC8D5E /* DropdownMenuSegue.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		52DF18631EDEBB7E61B429045A5AF3A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DropdownMenu;
-			target = 50E0CB2368EEFD2C16F5447EE74A958F /* DropdownMenu */;
-			targetProxy = 48FFE83C50CBD8EF21D1A1457D360F7F /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
 /* Begin XCBuildConfiguration section */
-		49C8AAF5FAD2413A6635B1CE4D2F6D83 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDA53C2E5F75C05F20BAF8CDC172A6B1 /* DropdownMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DropdownMenu/DropdownMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DropdownMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DropdownMenu/DropdownMenu.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DropdownMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		4BD1EAB142FA6EBF68D57EA30B4D1222 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DDA53C2E5F75C05F20BAF8CDC172A6B1 /* DropdownMenu.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DropdownMenu/DropdownMenu-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DropdownMenu/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DropdownMenu/DropdownMenu.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DropdownMenu;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		8EDE0D843DD54602DF122A0BD33548DB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Pancake/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Pancake/Pods-Pancake.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Pancake;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -411,36 +106,6 @@
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
-		};
-		C33DC2B2AB0BAE4FA1E699A7398C9761 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Pancake/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Pancake/Pods-Pancake.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_Pancake;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -484,24 +149,6 @@
 			buildConfigurations = (
 				A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */,
 				FB45FFD90572718D82AB9092B750F0CA /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		B957A167DBF59D12236B286192BCB24A /* Build configuration list for PBXNativeTarget "DropdownMenu" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				4BD1EAB142FA6EBF68D57EA30B4D1222 /* Debug */,
-				49C8AAF5FAD2413A6635B1CE4D2F6D83 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		E200F8AAB536BA0ABDF350B57E5F70B1 /* Build configuration list for PBXNativeTarget "Pods-Pancake" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				8EDE0D843DD54602DF122A0BD33548DB /* Debug */,
-				C33DC2B2AB0BAE4FA1E699A7398C9761 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

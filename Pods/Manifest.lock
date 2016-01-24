@@ -1,10 +1,1 @@
-PODS:
-  - DropdownMenu (1.0.0)
-
-DEPENDENCIES:
-  - DropdownMenu
-
-SPEC CHECKSUMS:
-  DropdownMenu: 5777e17ac6ddbc69b151719b83a838da81440786
-
 COCOAPODS: 0.39.0
