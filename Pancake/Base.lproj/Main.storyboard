@@ -190,7 +190,7 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="eCp-hj-KFD">
                                 <rect key="frame" x="-34" y="-36" width="388" height="640"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-Ol-c7G">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hours" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="251" translatesAutoresizingMaskIntoConstraints="NO" id="2eP-Ol-c7G">
                                 <rect key="frame" x="11" y="226" width="250" height="116"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="250" id="mFd-tq-S32"/>
@@ -358,6 +358,9 @@
                                     </constraints>
                                     <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     <state key="normal" image="Btn-Close-white"/>
+                                    <connections>
+                                        <action selector="cancel:" destination="9QF-Hg-nlk" eventType="touchUpInside" id="r0t-TR-29a"/>
+                                    </connections>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
@@ -436,6 +439,9 @@
                                         </constraints>
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="Btn-Close-white"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="poA-4a-oyA" eventType="touchUpInside" id="zLi-s0-7j6"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -708,6 +714,6 @@
         <image name="Spotify-logotype" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I4L-hR-9tE"/>
+        <segue reference="L8P-fg-C7O"/>
     </inferredMetricsTieBreakers>
 </document>
