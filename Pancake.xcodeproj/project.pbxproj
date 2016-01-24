@@ -382,6 +382,7 @@
 				TargetAttributes = {
 					11A63C6F1C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = E5K76XCPJE;
 					};
 					11A63C861C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
@@ -641,7 +642,7 @@
 				INFOPLIST_FILE = Pancake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -661,7 +662,7 @@
 				INFOPLIST_FILE = Pancake/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 			};
