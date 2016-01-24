@@ -331,7 +331,6 @@
         <!--Alarms Table View Controller-->
         <scene sceneID="dNC-5q-qBI">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="fzz-SU-HLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tableViewController id="9QF-Hg-nlk" customClass="AlarmsTableViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="51" sectionHeaderHeight="28" sectionFooterHeight="28" id="7oM-DC-s8U">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
@@ -383,6 +382,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzz-SU-HLx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="400" y="1122"/>
         </scene>
