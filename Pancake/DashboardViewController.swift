@@ -33,23 +33,36 @@ class DashboardViewController: UIViewController {
     
     // Updates Time and all its elements
     func timeUpdate(){
-       // Displays Time.
-        self.timeDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
+        
+        // Creates a custom Time format
+        let timeFormatter = NSDateFormatter()
+        timeFormatter.dateFormat = "hh:mm"
+       
+        // Displays time in custom format "hh:mm"
+        let now = NSDate()
+        let formattedTime = timeFormatter.stringFromDate(now)
+        
+        // ONLY Used to check if it is AM or PM
+        let time = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
         
         // Displays Date.
         self.dateDisplay.text = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.FullStyle, timeStyle: NSDateFormatterStyle.NoStyle)
+        
         // Checks if Time is AM or PM
-        if ((timeDisplay.text?.rangeOfString("AM")) != nil) {
+        if ((time.rangeOfString("AM")) != nil) {
             // It's the morning. Give some love :)
-            userDailyMessage.text = "Good Morning"
-            meridiemDisplay.text = "AM"
-        } else if ((timeDisplay.text?.rangeOfString("PM")) != nil){
+            self.userDailyMessage.text = "Good Morning"
+            self.meridiemDisplay.text = "AM"
+        } else if ((time.rangeOfString("PM")) != nil){
             // It's already evening
-            userDailyMessage.text = "Good Evening"
-            meridiemDisplay.text = "PM"
+            self.userDailyMessage.text = "Good Evening"
+            self.meridiemDisplay.text = "PM"
         } else {
             print("Error. No time section found.")
         }
+        
+        // Displays formatted time
+        self.timeDisplay.text = formattedTime
         
         // For debugging purposes onlye
         //print(timeDisplay.text)
