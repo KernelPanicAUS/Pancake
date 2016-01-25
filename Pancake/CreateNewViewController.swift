@@ -68,6 +68,10 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         // Selection options for adding photo
         let photoSelectionOptionsAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
         
+        // UIImageView that displays the background image
+        let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundView.contentMode = .ScaleAspectFill
+        
         // Changes the background color of the AlertView to white
         photoSelectionOptionsAlertController.view.backgroundColor = UIColor.whiteColor()
         // Changes the color of the text to gray
@@ -78,10 +82,15 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         }
         let libraryAction = UIAlertAction(title: "Choose from library", style: UIAlertActionStyle.Default) {(action) in
             print("Choose from library!")
+            backgroundView.image = UIImage(named: "setupBG")
+            // Adds Background to view
+            self.view.insertSubview(backgroundView, atIndex: 0)
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){(action) in
             print("Cancel")
         }
+        
+        
         
         // Adds actions to the photoSelectionOptionsAlertController
         photoSelectionOptionsAlertController.addAction(takePhotoAction)
