@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="YXs-xd-iss">
     <dependencies>
+        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <customFonts key="customFonts">
         <mutableArray key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
@@ -251,9 +253,6 @@
                                         <state key="normal" image="Btn-Request-off">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="GG7-hl-7dy" kind="show" id="mbh-tB-aBd"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-ZL-CGg">
                                         <rect key="frame" x="15" y="16" width="21" height="18"/>
@@ -416,13 +415,10 @@
                                 <state key="normal">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="addPhoto:" destination="poA-4a-oyA" eventType="touchUpInside" id="DIs-Ih-UJN"/>
+                                </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y2S-FS-6Ng">
-                                <rect key="frame" x="11" y="410" width="200" height="116"/>
-                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="95"/>
-                                <color key="textColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-pI-P2F">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
                                 <subviews>
@@ -457,7 +453,7 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="LtK-vV-f4r">
-                                <rect key="frame" x="11" y="519.5" width="298" height="38.5"/>
+                                <rect key="frame" x="11" y="519" width="298" height="38.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PDS-Ru-HaD" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="0.0" width="38.5" height="38.5"/>
@@ -481,7 +477,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f87-Ud-UAJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="43.5" y="0.0" width="38" height="38.5"/>
+                                        <rect key="frame" x="43" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="TUE">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -499,7 +495,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6B-S9-peT" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="130" y="0.0" width="38" height="38.5"/>
+                                        <rect key="frame" x="129" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="THU">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -517,7 +513,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="748-Ph-apN" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="173" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="172" y="0.0" width="38.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="FRI">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -535,7 +531,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fkl-Oh-lux" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="216.5" y="0.0" width="38" height="38.5"/>
+                                        <rect key="frame" x="216" y="0.0" width="38" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="SAT">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -553,7 +549,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FSe-r0-zcO" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="259.5" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="259" y="0.0" width="38.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="SUN">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -571,7 +567,7 @@
                                         </userDefinedRuntimeAttributes>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hss-pr-glv" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
-                                        <rect key="frame" x="86.5" y="0.0" width="38.5" height="38.5"/>
+                                        <rect key="frame" x="86" y="0.0" width="38.5" height="38.5"/>
                                         <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                         <state key="normal" title="WED">
                                             <color key="titleColor" red="0.43921568630000002" green="0.43921568630000002" blue="0.43921568630000002" alpha="1" colorSpace="calibratedRGB"/>
@@ -626,45 +622,173 @@
                                     <constraint firstAttribute="trailing" secondItem="FSe-r0-zcO" secondAttribute="trailing" id="qNp-jn-JF9"/>
                                 </constraints>
                             </view>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
-                                <rect key="frame" x="11" y="379" width="298" height="40"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sEv-uh-KjA">
+                                <rect key="frame" x="11" y="409.5" width="200" height="116"/>
+                                <fontDescription key="fontDescription" name="ProximaNovaT-Thin" family="Proxima Nova" pointSize="95"/>
+                                <state key="normal" title="Time">
+                                    <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <segue destination="oR8-Wh-l6i" kind="show" identifier="AddTime" id="IPW-5K-E85"/>
+                                </connections>
+                            </button>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
+                                <rect key="frame" x="11" y="378" width="298" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QDG-X4-ysR"/>
                                 </constraints>
-                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="28"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                                <connections>
+                                    <outlet property="delegate" destination="poA-4a-oyA" id="1R6-oy-iK8"/>
+                                </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-1q-rhU">
+                                <rect key="frame" x="219" y="474" width="48.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="25"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="JYU-pI-P2F" firstAttribute="top" secondItem="srM-xl-CMP" secondAttribute="bottom" id="24H-BZ-bUi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FyI-z0-mDG" secondAttribute="trailing" constant="-5" id="4cy-js-wBe"/>
-                            <constraint firstItem="y2S-FS-6Ng" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="8C7-cR-zxG"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" id="6dJ-R3-dea"/>
                             <constraint firstAttribute="trailingMargin" secondItem="JYU-pI-P2F" secondAttribute="trailing" constant="-24" id="8bc-IE-iyl"/>
+                            <constraint firstItem="LtK-vV-f4r" firstAttribute="top" secondItem="sEv-uh-KjA" secondAttribute="bottom" constant="-20" id="B8a-5u-skZ"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="bottom" secondItem="LtK-vV-f4r" secondAttribute="top" constant="7" id="GLQ-RA-CYh"/>
                             <constraint firstAttribute="trailingMargin" secondItem="LtK-vV-f4r" secondAttribute="trailing" constant="-5" id="INK-r2-q9G"/>
+                            <constraint firstItem="LtK-vV-f4r" firstAttribute="top" secondItem="sEv-uh-KjA" secondAttribute="bottom" constant="-5" id="N2w-CW-7iw"/>
                             <constraint firstItem="1tf-yh-0wK" firstAttribute="top" secondItem="egn-Ak-1zO" secondAttribute="bottom" constant="8" id="NFC-FD-YtY"/>
-                            <constraint firstItem="y2S-FS-6Ng" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" constant="-9" id="OhR-Bg-3pM"/>
+                            <constraint firstItem="bhK-lw-qfa" firstAttribute="leading" secondItem="sEv-uh-KjA" secondAttribute="trailing" constant="-219" id="O3H-Va-pEX"/>
                             <constraint firstItem="1tf-yh-0wK" firstAttribute="centerY" secondItem="Xt0-qK-5Ii" secondAttribute="centerY" id="RPp-iF-5oO"/>
                             <constraint firstItem="egn-Ak-1zO" firstAttribute="centerX" secondItem="Xt0-qK-5Ii" secondAttribute="centerX" id="U0Q-hG-goZ"/>
                             <constraint firstItem="1tf-yh-0wK" firstAttribute="centerX" secondItem="Xt0-qK-5Ii" secondAttribute="centerX" id="USD-nb-AbU"/>
-                            <constraint firstItem="LtK-vV-f4r" firstAttribute="top" secondItem="y2S-FS-6Ng" secondAttribute="bottom" constant="-6.5" id="V0H-8Z-Yne"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" id="VkY-eK-M66"/>
                             <constraint firstAttribute="trailingMargin" secondItem="bhK-lw-qfa" secondAttribute="trailing" constant="-24" id="Zl1-eV-VVu"/>
                             <constraint firstItem="bhK-lw-qfa" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="a5z-ic-iga"/>
                             <constraint firstItem="VPT-5A-nHd" firstAttribute="top" secondItem="bhK-lw-qfa" secondAttribute="bottom" id="aK5-TS-JQT"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="bottom" secondItem="LtK-vV-f4r" secondAttribute="top" constant="6" id="ati-R2-QKV"/>
+                            <constraint firstItem="SFC-1q-rhU" firstAttribute="leading" secondItem="sEv-uh-KjA" secondAttribute="trailing" id="b8t-kk-lMa"/>
                             <constraint firstItem="LtK-vV-f4r" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="bic-Rd-EKb"/>
+                            <constraint firstItem="SFC-1q-rhU" firstAttribute="bottom" secondItem="sEv-uh-KjA" secondAttribute="bottom" constant="-28" id="c6s-x6-cMw"/>
                             <constraint firstItem="bhK-lw-qfa" firstAttribute="top" secondItem="srM-xl-CMP" secondAttribute="bottom" id="eeh-tm-XgX"/>
                             <constraint firstItem="FyI-z0-mDG" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="f4p-cI-8Qy"/>
                             <constraint firstItem="JYU-pI-P2F" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="gj4-CQ-us3"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" constant="-6" id="kIn-OH-dRi"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="top" secondItem="FyI-z0-mDG" secondAttribute="bottom" constant="-8.5" id="pJJ-uF-11M"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="bottom" secondItem="LtK-vV-f4r" secondAttribute="top" id="qi3-E5-dtb"/>
                             <constraint firstItem="VPT-5A-nHd" firstAttribute="top" secondItem="LtK-vV-f4r" secondAttribute="bottom" constant="10" id="s5M-tE-n4P"/>
+                            <constraint firstItem="bhK-lw-qfa" firstAttribute="leading" secondItem="sEv-uh-KjA" secondAttribute="trailing" constant="-219" id="txn-uY-Jgb"/>
+                            <constraint firstItem="FyI-z0-mDG" firstAttribute="bottom" secondItem="sEv-uh-KjA" secondAttribute="top" constant="-5" id="uWZ-hR-usk"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="wCF-F7-5xy"/>
+                            <constraint firstItem="sEv-uh-KjA" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="yUc-DD-CHH"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="O3H-Va-pEX"/>
+                                <exclude reference="txn-uY-Jgb"/>
+                                <exclude reference="uWZ-hR-usk"/>
+                                <exclude reference="6dJ-R3-dea"/>
+                                <exclude reference="VkY-eK-M66"/>
+                                <exclude reference="ati-R2-QKV"/>
+                                <exclude reference="kIn-OH-dRi"/>
+                                <exclude reference="qi3-E5-dtb"/>
+                                <exclude reference="yUc-DD-CHH"/>
+                                <exclude reference="B8a-5u-skZ"/>
+                                <exclude reference="N2w-CW-7iw"/>
+                            </mask>
+                        </variation>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="alarmNameTextField" destination="FyI-z0-mDG" id="K3M-z6-9h6"/>
+                        <outlet property="meridiemDisplay" destination="SFC-1q-rhU" id="6Nw-gy-AAz"/>
+                        <outlet property="timeLabel" destination="sEv-uh-KjA" id="cUc-i3-UUP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="877" y="1122"/>
+        </scene>
+        <!--Time Selector View Controller-->
+        <scene sceneID="fdH-qL-hIJ">
+            <objects>
+                <viewController id="oR8-Wh-l6i" customClass="TimeSelectorViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="K75-Tg-j41"/>
+                        <viewControllerLayoutGuide type="bottom" id="q3A-Rg-GNu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Djh-9U-ZPP">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pwA-vp-ZC7">
+                                <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Yb-NR-5U5">
+                                        <rect key="frame" x="300" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="4ml-zV-ZOa"/>
+                                            <constraint firstAttribute="height" constant="21" id="o51-w1-oiM"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Valide-white"/>
+                                        <connections>
+                                            <action selector="success:" destination="oR8-Wh-l6i" eventType="touchUpInside" id="h7D-nr-Qln"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cjy-QH-fd0">
+                                        <rect key="frame" x="15" y="15" width="21" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="21" id="Bcb-Oc-B6g"/>
+                                            <constraint firstAttribute="height" constant="21" id="YaY-Eu-J8a"/>
+                                        </constraints>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <state key="normal" image="Btn-Close-white"/>
+                                        <connections>
+                                            <action selector="cancel:" destination="poA-4a-oyA" eventType="touchUpInside" id="TBl-X8-sAc"/>
+                                            <action selector="cancel:" destination="oR8-Wh-l6i" eventType="touchUpInside" id="d7c-yE-bQ2"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="9Yb-NR-5U5" secondAttribute="trailing" constant="15" id="3KD-ai-BKM"/>
+                                    <constraint firstItem="9Yb-NR-5U5" firstAttribute="centerY" secondItem="pwA-vp-ZC7" secondAttribute="centerY" id="8F0-hq-Iy5"/>
+                                    <constraint firstAttribute="height" constant="51" id="PAt-r7-qQa"/>
+                                    <constraint firstItem="cjy-QH-fd0" firstAttribute="centerY" secondItem="pwA-vp-ZC7" secondAttribute="centerY" id="PMl-rn-QaE"/>
+                                    <constraint firstItem="cjy-QH-fd0" firstAttribute="leading" secondItem="pwA-vp-ZC7" secondAttribute="leading" constant="15" id="pyZ-vI-YTF"/>
+                                </constraints>
+                            </view>
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdb-Lv-fQT">
+                                <rect key="frame" x="0.0" y="51" width="320" height="517"/>
+                                <date key="date" timeIntervalSinceReferenceDate="475364392.92270899">
+                                    <!--2016-01-24 21:39:52 +0000-->
+                                </date>
+                            </datePicker>
+                        </subviews>
+                        <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xdb-Lv-fQT" firstAttribute="leading" secondItem="Djh-9U-ZPP" secondAttribute="leading" id="EK0-31-6HJ"/>
+                            <constraint firstAttribute="trailing" secondItem="xdb-Lv-fQT" secondAttribute="trailing" id="OnU-fJ-iJ0"/>
+                            <constraint firstItem="pwA-vp-ZC7" firstAttribute="leading" secondItem="Djh-9U-ZPP" secondAttribute="leadingMargin" constant="-24" id="PeI-fV-EB9"/>
+                            <constraint firstItem="xdb-Lv-fQT" firstAttribute="top" secondItem="pwA-vp-ZC7" secondAttribute="bottom" id="Taj-Vv-13P"/>
+                            <constraint firstItem="q3A-Rg-GNu" firstAttribute="top" secondItem="xdb-Lv-fQT" secondAttribute="bottom" id="ed8-gv-mwL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="pwA-vp-ZC7" secondAttribute="trailing" constant="-24" id="njU-4t-Sj0"/>
+                            <constraint firstItem="pwA-vp-ZC7" firstAttribute="top" secondItem="K75-Tg-j41" secondAttribute="bottom" id="rea-Jc-T1v"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="timePicker" destination="xdb-Lv-fQT" id="fxA-KY-zga"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UfD-GX-FsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1305" y="1122"/>
         </scene>
         <!--Set Up Time View Controller-->
         <scene sceneID="H5Z-Kj-HcL">
@@ -683,7 +807,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NC5-3H-Fta" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="1789"/>
+            <point key="canvasLocation" x="877" y="1803"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXj-IB-yWo">
