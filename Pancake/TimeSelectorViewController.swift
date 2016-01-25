@@ -49,10 +49,14 @@ class TimeSelectorViewController: UIViewController{
             print("Error. No time section found.")
         }
 
+        // Makes am/pm visible
+        firstViewController!.hideMeridiem = false
         
+        // Show updated time in Alarm Setup
         firstViewController!.updatedTime = formattedTime
         
-        print("Alarm Time: \(time)")
+        // Used for debugging purposes only
+        //print("Alarm Time: \(time)")
         
         // Takes us back to Alarm Setup
         self.navigationController?.popViewControllerAnimated(true)

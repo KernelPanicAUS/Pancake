@@ -10,11 +10,16 @@ import UIKit
 
 class CreateNewViewController: UIViewController {
 
+    // Labels that display the selected Alarm Time
     @IBOutlet weak var timeLabel: UIButton!
     @IBOutlet weak var meridiemDisplay: UILabel!
     
+    // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
+    
+    // Hides am/pm when no alarm time is selected
+    var hideMeridiem = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,18 +35,18 @@ class CreateNewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    // Displays selected alarm time
     func updateTimeLabel() {
         timeLabel.setTitle(updatedTime, forState: UIControlState.Normal)
         meridiemDisplay.text = updatedMeridiem
-    }
-    
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if segue.identifier == "AddTime"{
-            var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
-            
-            timeSelectorViewController.firstViewController = self
+        
+        if hideMeridiem == true {
+            meridiemDisplay.hidden = true
+        } else {
+            meridiemDisplay.hidden = false
         }
     }
+    
     @IBAction func addPhoto(sender: AnyObject) {
         // Selection options for adding photo
         let photoSelectionOptionsAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -73,14 +78,17 @@ class CreateNewViewController: UIViewController {
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
-    /*
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        
+        // Checks which segue is going to happen
+        if segue.identifier == "AddTime"{
+            var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
+
+            timeSelectorViewController.firstViewController = self
+        }
+}
+
 
 }
