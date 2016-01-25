@@ -23,6 +23,7 @@
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
             <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
         </mutableArray>
         <mutableArray key="ProximaNova-Semibold.otf">
             <string>ProximaNova-Semibold</string>
@@ -628,7 +629,7 @@
                                     <color key="titleColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <segue destination="oR8-Wh-l6i" kind="show" id="IPW-5K-E85"/>
+                                    <segue destination="oR8-Wh-l6i" kind="show" identifier="AddTime" id="IPW-5K-E85"/>
                                 </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" misplaced="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
@@ -640,6 +641,12 @@
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="28"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-1q-rhU">
+                                <rect key="frame" x="219" y="474" width="48.5" height="30.5"/>
+                                <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="25"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -661,7 +668,9 @@
                             <constraint firstItem="bhK-lw-qfa" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="a5z-ic-iga"/>
                             <constraint firstItem="VPT-5A-nHd" firstAttribute="top" secondItem="bhK-lw-qfa" secondAttribute="bottom" id="aK5-TS-JQT"/>
                             <constraint firstItem="sEv-uh-KjA" firstAttribute="bottom" secondItem="LtK-vV-f4r" secondAttribute="top" constant="6" id="ati-R2-QKV"/>
+                            <constraint firstItem="SFC-1q-rhU" firstAttribute="leading" secondItem="sEv-uh-KjA" secondAttribute="trailing" id="b8t-kk-lMa"/>
                             <constraint firstItem="LtK-vV-f4r" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="bic-Rd-EKb"/>
+                            <constraint firstItem="SFC-1q-rhU" firstAttribute="bottom" secondItem="sEv-uh-KjA" secondAttribute="bottom" constant="-28" id="c6s-x6-cMw"/>
                             <constraint firstItem="bhK-lw-qfa" firstAttribute="top" secondItem="srM-xl-CMP" secondAttribute="bottom" id="eeh-tm-XgX"/>
                             <constraint firstItem="FyI-z0-mDG" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-5" id="f4p-cI-8Qy"/>
                             <constraint firstItem="JYU-pI-P2F" firstAttribute="leading" secondItem="Xt0-qK-5Ii" secondAttribute="leadingMargin" constant="-24" id="gj4-CQ-us3"/>
@@ -692,6 +701,10 @@
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="meridiemDisplay" destination="SFC-1q-rhU" id="6Nw-gy-AAz"/>
+                        <outlet property="timeLabel" destination="sEv-uh-KjA" id="cUc-i3-UUP"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -700,7 +713,7 @@
         <!--Time Selector View Controller-->
         <scene sceneID="fdH-qL-hIJ">
             <objects>
-                <viewController id="oR8-Wh-l6i" customClass="timeSelectorViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oR8-Wh-l6i" customClass="TimeSelectorViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="K75-Tg-j41"/>
                         <viewControllerLayoutGuide type="bottom" id="q3A-Rg-GNu"/>
@@ -825,6 +838,6 @@
         <image name="Spotify-logotype" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="L8P-fg-C7O"/>
+        <segue reference="I4L-hR-9tE"/>
     </inferredMetricsTieBreakers>
 </document>

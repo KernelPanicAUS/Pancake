@@ -10,18 +10,38 @@ import UIKit
 
 class CreateNewViewController: UIViewController {
 
+    @IBOutlet weak var timeLabel: UIButton!
+    @IBOutlet weak var meridiemDisplay: UILabel!
+    
+    var updatedTime = "Time"
+    var updatedMeridiem = "meri"
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.updateTimeLabel()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func updateTimeLabel() {
+        timeLabel.setTitle(updatedTime, forState: UIControlState.Normal)
+        meridiemDisplay.text = updatedMeridiem
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "AddTime"{
+            var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
+            
+            timeSelectorViewController.firstViewController = self
+        }
+    }
     @IBAction func addPhoto(sender: AnyObject) {
         // Selection options for adding photo
         let photoSelectionOptionsAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
