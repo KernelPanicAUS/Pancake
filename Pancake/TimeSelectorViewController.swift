@@ -52,6 +52,9 @@ class TimeSelectorViewController: UIViewController{
         // Makes am/pm visible
         firstViewController!.hideMeridiem = false
         
+        // Changes color of time to whiteColor
+        firstViewController!.timeWhiteColorON = true
+        
         // Show updated time in Alarm Setup
         firstViewController!.updatedTime = formattedTime
         

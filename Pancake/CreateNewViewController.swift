@@ -14,7 +14,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeLabel: UIButton!
     @IBOutlet weak var meridiemDisplay: UILabel!
     
+    // Outlet for the textfield
     @IBOutlet weak var alarmNameTextField: UITextField!
+   
     // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
@@ -22,11 +24,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     // Hides am/pm when no alarm time is selected
     var hideMeridiem = true
     
+    // Changes color time depending on status
+    var timeWhiteColorON = false
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        alarmNameTextField.delegate = self
-
+        // Changes the foreground color of the placeholder text
+        alarmNameTextField.attributedPlaceholder = NSAttributedString(string: "Add alarm title", attributes: [NSForegroundColorAttributeName : UIColorFromHex(0x707070)])
+        
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -43,10 +51,16 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         timeLabel.setTitle(updatedTime, forState: UIControlState.Normal)
         meridiemDisplay.text = updatedMeridiem
         
-        if hideMeridiem == true {
+        if hideMeridiem == true{
+            // Hide
             meridiemDisplay.hidden = true
         } else {
+            // Show
             meridiemDisplay.hidden = false
+            
+            // If user selects Alarm Time - Make the label white
+            timeLabel.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            meridiemDisplay.textColor = UIColor.whiteColor()
         }
     }
     
