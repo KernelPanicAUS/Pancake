@@ -8,12 +8,13 @@
 
 import UIKit
 
-class CreateNewViewController: UIViewController {
+class CreateNewViewController: UIViewController, UITextFieldDelegate {
 
     // Labels that display the selected Alarm Time
     @IBOutlet weak var timeLabel: UIButton!
     @IBOutlet weak var meridiemDisplay: UILabel!
     
+    @IBOutlet weak var alarmNameTextField: UITextField!
     // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
@@ -23,6 +24,8 @@ class CreateNewViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        alarmNameTextField.delegate = self
 
     }
 
@@ -79,9 +82,16 @@ class CreateNewViewController: UIViewController {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
     
+    // MARK: - TextField
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        // If user pressed done - Dismiss Keyboard
+        textField.resignFirstResponder()
+        
+        return true
+    }
+    
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        
         // Checks which segue is going to happen
         if segue.identifier == "AddTime"{
             var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
