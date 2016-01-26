@@ -27,6 +27,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     // Changes color time depending on status
     var timeWhiteColorON = false
     
+    // Reference to the background image
+    var backgroundImage = "setupBG"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -84,7 +86,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         }
         let libraryAction = UIAlertAction(title: "Choose from library", style: UIAlertActionStyle.Default) {(action) in
             print("Choose from library!")
-            backgroundView.image = UIImage(named: "setupBG")
+            backgroundView.image = UIImage(named: self.backgroundImage)
             // Adds Background to view
             self.view.insertSubview(backgroundView, atIndex: 0)
         }
@@ -122,6 +124,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
             var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
 
             timeSelectorViewController.firstViewController = self
+            
+            // Sends current background image to Time Selector view
+            timeSelectorViewController.backgroundImage = self.backgroundImage
         }
 }
 
