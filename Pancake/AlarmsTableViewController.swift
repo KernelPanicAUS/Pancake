@@ -35,18 +35,18 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 1
+        return 0
     }
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 1
+        return 0
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL", forIndexPath: indexPath)
-        cell.textLabel?.text = "Alarm 1"
+        //cell.textLabel?.text = "Alarm 1"
         return cell
     }
     
