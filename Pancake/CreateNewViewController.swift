@@ -71,6 +71,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         // UIImageView that displays the background image
         let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
         backgroundView.contentMode = .ScaleAspectFill
+        // Removes portion of the image that is drawn but not visible untile segue.
+        backgroundView.clipsToBounds = true
         
         // Changes the background color of the AlertView to white
         photoSelectionOptionsAlertController.view.backgroundColor = UIColor.whiteColor()
