@@ -28,7 +28,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     var timeWhiteColorON = false
     
     // Reference to the background image
-    var backgroundImage = "setupBG"
+    var backgroundImage = "setupBGFrance"
     
     override func viewDidLoad() {
         super.viewDidLoad()
