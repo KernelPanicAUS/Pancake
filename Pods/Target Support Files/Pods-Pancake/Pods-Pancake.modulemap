@@ -1,0 +1,6 @@
+framework module Pods_Pancake {
+  umbrella header "Pods-Pancake-umbrella.h"
+
+  export *
+  module * { export * }
+}
