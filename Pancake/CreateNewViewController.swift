@@ -121,12 +121,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Checks which segue is going to happen
         if segue.identifier == "AddTime"{
-            var timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
+            
+            let timeSelectorViewController = segue.destinationViewController as! TimeSelectorViewController
 
             timeSelectorViewController.firstViewController = self
             
             // Sends current background image to Time Selector view
             timeSelectorViewController.backgroundImage = self.backgroundImage
+        } else if (segue.identifier == "PhotoLibrarySegue") {
+            let photoLibraryViewController = segue.destinationViewController as! PhotoLibraryViewController
+            
+            //photoLibraryViewController.firstViewController = self
         }
 }
 

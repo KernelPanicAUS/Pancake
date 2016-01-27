@@ -7,9 +7,14 @@
 //
 
 import UIKit
+import Photos
 
 class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    var fetchResults = PHFetchResult()
+    
+    weak var firstViewController = TimeSelectorViewController()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -19,6 +24,9 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
         self.automaticallyAdjustsScrollViewInsets = false
     }
 
+    override func viewWillAppear(animated: Bool) {
+        self.fetchImages()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -29,6 +37,16 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    func fetchImages() {
+        let options = PHFetchOptions()
+        options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
+        
+        fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: options)
+        
+        // For debugging purposes only
+        print("There are \(fetchResults.count) images in library.")
+    }
+    
     // MARK: - UICollectionView
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -36,7 +54,8 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 100
+        // Returns the number of images in library
+        return fetchResults.count
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {

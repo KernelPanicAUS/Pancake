@@ -418,7 +418,7 @@
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                         <connections>
-                                            <segue destination="5IA-ob-1fp" kind="show" id="jTQ-nA-Mp8"/>
+                                            <segue destination="5IA-ob-1fp" kind="show" identifier="PhotoLibrarySegue" id="jTQ-nA-Mp8"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f87-Ud-UAJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
