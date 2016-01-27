@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '8B38F94279A0F389BB22DC20'
+               BlueprintIdentifier = 'B482CBE1E0FFA2BB6DBA189D'
                BlueprintName = 'Pods-Pancake'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'Pods_Pancake.framework'>

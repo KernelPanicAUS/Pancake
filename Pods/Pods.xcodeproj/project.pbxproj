@@ -7,49 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		16765DF3841677E3EE9357833A3A54CD /* Pods-PancakeUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0AD54BE7ABECABF36F62EE690D4E0710 /* Pods-PancakeUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		22DC2D74E9117167CD17FD04C327EB9D /* DZNEmptyDataSet-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5FE041B611163BC3499113D6CBFD9C6D /* DZNEmptyDataSet-dummy.m */; };
-		25DED14E5FADCA7DB9CA37A0074291F2 /* Pods-PancakeTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A9116919B674DEA79E89BF4B50D42CF4 /* Pods-PancakeTests-dummy.m */; };
-		27A5C4388A43BB369928EBDC356D9C59 /* Pods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 026385E062B32D120EDA93884D3EF24E /* Pods-dummy.m */; };
-		28A57EF5E9D2D0C8B1E6BCD9ACE085E4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
 		3BC49A2B50306C45D4EBCAA50600EBE7 /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = 7B69C7D7B9E7B6E52563319625578F7E /* UIScrollView+EmptyDataSet.m */; };
 		415DE89984F022AF68A370D7B57BDAC6 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		4ADC10987124C29EE21C51A083DB7A21 /* Pods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = A7F7156A102E3D1E6B72AE53E07E715C /* Pods-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		5EB48B8D6C9DB4057456D2FD92F5062D /* Pods-PancakeTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 34A9B2F8CF0FE55F51E173850889561E /* Pods-PancakeTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		7BB4358994E83FB8FA1C746941ABDF4A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		923B4B2DFEFC04AC5963FEAB6BE3FABA /* Pods-Pancake-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8B450F1F34C1475A61F3A1327DB684E0 /* Pods-Pancake-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		923B4B2DFEFC04AC5963FEAB6BE3FABA /* Pods-Pancake-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B116B651388E34E3CE3E9097BC83D47F /* DZNEmptyDataSet-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9EC4470650B86146175BA754A762324C /* DZNEmptyDataSet-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B7FDAC105AB53E3D878BCF26E2860012 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		C657A6F217493D3ACC94AE4CACFAE376 /* Pods-Pancake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = CCA77E2BD0CD4F984DAE1BC423F34118 /* Pods-Pancake-dummy.m */; };
+		C657A6F217493D3ACC94AE4CACFAE376 /* Pods-Pancake-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */; };
 		CAAD45C4CF53ECB0A96811C4CCCFAA2A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */; };
 		E14B01B2BDDA7C86AC2EBC45FCFEF52E /* UIScrollView+EmptyDataSet.h in Headers */ = {isa = PBXBuildFile; fileRef = 1B6B21AF41EBE54F12A278D7A573A5A1 /* UIScrollView+EmptyDataSet.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F01D81AD9279C27C45C96352CD4D2192 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */; };
-		FED7E597A72382A7723EADF7389392A3 /* Pods-PancakeUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 98697A58CB7D5028142A33FDCF82D969 /* Pods-PancakeUITests-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1A5A0B2FED62DB8FEACCED389C61170D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 16FB872D0D2D4BA0F378AB34D47CF95F;
-			remoteInfo = DZNEmptyDataSet;
-		};
 		8D2FA5E656479AFD628A97A8A6EC7889 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 16FB872D0D2D4BA0F378AB34D47CF95F;
-			remoteInfo = DZNEmptyDataSet;
-		};
-		D8A2EEB11BC921D2AA60B47D6017CC8E /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 16FB872D0D2D4BA0F378AB34D47CF95F;
-			remoteInfo = DZNEmptyDataSet;
-		};
-		EE6DEB8D8C213E1958AD77A8F8CA99E5 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
@@ -59,62 +29,29 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		026385E062B32D120EDA93884D3EF24E /* Pods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-dummy.m"; sourceTree = "<group>"; };
-		0437EB6F27B95DD593B003AF008F4226 /* Pods-PancakeTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PancakeTests.release.xcconfig"; sourceTree = "<group>"; };
-		0784106D340EE85B86A9F9513A66E4C9 /* Pods_PancakeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PancakeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		094625F8C51B1A448A8D4B2324E72F11 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.debug.xcconfig; sourceTree = "<group>"; };
-		0A30888CB223C8C6AD6AB93061660EA0 /* Pods-Pancake-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pancake-acknowledgements.markdown"; sourceTree = "<group>"; };
-		0AD54BE7ABECABF36F62EE690D4E0710 /* Pods-PancakeUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PancakeUITests-umbrella.h"; sourceTree = "<group>"; };
-		10A55412CD08C1E8AE842E8E93EF9C2B /* Pods-PancakeTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PancakeTests.modulemap"; sourceTree = "<group>"; };
-		14DA02FB5BB09E516F41E592C2597F80 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		166DEC738C92AFE9651309B28FABEE91 /* Pods-PancakeTests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PancakeTests-frameworks.sh"; sourceTree = "<group>"; };
-		1693392CF4CEF035CD4C0A3A8DF032BE /* Pods-Pancake-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-resources.sh"; sourceTree = "<group>"; };
+		02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pancake-umbrella.h"; sourceTree = "<group>"; };
 		1B6B21AF41EBE54F12A278D7A573A5A1 /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "UIScrollView+EmptyDataSet.h"; path = "Source/UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
-		2529C10B0BB910807B5C06BDE394ABB8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		309BCB1B381C5080ABA0BA95AC046188 /* Pods-Pancake.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Pancake.modulemap"; sourceTree = "<group>"; };
-		33994F3C3DA42B2ED9A457B272BA3D70 /* Pods-PancakeUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PancakeUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		34A9B2F8CF0FE55F51E173850889561E /* Pods-PancakeTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-PancakeTests-umbrella.h"; sourceTree = "<group>"; };
-		36FF9A5D6C387DC7861635F1FED3B836 /* Pods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-acknowledgements.plist"; sourceTree = "<group>"; };
+		1D335431D6AF007885B68F676053A863 /* Pods-Pancake-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-frameworks.sh"; sourceTree = "<group>"; };
+		33D52E9B34E5BF89192D3685C256AE7F /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3986FE0BABA19BDCC46C1D1CE37EF9B4 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		3CB95CD6EC3F0E52277F8AEA5B648950 /* Pods-PancakeUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PancakeUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		41591FA533E97F4303075E5C09F8476A /* Pods-PancakeUITests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PancakeUITests-resources.sh"; sourceTree = "<group>"; };
-		493403EC41C0C11D6E3D60A964D557E3 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		4E54EB560BF23DE1AF9BE44501CC051E /* Pods-PancakeTests-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PancakeTests-resources.sh"; sourceTree = "<group>"; };
-		57997CB6863914E6AC4687E036B17480 /* Pods-Pancake-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pancake-acknowledgements.plist"; sourceTree = "<group>"; };
-		5BBA1044D9042D481400F01118F6D13E /* Pods-PancakeTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-PancakeTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.debug.xcconfig"; sourceTree = "<group>"; };
+		486C47EE00A3D2EEF3AA97E6718C17B3 /* Pods-Pancake.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Pancake.modulemap"; sourceTree = "<group>"; };
 		5FE041B611163BC3499113D6CBFD9C6D /* DZNEmptyDataSet-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DZNEmptyDataSet-dummy.m"; sourceTree = "<group>"; };
-		679AE42F5F037753A9B05FBA12ACA9CE /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		691F14C970E1EC47F52AFCB37E46E78E /* Pods-Pancake-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-frameworks.sh"; sourceTree = "<group>"; };
-		6984DD6E037FEA83AE202A5ABAD40ACF /* Pods_PancakeUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PancakeUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		6B355D56BA603CEFF7B51A0DCEE99547 /* Pods-PancakeTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PancakeTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6E7E5AF37923BFA48D6994B9BFC6535F /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7B69C7D7B9E7B6E52563319625578F7E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; name = "UIScrollView+EmptyDataSet.m"; path = "Source/UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
-		80B44BFDB97BD0D542867424B84FFECD /* Pods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-acknowledgements.markdown"; sourceTree = "<group>"; };
-		8A0AB16652298903EC28C56507909E2D /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = Pods.release.xcconfig; sourceTree = "<group>"; };
-		8B450F1F34C1475A61F3A1327DB684E0 /* Pods-Pancake-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Pancake-umbrella.h"; sourceTree = "<group>"; };
-		8F73CAF169CFFA160B1D58B9C5942428 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		93ED8D9274F6D1D588311B479C409306 /* Pods-PancakeUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-PancakeUITests.release.xcconfig"; sourceTree = "<group>"; };
-		98697A58CB7D5028142A33FDCF82D969 /* Pods-PancakeUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PancakeUITests-dummy.m"; sourceTree = "<group>"; };
-		9AEC8C73E157F3D4BEEAFCFE4502C7CA /* Pods-Pancake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.debug.xcconfig"; sourceTree = "<group>"; };
+		863611F4C8C98C93694E99FF3FF8A61A /* Pods-Pancake-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Pancake-acknowledgements.plist"; sourceTree = "<group>"; };
+		8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pancake-dummy.m"; sourceTree = "<group>"; };
 		9EC4470650B86146175BA754A762324C /* DZNEmptyDataSet-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DZNEmptyDataSet-umbrella.h"; sourceTree = "<group>"; };
-		A2B5BD7E05D543422DC99EB7D17B4872 /* Pods-PancakeUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PancakeUITests-acknowledgements.plist"; sourceTree = "<group>"; };
-		A37338E9BE80801F215C4FF21306AAF6 /* Pods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = Pods.modulemap; sourceTree = "<group>"; };
-		A3BAA3E312A3437CEA31EAF5D81A9B66 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		A7F7156A102E3D1E6B72AE53E07E715C /* Pods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-umbrella.h"; sourceTree = "<group>"; };
-		A9116919B674DEA79E89BF4B50D42CF4 /* Pods-PancakeTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-PancakeTests-dummy.m"; sourceTree = "<group>"; };
 		AE43ACE05CA83ACB5B0F11FF6AAB2CE6 /* DZNEmptyDataSet.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DZNEmptyDataSet.modulemap; sourceTree = "<group>"; };
-		B271B2C86E365448AAEB3D7C06E69CD3 /* Pods-PancakeUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-PancakeUITests.modulemap"; sourceTree = "<group>"; };
 		B80EAB9ABC7030B90365BC319DA6085C /* DZNEmptyDataSet-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DZNEmptyDataSet-prefix.pch"; sourceTree = "<group>"; };
 		BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		C0D1ED96AD62125F5229DCDC2D678D35 /* Pods_Pancake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pancake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C22BC3DF3BD8A10B1789233015C841C7 /* DZNEmptyDataSet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DZNEmptyDataSet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B7BDF5CE5CB8F095FE12DA55D9A9BB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		CCA77E2BD0CD4F984DAE1BC423F34118 /* Pods-Pancake-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Pancake-dummy.m"; sourceTree = "<group>"; };
+		C5E8892E16E0EBFE05FFEE605359C9AF /* Pods_Pancake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pancake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF2B391A1807EA4C1021C6D91F1EDABF /* DZNEmptyDataSet.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DZNEmptyDataSet.xcconfig; sourceTree = "<group>"; };
-		D43705F21BE8240CBF1BB60E9DF4D1BE /* Pods-PancakeUITests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-PancakeUITests-frameworks.sh"; sourceTree = "<group>"; };
-		EFC256DB0B56DD282A661C0ECE4ADB24 /* Pods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-frameworks.sh"; sourceTree = "<group>"; };
-		F9F8F2C06C569A28B9687EE342489BA5 /* Pods-PancakeTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-PancakeTests-acknowledgements.plist"; sourceTree = "<group>"; };
-		FC71538AA20C9D581EFCE3E62277F989 /* Pods-Pancake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.release.xcconfig"; sourceTree = "<group>"; };
-		FF0290F450E8968C14E2D30123A3ACC8 /* Pods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-resources.sh"; sourceTree = "<group>"; };
+		D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Pancake.release.xcconfig"; sourceTree = "<group>"; };
+		F3D995FCDAB2B7FD54B70365AC81675F /* Pods-Pancake-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Pancake-resources.sh"; sourceTree = "<group>"; };
+		F3DB6A003DA6B1107E14271BEC5D788B /* Pods-Pancake-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Pancake-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,30 +60,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				415DE89984F022AF68A370D7B57BDAC6 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7215EC42F997722E5030AC18E7591617 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				F01D81AD9279C27C45C96352CD4D2192 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BCF22FB7CE7362F9C173C828778A934 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				28A57EF5E9D2D0C8B1E6BCD9ACE085E4 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		9BD1EE2A64D7A43DF634A72B946B2329 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				7BB4358994E83FB8FA1C746941ABDF4A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,53 +84,12 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		1DAB5F9F83A82A12FF852AE688230935 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				493403EC41C0C11D6E3D60A964D557E3 /* DZNEmptyDataSet.framework */,
-				A3BAA3E312A3437CEA31EAF5D81A9B66 /* Pods.framework */,
-				C0D1ED96AD62125F5229DCDC2D678D35 /* Pods_Pancake.framework */,
-				0784106D340EE85B86A9F9513A66E4C9 /* Pods_PancakeTests.framework */,
-				6984DD6E037FEA83AE202A5ABAD40ACF /* Pods_PancakeUITests.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
 		391E7CF3BE0B277DC3EF26607E1B9DD1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
 				8F4C1981A3CD5849D1926B2D86509DA7 /* DZNEmptyDataSet */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		3D758E2A5962DA67CB0DABA6AB1BF65E /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				48167C00AC6D20F25E655BFC4260A621 /* Pods */,
-				C5C73131481CC9EAF321C0A7DBDE481F /* Pods-Pancake */,
-				4193D8AB70282915C94562188A88A06E /* Pods-PancakeTests */,
-				5715D72541BD7F63915977F57B2CA343 /* Pods-PancakeUITests */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
-		4193D8AB70282915C94562188A88A06E /* Pods-PancakeTests */ = {
-			isa = PBXGroup;
-			children = (
-				8F73CAF169CFFA160B1D58B9C5942428 /* Info.plist */,
-				10A55412CD08C1E8AE842E8E93EF9C2B /* Pods-PancakeTests.modulemap */,
-				5BBA1044D9042D481400F01118F6D13E /* Pods-PancakeTests-acknowledgements.markdown */,
-				F9F8F2C06C569A28B9687EE342489BA5 /* Pods-PancakeTests-acknowledgements.plist */,
-				A9116919B674DEA79E89BF4B50D42CF4 /* Pods-PancakeTests-dummy.m */,
-				166DEC738C92AFE9651309B28FABEE91 /* Pods-PancakeTests-frameworks.sh */,
-				4E54EB560BF23DE1AF9BE44501CC051E /* Pods-PancakeTests-resources.sh */,
-				34A9B2F8CF0FE55F51E173850889561E /* Pods-PancakeTests-umbrella.h */,
-				6B355D56BA603CEFF7B51A0DCEE99547 /* Pods-PancakeTests.debug.xcconfig */,
-				0437EB6F27B95DD593B003AF008F4226 /* Pods-PancakeTests.release.xcconfig */,
-			);
-			name = "Pods-PancakeTests";
-			path = "Target Support Files/Pods-PancakeTests";
 			sourceTree = "<group>";
 		};
 		433CD3331B6C3787F473C941B61FC68F /* Frameworks */ = {
@@ -228,40 +100,12 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		48167C00AC6D20F25E655BFC4260A621 /* Pods */ = {
+		6FA055428F9DF03806E9744A0AD020BF /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				679AE42F5F037753A9B05FBA12ACA9CE /* Info.plist */,
-				A37338E9BE80801F215C4FF21306AAF6 /* Pods.modulemap */,
-				80B44BFDB97BD0D542867424B84FFECD /* Pods-acknowledgements.markdown */,
-				36FF9A5D6C387DC7861635F1FED3B836 /* Pods-acknowledgements.plist */,
-				026385E062B32D120EDA93884D3EF24E /* Pods-dummy.m */,
-				EFC256DB0B56DD282A661C0ECE4ADB24 /* Pods-frameworks.sh */,
-				FF0290F450E8968C14E2D30123A3ACC8 /* Pods-resources.sh */,
-				A7F7156A102E3D1E6B72AE53E07E715C /* Pods-umbrella.h */,
-				094625F8C51B1A448A8D4B2324E72F11 /* Pods.debug.xcconfig */,
-				8A0AB16652298903EC28C56507909E2D /* Pods.release.xcconfig */,
+				E2AB74264A595AFA43EF912E855298E6 /* Pods-Pancake */,
 			);
-			name = Pods;
-			path = "Target Support Files/Pods";
-			sourceTree = "<group>";
-		};
-		5715D72541BD7F63915977F57B2CA343 /* Pods-PancakeUITests */ = {
-			isa = PBXGroup;
-			children = (
-				2529C10B0BB910807B5C06BDE394ABB8 /* Info.plist */,
-				B271B2C86E365448AAEB3D7C06E69CD3 /* Pods-PancakeUITests.modulemap */,
-				33994F3C3DA42B2ED9A457B272BA3D70 /* Pods-PancakeUITests-acknowledgements.markdown */,
-				A2B5BD7E05D543422DC99EB7D17B4872 /* Pods-PancakeUITests-acknowledgements.plist */,
-				98697A58CB7D5028142A33FDCF82D969 /* Pods-PancakeUITests-dummy.m */,
-				D43705F21BE8240CBF1BB60E9DF4D1BE /* Pods-PancakeUITests-frameworks.sh */,
-				41591FA533E97F4303075E5C09F8476A /* Pods-PancakeUITests-resources.sh */,
-				0AD54BE7ABECABF36F62EE690D4E0710 /* Pods-PancakeUITests-umbrella.h */,
-				3CB95CD6EC3F0E52277F8AEA5B648950 /* Pods-PancakeUITests.debug.xcconfig */,
-				93ED8D9274F6D1D588311B479C409306 /* Pods-PancakeUITests.release.xcconfig */,
-			);
-			name = "Pods-PancakeUITests";
-			path = "Target Support Files/Pods-PancakeUITests";
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -270,8 +114,8 @@
 				BA6428E9F66FD5A23C0A2E06ED26CD2F /* Podfile */,
 				433CD3331B6C3787F473C941B61FC68F /* Frameworks */,
 				391E7CF3BE0B277DC3EF26607E1B9DD1 /* Pods */,
-				1DAB5F9F83A82A12FF852AE688230935 /* Products */,
-				3D758E2A5962DA67CB0DABA6AB1BF65E /* Targets Support Files */,
+				E45C31AB93263EDC08307D91558AA10C /* Products */,
+				6FA055428F9DF03806E9744A0AD020BF /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -299,43 +143,36 @@
 			path = "../Target Support Files/DZNEmptyDataSet";
 			sourceTree = "<group>";
 		};
-		C5C73131481CC9EAF321C0A7DBDE481F /* Pods-Pancake */ = {
+		E2AB74264A595AFA43EF912E855298E6 /* Pods-Pancake */ = {
 			isa = PBXGroup;
 			children = (
-				14DA02FB5BB09E516F41E592C2597F80 /* Info.plist */,
-				309BCB1B381C5080ABA0BA95AC046188 /* Pods-Pancake.modulemap */,
-				0A30888CB223C8C6AD6AB93061660EA0 /* Pods-Pancake-acknowledgements.markdown */,
-				57997CB6863914E6AC4687E036B17480 /* Pods-Pancake-acknowledgements.plist */,
-				CCA77E2BD0CD4F984DAE1BC423F34118 /* Pods-Pancake-dummy.m */,
-				691F14C970E1EC47F52AFCB37E46E78E /* Pods-Pancake-frameworks.sh */,
-				1693392CF4CEF035CD4C0A3A8DF032BE /* Pods-Pancake-resources.sh */,
-				8B450F1F34C1475A61F3A1327DB684E0 /* Pods-Pancake-umbrella.h */,
-				9AEC8C73E157F3D4BEEAFCFE4502C7CA /* Pods-Pancake.debug.xcconfig */,
-				FC71538AA20C9D581EFCE3E62277F989 /* Pods-Pancake.release.xcconfig */,
+				33D52E9B34E5BF89192D3685C256AE7F /* Info.plist */,
+				486C47EE00A3D2EEF3AA97E6718C17B3 /* Pods-Pancake.modulemap */,
+				F3DB6A003DA6B1107E14271BEC5D788B /* Pods-Pancake-acknowledgements.markdown */,
+				863611F4C8C98C93694E99FF3FF8A61A /* Pods-Pancake-acknowledgements.plist */,
+				8E0534AA57EE84F2FECD3BEDC7436649 /* Pods-Pancake-dummy.m */,
+				1D335431D6AF007885B68F676053A863 /* Pods-Pancake-frameworks.sh */,
+				F3D995FCDAB2B7FD54B70365AC81675F /* Pods-Pancake-resources.sh */,
+				02D98B97423A64D5221036FBAB03A710 /* Pods-Pancake-umbrella.h */,
+				4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */,
+				D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */,
 			);
 			name = "Pods-Pancake";
 			path = "Target Support Files/Pods-Pancake";
 			sourceTree = "<group>";
 		};
+		E45C31AB93263EDC08307D91558AA10C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C22BC3DF3BD8A10B1789233015C841C7 /* DZNEmptyDataSet.framework */,
+				C5E8892E16E0EBFE05FFEE605359C9AF /* Pods_Pancake.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		47DC9C0B5D8244630B2023A53FF3D9E1 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				16765DF3841677E3EE9357833A3A54CD /* Pods-PancakeUITests-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		4D89BDC54C8ACB0BC8E831D852EA036C /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				4ADC10987124C29EE21C51A083DB7A21 /* Pods-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		4D9C9A2043A53A3AE91808894C7E05FB /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -350,14 +187,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				923B4B2DFEFC04AC5963FEAB6BE3FABA /* Pods-Pancake-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		A22C3FA1B692F195A812E4EC3CF38330 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				5EB48B8D6C9DB4057456D2FD92F5062D /* Pods-PancakeTests-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -378,61 +207,7 @@
 			);
 			name = DZNEmptyDataSet;
 			productName = DZNEmptyDataSet;
-			productReference = 493403EC41C0C11D6E3D60A964D557E3 /* DZNEmptyDataSet.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		197BEFEA72784154482C3B096CF15BFE /* Pods-PancakeUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 94C33404FF40E9EA8593168CF5318CFC /* Build configuration list for PBXNativeTarget "Pods-PancakeUITests" */;
-			buildPhases = (
-				04D689D95857455B69825637B9032CCB /* Sources */,
-				9BD1EE2A64D7A43DF634A72B946B2329 /* Frameworks */,
-				47DC9C0B5D8244630B2023A53FF3D9E1 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6DBAC80D756C66E6F96E4EE8DCF944A2 /* PBXTargetDependency */,
-			);
-			name = "Pods-PancakeUITests";
-			productName = "Pods-PancakeUITests";
-			productReference = 6984DD6E037FEA83AE202A5ABAD40ACF /* Pods_PancakeUITests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		98ED7E7F9624CC8696FD684C3F606DEC /* Pods-PancakeTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = A600B2423C45EB38DE5BED5028F42F8A /* Build configuration list for PBXNativeTarget "Pods-PancakeTests" */;
-			buildPhases = (
-				1258468E1F737270FE6A954A517B5AE9 /* Sources */,
-				7215EC42F997722E5030AC18E7591617 /* Frameworks */,
-				A22C3FA1B692F195A812E4EC3CF38330 /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				2079E395B0902B996468614F9666D857 /* PBXTargetDependency */,
-			);
-			name = "Pods-PancakeTests";
-			productName = "Pods-PancakeTests";
-			productReference = 0784106D340EE85B86A9F9513A66E4C9 /* Pods_PancakeTests.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		A298E04EFD96CD0860115F5D676CAA91 /* Pods */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 9337DA905B6FFDCEBDDFCC42C68FFDDA /* Build configuration list for PBXNativeTarget "Pods" */;
-			buildPhases = (
-				8CA39BE8F9329089148D9429305EC9A9 /* Sources */,
-				9BCF22FB7CE7362F9C173C828778A934 /* Frameworks */,
-				4D89BDC54C8ACB0BC8E831D852EA036C /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AAB88CBA7CF1BA9F0AAC98EBB710E628 /* PBXTargetDependency */,
-			);
-			name = Pods;
-			productName = Pods;
-			productReference = A3BAA3E312A3437CEA31EAF5D81A9B66 /* Pods.framework */;
+			productReference = C22BC3DF3BD8A10B1789233015C841C7 /* DZNEmptyDataSet.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		B612D6A0E530D634DADDEEC5120E59FB /* Pods-Pancake */ = {
@@ -450,7 +225,7 @@
 			);
 			name = "Pods-Pancake";
 			productName = "Pods-Pancake";
-			productReference = C0D1ED96AD62125F5229DCDC2D678D35 /* Pods_Pancake.framework */;
+			productReference = C5E8892E16E0EBFE05FFEE605359C9AF /* Pods_Pancake.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -470,49 +245,22 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = 1DAB5F9F83A82A12FF852AE688230935 /* Products */;
+			productRefGroup = E45C31AB93263EDC08307D91558AA10C /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				16FB872D0D2D4BA0F378AB34D47CF95F /* DZNEmptyDataSet */,
-				A298E04EFD96CD0860115F5D676CAA91 /* Pods */,
 				B612D6A0E530D634DADDEEC5120E59FB /* Pods-Pancake */,
-				98ED7E7F9624CC8696FD684C3F606DEC /* Pods-PancakeTests */,
-				197BEFEA72784154482C3B096CF15BFE /* Pods-PancakeUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXSourcesBuildPhase section */
-		04D689D95857455B69825637B9032CCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				FED7E597A72382A7723EADF7389392A3 /* Pods-PancakeUITests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		1258468E1F737270FE6A954A517B5AE9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				25DED14E5FADCA7DB9CA37A0074291F2 /* Pods-PancakeTests-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		2A8F1194ACB18CF787D9AC3444C24BFC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				C657A6F217493D3ACC94AE4CACFAE376 /* Pods-Pancake-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8CA39BE8F9329089148D9429305EC9A9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				27A5C4388A43BB369928EBDC356D9C59 /* Pods-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -528,66 +276,18 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		2079E395B0902B996468614F9666D857 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DZNEmptyDataSet;
-			target = 16FB872D0D2D4BA0F378AB34D47CF95F /* DZNEmptyDataSet */;
-			targetProxy = EE6DEB8D8C213E1958AD77A8F8CA99E5 /* PBXContainerItemProxy */;
-		};
-		6DBAC80D756C66E6F96E4EE8DCF944A2 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DZNEmptyDataSet;
-			target = 16FB872D0D2D4BA0F378AB34D47CF95F /* DZNEmptyDataSet */;
-			targetProxy = D8A2EEB11BC921D2AA60B47D6017CC8E /* PBXContainerItemProxy */;
-		};
 		80906A63D1634347CFA23652D9181DA5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DZNEmptyDataSet;
 			target = 16FB872D0D2D4BA0F378AB34D47CF95F /* DZNEmptyDataSet */;
 			targetProxy = 8D2FA5E656479AFD628A97A8A6EC7889 /* PBXContainerItemProxy */;
 		};
-		AAB88CBA7CF1BA9F0AAC98EBB710E628 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DZNEmptyDataSet;
-			target = 16FB872D0D2D4BA0F378AB34D47CF95F /* DZNEmptyDataSet */;
-			targetProxy = 1A5A0B2FED62DB8FEACCED389C61170D /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0AB69F5F75349825D35A66D6A744D954 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 094625F8C51B1A448A8D4B2324E72F11 /* Pods.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		325CD7D03E771F68BB7CB6E90A4058B0 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = FC71538AA20C9D581EFCE3E62277F989 /* Pods-Pancake.release.xcconfig */;
+			baseConfigurationReference = D37BFFECE27226F8176F6BE02423CCDE /* Pods-Pancake.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -607,36 +307,6 @@
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
 				PRODUCT_NAME = Pods_Pancake;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		5C28CFE4639CC83F8CDD10343E7A87CF /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 0437EB6F27B95DD593B003AF008F4226 /* Pods-PancakeTests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PancakeTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PancakeTests/Pods-PancakeTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PancakeTests;
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -672,36 +342,6 @@
 			};
 			name = Release;
 		};
-		6B9893EEBFC5C83A882AF68431617DCA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3CB95CD6EC3F0E52277F8AEA5B648950 /* Pods-PancakeUITests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PancakeUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PancakeUITests/Pods-PancakeUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PancakeUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		87633C35115B9FBD987374E19A691C5E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = CF2B391A1807EA4C1021C6D91F1EDABF /* DZNEmptyDataSet.xcconfig */;
@@ -728,36 +368,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		94B5D341E9056801F54F864E144D66C2 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8A0AB16652298903EC28C56507909E2D /* Pods.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods/Pods.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		A70CDAD61F90AC503C7D04CC22DA2923 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -798,39 +408,9 @@
 			};
 			name = Debug;
 		};
-		D7EB4CB929C537C6086CB31253BED5AA /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6B355D56BA603CEFF7B51A0DCEE99547 /* Pods-PancakeTests.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PancakeTests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PancakeTests/Pods-PancakeTests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PancakeTests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		D96C46899080C92758B106EED5539400 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9AEC8C73E157F3D4BEEAFCFE4502C7CA /* Pods-Pancake.debug.xcconfig */;
+			baseConfigurationReference = 4062DF44522DF364A163257F18112FAD /* Pods-Pancake.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
@@ -857,36 +437,6 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		E704A331D51227661020504A14CF7EAD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 93ED8D9274F6D1D588311B479C409306 /* Pods-PancakeUITests.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-PancakeUITests/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-PancakeUITests/Pods-PancakeUITests.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_NAME = Pods_PancakeUITests;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
 		};
 		FB45FFD90572718D82AB9092B750F0CA /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -939,33 +489,6 @@
 			buildConfigurations = (
 				87633C35115B9FBD987374E19A691C5E /* Debug */,
 				65B827D88DB532B751DE295A53C4451F /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		9337DA905B6FFDCEBDDFCC42C68FFDDA /* Build configuration list for PBXNativeTarget "Pods" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				0AB69F5F75349825D35A66D6A744D954 /* Debug */,
-				94B5D341E9056801F54F864E144D66C2 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		94C33404FF40E9EA8593168CF5318CFC /* Build configuration list for PBXNativeTarget "Pods-PancakeUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6B9893EEBFC5C83A882AF68431617DCA /* Debug */,
-				E704A331D51227661020504A14CF7EAD /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A600B2423C45EB38DE5BED5028F42F8A /* Build configuration list for PBXNativeTarget "Pods-PancakeTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D7EB4CB929C537C6086CB31253BED5AA /* Debug */,
-				5C28CFE4639CC83F8CDD10343E7A87CF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

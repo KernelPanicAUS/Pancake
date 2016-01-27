@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import DZNEmptyDataSet
 
-class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
 
+    
+    @IBOutlet weak var alarmsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,7 +21,10 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         // self.clearsSelectionOnViewWillAppear = false
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        
+        self.alarmsTableView.emptyDataSetSource = self
+        self.alarmsTableView.emptyDataSetDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,6 +36,13 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    // MARK: - DZNEmptyDataSet
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        // Pancake is sad because there are no alarms setup :(
+        return UIImage(named: "sadFace")
+    }
+    
+    
 
     // MARK: - Table view data source
 
@@ -37,6 +50,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
+    
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
