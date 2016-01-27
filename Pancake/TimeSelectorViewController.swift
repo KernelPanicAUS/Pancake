@@ -12,11 +12,18 @@ class TimeSelectorViewController: UIViewController{
 
     @IBOutlet weak var timePicker: UIDatePicker!
     weak var firstViewController = CreateNewViewController()
+    var backgroundImage = UIImage()
     
     override func viewDidLoad() {
         
         // Changes color of Time Picker to white
         timePicker.setValue(UIColor.whiteColor(), forKey: "textColor")
+        
+    }
+    
+    override func viewWillLayoutSubviews() {
+        // Calls method that add image to background
+        addBlurredBackgroundImage()
         
     }
     
@@ -63,6 +70,25 @@ class TimeSelectorViewController: UIViewController{
         
         // Takes us back to Alarm Setup
         self.navigationController?.popViewControllerAnimated(true)
+    }
+    
+    // Adds Selected background image to this view
+    func addBlurredBackgroundImage() {
+        // UIView for the Background Image - Setup
+        let backgroundView = UIImageView(frame:UIScreen.mainScreen().bounds)
+        backgroundView.contentMode = .ScaleAspectFill
+        backgroundView.clipsToBounds = true
+        backgroundView.image = backgroundImage
+        
+        // UIView for the blur effect - Setup
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.frame
+        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        
+        // Blurs Background Image
+        self.view.insertSubview(blurEffectView, atIndex: 0)
+        self.view.insertSubview(backgroundView, atIndex: 0)
     }
     
     override func didReceiveMemoryWarning() {

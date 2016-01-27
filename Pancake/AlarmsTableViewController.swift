@@ -8,7 +8,7 @@
 
 import UIKit
 
-class AlarmsTableViewController: UITableViewController {
+class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
     override func viewDidLoad() {
@@ -33,14 +33,21 @@ class AlarmsTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return 0
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        
+        let cell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL", forIndexPath: indexPath)
+        //cell.textLabel?.text = "Alarm 1"
+        return cell
     }
     
     /*
