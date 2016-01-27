@@ -27,7 +27,6 @@
 		11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C844391C450E5800557CBA /* AlarmsTableViewController.swift */; };
 		11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */; };
 		11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */; };
-		11DB18E11C53D8FA00F9454F /* SetUpTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11DB18E01C53D8FA00F9454F /* SetUpTimeViewController.swift */; };
 		11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167211C32DB6F0033D1E3 /* AsyncButton.swift */; };
 		11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */; };
 		11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167231C32DB6F0033D1E3 /* AutoTextView.swift */; };
@@ -107,7 +106,6 @@
 		11C844391C450E5800557CBA /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
 		11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewViewController.swift; sourceTree = "<group>"; };
 		11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
-		11DB18E01C53D8FA00F9454F /* SetUpTimeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetUpTimeViewController.swift; sourceTree = "<group>"; };
 		11F167211C32DB6F0033D1E3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		11F167231C32DB6F0033D1E3 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -192,7 +190,6 @@
 				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
 				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
 				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
-				11DB18E01C53D8FA00F9454F /* SetUpTimeViewController.swift */,
 				E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */,
 			);
 			name = ViewControllers;
@@ -477,7 +474,6 @@
 				11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */,
 				11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */,
 				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
-				11DB18E11C53D8FA00F9454F /* SetUpTimeViewController.swift in Sources */,
 				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
 				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,
 				11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */,

@@ -827,25 +827,6 @@
             </objects>
             <point key="canvasLocation" x="365" y="1122"/>
         </scene>
-        <!--Set Up Time View Controller-->
-        <scene sceneID="H5Z-Kj-HcL">
-            <objects>
-                <viewController id="ITd-8v-sMt" customClass="SetUpTimeViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Bc6-Yv-x4v"/>
-                        <viewControllerLayoutGuide type="bottom" id="SUv-pg-RdW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="9kq-8n-Jwi">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="NC5-3H-Fta" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="877" y="1803"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="sXj-IB-yWo">
             <objects>
