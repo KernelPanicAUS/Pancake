@@ -13,7 +13,9 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
 
     var fetchResults = PHFetchResult()
     
-    weak var firstViewController = TimeSelectorViewController()
+    weak var firstViewController = CreateNewViewController()
+    
+    var selectedImage = UIImage()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,6 +24,15 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
         
         // For positioning UICollectionView directly below Custom Nav Bar View
         self.automaticallyAdjustsScrollViewInsets = false
+    }
+    
+    // Goes back one view ande adds image to background in Alarm Setup
+    @IBAction func success(sender: AnyObject) {
+        self.navigationController?.popViewControllerAnimated(true)
+        
+        // Adds background image to Alarm Setup 
+        self.firstViewController?.backgroundImage = selectedImage
+        self.firstViewController?.firstOpened = false
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -37,14 +48,18 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
         self.navigationController?.popViewControllerAnimated(true)
     }
     
+    // Fetches image assets
     func fetchImages() {
+        // Manipulate fetching options
         let options = PHFetchOptions()
+        // Displays images in order - Newest first
         options.sortDescriptors = [NSSortDescriptor(key: "creationDate", ascending: false)]
         
+        // Gets the number of images in library
         fetchResults = PHAsset.fetchAssetsWithMediaType(PHAssetMediaType.Image, options: options)
         
         // For debugging purposes only
-        print("There are \(fetchResults.count) images in library.")
+        //print("There are \(fetchResults.count) images in library.")
     }
     
     // MARK: - UICollectionView
@@ -60,9 +75,46 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         
+        // Creates cell from Storyboard
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("PHOTO_CELL", forIndexPath: indexPath)
         
+        // ImageView in cell.
+        let cellImageView = cell.viewWithTag(500) as! UIImageView
+        
+        // Grabs images from library
+        let asset = fetchResults.objectAtIndex(indexPath.row) as! PHAsset
+        PHImageManager.defaultManager().requestImageForAsset(asset,
+            targetSize: CGSizeMake(200, 200),
+            contentMode: PHImageContentMode.AspectFill,
+            options: PHImageRequestOptions(),
+            resultHandler: {(result, info) -> Void in
+            
+                cellImageView.image = result
+                
+            })
+        
+        //cellImageView.image = UIImage(named: "setupBG")
+        
         return cell
+    }
+    
+    func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        // Grabs images from library
+        let asset = fetchResults.objectAtIndex(indexPath.row) as! PHAsset
+        PHImageManager.defaultManager().requestImageForAsset(asset,
+            targetSize: CGSizeMake(1000, 1000), // Good Quality Image
+            contentMode: PHImageContentMode.AspectFill,
+            options: PHImageRequestOptions(),
+            resultHandler: {(result, info) -> Void in
+                
+                // Sets Alarm Setup background image - User Selected Image
+                self.selectedImage = result!
+                
+                
+        })
+        
+        // Highlights selected item
+        collectionView.cellForItemAtIndexPath(indexPath)?.highlighted = true
     }
     
     // Sets the size of the cells

@@ -12,7 +12,7 @@ class TimeSelectorViewController: UIViewController{
 
     @IBOutlet weak var timePicker: UIDatePicker!
     weak var firstViewController = CreateNewViewController()
-    var backgroundImage = ""
+    var backgroundImage = UIImage()
     
     override func viewDidLoad() {
         
@@ -78,7 +78,7 @@ class TimeSelectorViewController: UIViewController{
         let backgroundView = UIImageView(frame:UIScreen.mainScreen().bounds)
         backgroundView.contentMode = .ScaleAspectFill
         backgroundView.clipsToBounds = true
-        backgroundView.image = UIImage(named: backgroundImage)
+        backgroundView.image = backgroundImage
         
         // UIView for the blur effect - Setup
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)

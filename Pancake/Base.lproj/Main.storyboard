@@ -240,7 +240,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="poA-4a-oyA" kind="show" id="I4L-hR-9tE"/>
+                                            <segue destination="poA-4a-oyA" kind="show" identifier="HomeScreenSegue" id="I4L-hR-9tE"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdZ-ch-2pb">
@@ -417,9 +417,6 @@
                                                 <color key="value" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
-                                        <connections>
-                                            <segue destination="5IA-ob-1fp" kind="show" identifier="PhotoLibrarySegue" id="jTQ-nA-Mp8"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f87-Ud-UAJ" customClass="DesignableButton" customModule="Pancake" customModuleProvider="target">
                                         <rect key="frame" x="43" y="0.0" width="38" height="38.5"/>
@@ -653,6 +650,7 @@
                         <outlet property="alarmNameTextField" destination="FyI-z0-mDG" id="K3M-z6-9h6"/>
                         <outlet property="meridiemDisplay" destination="SFC-1q-rhU" id="6Nw-gy-AAz"/>
                         <outlet property="timeLabel" destination="sEv-uh-KjA" id="cUc-i3-UUP"/>
+                        <segue destination="5IA-ob-1fp" kind="show" identifier="PhotoLibrarySegue" id="pXD-mP-gbo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -757,14 +755,14 @@
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTO_CELL" id="DZA-Ka-jn2">
+                                    <collectionViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="PHOTO_CELL" id="DZA-Ka-jn2">
                                         <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yu5-qh-hMj">
+                                                <imageView userInteractionEnabled="NO" tag="500" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yu5-qh-hMj">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
@@ -797,6 +795,7 @@
                                         <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <state key="normal" image="Btn-Valide-white"/>
                                         <connections>
+                                            <action selector="success:" destination="5IA-ob-1fp" eventType="touchUpInside" id="E8n-PK-pqF"/>
                                             <action selector="success:" destination="oR8-Wh-l6i" eventType="touchUpInside" id="vzB-ei-eGD"/>
                                         </connections>
                                     </button>
@@ -882,7 +881,7 @@
                                         <state key="normal" image="Btn-Create-new"/>
                                         <connections>
                                             <action selector="success:" destination="oR8-Wh-l6i" eventType="touchUpInside" id="PlA-0D-LpN"/>
-                                            <segue destination="poA-4a-oyA" kind="show" id="YAK-Ec-i6x"/>
+                                            <segue destination="poA-4a-oyA" kind="show" identifier="TableVIewSegue" id="YAK-Ec-i6x"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tEI-GY-5ai">
@@ -985,6 +984,6 @@
         <image name="Spotify-logotype" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="YAK-Ec-i6x"/>
+        <segue reference="I4L-hR-9tE"/>
     </inferredMetricsTieBreakers>
 </document>

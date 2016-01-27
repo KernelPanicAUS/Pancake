@@ -24,11 +24,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
     // Hides am/pm when no alarm time is selected
     var hideMeridiem = true
     
+    // Check if view is loaded from Home Screen or Alarms Table View
+    var firstOpened = true
+    
     // Changes color time depending on status
     var timeWhiteColorON = false
     
     // Reference to the background image
-    var backgroundImage = "setupBGFrance"
+    var backgroundImage = UIImage()
+    
+    // UIImageView that displays the background image
+    let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,11 +42,21 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         // Changes the foreground color of the placeholder text
         alarmNameTextField.attributedPlaceholder = NSAttributedString(string: "Add alarm title", attributes: [NSForegroundColorAttributeName : UIColorFromHex(0x707070)])
         
+        // Setups backgroundView
+        backgroundView.contentMode = .ScaleAspectFill
+        // Removes portion of the image that is drawn but not visible untile segue.
+        backgroundView.clipsToBounds = true
+
+        // Adds Background to view
+        self.view.insertSubview(backgroundView, atIndex: 0)
         
     }
 
     override func viewWillAppear(animated: Bool) {
+        // Updates Time Label
         self.updateTimeLabel()
+        // Adds Selected image as background
+        self.addBackgroundImage()
     }
     
     override func didReceiveMemoryWarning() {
@@ -66,15 +82,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    func addBackgroundImage() {
+        if (firstOpened == true) {
+            print("No background image selected.")
+        } else {
+            backgroundView.image = backgroundImage
+        }
+    }
+    
     @IBAction func addPhoto(sender: AnyObject) {
         // Selection options for adding photo
         let photoSelectionOptionsAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
-        
-        // UIImageView that displays the background image
-        let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
-        backgroundView.contentMode = .ScaleAspectFill
-        // Removes portion of the image that is drawn but not visible untile segue.
-        backgroundView.clipsToBounds = true
         
         // Changes the background color of the AlertView to white
         photoSelectionOptionsAlertController.view.backgroundColor = UIColor.whiteColor()
@@ -86,9 +104,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         }
         let libraryAction = UIAlertAction(title: "Choose from library", style: UIAlertActionStyle.Default) {(action) in
             print("Choose from library!")
-            backgroundView.image = UIImage(named: self.backgroundImage)
-            // Adds Background to view
-            self.view.insertSubview(backgroundView, atIndex: 0)
+            
+            self.performSegueWithIdentifier("PhotoLibrarySegue", sender: self)
+
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){(action) in
             print("Cancel")
@@ -128,12 +146,17 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
             
             // Sends current background image to Time Selector view
             timeSelectorViewController.backgroundImage = self.backgroundImage
+            
         } else if (segue.identifier == "PhotoLibrarySegue") {
+            
             let photoLibraryViewController = segue.destinationViewController as! PhotoLibraryViewController
             
-            //photoLibraryViewController.firstViewController = self
+            photoLibraryViewController.firstViewController = self
+            
+        } else if (segue.identifier == "HomeScreenSegue" || segue.identifier == "TableViewSegue") {
+            firstOpened = true
         }
-}
+    }
 
 
 }
