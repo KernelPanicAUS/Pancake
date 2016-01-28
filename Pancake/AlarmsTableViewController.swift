@@ -8,19 +8,21 @@
 
 import UIKit
 
-class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
-    
+class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
+
+    // Outlet for Alarm Table View
     @IBOutlet weak var alarmsTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        //self.navigationItem.rightBarButtonItem = self.editButtonItem()
+        // EmptyDataSet in our Alarm Table View
+        self.alarmsTableView.emptyDataSetSource = self
+        self.alarmsTableView.emptyDataSetDelegate = self
+        
+        // Clears Table View of divisor lines
+        self.alarmsTableView.tableFooterView = UIView()
     }
 
     override func didReceiveMemoryWarning() {
@@ -32,14 +34,43 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
     // MARK: - DZNEmptyDataSet
+    
+    // Displays image when there is an Empty Data Set
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
         // Pancake is sad because there are no alarms setup :(
         return UIImage(named: "sadFace")
     }
     
-    
+    // Title and Description are having trouble being displayed.. Needs some love. :)
+    /*
+    func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        let title = "Huh"
+        
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(28.0)]
+        
+        return NSAttributedString(string: title, attributes: attrs)
+    }
 
+    func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
+        // Message to be displayed when Table View is empty
+        let description = "You have no alarms setup yet..."
+        
+        let paragraph = NSMutableParagraphStyle()
+        
+        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
+        paragraph.alignment = NSTextAlignment.Center
+        
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(18.0),
+            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
+            NSParagraphStyleAttributeName: paragraph]
+        
+        return NSAttributedString(string: description, attributes: attrs)
+        
+        
+    }
+    */
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
@@ -74,33 +105,6 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
-    // Override to support editing the table view.
-    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-        if editingStyle == .Delete {
-            // Delete the row from the data source
-            tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-        } else if editingStyle == .Insert {
-            // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-        }    
-    }
-    */
-
-    /*
-    // Override to support rearranging the table view.
-    override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-
-    }
-    */
-
-    /*
-    // Override to support conditional rearranging of the table view.
-    override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the item to be re-orderable.
         return true
     }
     */

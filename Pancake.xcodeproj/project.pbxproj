@@ -59,6 +59,7 @@
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
+		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,8 @@
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
+		E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -312,9 +315,19 @@
 		E72D5F261C545F2D00F97FDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */,
 				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
 			);
 			name = Tools;
+			sourceTree = "<group>";
+		};
+		E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */,
+				E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = DZNEmptyDataSet;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -483,6 +496,7 @@
 				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
 				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
 				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
+				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
 				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
 				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
