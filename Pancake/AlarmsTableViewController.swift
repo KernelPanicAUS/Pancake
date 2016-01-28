@@ -52,10 +52,10 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         return NSAttributedString(string: title, attributes: attrs)
     }
-
+    
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         // Message to be displayed when Table View is empty
-        let description = "You have no alarms setup yet..."
+        let description = "You have no alarms setup yet homie..."
         
         let paragraph = NSMutableParagraphStyle()
         
