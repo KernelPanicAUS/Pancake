@@ -7,9 +7,8 @@
 //
 
 import UIKit
-import DZNEmptyDataSet
 
-class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate {
+class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
     
     @IBOutlet weak var alarmsTableView: UITableView!
@@ -22,9 +21,6 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         //self.navigationItem.rightBarButtonItem = self.editButtonItem()
-        
-        self.alarmsTableView.emptyDataSetSource = self
-        self.alarmsTableView.emptyDataSetDelegate = self
     }
 
     override func didReceiveMemoryWarning() {
