@@ -23,8 +23,8 @@ class DashboardViewController: UIViewController {
         // Spotify is checking if the user is login
         self.spotifyUserCheck()
         
-        // Update Time Periodically
-        let timer = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
+        // Update Time Periodically = _ Stands for timer :P
+        let _ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
         
 
         // Do any additional setup after loading the view.
