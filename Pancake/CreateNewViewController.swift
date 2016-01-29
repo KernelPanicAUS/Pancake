@@ -46,6 +46,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         backgroundView.contentMode = .ScaleAspectFill
         // Removes portion of the image that is drawn but not visible untile segue.
         backgroundView.clipsToBounds = true
+        // Makes backgrounView darker
+        backgroundView.alpha = 0.8
 
         // Adds Background to view
         self.view.insertSubview(backgroundView, atIndex: 0)
