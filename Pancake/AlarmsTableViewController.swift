@@ -23,6 +23,8 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Clears Table View of divisor lines
         self.alarmsTableView.tableFooterView = UIView()
+        
+        self.edgesForExtendedLayout = UIRectEdge.None
     }
 
     override func didReceiveMemoryWarning() {
@@ -37,45 +39,36 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: - DZNEmptyDataSet
     
-    // Displays image when there is an Empty Data Set
-    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
-        // Pancake is sad because there are no alarms setup :(
-        return UIImage(named: "sadFace")
-    }
-    
     // Title and Description are having trouble being displayed.. Needs some love. :)
-    /*
+    
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let title = "Huh"
+        let title = "Title"
         
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(28.0)]
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(36.0)]
         
         return NSAttributedString(string: title, attributes: attrs)
     }
     
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         // Message to be displayed when Table View is empty
-        let description = "You have no alarms setup yet homie..."
+        let description = "Description..."
         
-        let paragraph = NSMutableParagraphStyle()
-        
-        paragraph.lineBreakMode = NSLineBreakMode.ByWordWrapping
-        paragraph.alignment = NSTextAlignment.Center
-        
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(18.0),
-            NSForegroundColorAttributeName: UIColor.lightGrayColor(),
-            NSParagraphStyleAttributeName: paragraph]
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0)]
         
         return NSAttributedString(string: description, attributes: attrs)
-        
-        
+    }
+    /*
+    // Displays image when there is an Empty Data Set
+    func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
+        // Pancake is sad because there are no alarms setup :(
+        return UIImage(named: "sadFace")
     }
     */
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
     
 
