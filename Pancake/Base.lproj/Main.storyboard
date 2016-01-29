@@ -53,8 +53,8 @@
                                 <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open your eyes with your favorites songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hha-su-0rK">
-                                <rect key="frame" x="33" y="320" width="254.5" height="17.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Open your eyes to your favorite songs" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Hha-su-0rK">
+                                <rect key="frame" x="43.5" y="320" width="234.5" height="17.5"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="14"/>
                                 <color key="textColor" red="0.7803921568627451" green="0.77647058823529413" blue="0.77647058823529413" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -871,6 +871,24 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-HO-CB3">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ALARM_CELL" id="l1P-xw-6DQ">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1P-xw-6DQ" id="C6s-hx-0U8">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="LPg-SW-PDb" id="jQO-AH-dxR"/>
+                                    <outlet property="delegate" destination="LPg-SW-PDb" id="bKB-19-Zoe"/>
+                                </connections>
+                            </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qmf-cl-WL9">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
                                 <subviews>
@@ -908,24 +926,6 @@
                                     <constraint firstItem="tEI-GY-5ai" firstAttribute="centerY" secondItem="qmf-cl-WL9" secondAttribute="centerY" id="n0Q-x3-C3N"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="1Lj-HO-CB3">
-                                <rect key="frame" x="0.0" y="51" width="320" height="517"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="ALARM_CELL" id="l1P-xw-6DQ">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="44"/>
-                                        <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="l1P-xw-6DQ" id="C6s-hx-0U8">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
-                                            <autoresizingMask key="autoresizingMask"/>
-                                        </tableViewCellContentView>
-                                    </tableViewCell>
-                                </prototypes>
-                                <connections>
-                                    <outlet property="dataSource" destination="LPg-SW-PDb" id="jQO-AH-dxR"/>
-                                    <outlet property="delegate" destination="LPg-SW-PDb" id="bKB-19-Zoe"/>
-                                </connections>
-                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -936,12 +936,16 @@
                             <constraint firstItem="Yvf-gd-ygT" firstAttribute="top" secondItem="1Lj-HO-CB3" secondAttribute="bottom" id="Ipj-rd-zw0"/>
                             <constraint firstItem="qmf-cl-WL9" firstAttribute="leading" secondItem="fr8-VY-12c" secondAttribute="leading" constant="-24" id="TW0-Gf-Eb1"/>
                             <constraint firstAttribute="trailing" secondItem="1Lj-HO-CB3" secondAttribute="trailing" id="W0s-57-bmN"/>
+                            <constraint firstItem="1Lj-HO-CB3" firstAttribute="top" secondItem="qmf-cl-WL9" secondAttribute="top" id="Xbj-LU-twx"/>
                             <constraint firstItem="1Lj-HO-CB3" firstAttribute="top" secondItem="qmf-cl-WL9" secondAttribute="bottom" id="eSz-mu-POq"/>
+                            <constraint firstItem="1Lj-HO-CB3" firstAttribute="top" secondItem="JDc-wg-5pK" secondAttribute="bottom" id="ent-OK-qq3"/>
                             <constraint firstItem="1Lj-HO-CB3" firstAttribute="leading" secondItem="fr8-VY-12c" secondAttribute="leading" id="i6H-mA-uMj"/>
                             <constraint firstItem="qmf-cl-WL9" firstAttribute="leading" secondItem="fr8-VY-12c" secondAttribute="leadingMargin" constant="-24" id="vAf-PD-F5S"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Xbj-LU-twx"/>
+                                <exclude reference="eSz-mu-POq"/>
                                 <exclude reference="0xv-uM-9CK"/>
                                 <exclude reference="5Z3-eN-HLc"/>
                                 <exclude reference="TW0-Gf-Eb1"/>
