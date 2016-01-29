@@ -791,6 +791,9 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
+                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="700" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Btn-Valide-white" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-6O-pgE">
+                                                    <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
+                                                </imageView>
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
@@ -798,7 +801,11 @@
                                         <constraints>
                                             <constraint firstItem="yu5-qh-hMj" firstAttribute="top" secondItem="DZA-Ka-jn2" secondAttribute="topMargin" constant="-8" id="3TY-QL-IVh"/>
                                             <constraint firstAttribute="trailingMargin" secondItem="yu5-qh-hMj" secondAttribute="trailing" constant="-8" id="FPx-hg-muv"/>
+                                            <constraint firstAttribute="bottomMargin" secondItem="IR1-6O-pgE" secondAttribute="bottom" constant="-8" id="MYw-Tp-pfT"/>
                                             <constraint firstAttribute="bottomMargin" secondItem="yu5-qh-hMj" secondAttribute="bottom" constant="-8" id="TPj-Yt-okd"/>
+                                            <constraint firstAttribute="trailingMargin" secondItem="IR1-6O-pgE" secondAttribute="trailing" constant="-8" id="UFm-8s-B6H"/>
+                                            <constraint firstItem="IR1-6O-pgE" firstAttribute="leading" secondItem="DZA-Ka-jn2" secondAttribute="leadingMargin" constant="-8" id="YSE-Sd-XZd"/>
+                                            <constraint firstItem="IR1-6O-pgE" firstAttribute="top" secondItem="DZA-Ka-jn2" secondAttribute="topMargin" constant="-8" id="eRH-Tn-Yv3"/>
                                             <constraint firstItem="yu5-qh-hMj" firstAttribute="leading" secondItem="DZA-Ka-jn2" secondAttribute="leadingMargin" constant="-8" id="o6P-l5-0T4"/>
                                         </constraints>
                                     </collectionViewCell>
