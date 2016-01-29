@@ -58,7 +58,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Manages attributes for displayed text
         let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0),
-                NSForegroundColorAttributeName: UIColorFromHex(0x707070)]
+                NSForegroundColorAttributeName: UIColorFromHex(0x707070)] 
         
         return NSAttributedString(string: description, attributes: attrs)
     }
