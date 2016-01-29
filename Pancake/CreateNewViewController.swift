@@ -122,10 +122,40 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         // Displays options on screen
         presentViewController(photoSelectionOptionsAlertController, animated: true, completion: nil)
     }
+    
+    // Highlights/Unhighlights selected button
+    func highlightButton(bttn: UIButton) {
+        
+        // Highlights/Unhighlights button depending on state.
+        if bttn.titleColorForState(UIControlState.Normal) == UIColor.whiteColor() {
+            let pancakeGrayColor = UIColorFromHex(0x707070)
+            bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
+            bttn.layer.borderColor = pancakeGrayColor.CGColor
+        } else {
+            bttn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            bttn.layer.borderColor = UIColor.whiteColor().CGColor
+        }
+    }
+
+    
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
     }
+    
+    // Selects days of the week that alarm will be active
+    @IBAction func selectDate(sender: AnyObject) {
+        // Date Button
+        let button = sender as! UIButton
+        
+        // Custom button highlight
+        self.highlightButton(button)
+        
+        // Used for debugging purposes only
+        //print("Date selected: \((button.titleLabel?.text)!)")
+    }
+    
+    
     
     // MARK: - TextField
     func textFieldShouldReturn(textField: UITextField) -> Bool {
