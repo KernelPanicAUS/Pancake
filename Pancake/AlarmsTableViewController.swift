@@ -23,8 +23,6 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Clears Table View of divisor lines
         self.alarmsTableView.tableFooterView = UIView()
-        
-        self.edgesForExtendedLayout = UIRectEdge.None
     }
 
     override func didReceiveMemoryWarning() {
@@ -44,8 +42,11 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         // Title message to be displayed when Table View is empty
         let title = "Huh!"
         
+        // Custom font
+        let proximaNovaBold = UIFont(name: "ProximaNova-Bold", size: 24.0)
+        
         // Manages attributes for displayed text
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(36.0),
+        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaBold!,
                 NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         return NSAttributedString(string: title, attributes: attrs)
@@ -55,10 +56,13 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         // Message to be displayed when Table View is empty
         let description = "You have no alarms setup yet"
+
+        // Custom font
+        let proximaNovaRegular = UIFont(name: "ProximaNova-Regular", size: 18.0)
         
         // Manages attributes for displayed text
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0),
-                NSForegroundColorAttributeName: UIColorFromHex(0x707070)] 
+        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaRegular!,
+            NSForegroundColorAttributeName: UIColorFromHex(0x707070)]
         
         return NSAttributedString(string: description, attributes: attrs)
     }
