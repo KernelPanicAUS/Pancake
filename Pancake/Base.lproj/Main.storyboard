@@ -944,11 +944,11 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="Xbj-LU-twx"/>
+                                <exclude reference="eSz-mu-POq"/>
                                 <exclude reference="0xv-uM-9CK"/>
                                 <exclude reference="5Z3-eN-HLc"/>
                                 <exclude reference="TW0-Gf-Eb1"/>
-                                <exclude reference="Xbj-LU-twx"/>
-                                <exclude reference="eSz-mu-POq"/>
                             </mask>
                         </variation>
                     </view>

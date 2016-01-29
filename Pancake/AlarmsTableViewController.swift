@@ -39,31 +39,36 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     // MARK: - DZNEmptyDataSet
     
-    // Title and Description are having trouble being displayed.. Needs some love. :)
-    
+    // Empty Data Set Title
     func titleForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
-        let title = "Title"
+        // Title message to be displayed when Table View is empty
+        let title = "Huh!"
         
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(36.0)]
+        // Manages attributes for displayed text
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(36.0),
+                NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         return NSAttributedString(string: title, attributes: attrs)
     }
     
+    // Empty Data Set Description
     func descriptionForEmptyDataSet(scrollView: UIScrollView!) -> NSAttributedString! {
         // Message to be displayed when Table View is empty
-        let description = "Description..."
+        let description = "You have no alarms setup yet"
         
-        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0)]
+        // Manages attributes for displayed text
+        let attrs = [NSFontAttributeName: UIFont.systemFontOfSize(20.0),
+                NSForegroundColorAttributeName: UIColorFromHex(0x707070)]
         
         return NSAttributedString(string: description, attributes: attrs)
     }
-    /*
-    // Displays image when there is an Empty Data Set
+    
+    // Empty Data Set Image
     func imageForEmptyDataSet(scrollView: UIScrollView!) -> UIImage! {
         // Pancake is sad because there are no alarms setup :(
         return UIImage(named: "sadFace")
     }
-    */
+    
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
