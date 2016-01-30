@@ -99,6 +99,7 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
     }
     
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
+        
         // Grabs images from library
         let asset = fetchResults.objectAtIndex(indexPath.row) as! PHAsset
         PHImageManager.defaultManager().requestImageForAsset(asset,
@@ -112,9 +113,18 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
                 
                 
         })
+
+        // Check/Uncheck selected image.
+        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(500)
+        let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(700)
         
-        // Highlights selected item
-        collectionView.cellForItemAtIndexPath(indexPath)?.highlighted = true
+        if (checkmark?.hidden == true) {
+            cellImageView?.alpha = 0.5
+            checkmark?.hidden = false
+        } else {
+            cellImageView?.alpha = 1
+            checkmark?.hidden = true
+        }
     }
     
     // Sets the size of the cells
