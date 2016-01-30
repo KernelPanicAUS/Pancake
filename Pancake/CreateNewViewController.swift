@@ -7,8 +7,9 @@
 //
 
 import UIKit
+import MobileCoreServices
 
-class CreateNewViewController: UIViewController, UITextFieldDelegate {
+class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     // Labels that display the selected Alarm Time
     @IBOutlet weak var timeLabel: UIButton!
@@ -103,6 +104,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         
         let takePhotoAction = UIAlertAction(title: "Take photo", style: UIAlertActionStyle.Default) {(action) in
             print("Take photo!")
+            self.photoWithCamera()
         }
         let libraryAction = UIAlertAction(title: "Choose from library", style: UIAlertActionStyle.Default) {(action) in
             print("Choose from library!")
@@ -123,6 +125,28 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         
         // Displays options on screen
         presentViewController(photoSelectionOptionsAlertController, animated: true, completion: nil)
+    }
+    
+    // Opens Camera and takes photo
+    func photoWithCamera() {
+        if UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.Camera) {
+            
+            let imagePicker = UIImagePickerController()
+            imagePicker.delegate = self
+            imagePicker.sourceType = UIImagePickerControllerSourceType.Camera;
+            imagePicker.mediaTypes = [kUTTypeImage as String]
+            imagePicker.allowsEditing = false
+            
+            self.presentViewController(imagePicker, animated: true, completion: nil)
+        } else {
+            // Displays alert when there is no camera found
+            let authErrorAlert = JSSAlertView()
+            
+            // Alert setup
+            authErrorAlert.show(self, title: "Oops...", text: "No camera detected", buttonText: "OK", color: UIColorFromHex(0xe74c3c, alpha: 1))
+            authErrorAlert.setTextTheme(.Light)
+
+        }
     }
     
     // Highlights/Unhighlights selected button
@@ -157,7 +181,24 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate {
         //print("Date selected: \((button.titleLabel?.text)!)")
     }
     
+    // MARK: - ImagePickerController Delegate
+    func imagePickerControllerDidCancel(picker: UIImagePickerController) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
+    func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
+        
+        // Sets background image
+        backgroundImage = image
+        backgroundView.image = image
+        
+        if picker.sourceType == UIImagePickerControllerSourceType.Camera {
+            UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
+        }
+        
+        self.addBackgroundImage()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
     
     // MARK: - TextField
     func textFieldShouldReturn(textField: UITextField) -> Bool {
