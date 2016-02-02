@@ -18,6 +18,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // Outlet for the textfield
     @IBOutlet weak var alarmNameTextField: UITextField!
    
+    // AlarmsTableViewController
+    weak var alarmTableViewController = AlarmsTableViewController()
+    
     // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
@@ -36,6 +39,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // UIImageView that displays the background image
     let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
+    
+    // Saved alarms
+    var savedAlarms = [Alarm]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -167,6 +173,26 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+    
+    // Saves alarm
+    @IBAction func success(sender: AnyObject) {
+        // Sends Alarms to Created Alarms
+        let title = alarmNameTextField.text
+        let time = timeLabel.titleLabel?.text
+        let days = "Fri, Sat"
+        let meri = meridiemDisplay.text
+        
+        let newAlarm = Alarm(title: title!, time: time!, days: days, meri: meri!)
+        
+        savedAlarms.append(newAlarm)
+        
+        alarmTableViewController?.alarms = savedAlarms
+        // Used for debugging purposes only
+        print("\(alarmTableViewController?.alarms)")
+        print("Array: \(savedAlarms)\nCount: \(savedAlarms.count)")
+        print("Title: \(savedAlarms[0].title)\nTime: \(savedAlarms[0].time)\nMeri: \(savedAlarms[0].meri)\nDate: \(savedAlarms[0].days)")
+
     }
     
     // Selects days of the week that alarm will be active

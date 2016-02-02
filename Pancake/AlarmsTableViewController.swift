@@ -14,6 +14,8 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     // Outlet for Alarm Table View
     @IBOutlet weak var alarmsTableView: UITableView!
     
+    var alarms = [Alarm]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -89,16 +91,28 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 3
+        
+        if (alarms.count ==  0) {
+            return 0
+        }
+        
+        return 1
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
         let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL") as! AlarmTableViewCell
+        
+        cell.alarmTitle.text = alarms[indexPath.row].title
+        cell.alarmTime.text = alarms[indexPath.row].time
+        cell.meri.text = alarms[indexPath.row].meri
+        cell.alarmDate.text = alarms[indexPath.row].days
+        
+       /*
         cell.alarmTitle.text = "Slowly together"
         cell.alarmTime.text = "05:30"
         cell.meri.text = "am"
-        cell.alarmDate.text = "Fri, Sat"
+        cell.alarmDate.text = "Fri, Sat"*/
         //cell.textLabel?.text = "Alarm 1"
         return cell
     }
@@ -107,30 +121,14 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         return 100
     }
     /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
-    }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+
     }
     */
 
