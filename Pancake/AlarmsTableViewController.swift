@@ -23,11 +23,12 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Clears Table View of divisor lines
         self.alarmsTableView.tableFooterView = UIView()
+        self.automaticallyAdjustsScrollViewInsets = false
         
+        // Loads custom cell
         let nib = UINib(nibName: "AlarmTableViewCell", bundle: nil)
         alarmsTableView.registerNib(nib, forCellReuseIdentifier: "ALARM_CELL")
         
-        self.automaticallyAdjustsScrollViewInsets = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -96,6 +97,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL") as! AlarmTableViewCell
         cell.alarmTitle.text = "Slowly together"
         cell.alarmTime.text = "05:30"
+        cell.meri.text = "am"
         cell.alarmDate.text = "Fri, Sat"
         //cell.textLabel?.text = "Alarm 1"
         return cell
