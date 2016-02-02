@@ -23,6 +23,11 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Clears Table View of divisor lines
         self.alarmsTableView.tableFooterView = UIView()
+        
+        let nib = UINib(nibName: "AlarmTableViewCell", bundle: nil)
+        alarmsTableView.registerNib(nib, forCellReuseIdentifier: "ALARM_CELL")
+        
+        self.automaticallyAdjustsScrollViewInsets = true
     }
 
     override func didReceiveMemoryWarning() {
@@ -83,16 +88,22 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return 3
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL", forIndexPath: indexPath)
+        let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL") as! AlarmTableViewCell
+        cell.alarmTitle.text = "Slowly together"
+        cell.alarmTime.text = "05:30"
+        cell.alarmDate.text = "Fri, Sat"
         //cell.textLabel?.text = "Alarm 1"
         return cell
     }
     
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
+    }
     /*
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)

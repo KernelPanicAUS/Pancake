@@ -59,6 +59,9 @@
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
+		E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013C51C6051B10084ECAA /* Alarm.swift */; };
+		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
+		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
 		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
 /* End PBXBuildFile section */
 
@@ -141,6 +144,9 @@
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
+		E7B013C51C6051B10084ECAA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = ../Alarm.swift; sourceTree = "<group>"; };
+		E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
+		E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -227,6 +233,9 @@
 				11F167201C32DB6F0033D1E3 /* Spring */,
 				11A63C731C317E8F0010CCCB /* AppDelegate.swift */,
 				11A63C751C317E8F0010CCCB /* ViewController.swift */,
+				E7B013C51C6051B10084ECAA /* Alarm.swift */,
+				E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */,
+				E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */,
 				111A5D411C3C2C6D0080522C /* ViewControllers */,
 				11A63C771C317E8F0010CCCB /* Main.storyboard */,
 				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
@@ -441,6 +450,7 @@
 				111A5D441C3C30F40080522C /* ProximaNova-Regular.otf in Resources */,
 				111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */,
 				111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */,
+				E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */,
 				11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */,
 				11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */,
 				11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */,
@@ -485,6 +495,7 @@
 				11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */,
 				11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */,
 				11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */,
+				E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */,
 				11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */,
 				11F167501C32DB6F0033D1E3 /* SoundPlayer.swift in Sources */,
 				11F1674F1C32DB6F0033D1E3 /* Misc.swift in Sources */,
@@ -497,6 +508,7 @@
 				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
 				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
 				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
+				E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */,
 				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
 				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,

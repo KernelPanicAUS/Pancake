@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <mutableArray key="ProximaNova-Bold.otf">
+            <string>ProximaNova-Bold</string>
+        </mutableArray>
+        <mutableArray key="ProximaNova-Regular.otf">
+            <string>ProximaNova-Regular</string>
+            <string>ProximaNova-Regular</string>
+        </mutableArray>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="300" id="OSd-30-bOf" customClass="AlarmTableViewCell" customModule="Pancake" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="413" height="104"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OSd-30-bOf" id="Ina-z1-Kgy">
+                <rect key="frame" x="0.0" y="0.0" width="413" height="103.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjP-g1-AHt">
+                        <rect key="frame" x="8" y="24" width="90" height="55"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="45"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6y-H5-DXQ">
+                        <rect key="frame" x="11" y="7" width="32.5" height="24.5"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-hI-xWJ">
+                        <rect key="frame" x="11" y="71" width="39.5" height="24.5"/>
+                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgZ-wB-Orn">
+                        <rect key="frame" x="99" y="51" width="29.5" height="17.5"/>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Kqc-hI-xWJ" firstAttribute="top" secondItem="AjP-g1-AHt" secondAttribute="bottom" constant="-8" id="222-4p-W59"/>
+                    <constraint firstItem="AjP-g1-AHt" firstAttribute="centerX" secondItem="Ina-z1-Kgy" secondAttribute="centerX" id="GHr-OT-r01"/>
+                    <constraint firstItem="AjP-g1-AHt" firstAttribute="top" secondItem="M6y-H5-DXQ" secondAttribute="bottom" constant="-8" id="H0d-Wi-oRQ"/>
+                    <constraint firstItem="M6y-H5-DXQ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="LOe-yY-sIq"/>
+                    <constraint firstAttribute="leadingMargin" secondItem="AjP-g1-AHt" secondAttribute="leading" id="Zro-rA-1S6"/>
+                    <constraint firstItem="AjP-g1-AHt" firstAttribute="centerY" secondItem="Ina-z1-Kgy" secondAttribute="centerY" id="bgo-re-UUG"/>
+                    <constraint firstItem="TgZ-wB-Orn" firstAttribute="leading" secondItem="AjP-g1-AHt" secondAttribute="trailing" constant="1" id="cWi-NJ-Sgg"/>
+                    <constraint firstItem="TgZ-wB-Orn" firstAttribute="bottom" secondItem="AjP-g1-AHt" secondAttribute="bottom" constant="-10" id="q9K-ei-uji"/>
+                    <constraint firstItem="Kqc-hI-xWJ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="vwz-Ov-8uT"/>
+                </constraints>
+                <variation key="default">
+                    <mask key="constraints">
+                        <exclude reference="GHr-OT-r01"/>
+                    </mask>
+                </variation>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="alarmDate" destination="Kqc-hI-xWJ" id="TQ7-qa-kNH"/>
+                <outlet property="alarmTime" destination="AjP-g1-AHt" id="RL2-HP-z0g"/>
+                <outlet property="alarmTitle" destination="M6y-H5-DXQ" id="vaJ-4y-cOg"/>
+                <outlet property="meri" destination="TgZ-wB-Orn" id="w8w-9R-wZD"/>
+            </connections>
+            <point key="canvasLocation" x="370.5" y="167"/>
+        </tableViewCell>
+    </objects>
+</document>
