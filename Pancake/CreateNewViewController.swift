@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import CoreData
 
 class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -17,7 +18,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // Outlet for the textfield
     @IBOutlet weak var alarmNameTextField: UITextField!
-   
+    
     // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
@@ -28,7 +29,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // Check if view is loaded from Home Screen or Alarms Table View
     var firstOpened = true
     
-    // Changes color time depending on status
+    // Changes color of time depending on status
     var timeWhiteColorON = false
     
     // Reference to the background image
@@ -36,7 +37,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // UIImageView that displays the background image
     let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -72,6 +73,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         timeLabel.setTitle(updatedTime, forState: UIControlState.Normal)
         meridiemDisplay.text = updatedMeridiem
         
+        // Determines wether or not to hide AM/PM label
         if hideMeridiem == true{
             // Hide
             meridiemDisplay.hidden = true
@@ -85,6 +87,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         }
     }
     
+    // Makes sure there is no error when opening View / No background selected
     func addBackgroundImage() {
         if (firstOpened == true) {
             print("No background image selected.")
@@ -93,6 +96,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         }
     }
     
+    // Adds background photo - Take a picture or select from Library
     @IBAction func addPhoto(sender: AnyObject) {
         // Selection options for adding photo
         let photoSelectionOptionsAlertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
@@ -102,21 +106,27 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Changes the color of the text to gray
         photoSelectionOptionsAlertController.view.tintColor = UIColor.lightGrayColor()
         
+        // Lets user take picture
         let takePhotoAction = UIAlertAction(title: "Take photo", style: UIAlertActionStyle.Default) {(action) in
-            print("Take photo!")
+            // Used for debugging purposes only
+            //print("Take photo!")
+            
+            // Takes picture
             self.photoWithCamera()
         }
+        // Lets user select picture from Library
         let libraryAction = UIAlertAction(title: "Choose from library", style: UIAlertActionStyle.Default) {(action) in
-            print("Choose from library!")
+            // Used for debugging purposes only
+            //print("Choose from library!")
             
+            // Goes to photo selection view
             self.performSegueWithIdentifier("PhotoLibrarySegue", sender: self)
-
         }
+        // Closes Alert (Photo selection method menu)
         let cancelAction = UIAlertAction(title: "Cancel", style: UIAlertActionStyle.Default){(action) in
-            print("Cancel")
+            // Use for debugging purposes only
+            //print("Cancel")
         }
-        
-        
         
         // Adds actions to the photoSelectionOptionsAlertController
         photoSelectionOptionsAlertController.addAction(takePhotoAction)
@@ -143,16 +153,20 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             let authErrorAlert = JSSAlertView()
             
             // Alert setup
-            authErrorAlert.show(self, title: "Oops...", text: "No camera detected", buttonText: "OK", color: UIColorFromHex(0xe74c3c, alpha: 1))
-            authErrorAlert.setTextTheme(.Light)
+            authErrorAlert.show(self,
+                title: "Oops...",
+                text: "No camera detected",
+                buttonText: "OK",
+                color: UIColorFromHex(0xe74c3c, alpha: 1))
+                authErrorAlert.setTextTheme(.Light)
 
         }
     }
     
-    // Highlights/Unhighlights selected button
+    // Highlights or Unhighlights selected button
     func highlightButton(bttn: UIButton) {
         
-        // Highlights/Unhighlights button depending on state.
+        // Highlights or Unhighlights button depending on state.
         if bttn.titleColorForState(UIControlState.Normal) == UIColor.whiteColor() {
             let pancakeGrayColor = UIColorFromHex(0x707070)
             bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
@@ -166,7 +180,58 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
-        self.navigationController?.popToRootViewControllerAnimated(true)
+        self.goBackToDashboard()
+    }
+    
+    // Saves alarm
+    @IBAction func success(sender: AnyObject) {
+        // Alarm setup
+        let title = alarmNameTextField.text
+        let time = timeLabel.titleLabel?.text
+        let days = "Fri, Sat"
+        let meri = meridiemDisplay.text
+        
+        // Saves new alarm
+        self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+    }
+    
+    // Manages Alarm save to CoreData
+    func saveAlarm(title: String, time: String, days: String, meri: String) {
+        
+        // Application Delegate
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        // Manages CoreData
+        let managedContext = appDelegate.managedObjectContext
+        // Entity described in data model
+        let entity = NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
+        
+        // New Alarm
+        let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        // Setups Alarm properties
+        alarm.setValue(title, forKey: "title")
+        alarm.setValue(time, forKey: "time")
+        alarm.setValue(meri, forKey: "meri")
+        alarm.setValue(days, forKey: "days")
+        
+        // Saves alarm if there are no errors
+        do {
+            try managedContext.save()
+            // Used for debugging purposes only
+            //print("Success saving date.")
+            let savedAlarmAlert = JSSAlertView()
+            savedAlarmAlert.show(self,
+                title: "Success!",
+                text: "Your alarm was saved succesfully\n",
+                buttonText: "OK",
+                color: UIColor.whiteColor())
+            
+            // Goes back to Dashboard when OK is pressed
+            savedAlarmAlert.addAction(goBackToDashboard)
+        } catch let error as NSError {
+            // Displays error message in console
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
     
     // Selects days of the week that alarm will be active
@@ -181,22 +246,32 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         //print("Date selected: \((button.titleLabel?.text)!)")
     }
     
+    // Goes to Main Screen - Dashboard
+    func goBackToDashboard() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
+
     // MARK: - ImagePickerController Delegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // Manages image taken with camera
     func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage, editingInfo: [String : AnyObject]?) {
         
         // Sets background image
         backgroundImage = image
         backgroundView.image = image
         
+        // Saves image to library
         if picker.sourceType == UIImagePickerControllerSourceType.Camera {
             UIImageWriteToSavedPhotosAlbum(image, nil, nil, nil)
         }
         
+        // Adds taken image to background
         self.addBackgroundImage()
+        
+        // Makes current view dissapear
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     

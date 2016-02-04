@@ -26,7 +26,7 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
         self.automaticallyAdjustsScrollViewInsets = false
     }
     
-    // Goes back one view ande adds image to background in Alarm Setup
+    // Goes back one view and adds image to background in Alarm Setup
     @IBAction func success(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
         

@@ -7,12 +7,15 @@
 //
 
 import UIKit
-
+import CoreData
 
 class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 
     // Outlet for Alarm Table View
     @IBOutlet weak var alarmsTableView: UITableView!
+    
+    // Contains all of saved alarms
+    var alarms = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,11 +26,40 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         // Clears Table View of divisor lines
         self.alarmsTableView.tableFooterView = UIView()
+        self.automaticallyAdjustsScrollViewInsets = false
+        
+        // Loads custom cell
+        let nib = UINib(nibName: "AlarmTableViewCell", bundle: nil)
+        alarmsTableView.registerNib(nib, forCellReuseIdentifier: "ALARM_CELL")
+        
+        // Fetches saved alarms from CoreData
+        self.fetchData()
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        // Reloads TableView every time view is going to appear
+        alarmsTableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // Gets Alarms Stored in CoreData
+    func fetchData() {
+        // Application Delegate
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        // Manages CoreData
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        
+        // Feteches saved alarms
+        let fetchRequest = NSFetchRequest(entityName: "Alarm")
+        do {
+            try alarms = context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not load data error: \(error), \(error.userInfo)")
+        }
     }
     
     // Goes back to the ViewController that presented it
@@ -83,34 +115,31 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        
+        if (alarms.count ==  0) {
+            return 0
+        }
+        
+        return alarms.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
-        let cell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL", forIndexPath: indexPath)
-        //cell.textLabel?.text = "Alarm 1"
+        let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL") as! AlarmTableViewCell
+        
+        let alarm = alarms[indexPath.row]
+        
+        cell.alarmTitle.text = alarm.valueForKey("title") as? String
+        cell.alarmTime.text = alarm.valueForKey("time") as? String
+        cell.meri.text = alarm.valueForKey("meri") as? String
+        cell.alarmDate.text = alarm.valueForKey("days") as? String
+
         return cell
     }
     
-    /*
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
-
-        // Configure the cell...
-
-        return cell
+    func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
+        return 100
     }
-    */
-
-    /*
-    // Override to support conditional editing of the table view.
-    override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        // Return false if you do not want the specified item to be editable.
-        return true
-    }
-    */
-
     /*
     // MARK: - Navigation
 
@@ -118,6 +147,8 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+
     }
     */
 
