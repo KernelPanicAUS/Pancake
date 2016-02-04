@@ -143,6 +143,7 @@
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
 		E7B013C51C6051B10084ECAA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = ../Alarm.swift; sourceTree = "<group>"; };
 		E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
@@ -796,6 +797,7 @@
 		11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
+				E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */,
 				11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */,
 			);
 			currentVersion = 11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */;

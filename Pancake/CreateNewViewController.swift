@@ -8,6 +8,7 @@
 
 import UIKit
 import MobileCoreServices
+import CoreData
 
 class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -17,9 +18,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // Outlet for the textfield
     @IBOutlet weak var alarmNameTextField: UITextField!
-   
-    // AlarmsTableViewController
-    weak var alarmTableViewController = AlarmsTableViewController()
     
     // Hold the correct alarm time
     var updatedTime = "Time"
@@ -42,7 +40,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // Saved alarms
     var savedAlarms = [Alarm]()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -187,12 +185,37 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         
         savedAlarms.append(newAlarm)
         
-        alarmTableViewController?.alarms = savedAlarms
+        self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+        //alarmsDelegate?.addAlarms(savedAlarms)
         // Used for debugging purposes only
-        print("\(alarmTableViewController?.alarms)")
-        print("Array: \(savedAlarms)\nCount: \(savedAlarms.count)")
-        print("Title: \(savedAlarms[0].title)\nTime: \(savedAlarms[0].time)\nMeri: \(savedAlarms[0].meri)\nDate: \(savedAlarms[0].days)")
+        //print("\(alarmTableViewController?.alarms)")
+        //print("Array: \(savedAlarms)\nCount: \(savedAlarms.count)")
+        //print("Title: \(savedAlarms[0].title)\nTime: \(savedAlarms[0].time)\nMeri: \(savedAlarms[0].meri)\nDate: \(savedAlarms[0].days)")
 
+    }
+    
+    func saveAlarm(title: String, time: String, days: String, meri: String) {
+        
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        
+        let managedContext = appDelegate.managedObjectContext
+        
+        let entity = NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
+        
+        let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+        
+        alarm.setValue(title, forKey: "title")
+        alarm.setValue(time, forKey: "time")
+        alarm.setValue(meri, forKey: "meri")
+        alarm.setValue(days, forKey: "days")
+        
+        do {
+            try managedContext.save()
+            print("Success saving date.")
+            
+        } catch let error as NSError {
+            print("Could not save \(error), \(error.userInfo)")
+        }
     }
     
     // Selects days of the week that alarm will be active

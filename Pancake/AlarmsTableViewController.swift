@@ -7,14 +7,14 @@
 //
 
 import UIKit
-
+import CoreData
 
 class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, DZNEmptyDataSetSource, DZNEmptyDataSetDelegate{
 
     // Outlet for Alarm Table View
     @IBOutlet weak var alarmsTableView: UITableView!
     
-    var alarms = [Alarm]()
+    var alarms = [NSManagedObject]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,13 +31,42 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: "AlarmTableViewCell", bundle: nil)
         alarmsTableView.registerNib(nib, forCellReuseIdentifier: "ALARM_CELL")
         
+        // Fetch from CoreData
+        self.fetchData()
+        
     }
 
+    override func viewWillAppear(animated: Bool) {
+        alarmsTableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+    func fetchData() {
+        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        var context:NSManagedObjectContext = appDel.managedObjectContext
+        
+//        let fetchRequest = NSFetchRequest(entityName:"Alarms")
+//        if let myLogs = context.executeFetchRequest(fetchRequest) {
+//            myTitles = myLogs.map { $0.myTitle } // get an array of the 'myTitle' attributes
+//            println(myTitles)
+//    }
+    
+        var fetchRequest = NSFetchRequest(entityName: "Alarm")
+        do {
+            try alarms = context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not load \(error), \(error.userInfo)")
+        }
+        
+        for alarm in alarms {
+            
+            print("1")
+            
+        }
+    }
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -103,10 +132,12 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         
         let cell: AlarmTableViewCell = tableView.dequeueReusableCellWithIdentifier("ALARM_CELL") as! AlarmTableViewCell
         
-        cell.alarmTitle.text = alarms[indexPath.row].title
-        cell.alarmTime.text = alarms[indexPath.row].time
-        cell.meri.text = alarms[indexPath.row].meri
-        cell.alarmDate.text = alarms[indexPath.row].days
+        let alarm = alarms[indexPath.row]
+        
+        cell.alarmTitle.text = alarm.valueForKey("title") as? String
+//        cell.alarmTime.text = alarms[indexPath.row].time
+//        cell.meri.text = alarms[indexPath.row].meri
+//        cell.alarmDate.text = alarms[indexPath.row].days
         
        /*
         cell.alarmTitle.text = "Slowly together"
