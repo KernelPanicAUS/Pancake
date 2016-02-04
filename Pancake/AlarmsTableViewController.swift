@@ -14,6 +14,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     // Outlet for Alarm Table View
     @IBOutlet weak var alarmsTableView: UITableView!
     
+    // Contains all of saved alarms
     var alarms = [NSManagedObject]()
     
     override func viewDidLoad() {
@@ -31,12 +32,13 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let nib = UINib(nibName: "AlarmTableViewCell", bundle: nil)
         alarmsTableView.registerNib(nib, forCellReuseIdentifier: "ALARM_CELL")
         
-        // Fetch from CoreData
+        // Fetches saved alarms from CoreData
         self.fetchData()
         
     }
 
     override func viewWillAppear(animated: Bool) {
+        // Reloads TableView every time view is going to appear
         alarmsTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
@@ -44,29 +46,22 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         // Dispose of any resources that can be recreated.
     }
     
+    // Gets Alarms Stored in CoreData
     func fetchData() {
-        var appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
-        var context:NSManagedObjectContext = appDel.managedObjectContext
+        // Application Delegate
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        // Manages CoreData
+        let context:NSManagedObjectContext = appDel.managedObjectContext
         
-//        let fetchRequest = NSFetchRequest(entityName:"Alarms")
-//        if let myLogs = context.executeFetchRequest(fetchRequest) {
-//            myTitles = myLogs.map { $0.myTitle } // get an array of the 'myTitle' attributes
-//            println(myTitles)
-//    }
-    
-        var fetchRequest = NSFetchRequest(entityName: "Alarm")
+        // Feteches saved alarms
+        let fetchRequest = NSFetchRequest(entityName: "Alarm")
         do {
             try alarms = context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
         } catch let error as NSError {
-            print("Could not load \(error), \(error.userInfo)")
-        }
-        
-        for alarm in alarms {
-            
-            print("1")
-            
+            print("Could not load data error: \(error), \(error.userInfo)")
         }
     }
+    
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popToRootViewControllerAnimated(true)
@@ -125,7 +120,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
             return 0
         }
         
-        return 1
+        return alarms.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -135,16 +130,10 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let alarm = alarms[indexPath.row]
         
         cell.alarmTitle.text = alarm.valueForKey("title") as? String
-//        cell.alarmTime.text = alarms[indexPath.row].time
-//        cell.meri.text = alarms[indexPath.row].meri
-//        cell.alarmDate.text = alarms[indexPath.row].days
-        
-       /*
-        cell.alarmTitle.text = "Slowly together"
-        cell.alarmTime.text = "05:30"
-        cell.meri.text = "am"
-        cell.alarmDate.text = "Fri, Sat"*/
-        //cell.textLabel?.text = "Alarm 1"
+        cell.alarmTime.text = alarm.valueForKey("time") as? String
+        cell.meri.text = alarm.valueForKey("meri") as? String
+        cell.alarmDate.text = alarm.valueForKey("days") as? String
+
         return cell
     }
     
