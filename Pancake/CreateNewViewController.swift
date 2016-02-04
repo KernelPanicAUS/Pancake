@@ -191,8 +191,12 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         let days = "Fri, Sat"
         let meri = meridiemDisplay.text
         
-        // Saves new alarm
-        self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+        // Checks if alarm info is valid
+        if self.validateAlarm() {
+            // Saves new alarm
+            self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+        }
+        
     }
     
     // Manages Alarm save to CoreData
@@ -232,6 +236,20 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             // Displays error message in console
             print("Could not save \(error), \(error.userInfo)")
         }
+    }
+    
+    // Checks if user enter all info needed to save alarm 
+    func validateAlarm() -> Bool{
+        if ((updatedTime == "Time") || (alarmNameTextField.text == nil)){
+            let incompleteInfoAlert = JSSAlertView()
+            incompleteInfoAlert.show(self,
+                title: "Oops...",
+                text: "You are missing important alarm information",
+                buttonText: "OK",
+                color: UIColor.whiteColor())
+            return false
+        }
+        return true
     }
     
     // Selects days of the week that alarm will be active
