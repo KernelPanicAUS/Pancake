@@ -146,6 +146,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
             alarms.removeAtIndex(indexPath.row)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
         }
+        self.alarmsTableView.reloadEmptyDataSet()
     }    /*
     // MARK: - Navigation
 

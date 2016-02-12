@@ -56,6 +56,7 @@
 		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
+		E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E71AED1F1C6E20430028D3AE /* alarm.mp3 */; };
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
@@ -141,6 +142,7 @@
 		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E71AED1F1C6E20430028D3AE /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
@@ -232,6 +234,7 @@
 		11A63C721C317E8F0010CCCB /* Pancake */ = {
 			isa = PBXGroup;
 			children = (
+				E71AED1F1C6E20430028D3AE /* alarm.mp3 */,
 				11F167201C32DB6F0033D1E3 /* Spring */,
 				11A63C731C317E8F0010CCCB /* AppDelegate.swift */,
 				E765A5731C62F700000AF222 /* Custom Classes */,
@@ -473,6 +476,7 @@
 				11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */,
 				11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */,
 				11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */,
+				E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */,
 				11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
