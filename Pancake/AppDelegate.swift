@@ -20,7 +20,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
     var sound = NSURL()
     var audioPlayer = AVAudioPlayer()
-
+    let audioSession = AVAudioSession()
+    var firstMusic = true
     var window: UIWindow?
 
 
@@ -74,9 +75,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
-        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+        if firstMusic == true {
+            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
+            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+        }
+       firstMusic = false
         
+//        dispatch_async(dispatch_get_main_queue()) {
+//            do {
+//                self.playAlarm()
+//            } catch let error as NSError {
+//                print(error)
+//            }
+//        }
+
         print("We are here.")
     }
 
@@ -143,6 +155,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Alarm
     func playAlarm() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
         sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
@@ -150,6 +175,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("There was an error loading the song.")
         }
         audioPlayer.play()
+        print("Inside playAlarm()")
     }
     
     // MARK: - Custom Alert
