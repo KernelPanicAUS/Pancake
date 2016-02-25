@@ -26,6 +26,12 @@ class DashboardViewController: UIViewController {
         // Update Time Periodically = _ Stands for timer :P
         let _ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
         
+        // Permission for notification
+        let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        // Schedules notification
+        self.scheduleNotification()
 
         // Do any additional setup after loading the view.
     }
@@ -66,6 +72,30 @@ class DashboardViewController: UIViewController {
         
         // For debugging purposes onlye
         //print(timeDisplay.text)
+        
+        
+    }
+    
+    // Manages notifications
+    func scheduleNotification() {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings?.types == .None {
+            let settingsInfoAlert = JSSAlertView()
+            settingsInfoAlert.show(self,
+                title: "Oops...",
+                text: "We don't have permission to wake you up",
+                buttonText: "OK",
+                color: UIColor.whiteColor())
+        }
+        
+        let alarmNotification = UILocalNotification()
+        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
+        alarmNotification.alertBody = "Wake up"
+        alarmNotification.alertAction = "OK"
+        alarmNotification.soundName = UILocalNotificationDefaultSoundName
+        alarmNotification.userInfo = ["CustomField": "Woot"]
+        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
         
         
     }
