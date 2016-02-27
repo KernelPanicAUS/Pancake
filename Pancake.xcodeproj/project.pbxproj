@@ -8,11 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		111A5D401C3C2C640080522C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A5D3F1C3C2C640080522C /* DashboardViewController.swift */; };
-		111A5D421C3C30F40080522C /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */; };
-		111A5D431C3C30F40080522C /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */; };
-		111A5D441C3C30F40080522C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */; };
-		111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */; };
-		111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */; };
 		11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C731C317E8F0010CCCB /* AppDelegate.swift */; };
 		11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C751C317E8F0010CCCB /* ViewController.swift */; };
 		11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C771C317E8F0010CCCB /* Main.storyboard */; };
@@ -83,11 +78,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
-		111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
-		111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
-		111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
-		111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Thin.otf"; sourceTree = "<group>"; };
 		111A5D3F1C3C2C640080522C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		11A63C701C317E8F0010CCCB /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A63C731C317E8F0010CCCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,11 +172,6 @@
 		111A5D391C3C02A30080522C /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
-				111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */,
-				111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */,
-				111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */,
-				111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */,
-				111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */,
 			);
 			name = Fonts;
 			path = ..;
@@ -463,11 +448,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				111A5D421C3C30F40080522C /* ProximaNova-Bold.otf in Resources */,
-				111A5D431C3C30F40080522C /* ProximaNova-Light.otf in Resources */,
-				111A5D441C3C30F40080522C /* ProximaNova-Regular.otf in Resources */,
-				111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */,
-				111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */,
 				E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */,
 				11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */,
 				11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */,
