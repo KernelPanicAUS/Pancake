@@ -409,7 +409,10 @@
 				TargetAttributes = {
 					11A63C6F1C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
+HEAD
 						DevelopmentTeam = 9689ADQMZP;
+=======
+ origin/master
 					};
 					11A63C861C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
