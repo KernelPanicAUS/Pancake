@@ -115,6 +115,7 @@ class DashboardViewController: UIViewController {
     }
     // Function relative to Spotify checking
     
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

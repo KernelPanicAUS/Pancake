@@ -75,20 +75,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
+        
+        // Checks if app is sent to background for the first time
         if firstMusic == true {
             let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
             NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
         }
        firstMusic = false
-        
-//        dispatch_async(dispatch_get_main_queue()) {
-//            do {
-//                self.playAlarm()
-//            } catch let error as NSError {
-//                print(error)
-//            }
-//        }
-
         print("We are here.")
     }
 
@@ -105,6 +98,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
     }
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        print("received wake up notification")
+    }
 
     // MARK: - Core Data stack
 
@@ -113,7 +110,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let urls = NSFileManager.defaultManager().URLsForDirectory(.DocumentDirectory, inDomains: .UserDomainMask)
         return urls[urls.count-1]
     }()
-
+    
     lazy var managedObjectModel: NSManagedObjectModel = {
         // The managed object model for the application. This property is not optional. It is a fatal error for the application not to be able to find and load its model.
         let modelURL = NSBundle.mainBundle().URLForResource("Pancake", withExtension: "momd")!
@@ -155,7 +152,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     // MARK: - Alarm
     func playAlarm() {
+        
         do {
+            // Keeps audio playing in the background
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             print("AVAudioSession Category Playback OK")
             do {
@@ -168,6 +167,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print(error.localizedDescription)
         }
         
+        // Plays sound
         sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
         do {
             audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
