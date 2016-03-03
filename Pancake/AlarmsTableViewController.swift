@@ -142,21 +142,28 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
         if editingStyle == UITableViewCellEditingStyle.Delete {
             
+            // Manages item to be deleted
             let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
             let context = appDelegate.managedObjectContext
             
+            // Deletes selected item from CoreData
             context.deleteObject(alarms[indexPath.row])
             
+            // Removes item from alarms array
             alarms.removeAtIndex(indexPath.row)
+            
+            // Saves current CoreData context
             do {
                 try context.save()
             } catch {
+                // Needs better error handling.
                 print("Error saving.")
             }
             
-            
+            // Deletes item from TableView (Visually)
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
             
         }

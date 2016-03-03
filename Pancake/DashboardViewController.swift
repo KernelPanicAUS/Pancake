@@ -11,8 +11,8 @@ import AVFoundation
 
 class DashboardViewController: UIViewController {
 
+    // Alarm outlets
     @IBOutlet weak var imageTimeDisplay: UIImageView!
-
     @IBOutlet weak var userDailyMessage: UILabel!
     @IBOutlet weak var timeDisplay: UILabel!
     @IBOutlet weak var dateDisplay: UILabel!
@@ -40,11 +40,11 @@ class DashboardViewController: UIViewController {
         // Schedules notification
         self.scheduleNotification()
 
+        // Lets us play background music when screen is locked
         let sleepPrevent = MMPDeepSleepPreventer()
-        
         sleepPrevent.startPreventSleep()
         
-        // Do any additional setup after loading the view.
+       
         
         // Checks if app is sent to background for the first time
 //        if firstMusic == true {
@@ -111,6 +111,7 @@ class DashboardViewController: UIViewController {
                 color: UIColor.whiteColor())
         }
         
+        // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
         alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
         alarmNotification.alertBody = "Wake up"
@@ -133,9 +134,11 @@ class DashboardViewController: UIViewController {
                 try AVAudioSession.sharedInstance().setActive(true)
                 print("AVAudioSession is Active")
             } catch let error as NSError {
+                // Needs better error handling
                 print(error.localizedDescription)
             }
         } catch let error as NSError {
+            // Needs better error handling
             print(error.localizedDescription)
         }
         

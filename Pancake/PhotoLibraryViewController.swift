@@ -11,10 +11,13 @@ import Photos
 
 class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    // Results from library
     var fetchResults = PHFetchResult()
     
+    // Reference to Alarm Creation View
     weak var firstViewController = CreateNewViewController()
     
+    // User selected image - Alarm Background
     var selectedImage = UIImage()
     
     override func viewDidLoad() {
@@ -36,8 +39,10 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
     }
 
     override func viewWillAppear(animated: Bool) {
+        // Fetch images in library every time view will become active
         self.fetchImages()
     }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -88,7 +93,8 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
             contentMode: PHImageContentMode.AspectFill,
             options: PHImageRequestOptions(),
             resultHandler: {(result, info) -> Void in
-            
+                
+                // Displays library image in cell
                 cellImageView.image = result
                 
             })
