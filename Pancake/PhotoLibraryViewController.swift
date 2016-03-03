@@ -114,17 +114,26 @@ class PhotoLibraryViewController: UIViewController, UICollectionViewDelegate, UI
                 
         })
 
-        // Check/Uncheck selected image.
+        // Checks selected image
         let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(500)
         let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(700)
+
+        // Make background darker and show checkmark
+        cellImageView?.alpha = 0.5
+        checkmark?.hidden = false
         
-        if (checkmark?.hidden == true) {
-            cellImageView?.alpha = 0.5
-            checkmark?.hidden = false
-        } else {
-            cellImageView?.alpha = 1
-            checkmark?.hidden = true
-        }
+    }
+    
+    // Used to toggle images
+    func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
+        // Unchecks old image
+        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(500)
+        let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(700)
+
+        // Make background original and hide checkmark
+        cellImageView?.alpha = 1
+        checkmark?.hidden = true
+
     }
     
     // Sets the size of the cells
