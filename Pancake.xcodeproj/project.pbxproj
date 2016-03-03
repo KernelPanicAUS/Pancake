@@ -60,6 +60,9 @@
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
+		E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */; };
+		E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = E795119C1C88673D00ECA35B /* MMPSilence.wav */; };
+		E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E795119E1C88679C00ECA35B /* AudioToolbox.framework */; };
 		E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013C51C6051B10084ECAA /* Alarm.swift */; };
 		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
 		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
@@ -147,6 +150,10 @@
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
+		E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPDeepSleepPreventer.h; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPDeepSleepPreventer.h"; sourceTree = "<group>"; };
+		E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPDeepSleepPreventer.m; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPDeepSleepPreventer.m"; sourceTree = "<group>"; };
+		E795119C1C88673D00ECA35B /* MMPSilence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MMPSilence.wav; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPSilence.wav"; sourceTree = "<group>"; };
+		E795119E1C88679C00ECA35B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E7B013C51C6051B10084ECAA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = ../Alarm.swift; sourceTree = "<group>"; };
 		E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
 		E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
@@ -159,6 +166,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */,
 				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
 				11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */,
 			);
@@ -241,6 +249,8 @@
 				111A5D411C3C2C6D0080522C /* ViewControllers */,
 				E765A5721C62F6A5000AF222 /* User Interface */,
 				E72D5F261C545F2D00F97FDB /* Tools */,
+				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
+				E795119C1C88673D00ECA35B /* MMPSilence.wav */,
 				111A5D391C3C02A30080522C /* Fonts */,
 				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
 				11A63C821C317E8F0010CCCB /* Info.plist */,
@@ -271,6 +281,7 @@
 		11A63CA41C317EA00010CCCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E795119E1C88679C00ECA35B /* AudioToolbox.framework */,
 				11A63CA51C317F0C0010CCCB /* Spotify.framework */,
 				11A63CA71C317F280010CCCB /* AVFoundation.framework */,
 			);
@@ -326,7 +337,7 @@
 			isa = PBXGroup;
 			children = (
 				E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */,
-				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
+				E79511981C88670B00ECA35B /* DeepSleep */,
 			);
 			name = Tools;
 			sourceTree = "<group>";
@@ -348,6 +359,15 @@
 				E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */,
 			);
 			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		E79511981C88670B00ECA35B /* DeepSleep */ = {
+			isa = PBXGroup;
+			children = (
+				E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */,
+				E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */,
+			);
+			name = DeepSleep;
 			sourceTree = "<group>";
 		};
 		E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */ = {
@@ -478,6 +498,7 @@
 				11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */,
 				E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */,
 				11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */,
+				E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -516,6 +537,7 @@
 				11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */,
 				11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */,
 				11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */,
+				E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */,
 				11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */,
 				E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */,
 				11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */,

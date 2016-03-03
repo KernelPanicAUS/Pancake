@@ -77,12 +77,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         
         // Checks if app is sent to background for the first time
-        if firstMusic == true {
-            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
-            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-        }
-       firstMusic = false
-        print("We are here.")
+//        if firstMusic == true {
+//            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
+//            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+//        }
+//       firstMusic = false
+//        print("We are here.")
     }
 
     func applicationWillEnterForeground(application: UIApplication) {

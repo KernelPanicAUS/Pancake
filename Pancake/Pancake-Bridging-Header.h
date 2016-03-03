@@ -10,5 +10,6 @@
 
 #import "UIScrollView+EmptyDataSet.h"
 
+#import "MMPDeepSleepPreventer.h"
 
 #endif

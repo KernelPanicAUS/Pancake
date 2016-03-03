@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class DashboardViewController: UIViewController {
 
@@ -16,6 +17,12 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var timeDisplay: UILabel!
     @IBOutlet weak var dateDisplay: UILabel!
     @IBOutlet weak var meridiemDisplay: UILabel!
+    
+    // Play music
+    var sound = NSURL()
+    var audioPlayer = AVAudioPlayer()
+    let audioSession = AVAudioSession()
+    var firstMusic = true
     
     
     override func viewDidLoad() {
@@ -33,7 +40,22 @@ class DashboardViewController: UIViewController {
         // Schedules notification
         self.scheduleNotification()
 
+        let sleepPrevent = MMPDeepSleepPreventer()
+        
+        sleepPrevent.startPreventSleep()
+        
         // Do any additional setup after loading the view.
+        
+        // Checks if app is sent to background for the first time
+//        if firstMusic == true {
+//            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 15), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
+//            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
+//        }
+//        firstMusic = false
+//        print("We are here.")
+        
+        
+
     }
 
     
@@ -99,6 +121,37 @@ class DashboardViewController: UIViewController {
         
         
     }
+    
+    // MARK: - Alarm
+    func playAlarm() {
+        
+        do {
+            // Keeps audio playing in the background
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        
+        // Plays sound
+        sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
+        do {
+            // Removed deprecated use of AVAudioSessionDelegate protocol
+            
+            audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
+        } catch {
+            print("There was an error loading the song.")
+        }
+        audioPlayer.play()
+        print("Inside playAlarm()")
+    }
+
     
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()

@@ -143,8 +143,22 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     
     func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if editingStyle == UITableViewCellEditingStyle.Delete {
+            
+            let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+            let context = appDelegate.managedObjectContext
+            
+            context.deleteObject(alarms[indexPath.row])
+            
             alarms.removeAtIndex(indexPath.row)
+            do {
+                try context.save()
+            } catch {
+                print("Error saving.")
+            }
+            
+            
             tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: UITableViewRowAnimation.Fade)
+            
         }
         self.alarmsTableView.reloadEmptyDataSet()
     }    /*
