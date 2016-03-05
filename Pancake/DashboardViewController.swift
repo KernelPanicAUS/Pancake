@@ -8,8 +8,9 @@
 
 import UIKit
 import AVFoundation
+import MediaPlayer
 
-class DashboardViewController: UIViewController {
+class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
     // Alarm outlets
     @IBOutlet weak var imageTimeDisplay: UIImageView!
@@ -24,6 +25,12 @@ class DashboardViewController: UIViewController {
     let audioSession = AVAudioSession()
     var firstMusic = true
     
+    // Spotify
+    var player = SPTAudioStreamingController?()
+    let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
+
+    let settingsInfoAlert = JSSAlertView()
+    weak var firstViewController = LoginViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,7 +41,7 @@ class DashboardViewController: UIViewController {
         let _ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
         
         // Permission for notification
-        let notificationSettings = UIUserNotificationSettings(forTypes: .Alert, categories: nil)
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         // Schedules notification
@@ -43,8 +50,6 @@ class DashboardViewController: UIViewController {
         // Lets us play background music when screen is locked
         let sleepPrevent = MMPDeepSleepPreventer()
         sleepPrevent.startPreventSleep()
-        
-       
         
         // Checks if app is sent to background for the first time
 //        if firstMusic == true {
@@ -103,12 +108,17 @@ class DashboardViewController: UIViewController {
         let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
         
         if settings?.types == .None {
-            let settingsInfoAlert = JSSAlertView()
-            settingsInfoAlert.show(self,
-                title: "Oops...",
-                text: "We don't have permission to wake you up",
-                buttonText: "OK",
-                color: UIColor.whiteColor())
+//            let settingsInfoAlert = JSSAlertView()
+//            settingsInfoAlert.show(self,
+//                title: "Oops...",
+//                text: "We don't have permission to wake you up",
+//                buttonText: "OK",
+//                color: UIColor.whiteColor())
+//            return
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
         }
         
         // Sends Alarm notification - You need to wake up now
@@ -116,7 +126,6 @@ class DashboardViewController: UIViewController {
         alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
-        alarmNotification.soundName = UILocalNotificationDefaultSoundName
         alarmNotification.userInfo = ["CustomField": "Woot"]
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
         
@@ -126,33 +135,34 @@ class DashboardViewController: UIViewController {
     // MARK: - Alarm
     func playAlarm() {
         
-        do {
-            // Keeps audio playing in the background
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            print("AVAudioSession Category Playback OK")
-            do {
-                try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
-            } catch let error as NSError {
-                // Needs better error handling
-                print(error.localizedDescription)
-            }
-        } catch let error as NSError {
-            // Needs better error handling
-            print(error.localizedDescription)
-        }
-        
-        // Plays sound
-        sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
-        do {
-            // Removed deprecated use of AVAudioSessionDelegate protocol
-            
-            audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
-        } catch {
-            print("There was an error loading the song.")
-        }
-        audioPlayer.play()
-        print("Inside playAlarm()")
+//        do {
+//            // Keeps audio playing in the background
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+//            print("AVAudioSession Category Playback OK")
+//            do {
+//                try AVAudioSession.sharedInstance().setActive(true)
+//                print("AVAudioSession is Active")
+//            } catch let error as NSError {
+//                // Needs better error handling
+//                print(error.localizedDescription)
+//            }
+//        } catch let error as NSError {
+//            // Needs better error handling
+//            print(error.localizedDescription)
+//        }
+//        
+//        // Plays sound
+//        sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
+//        do {
+//            // Removed deprecated use of AVAudioSessionDelegate protocol
+//            
+//            audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
+//        } catch {
+//            print("There was an error loading the song.")
+//        }
+//        audioPlayer.play()
+//
+
     }
 
     
@@ -161,8 +171,20 @@ class DashboardViewController: UIViewController {
         
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
             // print session
-            print(sessionObj)
+            //print(sessionObj)
+            
             print("Already Logged in ")
+            // print session
+            let sessionObjectData = sessionObj as! NSData
+            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
+            print(sessionObj)
+            
+            if !session.isValid(){
+                print("Session invalid.")
+            } else {
+                self.playUsingSession(session)
+            }
+
         } else {
             print("New User")
             self.performSegueWithIdentifier("newUser", sender: nil)
@@ -170,7 +192,104 @@ class DashboardViewController: UIViewController {
         
     }
     // Function relative to Spotify checking
+    // Spotify
+    func playUsingSession(session: SPTSession){
+        if player == nil {
+            player = SPTAudioStreamingController(clientId: kClientID)
+            player?.playbackDelegate = self
+        }
+        
+        player?.loginWithSession(session, callback: {(error: NSError!) -> Void in
+            
+            if error != nil {
+                print("Session Login error")
+            }
+            
+            self.useLoggedInPermissions()
+        })
+    }
     
+    // Manages songs to be played
+    func useLoggedInPermissions() {
+        // Custom track
+        let spotifyURI = "spotify:track:31nhn90QfKRPb1SzAVgJtz"
+        // Plays selected song
+        player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
+        
+    }
+
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
+        print("PlaybackStatus")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didSeekToOffset offset: NSTimeInterval) {
+        print("SeekToOffset")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeVolume volume: SPTVolume) {
+        print("ChangedVolume")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeShuffleStatus isShuffled: Bool) {
+        print("ChangedShuffleStatus")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeRepeatStatus isRepeated: Bool) {
+        print("ChangedRepeatStatus")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeToTrack trackMetadata: [NSObject : AnyObject]!) {
+        print("ChangedToTrack")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didFailToPlayTrack trackUri: NSURL!) {
+        print("FailToPlayTrack")
+    }
+    
+    func audioStreamingDidSkipToNextTrack(audioStreaming: SPTAudioStreamingController!) {
+        print("NextTrack")
+    }
+    
+    func audioStreamingDidSkipToPreviousTrack(audioStreaming: SPTAudioStreamingController!) {
+        print("PreviousTrack")
+    }
+    
+    func audioStreamingDidBecomeActivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
+        print("ActivePlaybackDevice")
+    }
+    
+    func audioStreamingDidBecomeInactivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
+        print("InactivePlaybackDevice")
+    }
+    
+    func audioStreamingDidLosePermissionForPlayback(audioStreaming: SPTAudioStreamingController!) {
+        print("DidLosePermissionForPlayback")
+    }
+    
+    func audioStreamingDidPopQueue(audioStreaming: SPTAudioStreamingController!) {
+        print("DidPopQueue")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: NSURL!) {
+        // Track Info
+        let trackName = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackName] as! String
+        let trackAlbum = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataAlbumName] as! String
+        let trackArtist = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataArtistName] as! String
+        let trackDuration = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackDuration]
+        
+        // Music Info Center
+        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyArtist : trackArtist, MPMediaItemPropertyAlbumTitle : trackAlbum, MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyPlaybackDuration: trackDuration!, MPNowPlayingInfoPropertyPlaybackRate : 1]
+        
+        print(trackName)
+        print(trackAlbum)
+        print(trackArtist)
+        print("StartedPlayingTrack")
+    }
+    
+    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: NSURL!) {
+        print("StoppedPlayingTrack")
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

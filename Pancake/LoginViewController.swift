@@ -7,13 +7,15 @@
 //
 
 import UIKit
+import MediaPlayer
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController{
     
-    let kClientId = "eb68da6b0f3c4589a25e1c95bd3699f3"
-    let kCallbackUrl = "pancakeapp://callback"
+    let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
+    let kCallbackURL = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
+    
 
     @IBOutlet weak var loginButton: DesignableButton!
     @IBOutlet var loginViewCrontoller: UIView!
@@ -29,36 +31,40 @@ class LoginViewController: UIViewController {
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
             // print session
             print(sessionObj)
-            // Dismiss the login view
-            dismiss();
         }
+        
     }
     
     func dismiss() {
         print("Should dismiss loginViewController");
         self.navigationController?.popViewControllerAnimated(true);
+//        let dashBoardViewController = self.navigationController?.viewControllers[0] as! DashboardViewController
+//        dashBoardViewController.firstViewController = self
+//        dashBoardViewController.session = thisSession
+        
     }
-
+    
     @IBAction func loginWithSpotify(sender: AnyObject) {
         let auth = SPTAuth.defaultInstance()
         
-        auth.clientID = kClientId
-        auth.redirectURL = NSURL(string:kCallbackUrl)
-//        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
-//        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
+        auth.clientID = kClientID
+        auth.redirectURL = NSURL(string:kCallbackURL)
+        //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+        //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         auth.requestedScopes = [SPTAuthStreamingScope]
         
         let loginURL = auth.loginURL
         print(loginURL)
         
         UIApplication.sharedApplication().openURL(loginURL)
+        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation

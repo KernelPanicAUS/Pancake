@@ -9,7 +9,7 @@
 
 import UIKit
 import CoreData
-import AVFoundation
+import AVFoundation 
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -100,7 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
-        print("received wake up notification")
+        print("Did receive wake up notification")
     }
 
     // MARK: - Core Data stack
