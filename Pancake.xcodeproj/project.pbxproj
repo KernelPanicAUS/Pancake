@@ -67,6 +67,7 @@
 		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
 		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
 		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
+		E7F3964C1C8A87530072F2AC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -160,6 +161,7 @@
 		E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E7F3964C1C8A87530072F2AC /* MediaPlayer.framework in Frameworks */,
 				E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */,
 				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
 				11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */,
@@ -279,6 +282,7 @@
 		11A63CA41C317EA00010CCCB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */,
 				E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */,
 				E795119E1C88679C00ECA35B /* AudioToolbox.framework */,
 				11A63CA51C317F0C0010CCCB /* Spotify.framework */,
@@ -717,7 +721,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
@@ -738,7 +742,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;

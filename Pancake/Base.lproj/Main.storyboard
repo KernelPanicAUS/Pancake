@@ -258,9 +258,6 @@
                                         <state key="normal" image="Btn-Request-off">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
-                                        <connections>
-                                            <segue destination="GG7-hl-7dy" kind="show" id="GO4-1T-4xc"/>
-                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-ZL-CGg">
                                         <rect key="frame" x="15" y="16" width="21" height="18"/>

@@ -2,6 +2,8 @@
 //  DashboardViewController.swift
 //  Pancake
 //
+//  Modified by Angel Vázquez
+//
 //  Created by Rudy Rosciglione on 05/01/16.
 //  Copyright © 2016 Rudy Rosciglione. All rights reserved.
 //
@@ -19,18 +21,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     @IBOutlet weak var dateDisplay: UILabel!
     @IBOutlet weak var meridiemDisplay: UILabel!
     
-    // Play music
-    var sound = NSURL()
-    var audioPlayer = AVAudioPlayer()
-    let audioSession = AVAudioSession()
-    var firstMusic = true
-    
     // Spotify
     var player = SPTAudioStreamingController?()
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
-
-    let settingsInfoAlert = JSSAlertView()
-    weak var firstViewController = LoginViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,19 +43,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Lets us play background music when screen is locked
         let sleepPrevent = MMPDeepSleepPreventer()
         sleepPrevent.startPreventSleep()
-        
-        // Checks if app is sent to background for the first time
-//        if firstMusic == true {
-//            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 15), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
-//            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-//        }
-//        firstMusic = false
-//        print("We are here.")
-        
-        
-
     }
-
     
     // Updates Time and all its elements
     func timeUpdate(){
@@ -105,71 +86,20 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     // Manages notifications
     func scheduleNotification() {
-        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
-        
-        if settings?.types == .None {
-//            let settingsInfoAlert = JSSAlertView()
-//            settingsInfoAlert.show(self,
-//                title: "Oops...",
-//                text: "We don't have permission to wake you up",
-//                buttonText: "OK",
-//                color: UIColor.whiteColor())
-//            return
-            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
-            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
-            presentViewController(ac, animated: true, completion: nil)
-            return
-        }
-        
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 20)
+        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
-        
-        
     }
-    
-    // MARK: - Alarm
-    func playAlarm() {
-        
-//        do {
-//            // Keeps audio playing in the background
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-//            print("AVAudioSession Category Playback OK")
-//            do {
-//                try AVAudioSession.sharedInstance().setActive(true)
-//                print("AVAudioSession is Active")
-//            } catch let error as NSError {
-//                // Needs better error handling
-//                print(error.localizedDescription)
-//            }
-//        } catch let error as NSError {
-//            // Needs better error handling
-//            print(error.localizedDescription)
-//        }
-//        
-//        // Plays sound
-//        sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
-//        do {
-//            // Removed deprecated use of AVAudioSessionDelegate protocol
-//            
-//            audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
-//        } catch {
-//            print("There was an error loading the song.")
-//        }
-//        audioPlayer.play()
-//
-
-    }
-
     
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
+        // Session available
+        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             // print session
             //print(sessionObj)
             
@@ -196,7 +126,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func playUsingSession(session: SPTSession){
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
-            player?.playbackDelegate = self
+            player!.playbackDelegate = self
+            player!.diskCache = SPTDiskCache(capacity: 1024 * 1024 * 64)
         }
         
         player?.loginWithSession(session, callback: {(error: NSError!) -> Void in
@@ -205,16 +136,46 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 print("Session Login error")
             }
             
-            self.useLoggedInPermissions()
+            let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 15), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
+            NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
+            
         })
     }
     
     // Manages songs to be played
     func useLoggedInPermissions() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
+            print("AVAudioSession Category Playback OK")
+            do {
+                try AVAudioSession.sharedInstance().setActive(true)
+                print("AVAudioSession is Active")
+            } catch let error as NSError {
+                print(error.localizedDescription)
+            }
+        } catch let error as NSError {
+            print(error.localizedDescription)
+        }
+        // Alert used to stop Spotify Music
+        let stopMusicAlert = JSSAlertView()
+        
         // Custom track
         let spotifyURI = "spotify:track:31nhn90QfKRPb1SzAVgJtz"
         // Plays selected song
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
+        
+        stopMusicAlert.show(self,
+            title: "Wake up",
+            text: "Common, you can do it!",
+            buttonText: "Im awake",
+            cancelButtonText: "Snooze",
+            color: UIColor.whiteColor())
+        
+        stopMusicAlert.addAction({
+            print("Stop")
+            self.player!.stop(nil)
+        })
+
         
     }
 
@@ -287,16 +248,16 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: NSURL!) {
+        // Music Info Center
+        // Clears all data in NowPlayingInfoCenter
+        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nil
         print("StoppedPlayingTrack")
     }
 
-    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-
     
     // MARK: - Navigation
     /*

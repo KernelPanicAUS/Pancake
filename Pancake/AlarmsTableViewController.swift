@@ -2,6 +2,8 @@
 //  AlarmsTableViewController.swift
 //  Pancake
 //
+//  Modified by Angel Vázquez
+//
 //  Created by Rudy Rosciglione on 12/01/16.
 //  Copyright © 2016 Rudy Rosciglione. All rights reserved.
 //

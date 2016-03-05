@@ -2,6 +2,8 @@
 //  AppDelegate.swift
 //  Pancake
 //
+//  Modified by Angel Vázquez
+//
 //  Created by Rudy Rosciglione on 28/12/15.
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
@@ -66,23 +68,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
         // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
-//        let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 20), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
-//        NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-//
-//        print("We are here.")
     }
 
     func applicationDidEnterBackground(application: UIApplication) {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-        
-        // Checks if app is sent to background for the first time
-//        if firstMusic == true {
-//            let timer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 5), interval: 60, target: self, selector: "playAlarm", userInfo: nil, repeats: false)
-//            NSRunLoop.currentRunLoop().addTimer(timer, forMode: NSDefaultRunLoopMode)
-//        }
-//       firstMusic = false
-//        print("We are here.")
     }
 
     func applicationWillEnterForeground(application: UIApplication) {
@@ -149,34 +139,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         managedObjectContext.persistentStoreCoordinator = coordinator
         return managedObjectContext
     }()
-    
-    // MARK: - Alarm
-    func playAlarm() {
-        
-        do {
-            // Keeps audio playing in the background
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
-            print("AVAudioSession Category Playback OK")
-            do {
-                try AVAudioSession.sharedInstance().setActive(true)
-                print("AVAudioSession is Active")
-            } catch let error as NSError {
-                print(error.localizedDescription)
-            }
-        } catch let error as NSError {
-            print(error.localizedDescription)
-        }
-        
-        // Plays sound
-        sound = NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("alarm", ofType: "mp3")!)
-        do {
-            audioPlayer = try AVAudioPlayer(contentsOfURL: self.sound)
-        } catch {
-            print("There was an error loading the song.")
-        }
-        audioPlayer.play()
-        print("Inside playAlarm()")
-    }
     
     // MARK: - Custom Alert
     

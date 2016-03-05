@@ -2,6 +2,8 @@
 //  LoginViewController.swift
 //  Pancake
 //
+//  Modified by Angel Vázquez
+//
 //  Created by Rudy Rosciglione on 28/12/15.
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
@@ -15,7 +17,8 @@ class LoginViewController: UIViewController{
     let kCallbackURL = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
-    
+    let auth = SPTAuth.defaultInstance()
+
 
     @IBOutlet weak var loginButton: DesignableButton!
     @IBOutlet var loginViewCrontoller: UIView!
@@ -38,25 +41,20 @@ class LoginViewController: UIViewController{
     func dismiss() {
         print("Should dismiss loginViewController");
         self.navigationController?.popViewControllerAnimated(true);
-//        let dashBoardViewController = self.navigationController?.viewControllers[0] as! DashboardViewController
-//        dashBoardViewController.firstViewController = self
-//        dashBoardViewController.session = thisSession
-        
     }
     
     @IBAction func loginWithSpotify(sender: AnyObject) {
-        let auth = SPTAuth.defaultInstance()
-        
         auth.clientID = kClientID
+        auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = NSURL(string:kCallbackURL)
         //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
         //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
-        auth.requestedScopes = [SPTAuthStreamingScope]
         
-        let loginURL = auth.loginURL
+        let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token"
+        )
         print(loginURL)
         
-        UIApplication.sharedApplication().openURL(loginURL)
+        UIApplication.sharedApplication().openURL(loginURL!)
         
     }
     
