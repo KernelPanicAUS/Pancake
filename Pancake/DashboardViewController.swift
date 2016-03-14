@@ -44,6 +44,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Lets us play background music when screen is locked
         let sleepPrevent = MMPDeepSleepPreventer()
         sleepPrevent.startPreventSleep()
+        
+        //EZSwipe
+        //presentViewController(EZSwipeController(), animated: true, completion: nil)
     }
     
     // Updates Time and all its elements

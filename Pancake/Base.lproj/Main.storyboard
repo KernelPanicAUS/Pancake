@@ -181,10 +181,10 @@
             </objects>
             <point key="canvasLocation" x="1219" y="-280"/>
         </scene>
-        <!--Dashboard View Controller-->
+        <!--DashboardVC-->
         <scene sceneID="MUo-BF-M2H">
             <objects>
-                <viewController id="iUf-Wf-7Po" customClass="DashboardViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="DashboardVC" title="DashboardVC" id="iUf-Wf-7Po" customClass="DashboardViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="GV8-VD-567"/>
                         <viewControllerLayoutGuide type="bottom" id="o3n-l7-uI4"/>
@@ -337,7 +337,7 @@
         <!--Create New View Controller-->
         <scene sceneID="6Sm-OK-b29">
             <objects>
-                <viewController id="poA-4a-oyA" customClass="CreateNewViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="CreateAlarmVC" id="poA-4a-oyA" customClass="CreateNewViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="srM-xl-CMP"/>
                         <viewControllerLayoutGuide type="bottom" id="VPT-5A-nHd"/>
@@ -1047,7 +1047,7 @@
         <!--Alarms Table View Controller-->
         <scene sceneID="1Cm-wI-m73">
             <objects>
-                <viewController id="LPg-SW-PDb" customClass="AlarmsTableViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmTableVC" id="LPg-SW-PDb" customClass="AlarmsTableViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JDc-wg-5pK"/>
                         <viewControllerLayoutGuide type="bottom" id="Yvf-gd-ygT"/>
