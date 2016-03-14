@@ -9,7 +9,6 @@
 //
 
 import UIKit
-import AVFoundation
 import MediaPlayer
 
 class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
@@ -24,6 +23,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Spotify
     var player = SPTAudioStreamingController?()
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
+    let auth = SPTAuth.defaultInstance()
+    let kCallbackURL = "pancakeapp://callback"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,7 +89,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func scheduleNotification() {
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
+        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 15)
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
@@ -111,6 +112,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             if !session.isValid(){
                 print("Session invalid.")
+                self.loginWithSpotify()
             } else {
                 self.playUsingSession(session)
             }
@@ -136,8 +138,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 print("Session Login error")
             }
             
-            let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 15), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
-            NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
+            //let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 14), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
+            //NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
             
         })
     }
@@ -160,7 +162,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Custom track
-        let spotifyURI = "spotify:track:31nhn90QfKRPb1SzAVgJtz"
+        let spotifyURI = "spotify:track:7HzCxalzzYQOFb9a7Xs3j6"
         // Plays selected song
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
@@ -237,6 +239,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let trackAlbum = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataAlbumName] as! String
         let trackArtist = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataArtistName] as! String
         let trackDuration = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackDuration]
+      
         
         // Music Info Center
         MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyArtist : trackArtist, MPMediaItemPropertyAlbumTitle : trackAlbum, MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyPlaybackDuration: trackDuration!, MPNowPlayingInfoPropertyPlaybackRate : 1]
@@ -258,6 +261,35 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    // This is for debugging purposes only
+    // Once refresh tokens are working this will not be needed.
+    // Login with Spotify
+    func loginWithSpotify() {
+        auth.clientID = kClientID
+        auth.requestedScopes = [SPTAuthStreamingScope]
+        auth.redirectURL = NSURL(string:kCallbackURL)
+        
+        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
+        //        let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token"
+        //        )
+        let loginURL = auth.loginURL
+        print(loginURL)
+        
+        UIApplication.sharedApplication().openURL(loginURL!)
+        
+    }
+    
+    // Controls music
+    override func remoteControlReceivedWithEvent(event: UIEvent?) {
+        if event!.type == UIEventType.RemoteControl {
+            if event!.subtype == UIEventSubtype.RemoteControlPause {
+                print("Pause")
+                player!.stop(nil)
+            }
+        }
+    }
+
     
     // MARK: - Navigation
     /*

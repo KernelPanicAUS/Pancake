@@ -8,10 +8,9 @@
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
 
-
 import UIKit
 import CoreData
-import AVFoundation 
+
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,15 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let kCallbackUrl = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
-    var sound = NSURL()
-    var audioPlayer = AVAudioPlayer()
-    let audioSession = AVAudioSession()
-    var firstMusic = true
+    
     var window: UIWindow?
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        // Override point for customization after application launch.
+     
+        
+        
         return true
     }
     

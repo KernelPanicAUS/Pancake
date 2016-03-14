@@ -50,8 +50,8 @@ class LoginViewController: UIViewController{
         //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
         //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         
-        let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token"
-        )
+        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
+        let loginURL = auth.loginURL
         print(loginURL)
         
         UIApplication.sharedApplication().openURL(loginURL!)

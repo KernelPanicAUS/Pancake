@@ -59,6 +59,8 @@
 		E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E71AED1F1C6E20430028D3AE /* alarm.mp3 */; };
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
+		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
+		E73DEAB61C966B830017BDAE /* EZSwipeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E73DEAB51C966B830017BDAE /* EZSwipeController.swift */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
 		E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */; };
 		E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = E795119C1C88673D00ECA35B /* MMPSilence.wav */; };
@@ -67,7 +69,6 @@
 		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
 		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
 		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
-		E7F3964C1C8A87530072F2AC /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +150,7 @@
 		E71AED1F1C6E20430028D3AE /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E73DEAB51C966B830017BDAE /* EZSwipeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EZSwipeController.swift; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
 		E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPDeepSleepPreventer.h; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPDeepSleepPreventer.h"; sourceTree = "<group>"; };
@@ -169,7 +171,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E7F3964C1C8A87530072F2AC /* MediaPlayer.framework in Frameworks */,
+				E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */,
 				E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */,
 				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
 				11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */,
@@ -361,6 +363,7 @@
 		E765A5731C62F700000AF222 /* Custom Classes */ = {
 			isa = PBXGroup;
 			children = (
+				E73DEAB51C966B830017BDAE /* EZSwipeController.swift */,
 				E7B013C51C6051B10084ECAA /* Alarm.swift */,
 				E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */,
 			);
@@ -557,6 +560,7 @@
 				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
 				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
 				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
+				E73DEAB61C966B830017BDAE /* EZSwipeController.swift in Sources */,
 				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
 				E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */,
 				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
@@ -721,7 +725,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
@@ -742,7 +746,7 @@
 					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = Pancake/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
