@@ -1,0 +1,859 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		111A5D401C3C2C640080522C /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 111A5D3F1C3C2C640080522C /* DashboardViewController.swift */; };
+		111A5D421C3C30F40080522C /* ProximaNova-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */; };
+		111A5D431C3C30F40080522C /* ProximaNova-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */; };
+		111A5D441C3C30F40080522C /* ProximaNova-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */; };
+		111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */; };
+		111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */; };
+		11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C731C317E8F0010CCCB /* AppDelegate.swift */; };
+		11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C751C317E8F0010CCCB /* ViewController.swift */; };
+		11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C771C317E8F0010CCCB /* Main.storyboard */; };
+		11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */; };
+		11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C7D1C317E8F0010CCCB /* Assets.xcassets */; };
+		11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */; };
+		11A63C8C1C317E8F0010CCCB /* PancakeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */; };
+		11A63C971C317E8F0010CCCB /* PancakeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C961C317E8F0010CCCB /* PancakeUITests.swift */; };
+		11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A63CA51C317F0C0010CCCB /* Spotify.framework */; };
+		11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 11A63CA71C317F280010CCCB /* AVFoundation.framework */; };
+		11A63CAE1C3181B80010CCCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63CAD1C3181B80010CCCB /* LoginViewController.swift */; };
+		11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C844391C450E5800557CBA /* AlarmsTableViewController.swift */; };
+		11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */; };
+		11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */; };
+		11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167211C32DB6F0033D1E3 /* AsyncButton.swift */; };
+		11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */; };
+		11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167231C32DB6F0033D1E3 /* AutoTextView.swift */; };
+		11F167421C32DB6F0033D1E3 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167241C32DB6F0033D1E3 /* BlurView.swift */; };
+		11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167251C32DB6F0033D1E3 /* DesignableButton.swift */; };
+		11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */; };
+		11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */; };
+		11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */; };
+		11F167471C32DB6F0033D1E3 /* DesignableTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */; };
+		11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */; };
+		11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */; };
+		11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */; };
+		11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 11F1672D1C32DB6F0033D1E3 /* Info.plist */; };
+		11F1674C1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */; };
+		11F1674D1C32DB6F0033D1E3 /* LoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */; };
+		11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 11F167301C32DB6F0033D1E3 /* LoadingView.xib */; };
+		11F1674F1C32DB6F0033D1E3 /* Misc.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167311C32DB6F0033D1E3 /* Misc.swift */; };
+		11F167501C32DB6F0033D1E3 /* SoundPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */; };
+		11F167511C32DB6F0033D1E3 /* Spring.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167341C32DB6F0033D1E3 /* Spring.swift */; };
+		11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */; };
+		11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167361C32DB6F0033D1E3 /* SpringButton.swift */; };
+		11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167371C32DB6F0033D1E3 /* SpringImageView.swift */; };
+		11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167381C32DB6F0033D1E3 /* SpringLabel.swift */; };
+		11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167391C32DB6F0033D1E3 /* SpringTextField.swift */; };
+		11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */; };
+		11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673B1C32DB6F0033D1E3 /* SpringView.swift */; };
+		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
+		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
+		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
+		E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = E71AED1F1C6E20430028D3AE /* alarm.mp3 */; };
+		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
+		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
+		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
+		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
+		E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */; };
+		E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = E795119C1C88673D00ECA35B /* MMPSilence.wav */; };
+		E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E795119E1C88679C00ECA35B /* AudioToolbox.framework */; };
+		E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013C51C6051B10084ECAA /* Alarm.swift */; };
+		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
+		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
+		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		11A63C881C317E8F0010CCCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11A63C681C317E8F0010CCCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A63C6F1C317E8F0010CCCB;
+			remoteInfo = Pancake;
+		};
+		11A63C931C317E8F0010CCCB /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 11A63C681C317E8F0010CCCB /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 11A63C6F1C317E8F0010CCCB;
+			remoteInfo = Pancake;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Bold.otf"; sourceTree = "<group>"; };
+		111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Light.otf"; sourceTree = "<group>"; };
+		111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Regular.otf"; sourceTree = "<group>"; };
+		111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Semibold.otf"; sourceTree = "<group>"; };
+		111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "ProximaNova-Thin.otf"; sourceTree = "<group>"; };
+		111A5D3F1C3C2C640080522C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		11A63C701C317E8F0010CCCB /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C731C317E8F0010CCCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		11A63C751C317E8F0010CCCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		11A63C781C317E8F0010CCCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pancake.xcdatamodel; sourceTree = "<group>"; };
+		11A63C7D1C317E8F0010CCCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		11A63C801C317E8F0010CCCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		11A63C821C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63C871C317E8F0010CCCB /* PancakeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeTests.swift; sourceTree = "<group>"; };
+		11A63C8D1C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PancakeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		11A63C961C317E8F0010CCCB /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
+		11A63C981C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11A63CA51C317F0C0010CCCB /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		11A63CA71C317F280010CCCB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
+		11A63CAD1C3181B80010CCCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		11A71D071C3D216D00E2AD88 /* pancakeSintaxPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pancakeSintaxPlayground.playground; path = Pancake/pancakeSintaxPlayground.playground; sourceTree = "<group>"; };
+		11C844391C450E5800557CBA /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
+		11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewViewController.swift; sourceTree = "<group>"; };
+		11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
+		11F167211C32DB6F0033D1E3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
+		11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
+		11F167231C32DB6F0033D1E3 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
+		11F167241C32DB6F0033D1E3 /* BlurView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		11F167251C32DB6F0033D1E3 /* DesignableButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableButton.swift; sourceTree = "<group>"; };
+		11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableImageView.swift; sourceTree = "<group>"; };
+		11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableLabel.swift; sourceTree = "<group>"; };
+		11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTabBarController.swift; sourceTree = "<group>"; };
+		11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextField.swift; sourceTree = "<group>"; };
+		11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableTextView.swift; sourceTree = "<group>"; };
+		11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignableView.swift; sourceTree = "<group>"; };
+		11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
+		11F1672D1C32DB6F0033D1E3 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
+		11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingView.swift; sourceTree = "<group>"; };
+		11F167301C32DB6F0033D1E3 /* LoadingView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LoadingView.xib; sourceTree = "<group>"; };
+		11F167311C32DB6F0033D1E3 /* Misc.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Misc.swift; sourceTree = "<group>"; };
+		11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SoundPlayer.swift; sourceTree = "<group>"; };
+		11F167331C32DB6F0033D1E3 /* Spring.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Spring.h; sourceTree = "<group>"; };
+		11F167341C32DB6F0033D1E3 /* Spring.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Spring.swift; sourceTree = "<group>"; };
+		11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringAnimation.swift; sourceTree = "<group>"; };
+		11F167361C32DB6F0033D1E3 /* SpringButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringButton.swift; sourceTree = "<group>"; };
+		11F167371C32DB6F0033D1E3 /* SpringImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringImageView.swift; sourceTree = "<group>"; };
+		11F167381C32DB6F0033D1E3 /* SpringLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringLabel.swift; sourceTree = "<group>"; };
+		11F167391C32DB6F0033D1E3 /* SpringTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextField.swift; sourceTree = "<group>"; };
+		11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringTextView.swift; sourceTree = "<group>"; };
+		11F1673B1C32DB6F0033D1E3 /* SpringView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpringView.swift; sourceTree = "<group>"; };
+		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
+		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
+		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
+		E71AED1F1C6E20430028D3AE /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
+		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
+		E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MMPDeepSleepPreventer.h; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPDeepSleepPreventer.h"; sourceTree = "<group>"; };
+		E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MMPDeepSleepPreventer.m; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPDeepSleepPreventer.m"; sourceTree = "<group>"; };
+		E795119C1C88673D00ECA35B /* MMPSilence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; name = MMPSilence.wav; path = "../../../../Downloads/MMPDeepSleepPreventer-master/MMPSilence.wav"; sourceTree = "<group>"; };
+		E795119E1C88679C00ECA35B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E7B013C51C6051B10084ECAA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = ../Alarm.swift; sourceTree = "<group>"; };
+		E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AlarmTableViewCell.xib; sourceTree = "<group>"; };
+		E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
+		E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		11A63C6D1C317E8F0010CCCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */,
+				E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */,
+				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
+				11A63CA61C317F0C0010CCCB /* Spotify.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C841C317E8F0010CCCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C8F1C317E8F0010CCCB /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		111A5D391C3C02A30080522C /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				111A5D3A1C3C02C30080522C /* ProximaNova-Bold.otf */,
+				111A5D3B1C3C02C30080522C /* ProximaNova-Light.otf */,
+				111A5D3C1C3C02C30080522C /* ProximaNova-Regular.otf */,
+				111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */,
+				111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */,
+			);
+			name = Fonts;
+			path = ..;
+			sourceTree = "<group>";
+		};
+		111A5D411C3C2C6D0080522C /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				11A63C751C317E8F0010CCCB /* ViewController.swift */,
+				11A63CAD1C3181B80010CCCB /* LoginViewController.swift */,
+				111A5D3F1C3C2C640080522C /* DashboardViewController.swift */,
+				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
+				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
+				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
+				E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */,
+				E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		11A63C671C317E8F0010CCCB = {
+			isa = PBXGroup;
+			children = (
+				11A71D081C3D22AB00E2AD88 /* Playgrounds */,
+				11A63CA41C317EA00010CCCB /* Frameworks */,
+				11A63C721C317E8F0010CCCB /* Pancake */,
+				11A63C8A1C317E8F0010CCCB /* PancakeTests */,
+				11A63C951C317E8F0010CCCB /* PancakeUITests */,
+				11A63C711C317E8F0010CCCB /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		11A63C711C317E8F0010CCCB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				11A63C701C317E8F0010CCCB /* Pancake.app */,
+				11A63C871C317E8F0010CCCB /* PancakeTests.xctest */,
+				11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		11A63C721C317E8F0010CCCB /* Pancake */ = {
+			isa = PBXGroup;
+			children = (
+				11F167201C32DB6F0033D1E3 /* Spring */,
+				11A63C731C317E8F0010CCCB /* AppDelegate.swift */,
+				E765A5731C62F700000AF222 /* Custom Classes */,
+				111A5D411C3C2C6D0080522C /* ViewControllers */,
+				E765A5721C62F6A5000AF222 /* User Interface */,
+				E72D5F261C545F2D00F97FDB /* Tools */,
+				111A5D391C3C02A30080522C /* Fonts */,
+				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
+				11A63C821C317E8F0010CCCB /* Info.plist */,
+				11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */,
+				11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */,
+			);
+			path = Pancake;
+			sourceTree = "<group>";
+		};
+		11A63C8A1C317E8F0010CCCB /* PancakeTests */ = {
+			isa = PBXGroup;
+			children = (
+				11A63C8B1C317E8F0010CCCB /* PancakeTests.swift */,
+				11A63C8D1C317E8F0010CCCB /* Info.plist */,
+			);
+			path = PancakeTests;
+			sourceTree = "<group>";
+		};
+		11A63C951C317E8F0010CCCB /* PancakeUITests */ = {
+			isa = PBXGroup;
+			children = (
+				11A63C961C317E8F0010CCCB /* PancakeUITests.swift */,
+				11A63C981C317E8F0010CCCB /* Info.plist */,
+			);
+			path = PancakeUITests;
+			sourceTree = "<group>";
+		};
+		11A63CA41C317EA00010CCCB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */,
+				E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */,
+				E795119E1C88679C00ECA35B /* AudioToolbox.framework */,
+				11A63CA51C317F0C0010CCCB /* Spotify.framework */,
+				11A63CA71C317F280010CCCB /* AVFoundation.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		11A71D081C3D22AB00E2AD88 /* Playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+				11A71D071C3D216D00E2AD88 /* pancakeSintaxPlayground.playground */,
+			);
+			name = Playgrounds;
+			sourceTree = "<group>";
+		};
+		11F167201C32DB6F0033D1E3 /* Spring */ = {
+			isa = PBXGroup;
+			children = (
+				11F167211C32DB6F0033D1E3 /* AsyncButton.swift */,
+				11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */,
+				11F167231C32DB6F0033D1E3 /* AutoTextView.swift */,
+				11F167241C32DB6F0033D1E3 /* BlurView.swift */,
+				11F167251C32DB6F0033D1E3 /* DesignableButton.swift */,
+				11F167261C32DB6F0033D1E3 /* DesignableImageView.swift */,
+				11F167271C32DB6F0033D1E3 /* DesignableLabel.swift */,
+				11F167281C32DB6F0033D1E3 /* DesignableTabBarController.swift */,
+				11F167291C32DB6F0033D1E3 /* DesignableTextField.swift */,
+				11F1672A1C32DB6F0033D1E3 /* DesignableTextView.swift */,
+				11F1672B1C32DB6F0033D1E3 /* DesignableView.swift */,
+				11F1672C1C32DB6F0033D1E3 /* ImageLoader.swift */,
+				11F1672D1C32DB6F0033D1E3 /* Info.plist */,
+				11F1672E1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift */,
+				11F1672F1C32DB6F0033D1E3 /* LoadingView.swift */,
+				11F167301C32DB6F0033D1E3 /* LoadingView.xib */,
+				11F167311C32DB6F0033D1E3 /* Misc.swift */,
+				11F167321C32DB6F0033D1E3 /* SoundPlayer.swift */,
+				11F167331C32DB6F0033D1E3 /* Spring.h */,
+				11F167341C32DB6F0033D1E3 /* Spring.swift */,
+				11F167351C32DB6F0033D1E3 /* SpringAnimation.swift */,
+				11F167361C32DB6F0033D1E3 /* SpringButton.swift */,
+				11F167371C32DB6F0033D1E3 /* SpringImageView.swift */,
+				11F167381C32DB6F0033D1E3 /* SpringLabel.swift */,
+				11F167391C32DB6F0033D1E3 /* SpringTextField.swift */,
+				11F1673A1C32DB6F0033D1E3 /* SpringTextView.swift */,
+				11F1673B1C32DB6F0033D1E3 /* SpringView.swift */,
+				11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */,
+				11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */,
+				11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */,
+			);
+			path = Spring;
+			sourceTree = "<group>";
+		};
+		E72D5F261C545F2D00F97FDB /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
+				E795119C1C88673D00ECA35B /* MMPSilence.wav */,
+				E71AED1F1C6E20430028D3AE /* alarm.mp3 */,
+				E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */,
+				E79511981C88670B00ECA35B /* DeepSleep */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
+		E765A5721C62F6A5000AF222 /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				11A63C771C317E8F0010CCCB /* Main.storyboard */,
+				E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */,
+				11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */,
+			);
+			name = "User Interface";
+			sourceTree = "<group>";
+		};
+		E765A5731C62F700000AF222 /* Custom Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E7B013C51C6051B10084ECAA /* Alarm.swift */,
+				E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */,
+			);
+			name = "Custom Classes";
+			sourceTree = "<group>";
+		};
+		E79511981C88670B00ECA35B /* DeepSleep */ = {
+			isa = PBXGroup;
+			children = (
+				E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */,
+				E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */,
+			);
+			name = DeepSleep;
+			sourceTree = "<group>";
+		};
+		E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */ = {
+			isa = PBXGroup;
+			children = (
+				E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */,
+				E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */,
+			);
+			name = DZNEmptyDataSet;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		11A63C6F1C317E8F0010CCCB /* Pancake */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A63C9B1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "Pancake" */;
+			buildPhases = (
+				11A63C6C1C317E8F0010CCCB /* Sources */,
+				11A63C6D1C317E8F0010CCCB /* Frameworks */,
+				11A63C6E1C317E8F0010CCCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Pancake;
+			productName = Pancake;
+			productReference = 11A63C701C317E8F0010CCCB /* Pancake.app */;
+			productType = "com.apple.product-type.application";
+		};
+		11A63C861C317E8F0010CCCB /* PancakeTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A63C9E1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeTests" */;
+			buildPhases = (
+				11A63C831C317E8F0010CCCB /* Sources */,
+				11A63C841C317E8F0010CCCB /* Frameworks */,
+				11A63C851C317E8F0010CCCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11A63C891C317E8F0010CCCB /* PBXTargetDependency */,
+			);
+			name = PancakeTests;
+			productName = PancakeTests;
+			productReference = 11A63C871C317E8F0010CCCB /* PancakeTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		11A63C911C317E8F0010CCCB /* PancakeUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 11A63CA11C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeUITests" */;
+			buildPhases = (
+				11A63C8E1C317E8F0010CCCB /* Sources */,
+				11A63C8F1C317E8F0010CCCB /* Frameworks */,
+				11A63C901C317E8F0010CCCB /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				11A63C941C317E8F0010CCCB /* PBXTargetDependency */,
+			);
+			name = PancakeUITests;
+			productName = PancakeUITests;
+			productReference = 11A63C921C317E8F0010CCCB /* PancakeUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		11A63C681C317E8F0010CCCB /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0720;
+				LastUpgradeCheck = 0720;
+				ORGANIZATIONNAME = "Rudy Rosciglione";
+				TargetAttributes = {
+					11A63C6F1C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = E5K76XCPJE;
+					};
+					11A63C861C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9689ADQMZP;
+						TestTargetID = 11A63C6F1C317E8F0010CCCB;
+					};
+					11A63C911C317E8F0010CCCB = {
+						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = 9689ADQMZP;
+						TestTargetID = 11A63C6F1C317E8F0010CCCB;
+					};
+				};
+			};
+			buildConfigurationList = 11A63C6B1C317E8F0010CCCB /* Build configuration list for PBXProject "Pancake" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 11A63C671C317E8F0010CCCB;
+			productRefGroup = 11A63C711C317E8F0010CCCB /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				11A63C6F1C317E8F0010CCCB /* Pancake */,
+				11A63C861C317E8F0010CCCB /* PancakeTests */,
+				11A63C911C317E8F0010CCCB /* PancakeUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		11A63C6E1C317E8F0010CCCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				111A5D421C3C30F40080522C /* ProximaNova-Bold.otf in Resources */,
+				111A5D431C3C30F40080522C /* ProximaNova-Light.otf in Resources */,
+				111A5D441C3C30F40080522C /* ProximaNova-Regular.otf in Resources */,
+				111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */,
+				111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */,
+				E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */,
+				11F1674B1C32DB6F0033D1E3 /* Info.plist in Resources */,
+				11A63C811C317E8F0010CCCB /* LaunchScreen.storyboard in Resources */,
+				11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */,
+				11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */,
+				E71AED201C6E20430028D3AE /* alarm.mp3 in Resources */,
+				11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */,
+				E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C851C317E8F0010CCCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C901C317E8F0010CCCB /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		11A63C6C1C317E8F0010CCCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */,
+				11A63CAE1C3181B80010CCCB /* LoginViewController.swift in Sources */,
+				11F167421C32DB6F0033D1E3 /* BlurView.swift in Sources */,
+				11F1674C1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift in Sources */,
+				11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */,
+				11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */,
+				11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */,
+				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
+				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
+				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,
+				11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */,
+				11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */,
+				11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */,
+				11F167561C32DB6F0033D1E3 /* SpringTextField.swift in Sources */,
+				E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */,
+				11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */,
+				E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */,
+				11F167441C32DB6F0033D1E3 /* DesignableImageView.swift in Sources */,
+				11F167501C32DB6F0033D1E3 /* SoundPlayer.swift in Sources */,
+				11F1674F1C32DB6F0033D1E3 /* Misc.swift in Sources */,
+				11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */,
+				11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */,
+				11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */,
+				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
+				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
+				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
+				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
+				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
+				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
+				E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */,
+				11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */,
+				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
+				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,
+				11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */,
+				E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */,
+				11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */,
+				11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */,
+				11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */,
+				11F167471C32DB6F0033D1E3 /* DesignableTextField.swift in Sources */,
+				11F1674D1C32DB6F0033D1E3 /* LoadingView.swift in Sources */,
+				11F167511C32DB6F0033D1E3 /* Spring.swift in Sources */,
+				111A5D401C3C2C640080522C /* DashboardViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C831C317E8F0010CCCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A63C8C1C317E8F0010CCCB /* PancakeTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		11A63C8E1C317E8F0010CCCB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				11A63C971C317E8F0010CCCB /* PancakeUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		11A63C891C317E8F0010CCCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A63C6F1C317E8F0010CCCB /* Pancake */;
+			targetProxy = 11A63C881C317E8F0010CCCB /* PBXContainerItemProxy */;
+		};
+		11A63C941C317E8F0010CCCB /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 11A63C6F1C317E8F0010CCCB /* Pancake */;
+			targetProxy = 11A63C931C317E8F0010CCCB /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		11A63C771C317E8F0010CCCB /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A63C781C317E8F0010CCCB /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		11A63C7F1C317E8F0010CCCB /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				11A63C801C317E8F0010CCCB /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		11A63C991C317E8F0010CCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		11A63C9A1C317E8F0010CCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		11A63C9C1C317E8F0010CCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Pancake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		11A63C9D1C317E8F0010CCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = Pancake/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		11A63C9F1C317E8F0010CCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PancakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pancake.app/Pancake";
+			};
+			name = Debug;
+		};
+		11A63CA01C317E8F0010CCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = PancakeTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Pancake.app/Pancake";
+			};
+			name = Release;
+		};
+		11A63CA21C317E8F0010CCCB /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PancakeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pancake;
+				USES_XCTRUNNER = YES;
+			};
+			name = Debug;
+		};
+		11A63CA31C317E8F0010CCCB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = PancakeUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.PancakeUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = Pancake;
+				USES_XCTRUNNER = YES;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		11A63C6B1C317E8F0010CCCB /* Build configuration list for PBXProject "Pancake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A63C991C317E8F0010CCCB /* Debug */,
+				11A63C9A1C317E8F0010CCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A63C9B1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "Pancake" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A63C9C1C317E8F0010CCCB /* Debug */,
+				11A63C9D1C317E8F0010CCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A63C9E1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A63C9F1C317E8F0010CCCB /* Debug */,
+				11A63CA01C317E8F0010CCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		11A63CA11C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "PancakeUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				11A63CA21C317E8F0010CCCB /* Debug */,
+				11A63CA31C317E8F0010CCCB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */,
+				11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */,
+			);
+			currentVersion = 11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */;
+			path = Pancake.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 11A63C681C317E8F0010CCCB /* Project object */;
+}
