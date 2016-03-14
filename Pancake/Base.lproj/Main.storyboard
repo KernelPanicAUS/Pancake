@@ -270,7 +270,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="LPg-SW-PDb" kind="show" id="ivM-yY-XK8"/>
+                                            <segue destination="LPg-SW-PDb" kind="show" id="t11-ZS-rZe"/>
                                         </connections>
                                     </button>
                                 </subviews>

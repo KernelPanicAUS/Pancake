@@ -92,7 +92,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func scheduleNotification() {
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 15)
+        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
@@ -141,8 +141,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 print("Session Login error")
             }
             
-            //let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 14), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
-            //NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
+            let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 60), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
+            NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
             
         })
     }
