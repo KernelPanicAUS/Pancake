@@ -184,6 +184,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
     }
 
+    
+    // MARK: - SPTAudioStreamingPlaybackDelegate
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
         print("PlaybackStatus")
     }
@@ -265,6 +267,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Session refresh
     // This is for debugging purposes only
     // Once refresh tokens are working this will not be needed.
     // Login with Spotify
@@ -283,6 +286,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
     }
     
+    //MARK: - Control Music
     // Controls music
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
         if event!.type == UIEventType.RemoteControl {
