@@ -86,7 +86,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        
+        if (notification.alertBody == "Wake up") {
+            print("Mike Posner")
+        }
+        
         print("Did receive wake up notification")
+        
     }
 
     // MARK: - Core Data stack

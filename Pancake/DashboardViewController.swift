@@ -90,13 +90,29 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     // Manages notifications
     func scheduleNotification() {
+               print("Schedule Notification")
+        
+        // Fires alarm every Sunday at selected hour
+        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
+        
+        // Set week day for recurring alarm
+        dateComponent?.weekday = 1
+        dateComponent?.hour = 2
+        dateComponent?.minute = 57
+        
+        let dd = UIDatePicker()
+        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
+        
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
+        alarmNotification.fireDate = dd.date
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
+        
+        
     }
     
     func spotifyUserCheck() {

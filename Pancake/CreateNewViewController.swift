@@ -199,7 +199,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             // Saves new alarm
             self.saveAlarm(title!, time: time!, days: days, meri: meri!)
         }
-        
     }
     
     // Manages Alarm save to CoreData
@@ -265,6 +264,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         
         // Used for debugging purposes only
         //print("Date selected: \((button.titleLabel?.text)!)")
+        if (button.titleLabel?.text == "SUN") {
+            
+        }
     }
     
     // Goes to Main Screen - Dashboard
