@@ -26,6 +26,10 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
     
+    // Used to set off alarm
+    var hoursForAlarm = 0
+    var minutesForAlarm = 0
+    
     // Hides am/pm when no alarm time is selected
     var hideMeridiem = true
     
@@ -40,6 +44,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     
     // UIImageView that displays the background image
     let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
+    
+    var selectedDates = [String]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +70,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.updateTimeLabel()
         // Adds Selected image as background
         self.addBackgroundImage()
+        print("Hourse: \(hoursForAlarm) + Minutes: \(minutesForAlarm)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -174,9 +181,24 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             let pancakeGrayColor = UIColorFromHex(0x707070)
             bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
             bttn.layer.borderColor = pancakeGrayColor.CGColor
+            
+            // Removes unselected dates from array
+            for i in 0...selectedDates.count-1{
+                if ((bttn.titleLabel?.text)! == selectedDates[i]) {
+                     print("Hola")
+                    self.selectedDates.removeAtIndex(i)
+                }
+               
+            }
+            
         } else {
             bttn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
             bttn.layer.borderColor = UIColor.whiteColor().CGColor
+            // Adds selected date to array
+            selectedDates.append((bttn.titleLabel?.text)!)
+            print("date: \((bttn.titleLabel?.text)!)")
+            print("\(selectedDates)")
+            
         }
     }
 
@@ -198,6 +220,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         if self.validateAlarm() {
             // Saves new alarm
             self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+            self.scheduleNotification()
         }
     }
     
@@ -298,6 +321,35 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.dismissViewControllerAnimated(true, completion: nil)
     }
     
+    // MARK: - Alarm setup
+    
+    // Manages notifications
+    func scheduleNotification() {
+        print("Schedule Notification")
+        
+        // Fires alarm every Sunday at selected hour
+        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
+        
+        // Set week day for recurring alarm
+        dateComponent?.weekday = 1
+        dateComponent?.hour = hoursForAlarm
+        dateComponent?.minute = minutesForAlarm
+        
+        let dd = UIDatePicker()
+        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
+        
+        // Sends Alarm notification - You need to wake up now
+        let alarmNotification = UILocalNotification()
+        alarmNotification.fireDate = dd.date
+        alarmNotification.alertBody = "Wake up"
+        alarmNotification.alertAction = "OK"
+        alarmNotification.userInfo = ["CustomField": "Woot"]
+        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
+        
+        
+    }
+
     // MARK: - TextField
     func textFieldShouldReturn(textField: UITextField) -> Bool {
         // If user pressed done - Dismiss Keyboard
