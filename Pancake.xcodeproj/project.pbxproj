@@ -67,6 +67,7 @@
 		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
 		E7B013CC1C6058680084ECAA /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */; };
 		E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */ = {isa = PBXBuildFile; fileRef = E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */; };
+		E7DCE9651C983E4F009F79BF /* MainPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -159,6 +160,7 @@
 		E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		E7CD4CB11C59E77800D4255E /* UIScrollView+EmptyDataSet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIScrollView+EmptyDataSet.h"; sourceTree = "<group>"; };
 		E7CD4CB21C59E77800D4255E /* UIScrollView+EmptyDataSet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIScrollView+EmptyDataSet.m"; sourceTree = "<group>"; };
+		E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainPageViewController.swift; path = Assets.xcassets/MainPageViewController.swift; sourceTree = "<group>"; };
 		E7F3964B1C8A87530072F2AC /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
@@ -211,6 +213,7 @@
 				11A63CAD1C3181B80010CCCB /* LoginViewController.swift */,
 				111A5D3F1C3C2C640080522C /* DashboardViewController.swift */,
 				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
+				E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */,
 				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
 				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
 				E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */,
@@ -550,6 +553,7 @@
 				11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */,
 				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
 				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
+				E7DCE9651C983E4F009F79BF /* MainPageViewController.swift in Sources */,
 				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
 				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
 				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
@@ -720,7 +724,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -741,7 +745,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

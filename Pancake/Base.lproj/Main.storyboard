@@ -140,6 +140,16 @@
             </objects>
             <point key="canvasLocation" x="1219" y="374"/>
         </scene>
+        <!--Main Page View Controller-->
+        <scene sceneID="qRU-C4-aqi">
+            <objects>
+                <pageViewController autoresizesArchivedViewToFullSize="NO" modalPresentationStyle="currentContext" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="CB5-zm-vag" customClass="MainPageViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ROb-rx-7O9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-280"/>
+        </scene>
         <!--Requests Table View Controller-->
         <scene sceneID="RZn-ik-x55">
             <objects>

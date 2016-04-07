@@ -41,9 +41,23 @@ class TimeSelectorViewController: UIViewController{
         let timeFormatter = NSDateFormatter()
         timeFormatter.dateFormat = "hh:mm"
         
+        let hoursTimeFormatter = NSDateFormatter()
+        hoursTimeFormatter.dateFormat = "HH"
+        
+        let minutesTimeFormatter = NSDateFormatter()
+        minutesTimeFormatter.dateFormat = "mm"
+        
+        
         // Displays time in custom format "hh:mm"
         let now = timePicker.date
         let formattedTime = timeFormatter.stringFromDate(now)
+        
+        // Saves date for use with alarm setup
+        let hours = hoursTimeFormatter.stringFromDate(now)
+        let minutes = minutesTimeFormatter.stringFromDate(now)
+        
+        // Used for debugging purposes only
+        //print("Hours: \(hours) + Minutes: \(minutes)")
         
         // Checks if Time is AM or PM
         if ((time.rangeOfString("AM")) != nil) {
@@ -64,6 +78,9 @@ class TimeSelectorViewController: UIViewController{
         
         // Show updated time in Alarm Setup
         firstViewController!.updatedTime = formattedTime
+        // Converts String to Int and passes data to CreateNewViewController
+        firstViewController!.hoursForAlarm = Int(hours)!
+        firstViewController!.minutesForAlarm = Int(minutes)!
         
         // Used for debugging purposes only
         //print("Alarm Time: \(time)")

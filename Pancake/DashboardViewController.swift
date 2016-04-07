@@ -10,6 +10,7 @@
 
 import UIKit
 import MediaPlayer
+import CoreData
 
 class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
@@ -26,28 +27,46 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let auth = SPTAuth.defaultInstance()
     let kCallbackURL = "pancakeapp://callback"
     
+    // Used to fetch alarms from CoreData
+    var alarms = [NSManagedObject]()
+    
+    // Used to play alarm only once
+    var canPlayAlarmFlag = true
+    var lastAlarmTime = "last"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Spotify is checking if the user is login
+        
+        // Spotify is checking if the user is logged in
         self.spotifyUserCheck()
         
         // Update Time Periodically = _ Stands for timer :P
-        let _ = NSTimer.scheduledTimerWithTimeInterval(0.1, target: self, selector: "timeUpdate", userInfo: nil, repeats: true)
+        let _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
         // Permission for notification
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
+        // Deprecated code. Left here until final version is released.
+        /*
         // Schedules notification
-        self.scheduleNotification()
+        //self.scheduleNotification()
 
         // Lets us play background music when screen is locked
-        let sleepPrevent = MMPDeepSleepPreventer()
-        sleepPrevent.startPreventSleep()
+        //let sleepPrevent = MMPDeepSleepPreventer()
+        //sleepPrevent.startPreventSleep()
         
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
+         */
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        // Fetches Alarms.
+        self.fetchData()
+    }
+    
+    // MARK: - Timer
     
     // Updates Time and all its elements
     func timeUpdate(){
@@ -59,6 +78,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Displays time in custom format "hh:mm"
         let now = NSDate()
         let formattedTime = timeFormatter.stringFromDate(now)
+        
+        // Prints day of the week
+        //print("\(self.getDayOfWeekString(dayFormatter.stringFromDate(now)))")
         
         // ONLY Used to check if it is AM or PM
         let time = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
@@ -85,20 +107,86 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // For debugging purposes onlye
         //print(timeDisplay.text)
         
+        if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
+            canPlayAlarmFlag = true
+            print(canPlayAlarmFlag)
+        }
         
+        // Checks alarm time with current time - Determines if it has to play or not.
+        self.timeToPlayAlarm()
     }
     
+    // MARK: - Alarm
+    
+    // Check if it is time for alarm
+    func timeToPlayAlarm() {
+        
+        // Check only if there are alarms saved
+        if (alarms.isEmpty == false) {
+            // Verify if alarm can be played - Used to play only once
+            if (canPlayAlarmFlag == true) {
+                for i in 0...alarms.count-1 {
+                    // Gets current alarm time
+                    let alarm = alarms[i]
+                    let alarmTime = alarm.valueForKey("time") as! String
+                    // If Current time is = to Alarm time, play alarm
+                    if (alarmTime.rangeOfString(timeDisplay.text!) != nil) {
+                       
+                        // Play alarm only once
+                        canPlayAlarmFlag = false
+                        
+                        // Used for debugging purposes only
+                        //print("Alarm must be played.")
+                        
+                        // Check the last alarm played in order to reactivate flag
+                        lastAlarmTime = alarmTime
+                        
+                        // Used for debugging purposes only
+                        //print(canPlayAlarmFlag)
+                        
+                        // Play spotify music
+                        self.useLoggedInPermissions()
+                    }
+                }
+
+            }
+        }
+    }
+    
+    
     // Manages notifications
+    /*
     func scheduleNotification() {
+               print("Schedule Notification")
+        
+        // Fires alarm every Sunday at selected hour
+        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
+        
+        // Set week day for recurring alarm
+        dateComponent?.weekday = 1
+        dateComponent?.hour = 2
+        dateComponent?.minute = 57
+        
+        let dd = UIDatePicker()
+        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
+        
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = NSDate(timeIntervalSinceNow: 60)
+        alarmNotification.fireDate = dd.date
         alarmNotification.alertBody = "Wake up"
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
+        
+        
     }
+    */
     
+    // MARK: - Spotify
+    
+    // Checks if user is freshly logged in
+    // Needs work with refresh tokens for final app
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -126,8 +214,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         }
         
     }
-    // Function relative to Spotify checking
-    // Spotify
+    
+    // Initializes and Setups Spotify music player.
     func playUsingSession(session: SPTSession){
         if player == nil {
             player = SPTAudioStreamingController(clientId: kClientID)
@@ -141,13 +229,15 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 print("Session Login error")
             }
             
-            let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 60), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
-            NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
-            
+            // Deprecated code. Will be removed when final version is available.
+            /*
+            //let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 60), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
+            //NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
+            */
         })
     }
     
-    // Manages songs to be played
+    // Manages songs/playlist to be played
     func useLoggedInPermissions() {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
@@ -165,10 +255,11 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Custom track
-        let spotifyURI = "spotify:track:7HzCxalzzYQOFb9a7Xs3j6"
+        let spotifyURI = "spotify:track:0xlg27g9OXI2PHvwLJSCoo"
         // Plays selected song
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
+        // Snoozes or Stops alarm - Very early version
         stopMusicAlert.show(self,
             title: "Wake up",
             text: "Common, you can do it!",
@@ -184,6 +275,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
     }
 
+    
+    // MARK: - SPTAudioStreamingPlaybackDelegate
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
         print("PlaybackStatus")
     }
@@ -265,6 +358,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - Session refresh
     // This is for debugging purposes only
     // Once refresh tokens are working this will not be needed.
     // Login with Spotify
@@ -274,8 +368,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         auth.redirectURL = NSURL(string:kCallbackURL)
         
         // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
-        //        let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token"
-        //        )
+        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
         let loginURL = auth.loginURL
         print(loginURL)
         
@@ -283,6 +376,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
     }
     
+    //MARK: - Control Music
     // Controls music
     override func remoteControlReceivedWithEvent(event: UIEvent?) {
         if event!.type == UIEventType.RemoteControl {
@@ -292,6 +386,24 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             }
         }
     }
+    
+    // MARK: - CoreData
+    // Gets Alarms Stored in CoreData
+    func fetchData() {
+        // Application Delegate
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        // Manages CoreData
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        
+        // Feteches saved alarms
+        let fetchRequest = NSFetchRequest(entityName: "Alarm")
+        do {
+            try alarms = context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not load data error: \(error), \(error.userInfo)")
+        }
+    }
+
 
     
     // MARK: - Navigation
