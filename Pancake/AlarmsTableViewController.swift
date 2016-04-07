@@ -42,6 +42,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     override func viewWillAppear(animated: Bool) {
         // Reloads TableView every time view is going to appear
         alarmsTableView.reloadData()
+        print("Hi")
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
