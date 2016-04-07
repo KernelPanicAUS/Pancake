@@ -221,7 +221,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             // Saves new alarm
             self.saveAlarm(title!, time: time!, days: days, meri: meri!)
             
-            for (var i = 0; i < (selectedDates.count); i += 1) {
+            for (var i = 0; i < selectedDates.count; i++) {
                 self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
             }
             

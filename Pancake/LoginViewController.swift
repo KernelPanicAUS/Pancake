@@ -11,7 +11,7 @@
 import UIKit
 import MediaPlayer
 
-class LoginViewController: UIViewController{
+class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStreamingPlaybackDelegate{
     
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let kCallbackURL = "pancakeapp://callback"
@@ -52,13 +52,41 @@ class LoginViewController: UIViewController{
         //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
         //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         
-        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
-        let loginURL = auth.loginURL
-        print(loginURL)
+        let spotifyAuthenticationViewController = SPTAuthViewController.authenticationViewController()
+        spotifyAuthenticationViewController.delegate = self
         
-        UIApplication.sharedApplication().openURL(loginURL!)
+        spotifyAuthenticationViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        spotifyAuthenticationViewController.definesPresentationContext = true
+        
+        presentViewController(spotifyAuthenticationViewController, animated: false, completion: nil)
+    }
+    
+    // MARK: - PTAuthViewDelegate Protocol
+    func authenticationViewController(authenticationViewController: SPTAuthViewController!, didLoginWithSession session: SPTSession!) {
+        
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+        
+        userDefaults.setObject(sessionData, forKey: "SpotifySession")
+        userDefaults.synchronize()
+        
+        print("Login was successful");
+        // Spotifiy session data has been received
+        // Post notification to tell LoginViewController to be dismissed
+        NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object: nil)
         
     }
+    
+    func authenticationViewController(authenticationViewController: SPTAuthViewController!, didFailToLogin error: NSError!) {
+        print("Login failed... \(error)")
+        
+    }
+    
+    func authenticationViewControllerDidCancelLogin(authenticationViewController: SPTAuthViewController!) {
+        print("Did Cancel Login...")
+    }
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
