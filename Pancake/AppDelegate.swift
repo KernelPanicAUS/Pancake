@@ -91,7 +91,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             print("Mike Posner")
         }
         
-        print("Did receive wake up notification")
+        print("Did receive \((notification.alertBody)!) notification")
         
     }
 

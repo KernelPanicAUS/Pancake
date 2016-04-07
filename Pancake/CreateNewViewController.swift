@@ -220,7 +220,14 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         if self.validateAlarm() {
             // Saves new alarm
             self.saveAlarm(title!, time: time!, days: days, meri: meri!)
-            self.scheduleNotification()
+            
+            for (var i = 0; i < (selectedDates.count); i += 1) {
+                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+            }
+            
+//            for i in 0...selectedDates.count {
+//                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+//            }
         }
     }
     
@@ -290,6 +297,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         if (button.titleLabel?.text == "SUN") {
             
         }
+        
+        // Used for debugging purposes only
+        //print(self.dayOfTheWeek((button.titleLabel?.text)!))
     }
     
     // Goes to Main Screen - Dashboard
@@ -324,7 +334,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // MARK: - Alarm setup
     
     // Manages notifications
-    func scheduleNotification() {
+    func scheduleNotification(dayOfWeek: Int, hour: Int, minute: Int) {
         print("Schedule Notification")
         
         // Fires alarm every Sunday at selected hour
@@ -332,9 +342,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
         
         // Set week day for recurring alarm
-        dateComponent?.weekday = 1
-        dateComponent?.hour = hoursForAlarm
-        dateComponent?.minute = minutesForAlarm
+        dateComponent?.weekday = dayOfWeek
+        dateComponent?.hour = hour
+        dateComponent?.minute = minute
         
         let dd = UIDatePicker()
         dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
@@ -342,12 +352,40 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Sends Alarm notification - You need to wake up now
         let alarmNotification = UILocalNotification()
         alarmNotification.fireDate = dd.date
-        alarmNotification.alertBody = "Wake up"
+        alarmNotification.alertBody = alarmNameTextField.text
         alarmNotification.alertAction = "OK"
         alarmNotification.userInfo = ["CustomField": "Woot"]
         UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
         
         
+    }
+    
+    // Returns date of the week
+    func dayOfTheWeek(nameOfDay: String) -> Int {
+        
+        var dayOfTheWeekInt = 0
+        
+        switch nameOfDay {
+            case "SUN":
+                dayOfTheWeekInt = 1
+            case "MON":
+                dayOfTheWeekInt = 2
+            case "TUE":
+                dayOfTheWeekInt = 3
+            case "WED":
+                dayOfTheWeekInt = 4
+            case "THU":
+                dayOfTheWeekInt = 5
+            case "FRI":
+                dayOfTheWeekInt = 6
+            case "SAT":
+                dayOfTheWeekInt = 7
+            default:
+                print("Default")
+        }
+        
+        
+        return Int(dayOfTheWeekInt)
     }
 
     // MARK: - TextField

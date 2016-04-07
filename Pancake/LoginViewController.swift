@@ -25,21 +25,23 @@ class LoginViewController: UIViewController{
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+
         // Register to be notified when the user has logged in successfully in order to dismiss the login view
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "dismiss", name: "loginSuccessful", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.dismiss), name: "loginSuccessful", object: nil)
 
         // If session data is available, dismiss the loginViewController
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
             // print session
             print(sessionObj)
+            print("HolaSessionOBj")
         }
         
     }
     
     func dismiss() {
         print("Should dismiss loginViewController");
+        print("HolaDismiss")
         self.navigationController?.popViewControllerAnimated(true);
     }
     
