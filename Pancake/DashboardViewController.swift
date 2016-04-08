@@ -26,6 +26,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let auth = SPTAuth.defaultInstance()
     let kCallbackURL = "pancakeapp://callback"
+    let kTokenSwapUrl = "https://peaceful-sierra-1249.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://peaceful-sierra-1249.herokuapp.com/refresh"
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -48,17 +50,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         // Deprecated code. Left here until final version is released.
-        /*
-        // Schedules notification
-        //self.scheduleNotification()
-
-        // Lets us play background music when screen is locked
-        //let sleepPrevent = MMPDeepSleepPreventer()
-        //sleepPrevent.startPreventSleep()
-        
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
-         */
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -107,6 +101,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // For debugging purposes onlye
         //print(timeDisplay.text)
         
+        // When last alarm finished playing - Let other alarms play
         if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
             canPlayAlarmFlag = true
             print(canPlayAlarmFlag)
@@ -152,36 +147,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             }
         }
     }
-    
-    
-    // Manages notifications
-    /*
-    func scheduleNotification() {
-               print("Schedule Notification")
-        
-        // Fires alarm every Sunday at selected hour
-        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
-        
-        // Set week day for recurring alarm
-        dateComponent?.weekday = 1
-        dateComponent?.hour = 2
-        dateComponent?.minute = 57
-        
-        let dd = UIDatePicker()
-        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
-        
-        // Sends Alarm notification - You need to wake up now
-        let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = dd.date
-        alarmNotification.alertBody = "Wake up"
-        alarmNotification.alertAction = "OK"
-        alarmNotification.userInfo = ["CustomField": "Woot"]
-        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
-        
-        
-    }
-    */
     
     // MARK: - Spotify
     
@@ -366,13 +331,15 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         auth.clientID = kClientID
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = NSURL(string:kCallbackURL)
+        //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+        //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         
-        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
-        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
-        let loginURL = auth.loginURL
-        print(loginURL)
-        
-        UIApplication.sharedApplication().openURL(loginURL!)
+//        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
+//        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
+//        let loginURL = auth.loginURL
+//        print(loginURL)
+//        
+//        UIApplication.sharedApplication().openURL(loginURL!)
         
     }
     

@@ -15,11 +15,12 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let kCallbackURL = "pancakeapp://callback"
-    let kTokenSwapUrl = "http://localhost:1234/swap"
-    let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
+    // Use my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com
+    let kTokenSwapUrl = "https://peaceful-sierra-1249.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://peaceful-sierra-1249.herokuapp.com/refresh"
     let auth = SPTAuth.defaultInstance()
 
-
+    // Login with Spotify button
     @IBOutlet weak var loginButton: DesignableButton!
     @IBOutlet var loginViewCrontoller: UIView!
     
@@ -32,17 +33,11 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
         // If session data is available, dismiss the loginViewController
         let userDefaults = NSUserDefaults.standardUserDefaults()
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
+            // Used for debugging purposes only
             // print session
-            print(sessionObj)
-            print("HolaSessionOBj")
+            //print(sessionObj)
         }
         
-    }
-    
-    func dismiss() {
-        print("Should dismiss loginViewController");
-        print("HolaDismiss")
-        self.navigationController?.popViewControllerAnimated(true);
     }
     
     @IBAction func loginWithSpotify(sender: AnyObject) {
@@ -64,7 +59,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     // MARK: - PTAuthViewDelegate Protocol
     func authenticationViewController(authenticationViewController: SPTAuthViewController!, didLoginWithSession session: SPTSession!) {
         
-        
+        // Save new sessin data
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
         
@@ -72,22 +67,32 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
         userDefaults.synchronize()
         
         print("Login was successful");
+        
         // Spotifiy session data has been received
         // Post notification to tell LoginViewController to be dismissed
         NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object: nil)
         
     }
     
+    // Login failed with error
     func authenticationViewController(authenticationViewController: SPTAuthViewController!, didFailToLogin error: NSError!) {
         print("Login failed... \(error)")
         
     }
     
+    // User cancel log in
     func authenticationViewControllerDidCancelLogin(authenticationViewController: SPTAuthViewController!) {
         print("Did Cancel Login...")
     }
-
     
+    // When login is succesfull go to Dashboard
+    func dismiss() {
+        
+        // Go to Dashboard
+        print("Should dismiss loginViewController");
+        self.navigationController?.popViewControllerAnimated(true);
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
