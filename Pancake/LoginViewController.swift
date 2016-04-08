@@ -15,9 +15,9 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let kCallbackURL = "pancakeapp://callback"
-    // Use my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com
-    let kTokenSwapUrl = "https://peaceful-sierra-1249.herokuapp.com/swap"
-    let kTokenRefreshServiceUrl = "https://peaceful-sierra-1249.herokuapp.com/refresh"
+    // Using my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com #Use with caution.
+    let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
     let auth = SPTAuth.defaultInstance()
 
     // Login with Spotify button
@@ -44,8 +44,8 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
         auth.clientID = kClientID
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = NSURL(string:kCallbackURL)
-        //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
-        //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
+        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         
         let spotifyAuthenticationViewController = SPTAuthViewController.authenticationViewController()
         spotifyAuthenticationViewController.delegate = self

@@ -104,7 +104,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // When last alarm finished playing - Let other alarms play
         if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
             canPlayAlarmFlag = true
-            print(canPlayAlarmFlag)
+            
+            // Used for debugging purposes only. 
+            //print(canPlayAlarmFlag)
         }
         
         // Checks alarm time with current time - Determines if it has to play or not.
@@ -124,8 +126,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                     // Gets current alarm time
                     let alarm = alarms[i]
                     let alarmTime = alarm.valueForKey("time") as! String
+                    let alarmMeri = alarm.valueForKey("meri") as! String
                     // If Current time is = to Alarm time, play alarm
-                    if (alarmTime.rangeOfString(timeDisplay.text!) != nil) {
+                    if (alarmTime.rangeOfString(timeDisplay.text!) != nil && alarmMeri.rangeOfString(meridiemDisplay.text!) != nil) {
                        
                         // Play alarm only once
                         canPlayAlarmFlag = false
@@ -220,7 +223,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Custom track
-        let spotifyURI = "spotify:track:0xlg27g9OXI2PHvwLJSCoo"
+        let spotifyURI = "spotify:user:22xg74wzgy4kulndiurtvsxji:playlist:6LDPTXOVkumyqcf5ghhe6R"
+        //let spotifyURI = "spotify:track:0xlg27g9OXI2PHvwLJSCoo"
         // Plays selected song
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
@@ -350,6 +354,21 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             if event!.subtype == UIEventSubtype.RemoteControlPause {
                 print("Pause")
                 player!.stop(nil)
+            } else if (event!.subtype == UIEventSubtype.RemoteControlNextTrack) { 
+                print("Next")
+                
+                // Goes to next song in the playlist
+                // Needs better error handling.
+                let callBack: SPTErrorableOperationCallback = { error -> Void in
+                    
+                    if (error != nil) {
+                        print("There was an error: \(error)")
+                    } else {
+                        print("Playing next song.")
+                    }
+                }
+                
+                player!.skipNext(callBack)
             }
         }
     }

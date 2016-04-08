@@ -225,9 +225,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
                 self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
             }
             
-//            for i in 0...selectedDates.count {
-//                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-//            }
+
         }
     }
     
@@ -291,20 +289,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         
         // Custom button highlight
         self.highlightButton(button)
-        
-        // Used for debugging purposes only
-        //print("Date selected: \((button.titleLabel?.text)!)")
-        if (button.titleLabel?.text == "SUN") {
-            
-        }
-        
-        // Used for debugging purposes only
-        //print(self.dayOfTheWeek((button.titleLabel?.text)!))
-    }
-    
-    // Goes to Main Screen - Dashboard
-    func goBackToDashboard() {
-        self.navigationController?.popToRootViewControllerAnimated(true)
     }
 
     // MARK: - ImagePickerController Delegate
@@ -419,5 +403,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         }
     }
 
+    // Goes to Main Screen - Dashboard
+    func goBackToDashboard() {
+        self.navigationController?.popToRootViewControllerAnimated(true)
+    }
 
 }
