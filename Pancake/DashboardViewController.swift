@@ -163,8 +163,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
-        var newSession = SPTSession()
-        
         // Session available
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             // print session
@@ -336,49 +334,31 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     // MARK: - Session refresh
-    // This is for debugging purposes only
-    // Once refresh tokens are working this will not be needed.
-    // Login with Spotify
-    func loginWithSpotify() {
-        auth.clientID = kClientID
-        auth.requestedScopes = [SPTAuthStreamingScope]
-        auth.redirectURL = NSURL(string:kCallbackURL)
-        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
-        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
-        
-        
-        
-//        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
-//        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
-//        let loginURL = auth.loginURL
-//        print(loginURL)
-//        
-//        UIApplication.sharedApplication().openURL(loginURL!)
-        
-    }
-    
+    // Renews invalid session
     func renewToken(invalidSession: SPTSession){
+        
+        // Displays in console that tokens are being refreshed
         print("Refreshing Token")
+        
+        // Sets the correct URL's for Token Refresh service.
         auth.tokenSwapURL = NSURL(string: kTokenSwapUrl)
         auth.tokenRefreshURL = NSURL(string: kTokenRefreshServiceUrl)
+        
+        // Renewing session
         auth.renewSession(invalidSession, callback: {(error, session) -> Void in
             
-            
-            
+            // Perform if there is no error renewing session
             if error == nil {
                 self.playUsingSession(session)
                 print("The renewed Spotify session is", session)
                 print("The renewed canonical user name in the session is", session.canonicalUsername)
-//                print("The renewed access Spotify token in session is - %@", self.auth.session.accessToken)
-//                print("The renewed encrypted refresh Spotify token in session is - %@", self.auth.session.encryptedRefreshToken)
-                //print("The renewed expiration date of the Spotify access token is - %@", self.auth.session.expirationDate)
-            
+                
+            // If there is an error renewing session
             } else {
-            
+                
+                // Needs better error handling
                 print ("The problem with the renewal session is", error)
-            
             }
-            
         })
     }
 
