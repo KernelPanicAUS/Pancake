@@ -26,6 +26,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let auth = SPTAuth.defaultInstance()
     let kCallbackURL = "pancakeapp://callback"
+    let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -33,6 +35,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Used to play alarm only once
     var canPlayAlarmFlag = true
     var lastAlarmTime = "last"
+    
+    // New User Flag
+    var newUser = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,22 +53,29 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
         // Deprecated code. Left here until final version is released.
-        /*
-        // Schedules notification
-        //self.scheduleNotification()
-
-        // Lets us play background music when screen is locked
-        //let sleepPrevent = MMPDeepSleepPreventer()
-        //sleepPrevent.startPreventSleep()
-        
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
-         */
+        
     }
     
     override func viewWillAppear(animated: Bool) {
         // Fetches Alarms.
         self.fetchData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        
+        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        
+        // Initialize Player after first log in
+        if (player == nil && newUser == true){
+            // Used for debugging purposes only.
+            //print("Player nil")
+            self.playUsingSession(auth.session)
+        } else {
+            // Used for debugging purposes only
+            //print("Player ok")
+        }
     }
     
     // MARK: - Timer
@@ -107,9 +119,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // For debugging purposes onlye
         //print(timeDisplay.text)
         
+        // When last alarm finished playing - Let other alarms play
         if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
             canPlayAlarmFlag = true
-            print(canPlayAlarmFlag)
+            
+            // Used for debugging purposes only. 
+            //print(canPlayAlarmFlag)
         }
         
         // Checks alarm time with current time - Determines if it has to play or not.
@@ -129,8 +144,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                     // Gets current alarm time
                     let alarm = alarms[i]
                     let alarmTime = alarm.valueForKey("time") as! String
+                    let alarmMeri = alarm.valueForKey("meri") as! String
                     // If Current time is = to Alarm time, play alarm
-                    if (alarmTime.rangeOfString(timeDisplay.text!) != nil) {
+                    if (alarmTime.rangeOfString(timeDisplay.text!) != nil && alarmMeri.rangeOfString(meridiemDisplay.text!) != nil) {
                        
                         // Play alarm only once
                         canPlayAlarmFlag = false
@@ -153,36 +169,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         }
     }
     
-    
-    // Manages notifications
-    /*
-    func scheduleNotification() {
-               print("Schedule Notification")
-        
-        // Fires alarm every Sunday at selected hour
-        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
-        
-        // Set week day for recurring alarm
-        dateComponent?.weekday = 1
-        dateComponent?.hour = 2
-        dateComponent?.minute = 57
-        
-        let dd = UIDatePicker()
-        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
-        
-        // Sends Alarm notification - You need to wake up now
-        let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = dd.date
-        alarmNotification.alertBody = "Wake up"
-        alarmNotification.alertAction = "OK"
-        alarmNotification.userInfo = ["CustomField": "Woot"]
-        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
-        
-        
-    }
-    */
-    
     // MARK: - Spotify
     
     // Checks if user is freshly logged in
@@ -196,20 +182,23 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             //print(sessionObj)
             
             print("Already Logged in ")
+            newUser = false
             // print session
             let sessionObjectData = sessionObj as! NSData
             let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
             print(sessionObj)
             
+            // If session is not valid
             if !session.isValid(){
-                print("Session invalid.")
-                self.loginWithSpotify()
+                print("Session invalid. Needs token Refresh.")
+                self.renewToken(session)
             } else {
                 self.playUsingSession(session)
             }
 
         } else {
             print("New User")
+            newUser = true
             self.performSegueWithIdentifier("newUser", sender: nil)
         }
         
@@ -225,15 +214,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         player?.loginWithSession(session, callback: {(error: NSError!) -> Void in
             
+            // Handles player error
+            // Needs better error handling
             if error != nil {
                 print("Session Login error")
             }
             
-            // Deprecated code. Will be removed when final version is available.
-            /*
-            //let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 60), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
-            //NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
-            */
         })
     }
     
@@ -251,12 +237,14 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
         // Alert used to stop Spotify Music
         let stopMusicAlert = JSSAlertView()
         
-        // Custom track
-        let spotifyURI = "spotify:track:0xlg27g9OXI2PHvwLJSCoo"
-        // Plays selected song
+        // Plays custom playlist
+        let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
+        
+        // Starts playing the music
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
         // Snoozes or Stops alarm - Very early version
@@ -359,22 +347,34 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     // MARK: - Session refresh
-    // This is for debugging purposes only
-    // Once refresh tokens are working this will not be needed.
-    // Login with Spotify
-    func loginWithSpotify() {
-        auth.clientID = kClientID
-        auth.requestedScopes = [SPTAuthStreamingScope]
-        auth.redirectURL = NSURL(string:kCallbackURL)
+    // Renews invalid session
+    func renewToken(invalidSession: SPTSession){
         
-        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
-        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
-        let loginURL = auth.loginURL
-        print(loginURL)
+        // Displays in console that tokens are being refreshed
+        print("Refreshing Token")
         
-        UIApplication.sharedApplication().openURL(loginURL!)
+        // Sets the correct URL's for Token Refresh service.
+        auth.tokenSwapURL = NSURL(string: kTokenSwapUrl)
+        auth.tokenRefreshURL = NSURL(string: kTokenRefreshServiceUrl)
         
+        // Renewing session
+        auth.renewSession(invalidSession, callback: {(error, session) -> Void in
+            
+            // Perform if there is no error renewing session
+            if error == nil {
+                self.playUsingSession(session)
+                print("The renewed Spotify session is", session)
+                print("The renewed canonical user name in the session is", session.canonicalUsername)
+                
+            // If there is an error renewing session
+            } else {
+                
+                // Needs better error handling
+                print ("The problem with the renewal session is", error)
+            }
+        })
     }
+
     
     //MARK: - Control Music
     // Controls music
@@ -383,6 +383,21 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             if event!.subtype == UIEventSubtype.RemoteControlPause {
                 print("Pause")
                 player!.stop(nil)
+            } else if (event!.subtype == UIEventSubtype.RemoteControlNextTrack) { 
+                print("Next")
+                
+                // Goes to next song in the playlist
+                // Needs better error handling.
+                let callBack: SPTErrorableOperationCallback = { error -> Void in
+                    
+                    if (error != nil) {
+                        print("There was an error: \(error)")
+                    } else {
+                        print("Playing next song.")
+                    }
+                }
+                
+                player!.skipNext(callBack)
             }
         }
     }
