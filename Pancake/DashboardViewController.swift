@@ -26,8 +26,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let auth = SPTAuth.defaultInstance()
     let kCallbackURL = "pancakeapp://callback"
-    let kTokenSwapUrl = "https://peaceful-sierra-1249.herokuapp.com/swap"
-    let kTokenRefreshServiceUrl = "https://peaceful-sierra-1249.herokuapp.com/refresh"
+    let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -58,6 +58,11 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     override func viewWillAppear(animated: Bool) {
         // Fetches Alarms.
         self.fetchData()
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        self.becomeFirstResponder()
+        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
     }
     
     // MARK: - Timer
@@ -158,6 +163,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
+        var newSession = SPTSession()
+        
         // Session available
         if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {
             // print session
@@ -169,9 +176,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
             print(sessionObj)
             
+            // If session is not valid
             if !session.isValid(){
-                print("Session invalid.")
-                self.loginWithSpotify()
+                print("Session invalid. Needs token Refresh.")
+                self.renewToken(session)
             } else {
                 self.playUsingSession(session)
             }
@@ -223,8 +231,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Custom track
-        let spotifyURI = "spotify:user:22xg74wzgy4kulndiurtvsxji:playlist:6LDPTXOVkumyqcf5ghhe6R"
-        //let spotifyURI = "spotify:track:0xlg27g9OXI2PHvwLJSCoo"
+        //let spotifyURI = "spotify:user:22xg74wzgy4kulndiurtvsxji:playlist:6LDPTXOVkumyqcf5ghhe6R"
+        let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox"
         // Plays selected song
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
@@ -335,8 +343,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         auth.clientID = kClientID
         auth.requestedScopes = [SPTAuthStreamingScope]
         auth.redirectURL = NSURL(string:kCallbackURL)
-        //auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
-        //auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
+        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
+        
+        
         
 //        // This needs to be used for Demo purposes. When app is live we only need auth.loginURL
 //        //let loginURL = NSURL(string: "https://accounts.spotify.com/authorize?client_id=eb68da6b0f3c4589a25e1c95bd3699f3&scope=streaming&redirect_uri=pancakeapp%3A%2F%2Fcallback&nosignup=true&nolinks=true&response_type=token")
@@ -346,6 +356,32 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 //        UIApplication.sharedApplication().openURL(loginURL!)
         
     }
+    
+    func renewToken(invalidSession: SPTSession){
+        print("Refreshing Token")
+        auth.tokenSwapURL = NSURL(string: kTokenSwapUrl)
+        auth.tokenRefreshURL = NSURL(string: kTokenRefreshServiceUrl)
+        auth.renewSession(invalidSession, callback: {(error, session) -> Void in
+            
+            
+            
+            if error == nil {
+                self.playUsingSession(session)
+                print("The renewed Spotify session is", session)
+                print("The renewed canonical user name in the session is", session.canonicalUsername)
+//                print("The renewed access Spotify token in session is - %@", self.auth.session.accessToken)
+//                print("The renewed encrypted refresh Spotify token in session is - %@", self.auth.session.encryptedRefreshToken)
+                //print("The renewed expiration date of the Spotify access token is - %@", self.auth.session.expirationDate)
+            
+            } else {
+            
+                print ("The problem with the renewal session is", error)
+            
+            }
+            
+        })
+    }
+
     
     //MARK: - Control Music
     // Controls music

@@ -15,7 +15,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let kCallbackURL = "pancakeapp://callback"
-    // Using my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com #Use with caution.
+    // Using my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com
     let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
     let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
     let auth = SPTAuth.defaultInstance()
@@ -92,7 +92,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
         print("Should dismiss loginViewController");
         self.navigationController?.popViewControllerAnimated(true);
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
