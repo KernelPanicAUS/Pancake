@@ -36,6 +36,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     var canPlayAlarmFlag = true
     var lastAlarmTime = "last"
     
+    // New User Flag
+    var newUser = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,7 +68,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         
         // Initialize Player after first log in
-        if (player == nil){
+        if (player == nil && newUser == true){
             // Used for debugging purposes only.
             //print("Player nil")
             self.playUsingSession(auth.session)
@@ -179,6 +182,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             //print(sessionObj)
             
             print("Already Logged in ")
+            newUser = false
             // print session
             let sessionObjectData = sessionObj as! NSData
             let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
@@ -194,6 +198,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 
         } else {
             print("New User")
+            newUser = true
             self.performSegueWithIdentifier("newUser", sender: nil)
         }
         
