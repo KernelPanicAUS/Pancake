@@ -63,6 +63,16 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     override func viewDidAppear(animated: Bool) {
         self.becomeFirstResponder()
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
+        
+        // Initialize Player after first log in
+        if (player == nil){
+            // Used for debugging purposes only. 
+            //print("Player nil")
+            self.playUsingSession(auth.session)
+        } else {
+            // Used for debugging purposes only
+            //print("Player ok")
+        }
     }
     
     // MARK: - Timer
@@ -199,15 +209,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         player?.loginWithSession(session, callback: {(error: NSError!) -> Void in
             
+            // Handles player error
+            // Needs better error handling
             if error != nil {
                 print("Session Login error")
             }
             
-            // Deprecated code. Will be removed when final version is available.
-            /*
-            //let alarmTimer = NSTimer(fireDate: NSDate(timeIntervalSinceNow: 60), interval: 60, target: self, selector: "useLoggedInPermissions", userInfo: nil, repeats: false)
-            //NSRunLoop.currentRunLoop().addTimer(alarmTimer, forMode: NSDefaultRunLoopMode)
-            */
         })
     }
     
@@ -225,13 +232,14 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         } catch let error as NSError {
             print(error.localizedDescription)
         }
+        
         // Alert used to stop Spotify Music
         let stopMusicAlert = JSSAlertView()
         
-        // Custom track
-        //let spotifyURI = "spotify:user:22xg74wzgy4kulndiurtvsxji:playlist:6LDPTXOVkumyqcf5ghhe6R"
-        let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox"
-        // Plays selected song
+        // Plays custom playlist
+        let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
+        
+        // Starts playing the music
         player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
         
         // Snoozes or Stops alarm - Very early version
