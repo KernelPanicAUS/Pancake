@@ -61,12 +61,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     override func viewDidAppear(animated: Bool) {
-        self.becomeFirstResponder()
+        
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         
         // Initialize Player after first log in
         if (player == nil){
-            // Used for debugging purposes only. 
+            // Used for debugging purposes only.
             //print("Player nil")
             self.playUsingSession(auth.session)
         } else {
