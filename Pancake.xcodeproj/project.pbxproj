@@ -57,6 +57,8 @@
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
+		E724D7741CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */; };
+		E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
@@ -147,6 +149,8 @@
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
@@ -218,6 +222,7 @@
 				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
 				E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */,
 				E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */,
+				E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 			isa = PBXGroup;
 			children = (
 				E7B013C51C6051B10084ECAA /* Alarm.swift */,
+				E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */,
 				E7B013CB1C6058680084ECAA /* AlarmTableViewCell.swift */,
 			);
 			name = "Custom Classes";
@@ -453,6 +459,7 @@
 				TargetAttributes = {
 					11A63C6F1C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = E5K76XCPJE;
 					};
 					11A63C861C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
@@ -532,10 +539,12 @@
 				11F167421C32DB6F0033D1E3 /* BlurView.swift in Sources */,
 				11F1674C1C32DB6F0033D1E3 /* KeyboardLayoutConstraint.swift in Sources */,
 				11F167571C32DB6F0033D1E3 /* SpringTextView.swift in Sources */,
+				E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */,
 				11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */,
 				11F167481C32DB6F0033D1E3 /* DesignableTextView.swift in Sources */,
 				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
 				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
+				E724D7741CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift in Sources */,
 				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,
 				11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */,
 				11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */,
@@ -723,7 +732,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -744,7 +753,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_LDFLAGS = "-ObjC";
-				PRODUCT_BUNDLE_IDENTIFIER = eu.rudyrosciglione.Pancake;
+				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";

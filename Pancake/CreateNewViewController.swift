@@ -70,7 +70,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.updateTimeLabel()
         // Adds Selected image as background
         self.addBackgroundImage()
-        print("Hourse: \(hoursForAlarm) + Minutes: \(minutesForAlarm)")
+        print("Hours: \(hoursForAlarm) + Minutes: \(minutesForAlarm)")
     }
     
     override func didReceiveMemoryWarning() {
@@ -211,62 +211,66 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // Saves alarm
     @IBAction func success(sender: AnyObject) {
         // Alarm setup
-        let title = alarmNameTextField.text
-        let time = timeLabel.titleLabel?.text
-        let days = "Fri, Sat"
-        let meri = meridiemDisplay.text
+//        let title = alarmNameTextField.text
+//        let time = timeLabel.titleLabel?.text
+//        let days = Alarm.sortDaysOfTheWeek(selectedDates)
+//        let meri = meridiemDisplay.text
         
-        // Checks if alarm info is valid
         if self.validateAlarm() {
-            // Saves new alarm
-            self.saveAlarm(title!, time: time!, days: days, meri: meri!)
-            
-            for i in 0 ..< selectedDates.count {
-                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-            }
-            
-
+            self.performSegueWithIdentifier("ShowPlaylists", sender: self)
         }
+//        // Checks if alarm info is valid
+//        if self.validateAlarm() {
+//            // Saves new alarm
+//            self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+//            
+//            for i in 0 ..< selectedDates.count {
+//                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+//            }
+//            
+//
+//        }
+        //self.performSegueWithIdentifier("ShowPlaylists", sender: self)
     }
     
     // Manages Alarm save to CoreData
-    func saveAlarm(title: String, time: String, days: String, meri: String) {
-        
-        // Application Delegate
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
-        // Manages CoreData
-        let managedContext = appDelegate.managedObjectContext
-        // Entity described in data model
-        let entity = NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
-        
-        // New Alarm
-        let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
-        
-        // Setups Alarm properties
-        alarm.setValue(title, forKey: "title")
-        alarm.setValue(time, forKey: "time")
-        alarm.setValue(meri, forKey: "meri")
-        alarm.setValue(days, forKey: "days")
-        
-        // Saves alarm if there are no errors
-        do {
-            try managedContext.save()
-            // Used for debugging purposes only
-            //print("Success saving date.")
-            let savedAlarmAlert = JSSAlertView()
-            savedAlarmAlert.show(self,
-                title: "Success!",
-                text: "Your alarm was saved succesfully\n",
-                buttonText: "OK",
-                color: UIColor.whiteColor())
-            
-            // Goes back to Dashboard when OK is pressed
-            savedAlarmAlert.addAction(goBackToDashboard)
-        } catch let error as NSError {
-            // Displays error message in console
-            print("Could not save \(error), \(error.userInfo)")
-        }
-    }
+//    func saveAlarm(title: String, time: String, days: String, meri: String) {
+//        
+//        // Application Delegate
+//        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+//        // Manages CoreData
+//        let managedContext = appDelegate.managedObjectContext
+//        // Entity described in data model
+//        let entity = NSEntityDescription.entityForName("Alarm", inManagedObjectContext: managedContext)
+//        
+//        // New Alarm
+//        let alarm = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedContext)
+//        
+//        // Setups Alarm properties
+//        alarm.setValue(title, forKey: "title")
+//        alarm.setValue(time, forKey: "time")
+//        alarm.setValue(meri, forKey: "meri")
+//        alarm.setValue(days, forKey: "days")
+//        
+//        // Saves alarm if there are no errors
+//        do {
+//            try managedContext.save()
+//            // Used for debugging purposes only
+//            //print("Success saving date.")
+//            let savedAlarmAlert = JSSAlertView()
+//            savedAlarmAlert.show(self,
+//                title: "Success!",
+//                text: "Your alarm was saved succesfully\n",
+//                buttonText: "OK",
+//                color: UIColor.whiteColor())
+//            
+//            // Goes back to Dashboard when OK is pressed
+//            savedAlarmAlert.addAction(goBackToDashboard)
+//        } catch let error as NSError {
+//            // Displays error message in console
+//            print("Could not save \(error), \(error.userInfo)")
+//        }
+//    }
     
     // Checks if user enter all info needed to save alarm 
     func validateAlarm() -> Bool{
@@ -400,6 +404,27 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             
         } else if (segue.identifier == "HomeScreenSegue" || segue.identifier == "TableViewSegue") {
             firstOpened = true
+        } else if (segue.identifier == "ShowPlaylists") {
+            let spotifyPlaylistCollectionViewController = segue.destinationViewController as! SpotifyPlaylistCollectionViewController
+            
+            let userDefaults = NSUserDefaults.standardUserDefaults()
+            
+            // Session available
+            let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession")!
+            
+            let sessionObjData = sessionObj as! NSData
+            
+            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjData) as! SPTSession
+            
+            spotifyPlaylistCollectionViewController.currentSession = session
+            
+            spotifyPlaylistCollectionViewController.alarmTitle = self.alarmNameTextField.text!
+            spotifyPlaylistCollectionViewController.alarmTime = (self.timeLabel.titleLabel?.text)!
+            spotifyPlaylistCollectionViewController.alarmDays = Alarm.sortDaysOfTheWeek(selectedDates)
+            spotifyPlaylistCollectionViewController.alarmMeri = self.meridiemDisplay.text!
+            spotifyPlaylistCollectionViewController.selectedDates = self.selectedDates
+            spotifyPlaylistCollectionViewController.hoursForAlarm = self.hoursForAlarm
+            spotifyPlaylistCollectionViewController.minutesForAlarm = self.minutesForAlarm
         }
     }
 
