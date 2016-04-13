@@ -28,6 +28,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let kCallbackURL = "pancakeapp://callback"
     let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
     let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
+    var needsSessionRefresh = false
+    var session = SPTSession()
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -46,7 +48,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         self.spotifyUserCheck()
         
         // Update Time Periodically = _ Stands for timer :P
-        let _ = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        let _ = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
         // Permission for notification
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
@@ -55,6 +57,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Deprecated code. Left here until final version is released.
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
+        
         
     }
     
@@ -127,6 +130,14 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             //print(canPlayAlarmFlag)
         }
         
+        // Used for debugging purposes only.
+        //print("New session saved succesfully.")
+        
+        // Used to leave user logged in
+        if (!session.isValid()) {
+            self.renewToken(session)
+        }
+        
         // Checks alarm time with current time - Determines if it has to play or not.
         self.timeToPlayAlarm()
     }
@@ -135,7 +146,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     // Check if it is time for alarm
     func timeToPlayAlarm() {
-        
         // Check only if there are alarms saved
         if (alarms.isEmpty == false) {
             // Verify if alarm can be played - Used to play only once
@@ -145,6 +155,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                     let alarm = alarms[i]
                     let alarmTime = alarm.valueForKey("time") as! String
                     let alarmMeri = alarm.valueForKey("meri") as! String
+                    let playlistURI = alarm.valueForKey("playURI") as! String
                     // If Current time is = to Alarm time, play alarm
                     if (alarmTime.rangeOfString(timeDisplay.text!) != nil && alarmMeri.rangeOfString(meridiemDisplay.text!) != nil) {
                        
@@ -161,7 +172,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         //print(canPlayAlarmFlag)
                         
                         // Play spotify music
-                        self.useLoggedInPermissions()
+                        self.useLoggedInPermissions(playlistURI)
                     }
                 }
 
@@ -183,14 +194,16 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             print("Already Logged in ")
             newUser = false
+
             // print session
             let sessionObjectData = sessionObj as! NSData
-            let session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
+            session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjectData) as! SPTSession
             print(sessionObj)
             
             // If session is not valid
             if !session.isValid(){
                 print("Session invalid. Needs token Refresh.")
+                needsSessionRefresh = true
                 self.renewToken(session)
             } else {
                 self.playUsingSession(session)
@@ -224,7 +237,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     // Manages songs/playlist to be played
-    func useLoggedInPermissions() {
+    func useLoggedInPermissions(playlistURI: String) {
         do {
             try AVAudioSession.sharedInstance().setCategory(AVAudioSessionCategoryPlayback)
             print("AVAudioSession Category Playback OK")
@@ -245,7 +258,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
         
         // Starts playing the music
-        player!.playURIs([NSURL(string: spotifyURI)!], withOptions: nil, callback: nil)
+        player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
         
         // Snoozes or Stops alarm - Very early version
         stopMusicAlert.show(self,
@@ -362,6 +375,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             // Perform if there is no error renewing session
             if error == nil {
+                // Save new session
+                self.saveNewSession(session)
+                // Get player ready
                 self.playUsingSession(session)
                 print("The renewed Spotify session is", session)
                 print("The renewed canonical user name in the session is", session.canonicalUsername)
@@ -373,6 +389,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 print ("The problem with the renewal session is", error)
             }
         })
+    }
+    
+    // Replace invalid session with valid session using CoreData
+    func saveNewSession(newSession: SPTSession) {
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(newSession)
+        
+        userDefaults.setObject(sessionData, forKey: "SpotifySession")
+        userDefaults.synchronize()
+        
     }
 
     

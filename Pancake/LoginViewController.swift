@@ -59,7 +59,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     // MARK: - PTAuthViewDelegate Protocol
     func authenticationViewController(authenticationViewController: SPTAuthViewController!, didLoginWithSession session: SPTSession!) {
         
-        // Save new sessin data
+        // Save new session data
         let userDefaults = NSUserDefaults.standardUserDefaults()
         let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
         

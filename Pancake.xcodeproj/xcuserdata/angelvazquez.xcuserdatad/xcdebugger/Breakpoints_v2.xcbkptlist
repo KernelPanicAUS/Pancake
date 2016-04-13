@@ -10,11 +10,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/CreateNewViewController.swift"
-            timestampString = "481822242.779913"
+            timestampString = "482196372.970832"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "278"
-            endingLineNumber = "278"
+            startingLineNumber = "282"
+            endingLineNumber = "282"
             landmarkName = "validateAlarm()"
             landmarkType = "5">
          </BreakpointContent>
@@ -26,12 +26,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "481875642.317297"
+            timestampString = "482209718.763261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "251"
-            endingLineNumber = "251"
-            landmarkName = "useLoggedInPermissions()"
+            startingLineNumber = "264"
+            endingLineNumber = "264"
+            landmarkName = "useLoggedInPermissions(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "481875642.317297"
+            timestampString = "482209718.763261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "DashboardViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -58,11 +58,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "481875642.317297"
+            timestampString = "482209718.763261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "380"
-            endingLineNumber = "380"
+            startingLineNumber = "407"
+            endingLineNumber = "407"
             landmarkName = "DashboardViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "481875642.317297"
+            timestampString = "482209718.763261"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "381"
-            endingLineNumber = "381"
+            startingLineNumber = "408"
+            endingLineNumber = "408"
             landmarkName = "remoteControlReceivedWithEvent(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -96,6 +96,22 @@
             startingLineNumber = "61"
             endingLineNumber = "61"
             landmarkName = "authenticationViewController(_:didLoginWithSession:)"
+            landmarkType = "5">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pancake/SpotifyPlaylistCollectionViewController.swift"
+            timestampString = "482208841.270704"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "success(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
