@@ -384,7 +384,7 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         if ((self.playURI == nil)){
             let incompleteInfoAlert = JSSAlertView()
             incompleteInfoAlert.show(self,
-                                     title: "Oops... No playlist selected",
+                                     title: "Oops...",
                                      text: "Please select a playlist for the alarm",
                                      buttonText: "OK",
                                      color: UIColor.whiteColor())
