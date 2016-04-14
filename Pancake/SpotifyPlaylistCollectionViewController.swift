@@ -55,6 +55,7 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         //potifyAuthenticator.tokenRefreshURL = NSURL(string: kTokenRefreshURL)
         
         loginWithSpotifySession(currentSession!)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -196,6 +197,13 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
                 self.playlistCollectionView.reloadData()
                 
                 // Stop progress wheel
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), {
+                    
+                    dispatch_async(dispatch_get_main_queue(), {
+                        MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    })
+                    
+                })
             }
         }
     }
