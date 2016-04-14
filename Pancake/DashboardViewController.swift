@@ -41,14 +41,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // New User Flag
     var newUser = false
     
+    
+    // Main timer
+    var mainTimer = NSTimer?()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         // Spotify is checking if the user is logged in
         self.spotifyUserCheck()
         
-        // Update Time Periodically = _ Stands for timer :P
-        let _ = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        
         
         // Permission for notification
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
@@ -62,6 +65,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     override func viewWillAppear(animated: Bool) {
+        // Update Time Periodically = _ Stands for timer :P
+        mainTimer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        
         // Fetches Alarms.
         self.fetchData()
     }
@@ -449,12 +455,15 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 
     
     // MARK: - Navigation
-    /*
+    
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        if (segue.identifier == "ViewAlarmsSegue") {
+            mainTimer?.invalidate()
+        }
     }
-    */
+    
 
 }
