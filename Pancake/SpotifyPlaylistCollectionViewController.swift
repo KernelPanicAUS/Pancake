@@ -55,6 +55,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         //potifyAuthenticator.tokenRefreshURL = NSURL(string: kTokenRefreshURL)
         
         loginWithSpotifySession(currentSession!)
+//        let progressHUD = MBProgressHUD()
+//        progressHUD.mode = .Determinate
+//        self.view.addSubview(progressHUD)
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     

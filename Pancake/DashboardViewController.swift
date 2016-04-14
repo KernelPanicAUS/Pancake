@@ -41,6 +41,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // New User Flag
     var newUser = false
     
+    // Refreshing tokens flag
+    var refreshingTokens = false
     
     // Main timer
     var mainTimer = NSTimer?()
@@ -381,12 +383,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             // Perform if there is no error renewing session
             if error == nil {
-                // Save new session
-                self.saveNewSession(session)
-                // Get player ready
-                self.playUsingSession(session)
-                print("The renewed Spotify session is", session)
-                print("The renewed canonical user name in the session is", session.canonicalUsername)
+                
+                //if (self.refreshingTokens == false) {
+                    // Save new session
+                    self.saveNewSession(session)
+                    // Get player ready
+                    self.playUsingSession(session)
+                    print("The renewed Spotify session is", session)
+                    print("The renewed canonical user name in the session is", session.canonicalUsername)
+                    self.refreshingTokens = true
+                    print("Refreshing tokens = \(self.refreshingTokens)")
+                //}
                 
             // If there is an error renewing session
             } else {
@@ -461,6 +468,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         if (segue.identifier == "ViewAlarmsSegue") {
+            // Invalidate timer so that App doesn't crash when an alarm is deleted
             mainTimer?.invalidate()
         }
     }
