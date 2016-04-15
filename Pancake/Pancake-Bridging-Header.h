@@ -12,4 +12,6 @@
 
 #import "MMPDeepSleepPreventer.h"
 
+#import "MBProgressHUD.h"
+
 #endif

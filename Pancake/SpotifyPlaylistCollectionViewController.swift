@@ -55,6 +55,10 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         //potifyAuthenticator.tokenRefreshURL = NSURL(string: kTokenRefreshURL)
         
         loginWithSpotifySession(currentSession!)
+//        let progressHUD = MBProgressHUD()
+//        progressHUD.mode = .Determinate
+//        self.view.addSubview(progressHUD)
+        MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     
     @IBAction func cancel(sender: AnyObject) {
@@ -194,125 +198,19 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
             if (i == numberOfPlaylists-1){
                 self.artWorkAvailable = true
                 self.playlistCollectionView.reloadData()
-            }
-        }
-    }
-    
-    // Manages songs to be played
-    func playPlaylist(index: Int) {
-        print("Here playing playlist.")
-        player?.loginWithSession(currentSession, callback: { (error) in
-            
-            //Needs better error handling
-            if (error != nil) {
-                print("Error loading Player.")
-            }
-            
-            // Plays selected Playlist
-            let selectedPlaylist = self.playlistURI[index]
-            print(selectedPlaylist)
-            self.player!.playURIs([selectedPlaylist], withOptions: nil, callback: nil)
-            
-        })
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
-        print("PlaybackStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didSeekToOffset offset: NSTimeInterval) {
-        print("SeekToOffset")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeVolume volume: SPTVolume) {
-        print("ChangedVolume")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeShuffleStatus isShuffled: Bool) {
-        print("ChangedShuffleStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeRepeatStatus isRepeated: Bool) {
-        print("ChangedRepeatStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeToTrack trackMetadata: [NSObject : AnyObject]!) {
-        print("ChangedToTrack")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didFailToPlayTrack trackUri: NSURL!) {
-        print("FailToPlayTrack")
-    }
-    
-    func audioStreamingDidSkipToNextTrack(audioStreaming: SPTAudioStreamingController!) {
-        print("NextTrack")
-    }
-    
-    func audioStreamingDidSkipToPreviousTrack(audioStreaming: SPTAudioStreamingController!) {
-        print("PreviousTrack")
-    }
-    
-    func audioStreamingDidBecomeActivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
-        print("ActivePlaybackDevice")
-    }
-    
-    func audioStreamingDidBecomeInactivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
-        print("InactivePlaybackDevice")
-    }
-    
-    func audioStreamingDidLosePermissionForPlayback(audioStreaming: SPTAudioStreamingController!) {
-        print("DidLosePermissionForPlayback")
-    }
-    
-    func audioStreamingDidPopQueue(audioStreaming: SPTAudioStreamingController!) {
-        print("DidPopQueue")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: NSURL!) {
-        // Track Info
-        let trackName = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackName] as! String
-        let trackAlbum = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataAlbumName] as! String
-        let trackArtist = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataArtistName] as! String
-        let trackDuration = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackDuration]
-        
-        // Music Info Center
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyArtist : trackArtist, MPMediaItemPropertyAlbumTitle : trackAlbum, MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyPlaybackDuration: trackDuration!, MPNowPlayingInfoPropertyPlaybackRate : 1]
-        
-        print(trackName)
-        print(trackAlbum)
-        print(trackArtist)
-        print("StartedPlayingTrack")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: NSURL!) {
-        print("StoppedPlayingTrack")
-    }
-    
-    override func remoteControlReceivedWithEvent(event: UIEvent?) {
-        if event!.type == UIEventType.RemoteControl {
-            if event!.subtype == UIEventSubtype.RemoteControlPause {
-                print("Stop")
-                player?.stop(nil)
-            } else if (event!.subtype == UIEventSubtype.RemoteControlNextTrack) {
-                print("Next")
                 
-                // Goes to next song in the playlist
-                // Needs better error handling.
-                let callBack: SPTErrorableOperationCallback = { error -> Void in
+                // Stop progress wheel
+                dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), {
                     
-                    if (error != nil) {
-                        print("There was an error: \(error)")
-                    } else {
-                        print("Playing next song.")
-                    }
-                }
-                
-                player!.skipNext(callBack)
+                    dispatch_async(dispatch_get_main_queue(), {
+                        MBProgressHUD.hideHUDForView(self.view, animated: true)
+                    })
+                    
+                })
             }
-
         }
     }
-
+    
     // MARK: UICollectionViewDataSource
 
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
@@ -489,7 +387,7 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         if ((self.playURI == nil)){
             let incompleteInfoAlert = JSSAlertView()
             incompleteInfoAlert.show(self,
-                                     title: "Oops... No playlist selected",
+                                     title: "Oops...",
                                      text: "Please select a playlist for the alarm",
                                      buttonText: "OK",
                                      color: UIColor.whiteColor())

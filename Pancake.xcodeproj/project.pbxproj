@@ -61,6 +61,7 @@
 		E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
+		E75ADFED1CBFE563003C7FA2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
 		E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */; };
 		E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = E795119C1C88673D00ECA35B /* MMPSilence.wav */; };
@@ -152,6 +153,8 @@
 		E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
 		E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
@@ -345,6 +348,8 @@
 		E72D5F261C545F2D00F97FDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */,
+				E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */,
 				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
 				E795119C1C88673D00ECA35B /* MMPSilence.wav */,
 				E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */,
@@ -559,6 +564,7 @@
 				11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */,
 				11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */,
 				11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */,
+				E75ADFED1CBFE563003C7FA2 /* MBProgressHUD.m in Sources */,
 				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
 				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
 				E7DCE9651C983E4F009F79BF /* MainPageViewController.swift in Sources */,
