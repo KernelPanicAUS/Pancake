@@ -87,6 +87,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         print("Did receive wake up notification")
+//        if (notification.alertTitle == "Hello.") {
+//            for i in 0..<10 {
+//                print("Do this code bro.")
+//            }
+//        }
     }
     
     // MARK: - Core Data stack
