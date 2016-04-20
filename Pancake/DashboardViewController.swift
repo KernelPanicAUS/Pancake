@@ -263,7 +263,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Plays custom playlist
-        let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
+        // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
         
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
