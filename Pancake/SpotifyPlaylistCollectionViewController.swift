@@ -264,15 +264,10 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
         let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(501)
-        let playlistTitle = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(503)
-        let numberOfSongsInPlaylist = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(504)
         let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
-        
         
         // Make background darker and show checkmark
         cellImageView?.alpha = 0.5
-        playlistTitle?.alpha = 0.5
-        numberOfSongsInPlaylist?.alpha = 0.5
         checkmark?.hidden = false
 
         
@@ -284,13 +279,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
         let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(501)
-        let playlistTitle = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(503)
-        let numberOfSongsInPlaylist = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(504)
         let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
         
         cellImageView?.alpha = 1
-        playlistTitle?.alpha = 1
-        numberOfSongsInPlaylist?.alpha = 1
         checkmark?.hidden = true
     }
     // MARK: - Alarm setup

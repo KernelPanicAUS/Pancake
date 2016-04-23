@@ -25,9 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        // Hide the status bar
-        application.statusBarHidden = true
-        
         return true
     }
     
@@ -90,11 +87,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         print("Did receive wake up notification")
-//        if (notification.alertTitle == "Hello.") {
-//            for i in 0..<10 {
-//                print("Do this code bro.")
-//            }
-//        }
     }
     
     // MARK: - Core Data stack

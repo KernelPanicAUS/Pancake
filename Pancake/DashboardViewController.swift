@@ -16,7 +16,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 
     // Alarm outlets
     @IBOutlet weak var imageTimeDisplay: UIImageView!
-    @IBOutlet weak var alarmImageView: UIImageView!
     @IBOutlet weak var userDailyMessage: UILabel!
     @IBOutlet weak var timeDisplay: UILabel!
     @IBOutlet weak var dateDisplay: UILabel!
@@ -180,13 +179,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         // Used for debugging purposes only
                         //print(canPlayAlarmFlag)
                         
-                        // Change background
-                        //alarmImageView.backgroundColor = UIColor.lightGrayColor()
-                        //userDailyMessage.text = alarm.valueForKey("title") as! String
-                        
                         // Play spotify music
                         self.useLoggedInPermissions(playlistURI)
-                        
                     }
                 }
 
@@ -269,11 +263,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let stopMusicAlert = JSSAlertView()
         
         // Plays custom playlist
-<<<<<<< HEAD
-       // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
-=======
         // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
->>>>>>> RudyRosciglione/master
         
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
