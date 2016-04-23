@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<<<<<<< HEAD
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+=======
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+>>>>>>> RudyRosciglione/master
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <mutableArray key="ProximaNova-Bold.otf">
-            <string>ProximaNova-Bold</string>
-        </mutableArray>
-        <mutableArray key="ProximaNova-Regular.otf">
-            <string>ProximaNova-Regular</string>
-            <string>ProximaNova-Regular</string>
-        </mutableArray>
-    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -24,67 +19,56 @@
                 <rect key="frame" x="0.0" y="0.0" width="413" height="113.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="cellGradiant" translatesAutoresizingMaskIntoConstraints="NO" id="AnF-9f-70q">
+                        <rect key="frame" x="-7" y="-7" width="427" height="128"/>
+                    </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AjP-g1-AHt">
-                        <rect key="frame" x="8" y="29.5" width="90" height="55"/>
-                        <fontDescription key="fontDescription" name="ProximaNova-Bold" family="Proxima Nova" pointSize="45"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="8" y="32.5" width="84" height="48"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M6y-H5-DXQ">
-                        <rect key="frame" x="11" y="7" width="32.5" height="30"/>
-                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="11" y="7" width="30.5" height="33.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kqc-hI-xWJ">
-                        <rect key="frame" x="11" y="76.5" width="39.5" height="24"/>
-                        <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="20"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="11" y="72.5" width="36" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TgZ-wB-Orn">
-                        <rect key="frame" x="99" y="56.5" width="29.5" height="17.5"/>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="15"/>
-                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <rect key="frame" x="93" y="48.5" width="36" height="21.5"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                        <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="MzG-BL-CYB">
-                        <rect key="frame" x="0.0" y="108" width="413" height="5"/>
-                        <color key="backgroundColor" red="0.16862745100000001" green="0.16862745100000001" blue="0.16862745100000001" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="height" constant="10" id="Ufz-Ci-FL4"/>
-                            <constraint firstAttribute="height" constant="5" id="pFb-5r-0Pq"/>
-                        </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="Ufz-Ci-FL4"/>
-                            </mask>
-                        </variation>
-                    </imageView>
                 </subviews>
+                <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="MzG-BL-CYB" secondAttribute="trailing" id="1Bh-8S-OBk"/>
                     <constraint firstItem="M6y-H5-DXQ" firstAttribute="top" secondItem="Ina-z1-Kgy" secondAttribute="topMargin" constant="-1" id="1XM-yO-EcH"/>
                     <constraint firstItem="Kqc-hI-xWJ" firstAttribute="top" secondItem="AjP-g1-AHt" secondAttribute="bottom" constant="-8" id="222-4p-W59"/>
-                    <constraint firstItem="MzG-BL-CYB" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leading" id="3L9-3C-LRj"/>
                     <constraint firstItem="AjP-g1-AHt" firstAttribute="top" secondItem="M6y-H5-DXQ" secondAttribute="bottom" constant="-7.5" id="5hq-a4-JfD"/>
                     <constraint firstItem="Kqc-hI-xWJ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="5oC-vs-ozK"/>
-                    <constraint firstAttribute="bottom" secondItem="MzG-BL-CYB" secondAttribute="bottom" id="Dso-rb-x0m"/>
                     <constraint firstItem="M6y-H5-DXQ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="EUH-hF-de7"/>
                     <constraint firstItem="AjP-g1-AHt" firstAttribute="centerX" secondItem="Ina-z1-Kgy" secondAttribute="centerX" id="GHr-OT-r01"/>
                     <constraint firstItem="Kqc-hI-xWJ" firstAttribute="top" secondItem="AjP-g1-AHt" secondAttribute="bottom" constant="-8" id="GbE-kT-CvN"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="AnF-9f-70q" secondAttribute="bottom" constant="-15" id="Gpy-bi-Tuj"/>
                     <constraint firstItem="AjP-g1-AHt" firstAttribute="top" secondItem="M6y-H5-DXQ" secondAttribute="bottom" constant="-8" id="H0d-Wi-oRQ"/>
+                    <constraint firstItem="AnF-9f-70q" firstAttribute="top" secondItem="Ina-z1-Kgy" secondAttribute="topMargin" constant="-15" id="HCo-8Y-uHH"/>
                     <constraint firstItem="M6y-H5-DXQ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="LOe-yY-sIq"/>
-                    <constraint firstAttribute="trailing" secondItem="MzG-BL-CYB" secondAttribute="trailing" constant="173" id="Mfo-gl-ifz"/>
-                    <constraint firstItem="MzG-BL-CYB" firstAttribute="top" secondItem="Kqc-hI-xWJ" secondAttribute="bottom" constant="8" id="RaL-DU-YMQ"/>
-                    <constraint firstItem="MzG-BL-CYB" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leading" id="TUz-by-rFz"/>
-                    <constraint firstAttribute="bottom" secondItem="MzG-BL-CYB" secondAttribute="bottom" id="UMU-Zf-han"/>
+                    <constraint firstItem="AnF-9f-70q" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="-15" id="S6L-J4-I1K"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="AnF-9f-70q" secondAttribute="trailing" constant="-15" id="Wuy-nY-50t"/>
                     <constraint firstAttribute="leadingMargin" secondItem="AjP-g1-AHt" secondAttribute="leading" id="Zro-rA-1S6"/>
                     <constraint firstItem="AjP-g1-AHt" firstAttribute="centerY" secondItem="Ina-z1-Kgy" secondAttribute="centerY" id="bgo-re-UUG"/>
                     <constraint firstItem="TgZ-wB-Orn" firstAttribute="leading" secondItem="AjP-g1-AHt" secondAttribute="trailing" constant="1" id="cWi-NJ-Sgg"/>
-                    <constraint firstItem="MzG-BL-CYB" firstAttribute="top" secondItem="Kqc-hI-xWJ" secondAttribute="bottom" constant="8" id="gAv-9m-ZKL"/>
+                    <constraint firstItem="AnF-9f-70q" firstAttribute="centerX" secondItem="Ina-z1-Kgy" secondAttribute="centerX" id="dPb-uN-GN2"/>
                     <constraint firstItem="TgZ-wB-Orn" firstAttribute="bottom" secondItem="AjP-g1-AHt" secondAttribute="bottom" constant="-10" id="q9K-ei-uji"/>
                     <constraint firstItem="Kqc-hI-xWJ" firstAttribute="leading" secondItem="Ina-z1-Kgy" secondAttribute="leadingMargin" constant="3" id="vwz-Ov-8uT"/>
+                    <constraint firstItem="AnF-9f-70q" firstAttribute="centerY" secondItem="Ina-z1-Kgy" secondAttribute="centerY" id="wqm-8q-1Gj"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
@@ -93,10 +77,6 @@
                         <exclude reference="H0d-Wi-oRQ"/>
                         <exclude reference="222-4p-W59"/>
                         <exclude reference="vwz-Ov-8uT"/>
-                        <exclude reference="Dso-rb-x0m"/>
-                        <exclude reference="Mfo-gl-ifz"/>
-                        <exclude reference="TUz-by-rFz"/>
-                        <exclude reference="gAv-9m-ZKL"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -109,4 +89,7 @@
             <point key="canvasLocation" x="370.5" y="167"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="cellGradiant" width="375" height="81"/>
+    </resources>
 </document>
