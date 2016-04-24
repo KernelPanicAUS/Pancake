@@ -78,10 +78,10 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let title = "Huh!"
         
         // Custom font
-        let proximaNovaBold = UIFont(name: "ProximaNova-Bold", size: 24.0)
+        let proximaNovaBold = UIFont.systemFontOfSize(38, weight: UIFontWeightHeavy)//UIFont(name: "ProximaNova-Bold", size: 24.0)
         
         // Manages attributes for displayed text
-        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaBold!,
+        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaBold,
                 NSForegroundColorAttributeName: UIColor.whiteColor()]
         
         return NSAttributedString(string: title, attributes: attrs)
@@ -93,10 +93,10 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         let description = "You have no alarms setup yet"
 
         // Custom font
-        let proximaNovaRegular = UIFont(name: "ProximaNova-Regular", size: 18.0)
+        let proximaNovaRegular = UIFont.systemFontOfSize(18, weight: UIFontWeightThin)
         
         // Manages attributes for displayed text
-        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaRegular!,
+        let attrs: [String : AnyObject] = [NSFontAttributeName: proximaNovaRegular,
             NSForegroundColorAttributeName: UIColorFromHex(0x707070)]
         
         return NSAttributedString(string: description, attributes: attrs)
@@ -108,13 +108,19 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         return UIImage(named: "sadFace")
     }
     
+    func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return -30
+    }
+    
+    func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
+        return 5.0
+    }
     // MARK: - Table view data source
 
     func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
-    
 
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
