@@ -109,7 +109,7 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
     }
     
     func verticalOffsetForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
-        return -30
+        return -40
     }
     
     func spaceHeightForEmptyDataSet(scrollView: UIScrollView!) -> CGFloat {
