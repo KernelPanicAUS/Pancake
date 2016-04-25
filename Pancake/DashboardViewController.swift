@@ -470,6 +470,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         if (segue.identifier == "ViewAlarmsSegue") {
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             mainTimer?.invalidate()
+        } else if (segue.identifier == "UserSegue") {
+            let userViewController = segue.destinationViewController as! ViewController
+            userViewController.session = session
         }
     }
     

@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "482364101.038481"
+            timestampString = "483222250.359606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "265"
+            endingLineNumber = "265"
             landmarkName = "useLoggedInPermissions(_:)"
             landmarkType = "5">
          </BreakpointContent>
@@ -42,13 +42,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "482364101.038481"
+            timestampString = "483222250.359606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "DashboardViewController"
-            landmarkType = "3">
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "saveNewSession(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -58,13 +58,13 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "482364101.038481"
+            timestampString = "483222250.359606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "420"
-            endingLineNumber = "420"
-            landmarkName = "DashboardViewController"
-            landmarkType = "3">
+            startingLineNumber = "413"
+            endingLineNumber = "413"
+            landmarkName = "saveNewSession(_:)"
+            landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Pancake/DashboardViewController.swift"
-            timestampString = "482364101.038481"
+            timestampString = "483222250.359606"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "421"
-            endingLineNumber = "421"
-            landmarkName = "remoteControlReceivedWithEvent(_:)"
+            startingLineNumber = "414"
+            endingLineNumber = "414"
+            landmarkName = "saveNewSession(_:)"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
