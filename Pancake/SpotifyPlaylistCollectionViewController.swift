@@ -67,9 +67,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     @IBAction func success(sender: AnyObject) {
         
-        for i in 0 ..< selectedDates.count {
-            self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-        }
+//        for i in 0 ..< selectedDates.count {
+//            self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+//        }
         
         // Saves new alarm
         if self.validateAlarm() {
