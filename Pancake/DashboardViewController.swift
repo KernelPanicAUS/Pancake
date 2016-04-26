@@ -161,6 +161,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                 for i in 0...alarms.count-1 {
                     // Gets current alarm time
                     let alarm = alarms[i]
+                    let alarmTitle = alarm.valueForKey("title") as! String
                     let alarmTime = alarm.valueForKey("time") as! String
                     let alarmMeri = alarm.valueForKey("meri") as! String
                     let playlistURI = alarm.valueForKey("playURI") as! String
@@ -178,6 +179,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         
                         // Used for debugging purposes only
                         //print(canPlayAlarmFlag)
+                        
+                        // Trigger notification
+                        self.alarmNotification(alarmTitle)
                         
                         // Play spotify music
                         self.useLoggedInPermissions(playlistURI)
@@ -282,6 +286,26 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         })
 
         
+    }
+    
+    // Notification setup
+    func alarmNotification(alarmName: String) {
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings?.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "We dont have permission to schedule notifications.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "Ok", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+        }
+        
+        let notification = UILocalNotification()
+        notification.fireDate = NSDate.init(timeIntervalSinceNow: 0)
+        notification.alertTitle = alarmName
+        notification.alertBody = alarmName
+        notification.alertAction = "OK"
+        notification.userInfo = ["CustomField": "Woot"]
+
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
     
@@ -469,7 +493,18 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Pass the selected object to the new view controller.
         if (segue.identifier == "ViewAlarmsSegue") {
             // Invalidate timer so that App doesn't crash when an alarm is deleted
-            mainTimer?.invalidate()
+            print("View Alarms segue")
+            
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.mainTimer?.invalidate()
+            
+            })
+            
+            
+        } else if (segue.identifier == "UserSegue") {
+            let userViewController = segue.destinationViewController as! ViewController
+            userViewController.session = session
         }
     }
     

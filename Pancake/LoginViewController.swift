@@ -42,7 +42,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
     
     @IBAction func loginWithSpotify(sender: AnyObject) {
         auth.clientID = kClientID
-        auth.requestedScopes = [SPTAuthStreamingScope]
+        auth.requestedScopes = [SPTAuthStreamingScope, SPTAuthUserReadPrivateScope]
         auth.redirectURL = NSURL(string:kCallbackURL)
         auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
         auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)

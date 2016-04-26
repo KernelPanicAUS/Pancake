@@ -25,6 +25,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
+        // Removes status bar
+        application.statusBarHidden = true
+        
         return true
     }
     

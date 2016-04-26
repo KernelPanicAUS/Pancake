@@ -67,9 +67,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     @IBAction func success(sender: AnyObject) {
         
-        for i in 0 ..< selectedDates.count {
-            self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-        }
+//        for i in 0 ..< selectedDates.count {
+//            self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+//        }
         
         // Saves new alarm
         if self.validateAlarm() {
@@ -263,10 +263,14 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
 
     func collectionView(collectionView: UICollectionView, didSelectItemAtIndexPath indexPath: NSIndexPath) {
         
-        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(501)
+        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(502)
+        let playlistTitle = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(503)
+        let numberOfSongsInPlaylist = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(504);
         let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
         
         // Make background darker and show checkmark
+        playlistTitle!.alpha = 0.5
+        numberOfSongsInPlaylist!.alpha = 0.5
         cellImageView?.alpha = 0.5
         checkmark?.hidden = false
 
@@ -278,9 +282,12 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     }
     
     func collectionView(collectionView: UICollectionView, didDeselectItemAtIndexPath indexPath: NSIndexPath) {
-        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(501)
-        let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
+        let cellImageView = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(502)
+        let playlistTitle = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(503)
+        let numberOfSongsInPlaylist = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(504);        let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
         
+        playlistTitle!.alpha = 0.5
+        numberOfSongsInPlaylist!.alpha = 0.5
         cellImageView?.alpha = 1
         checkmark?.hidden = true
     }
