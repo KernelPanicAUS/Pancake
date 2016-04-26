@@ -301,6 +301,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let notification = UILocalNotification()
         notification.fireDate = NSDate.init(timeIntervalSinceNow: 0)
         notification.alertTitle = alarmName
+        notification.alertBody = alarmName
+        notification.alertAction = "OK"
+        notification.userInfo = ["CustomField": "Woot"]
+
         UIApplication.sharedApplication().scheduleLocalNotification(notification)
     }
 
