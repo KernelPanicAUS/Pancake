@@ -322,59 +322,59 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // MARK: - Alarm setup
     
     // Manages notifications
-    func scheduleNotification(dayOfWeek: Int, hour: Int, minute: Int) {
-        print("Schedule Notification")
-        
-        // Fires alarm every Sunday at selected hour
-        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
-        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
-        
-        // Set week day for recurring alarm
-        dateComponent?.weekday = dayOfWeek
-        dateComponent?.hour = hour
-        dateComponent?.minute = minute
-        
-        let dd = UIDatePicker()
-        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
-        
-        // Sends Alarm notification - You need to wake up now
-        let alarmNotification = UILocalNotification()
-        alarmNotification.fireDate = dd.date
-        alarmNotification.alertBody = alarmNameTextField.text
-        alarmNotification.alertAction = "OK"
-        alarmNotification.userInfo = ["CustomField": "Woot"]
-        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
-        
-        
-    }
+//    func scheduleNotification(dayOfWeek: Int, hour: Int, minute: Int) {
+//        print("Schedule Notification")
+//        
+//        // Fires alarm every Sunday at selected hour
+//        let gregCalendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
+//        let dateComponent = gregCalendar?.components([NSCalendarUnit.Year, NSCalendarUnit.Month,NSCalendarUnit.Day, NSCalendarUnit.Hour, NSCalendarUnit.Minute, NSCalendarUnit.Weekday], fromDate: NSDate())
+//        
+//        // Set week day for recurring alarm
+//        dateComponent?.weekday = dayOfWeek
+//        dateComponent?.hour = hour
+//        dateComponent?.minute = minute
+//        
+//        let dd = UIDatePicker()
+//        dd.setDate((gregCalendar?.dateFromComponents(dateComponent!))!, animated: true)
+//        
+//        // Sends Alarm notification - You need to wake up now
+//        let alarmNotification = UILocalNotification()
+//        alarmNotification.fireDate = dd.date
+//        alarmNotification.alertBody = alarmNameTextField.text
+//        alarmNotification.alertAction = "OK"
+//        alarmNotification.userInfo = ["CustomField": "Woot"]
+//        UIApplication.sharedApplication().scheduleLocalNotification(alarmNotification)
+//        
+//        
+//    }
     
-    // Returns date of the week
-    func dayOfTheWeek(nameOfDay: String) -> Int {
-        
-        var dayOfTheWeekInt = 0
-        
-        switch nameOfDay {
-            case "SUN":
-                dayOfTheWeekInt = 1
-            case "MON":
-                dayOfTheWeekInt = 2
-            case "TUE":
-                dayOfTheWeekInt = 3
-            case "WED":
-                dayOfTheWeekInt = 4
-            case "THU":
-                dayOfTheWeekInt = 5
-            case "FRI":
-                dayOfTheWeekInt = 6
-            case "SAT":
-                dayOfTheWeekInt = 7
-            default:
-                print("Default")
-        }
-        
-        
-        return Int(dayOfTheWeekInt)
-    }
+//    // Returns date of the week
+//    func dayOfTheWeek(nameOfDay: String) -> Int {
+//        
+//        var dayOfTheWeekInt = 0
+//        
+//        switch nameOfDay {
+//            case "SUN":
+//                dayOfTheWeekInt = 1
+//            case "MON":
+//                dayOfTheWeekInt = 2
+//            case "TUE":
+//                dayOfTheWeekInt = 3
+//            case "WED":
+//                dayOfTheWeekInt = 4
+//            case "THU":
+//                dayOfTheWeekInt = 5
+//            case "FRI":
+//                dayOfTheWeekInt = 6
+//            case "SAT":
+//                dayOfTheWeekInt = 7
+//            default:
+//                print("Default")
+//        }
+//        
+//        
+//        return Int(dayOfTheWeekInt)
+//    }
 
     // MARK: - TextField
     func textFieldShouldReturn(textField: UITextField) -> Bool {
