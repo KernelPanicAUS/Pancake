@@ -16,6 +16,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var smallProfilePicture: UIImageView!
     
     @IBOutlet weak var currentUserName: UILabel!
+    
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,7 +42,7 @@ class ViewController: UIViewController {
             
         }
         
-        let user = SPTUser.requestCurrentUserWithAccessToken(session.accessToken, callback: callBack)
+        SPTUser.requestCurrentUserWithAccessToken(session.accessToken, callback: callBack)
         
         
     }

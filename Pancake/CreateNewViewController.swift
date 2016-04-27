@@ -63,6 +63,13 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Adds Background to view
         self.view.insertSubview(backgroundView, atIndex: 0)
         
+        // Make corner button round
+        for i in 2000...2006{
+            let dateButton = self.view.viewWithTag(i) as! UIButton
+            //dateButton.layer.cornerRadius = dateButton.layer.frame.size.height
+        }
+
+        
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -71,6 +78,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Adds Selected image as background
         self.addBackgroundImage()
         print("Hours: \(hoursForAlarm) + Minutes: \(minutesForAlarm)")
+        
     }
     
     override func didReceiveMemoryWarning() {
