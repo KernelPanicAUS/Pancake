@@ -1066,7 +1066,7 @@
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                     <color key="backgroundColor" red="0.29803922770000002" green="0.29803922770000002" blue="0.29803922770000002" alpha="1" colorSpace="calibratedRGB"/>
                                                 </imageView>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="700" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Btn-Valide-white" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-6O-pgE">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="700" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="IR1-6O-pgE">
                                                     <rect key="frame" x="0.0" y="0.0" width="80" height="80"/>
                                                 </imageView>
                                             </subviews>
@@ -1334,7 +1334,7 @@
                                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="701" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Btn-Valide-white" translatesAutoresizingMaskIntoConstraints="NO" id="FCf-fr-sCs">
+                                                <imageView hidden="YES" userInteractionEnabled="NO" tag="701" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="FCf-fr-sCs">
                                                     <rect key="frame" x="0.0" y="0.0" width="200" height="250"/>
                                                 </imageView>
                                             </subviews>
@@ -1463,6 +1463,7 @@
         <image name="btnPrevious" width="21" height="17"/>
         <image name="btnRequestOff" width="21" height="21"/>
         <image name="cameraIcon" width="67" height="45"/>
+        <image name="checkMark" width="47" height="33"/>
         <image name="concernedFace" width="101" height="101"/>
         <image name="openBackground" width="375" height="667"/>
         <image name="pancakeHappy" width="131" height="131"/>
