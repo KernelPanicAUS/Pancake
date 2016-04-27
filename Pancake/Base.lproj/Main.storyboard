@@ -795,6 +795,7 @@
                     <connections>
                         <outlet property="alarmNameTextField" destination="FyI-z0-mDG" id="K3M-z6-9h6"/>
                         <outlet property="meridiemDisplay" destination="SFC-1q-rhU" id="6Nw-gy-AAz"/>
+                        <outlet property="mon" destination="PDS-Ru-HaD" id="gKl-zO-8DZ"/>
                         <outlet property="timeLabel" destination="sEv-uh-KjA" id="cUc-i3-UUP"/>
                         <segue destination="5IA-ob-1fp" kind="show" identifier="PhotoLibrarySegue" id="pXD-mP-gbo"/>
                     </connections>

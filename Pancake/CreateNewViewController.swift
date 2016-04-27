@@ -22,6 +22,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     // Outlet for the textfield
     @IBOutlet weak var alarmNameTextField: UITextField!
     
+    @IBOutlet weak var mon: DesignableButton!
     // Hold the correct alarm time
     var updatedTime = "Time"
     var updatedMeridiem = "meri"
@@ -66,9 +67,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Make corner button round
         for i in 2000...2006{
             let dateButton = self.view.viewWithTag(i) as! UIButton
-            //dateButton.layer.cornerRadius = dateButton.layer.frame.size.height
+            dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/1.7
         }
-
+        
         
     }
 
