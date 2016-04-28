@@ -67,7 +67,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Make corner button round
         for i in 2000...2006{
             let dateButton = self.view.viewWithTag(i) as! UIButton
-            dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/1.7
+            dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/2
         }
         
         

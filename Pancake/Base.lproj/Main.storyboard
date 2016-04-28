@@ -25,7 +25,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="LoginViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -204,21 +204,33 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BrM-KI-Hu5">
+                                <rect key="frame" x="76" y="371" width="169" height="53"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="39"/>
+                                <state key="normal" title="Log out"/>
+                                <connections>
+                                    <action selector="logOut:" destination="CkE-5z-ApJ" eventType="touchUpInside" id="kMr-tV-rzf"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.16862745098039217" green="0.16862745098039217" blue="0.16862745098039217" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="FA6-Od-HTC" firstAttribute="leading" secondItem="mLg-mZ-rOu" secondAttribute="leading" id="1do-vE-q0l"/>
                             <constraint firstItem="FA6-Od-HTC" firstAttribute="height" secondItem="mLg-mZ-rOu" secondAttribute="height" multiplier="0.4" id="5u3-UW-eKd"/>
                             <constraint firstItem="hSS-qB-PQ7" firstAttribute="bottom" secondItem="FA6-Od-HTC" secondAttribute="bottom" constant="10" id="6HS-zC-kiL"/>
+                            <constraint firstItem="BrM-KI-Hu5" firstAttribute="leading" secondItem="mLg-mZ-rOu" secondAttribute="leading" constant="76" id="8kt-bs-i4A"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lDL-2H-gyW" secondAttribute="trailing" constant="-24" id="8ru-Bx-CfQ"/>
                             <constraint firstItem="OTl-kH-lC4" firstAttribute="bottom" secondItem="FA6-Od-HTC" secondAttribute="bottom" id="Bgt-fI-UVk"/>
                             <constraint firstItem="hSS-qB-PQ7" firstAttribute="top" secondItem="lDL-2H-gyW" secondAttribute="bottom" constant="8" id="QLZ-6G-USd"/>
                             <constraint firstAttribute="trailing" secondItem="FA6-Od-HTC" secondAttribute="trailing" id="R8c-tr-NWr"/>
                             <constraint firstAttribute="trailing" secondItem="OTl-kH-lC4" secondAttribute="trailing" id="SAg-Sy-cwb"/>
+                            <constraint firstItem="BrM-KI-Hu5" firstAttribute="top" secondItem="OTl-kH-lC4" secondAttribute="bottom" constant="144" id="SIW-ev-ovE"/>
+                            <constraint firstItem="fvJ-KR-11e" firstAttribute="top" secondItem="BrM-KI-Hu5" secondAttribute="bottom" constant="144" id="Vwk-rL-C30"/>
                             <constraint firstItem="OTl-kH-lC4" firstAttribute="centerX" secondItem="mLg-mZ-rOu" secondAttribute="centerX" id="X80-ic-9A3"/>
                             <constraint firstItem="lDL-2H-gyW" firstAttribute="leading" secondItem="mLg-mZ-rOu" secondAttribute="leadingMargin" constant="-24" id="Y2a-du-ckT"/>
                             <constraint firstItem="hSS-qB-PQ7" firstAttribute="centerX" secondItem="mLg-mZ-rOu" secondAttribute="centerX" id="YbT-ZU-29I"/>
                             <constraint firstItem="lDL-2H-gyW" firstAttribute="top" secondItem="hLW-dS-eVm" secondAttribute="bottom" id="fkX-Ki-FQ4"/>
+                            <constraint firstAttribute="trailing" secondItem="BrM-KI-Hu5" secondAttribute="trailing" constant="75" id="gln-yE-cco"/>
                             <constraint firstItem="OTl-kH-lC4" firstAttribute="leading" secondItem="FA6-Od-HTC" secondAttribute="trailing" id="mrd-qr-UHf"/>
                             <constraint firstItem="FA6-Od-HTC" firstAttribute="top" secondItem="hLW-dS-eVm" secondAttribute="bottom" id="r8S-du-Hnj"/>
                             <constraint firstItem="lDL-2H-gyW" firstAttribute="leading" secondItem="mLg-mZ-rOu" secondAttribute="leadingMargin" constant="-24" id="rGA-8y-sXd"/>

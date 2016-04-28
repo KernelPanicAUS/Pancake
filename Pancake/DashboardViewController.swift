@@ -63,15 +63,19 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
         
+        // Fast update time
+        self.timeUpdate()
         
     }
     
+    
     override func viewWillAppear(animated: Bool) {
         // Update Time Periodically = _ Stands for timer :P
-        mainTimer = NSTimer.scheduledTimerWithTimeInterval(2, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        mainTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
         // Fetches Alarms.
         self.fetchData()
+        
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -268,6 +272,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         // Plays custom playlist
         // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
+        
+        player?.shuffle = true
         
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
