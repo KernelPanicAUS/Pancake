@@ -29,6 +29,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
     let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
     var needsSessionRefresh = false
+    var sessionIsRefreshing = false
     var session = SPTSession()
     
     // Used to fetch alarms from CoreData
@@ -71,7 +72,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     override func viewWillAppear(animated: Bool) {
         // Update Time Periodically = _ Stands for timer :P
-        mainTimer = NSTimer.scheduledTimerWithTimeInterval(5, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
         // Fetches Alarms.
         self.fetchData()
@@ -144,9 +145,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         // Used for debugging purposes only.
         //print("New session saved succesfully.")
+        if session.isValid() {
+            sessionIsRefreshing = false
+        }
         
         // Used to leave user logged in
-        if (!session.isValid()) {
+        if (!session.isValid() && sessionIsRefreshing == false) {
             self.renewToken(session)
         }
         
@@ -155,7 +159,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     // MARK: - Alarm
-    
     // Check if it is time for alarm
     func timeToPlayAlarm() {
         // Check only if there are alarms saved
@@ -176,7 +179,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         canPlayAlarmFlag = false
                         
                         // Used for debugging purposes only
-                        //print("Alarm must be played.")
+                        print("Alarm must be played.")
                         
                         // Check the last alarm played in order to reactivate flag
                         lastAlarmTime = alarmTime
@@ -273,6 +276,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Plays custom playlist
         // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
         
+        // Shuffles between songs in playlists
         player?.shuffle = true
         
         // Starts playing the music
@@ -401,6 +405,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Renews invalid session
     func renewToken(invalidSession: SPTSession){
         
+        sessionIsRefreshing = true
         // Displays in console that tokens are being refreshed
         print("Refreshing Token")
         
