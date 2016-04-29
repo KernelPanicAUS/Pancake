@@ -15,6 +15,7 @@ import CoreData
 
 class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    @IBOutlet weak var textFieldBottomConstraint: NSLayoutConstraint!
     // Labels that display the selected Alarm Time
     @IBOutlet weak var timeLabel: UIButton!
     @IBOutlet weak var meridiemDisplay: UILabel!
@@ -69,6 +70,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             let dateButton = self.view.viewWithTag(i) as! UIButton
             dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/2
         }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
         
         
     }
@@ -392,6 +396,21 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         
         return true
     }
+    
+    // Moves View up so that Keyboard dosn't interfere with TextField
+    func keyboardWillShow(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y -= keyboardSize.height
+        }
+    }
+    
+    // Moves View down back to normal
+    func keyboardWillHide(notification: NSNotification) {
+        if let keyboardSize = (notification.userInfo?[UIKeyboardFrameBeginUserInfoKey] as? NSValue)?.CGRectValue() {
+            self.view.frame.origin.y += keyboardSize.height
+        }
+    }
+    
     
     // MARK: - Navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {

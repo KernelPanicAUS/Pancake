@@ -111,6 +111,10 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         // Callback Method that gets number of playlist that user has
         let callBack: SPTRequestCallback = { playlist -> Void in
             
+            if (playlist.0 != nil) {
+                print(playlist.0)
+            }
+            
             // Page 1 of playlists
             let listPage: SPTListPage = playlist.1 as! SPTListPage
             

@@ -477,7 +477,7 @@
                             <imageView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" fixedFrame="YES" image="scenegradiant" translatesAutoresizingMaskIntoConstraints="NO" id="o2g-PQ-RSm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                             </imageView>
-                            <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhK-lw-qfa">
+                            <button opaque="NO" alpha="0.5" tag="5001" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bhK-lw-qfa">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="568"/>
                                 <fontDescription key="fontDescription" name="ProximaNova-Regular" family="Proxima Nova" pointSize="18"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -490,7 +490,7 @@
                                     <segue destination="iKC-4F-Gx6" kind="show" identifier="ShowPlaylists" id="Hkj-iH-gin"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yh-0wK">
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.5" tag="5002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap to add a photo" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tf-yh-0wK">
                                 <rect key="frame" x="84" y="283" width="152" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
@@ -698,8 +698,14 @@
                                     <segue destination="oR8-Wh-l6i" kind="show" identifier="AddTime" id="IPW-5K-E85"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-1q-rhU">
+                                <rect key="frame" x="205" y="477" width="36" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="252" verticalHuggingPriority="252" horizontalCompressionResistancePriority="751" verticalCompressionResistancePriority="751" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Add alarm title" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="FyI-z0-mDG">
-                                <rect key="frame" x="11" y="368.5" width="298" height="40"/>
+                                <rect key="frame" x="11" y="369" width="298" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="QDG-X4-ysR"/>
                                 </constraints>
@@ -710,12 +716,6 @@
                                     <outlet property="delegate" destination="poA-4a-oyA" id="1R6-oy-iK8"/>
                                 </connections>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="meri" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SFC-1q-rhU">
-                                <rect key="frame" x="205" y="477" width="36" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="0.4392156862745098" green="0.4392156862745098" blue="0.4392156862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JYU-pI-P2F">
                                 <rect key="frame" x="-8" y="0.0" width="336" height="51"/>
                                 <subviews>
@@ -808,6 +808,7 @@
                         <outlet property="alarmNameTextField" destination="FyI-z0-mDG" id="K3M-z6-9h6"/>
                         <outlet property="meridiemDisplay" destination="SFC-1q-rhU" id="6Nw-gy-AAz"/>
                         <outlet property="mon" destination="PDS-Ru-HaD" id="gKl-zO-8DZ"/>
+                        <outlet property="textFieldBottomConstraint" destination="uWZ-hR-usk" id="DeJ-rO-tQZ"/>
                         <outlet property="timeLabel" destination="sEv-uh-KjA" id="cUc-i3-UUP"/>
                         <segue destination="5IA-ob-1fp" kind="show" identifier="PhotoLibrarySegue" id="pXD-mP-gbo"/>
                     </connections>

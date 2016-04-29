@@ -506,11 +506,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             print("View Alarms segue")
             
-            dispatch_async(dispatch_get_main_queue(), {
+        
                 
-                self.mainTimer?.invalidate()
-            
-            })
+            self.mainTimer?.invalidate()
+        
             
             
         } else if (segue.identifier == "UserSegue") {
