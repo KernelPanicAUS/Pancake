@@ -32,6 +32,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     var sessionIsRefreshing = false
     var session = SPTSession()
     
+    //Debugging timer function
+    var numberOfSeconds = 0
+    
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
     
@@ -54,8 +57,15 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Spotify is checking if the user is logged in
         self.spotifyUserCheck()
         
+        // Get run loop
+        //let runLoop = NSRunLoop.currentRunLoop()
         
+        // Add timer to runLoop
+        //runLoop.addTimer(mainTimer!, forMode: "NSRunLoopCommonModes")
+        //runLoop.addTimer(mainTimer!, forMode: "NSEventTrackingRunLoopMode")
+//        self.mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
+
         // Permission for notification
         let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
         UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
@@ -72,11 +82,16 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     override func viewWillAppear(animated: Bool) {
         // Update Time Periodically = _ Stands for timer :P
-        mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
-        
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+            
+            NSRunLoop.currentRunLoop().addTimer(self.mainTimer!, forMode: NSRunLoopCommonModes)
+        })
+
         // Fetches Alarms.
         self.fetchData()
-        
+//
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -94,11 +109,20 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         }
     }
     
+    override func viewWillDisappear(animated: Bool) {
+//        //Invalidate timer every time you are out of Dashboard
+//        print("View will disappear")
+//        self.mainTimer?.invalidate()
+//        self.mainTimer = nil
+//
+    }
+    
     // MARK: - Timer
     
     // Updates Time and all its elements
     func timeUpdate(){
-        
+        print(numberOfSeconds)
+        numberOfSeconds++
         // Creates a custom Time format
         let timeFormatter = NSDateFormatter()
         timeFormatter.dateFormat = "hh:mm"
@@ -242,6 +266,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             player = SPTAudioStreamingController(clientId: kClientID)
             player!.playbackDelegate = self
             player!.diskCache = SPTDiskCache(capacity: 1024 * 1024 * 64)
+            
+            // Shuffles between songs in playlists
+            player?.shuffle = true
+
+            let callBack: SPTErrorableOperationCallback = { error -> Void in
+                if (error != nil) {
+                    print("Error with bitrate.")
+                }
+            
+            }
+            player?.setTargetBitrate(SPTBitrate.Low, callback: callBack)
         }
         
         player?.loginWithSession(session, callback: {(error: NSError!) -> Void in
@@ -275,9 +310,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         // Plays custom playlist
         // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
-        
-        // Shuffles between songs in playlists
-        player?.shuffle = true
         
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
@@ -320,6 +352,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 
     
     // MARK: - SPTAudioStreamingPlaybackDelegate
+    
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
         print("PlaybackStatus")
     }
@@ -502,14 +535,13 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
+        
+        mainTimer?.invalidate()
+        mainTimer = nil
+        
         if (segue.identifier == "ViewAlarmsSegue") {
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             print("View Alarms segue")
-            
-        
-                
-            self.mainTimer?.invalidate()
-        
             
             
         } else if (segue.identifier == "UserSegue") {

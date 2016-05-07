@@ -186,36 +186,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         }
     }
     
-    // Highlights or Unhighlights selected button
-    func highlightButton(bttn: UIButton) {
-        
-        // Highlights or Unhighlights button depending on state.
-        if bttn.titleColorForState(UIControlState.Normal) == UIColor.whiteColor() {
-            let pancakeGrayColor = UIColorFromHex(0x707070)
-            bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
-            bttn.layer.borderColor = pancakeGrayColor.CGColor
-            
-            // Removes unselected dates from array
-            for i in 0...selectedDates.count-1{
-                if ((bttn.titleLabel?.text)! == selectedDates[i]) {
-                     print("Hola")
-                    self.selectedDates.removeAtIndex(i)
-                }
-               
-            }
-            
-        } else {
-            bttn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
-            bttn.layer.borderColor = UIColor.whiteColor().CGColor
-            // Adds selected date to array
-            selectedDates.append((bttn.titleLabel?.text)!)
-            print("date: \((bttn.titleLabel?.text)!)")
-            print("\(selectedDates)")
-            
-        }
-    }
-
-    
     // Goes back to the ViewController that presented it
     @IBAction func cancel(sender: AnyObject) {
         self.goBackToDashboard()
@@ -299,6 +269,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         return true
     }
     
+    // MARK: - Date Selection
+    
     // Selects days of the week that alarm will be active
     @IBAction func selectDate(sender: AnyObject) {
         // Date Button
@@ -307,6 +279,38 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Custom button highlight
         self.highlightButton(button)
     }
+    
+    // Highlights or Unhighlights selected button
+    func highlightButton(bttn: UIButton) {
+        
+        // Highlights or Unhighlights button depending on state.
+        if bttn.titleColorForState(UIControlState.Normal) == UIColor.whiteColor() {
+            let pancakeGrayColor = UIColorFromHex(0x707070)
+            bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
+            bttn.layer.borderColor = pancakeGrayColor.CGColor
+            
+            var to = selectedDates.count
+            
+            // Removes unselected dates from array
+            for i in 0..<selectedDates.count{
+                if ((bttn.titleLabel?.text)! == selectedDates[i]) {
+                    //print("Hola")
+                    self.selectedDates.removeAtIndex(i)
+                }
+                
+            }
+            
+        } else {
+            bttn.setTitleColor(UIColor.whiteColor(), forState: UIControlState.Normal)
+            bttn.layer.borderColor = UIColor.whiteColor().CGColor
+            // Adds selected date to array
+            selectedDates.append((bttn.titleLabel?.text)!)
+            print("date: \((bttn.titleLabel?.text)!)")
+            print("\(selectedDates)")
+            
+        }
+    }
+
 
     // MARK: - ImagePickerController Delegate
     func imagePickerControllerDidCancel(picker: UIImagePickerController) {
