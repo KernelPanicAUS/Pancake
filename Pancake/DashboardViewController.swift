@@ -123,6 +123,18 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     func timeUpdate(){
         print(numberOfSeconds)
         numberOfSeconds++
+        
+        // Used for debugging purposes only.
+        //print("New session saved succesfully.")
+        if session.isValid() {
+            sessionIsRefreshing = false
+        }
+        
+        // Used to leave user logged in
+        if (!session.isValid() && sessionIsRefreshing == false) {
+            self.renewToken(session)
+        }
+        
         // Creates a custom Time format
         let timeFormatter = NSDateFormatter()
         timeFormatter.dateFormat = "hh:mm"
@@ -167,17 +179,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             //print(canPlayAlarmFlag)
         }
         
-        // Used for debugging purposes only.
-        //print("New session saved succesfully.")
-        if session.isValid() {
-            sessionIsRefreshing = false
-        }
-        
-        // Used to leave user logged in
-        if (!session.isValid() && sessionIsRefreshing == false) {
-            self.renewToken(session)
-        }
-        
         // Checks alarm time with current time - Determines if it has to play or not.
         self.timeToPlayAlarm()
     }
@@ -212,7 +213,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         //print(canPlayAlarmFlag)
                         
                         // Trigger notification
-                        self.alarmNotification(alarmTitle)
+                        //self.alarmNotification(alarmTitle)
                         
                         // Play spotify music
                         self.useLoggedInPermissions(playlistURI)

@@ -203,16 +203,16 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             self.performSegueWithIdentifier("ShowPlaylists", sender: self)
         }
 //        // Checks if alarm info is valid
-//        if self.validateAlarm() {
-//            // Saves new alarm
-//            self.saveAlarm(title!, time: time!, days: days, meri: meri!)
-//            
-//            for i in 0 ..< selectedDates.count {
-//                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-//            }
-//            
-//
-//        }
+        if self.validateAlarm() {
+            // Saves new alarm
+            //self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+            
+            for i in 0 ..< selectedDates.count {
+                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+            }
+            
+
+        }
         //self.performSegueWithIdentifier("ShowPlaylists", sender: self)
     }
     

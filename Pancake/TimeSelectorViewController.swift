@@ -79,8 +79,8 @@ class TimeSelectorViewController: UIViewController{
         // Show updated time in Alarm Setup
         firstViewController!.updatedTime = formattedTime
         // Converts String to Int and passes data to CreateNewViewController
-        //firstViewController!.hoursForAlarm = 9
-        //firstViewController!.minutesForAlarm = 9
+        firstViewController!.hoursForAlarm = Int(hours)!
+        firstViewController!.minutesForAlarm = Int(minutes)!
         
         // Used for debugging purposes only
         //print("Alarm Time: \(time)")
