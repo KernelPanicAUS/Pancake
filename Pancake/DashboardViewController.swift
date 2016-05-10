@@ -311,8 +311,31 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Plays custom playlist
         // let spotifyURI = "spotify:user:spotify:playlist:5HEiuySFNy9YKjZTvNn6ox" // Chill Vibes Playlist
         
+        let callback: SPTErrorableOperationCallback = { result -> Void in
+        
+            print("Callback in.")
+        
+            if result != nil {
+                print("What happened")
+                // Snoozes or Stops alarm - Very early version
+                stopMusicAlert.show(self,
+                                    title: "Error",
+                                    text: "\(result)",
+                                    buttonText: "Im awake",
+                                    cancelButtonText: "Snooze",
+                                    color: UIColor.whiteColor())
+                
+                stopMusicAlert.addAction({
+                    print("Stop")
+                    self.player!.stop(nil)
+                })
+
+            }
+            
+        }
+        
         // Starts playing the music
-        player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: nil)
+        player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: callback)
         
         // Snoozes or Stops alarm - Very early version
         stopMusicAlert.show(self,
