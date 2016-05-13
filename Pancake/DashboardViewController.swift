@@ -11,6 +11,7 @@
 import UIKit
 import MediaPlayer
 import CoreData
+import AVKit
 
 class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
@@ -34,6 +35,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     //Debugging timer function
     var numberOfSeconds = 0
+    var downloadTask:NSURLSessionDownloadTask?
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -109,14 +111,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         }
     }
     
-    override func viewWillDisappear(animated: Bool) {
-//        //Invalidate timer every time you are out of Dashboard
-//        print("View will disappear")
-//        self.mainTimer?.invalidate()
-//        self.mainTimer = nil
-//
-    }
-    
     // MARK: - Timer
     
     // Updates Time and all its elements
@@ -174,10 +168,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // When last alarm finished playing - Let other alarms play
         if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
             canPlayAlarmFlag = true
-            
-            // Used for debugging purposes only. 
-            //print(canPlayAlarmFlag)
         }
+        
+        
         
         // Checks alarm time with current time - Determines if it has to play or not.
         self.timeToPlayAlarm()
@@ -187,7 +180,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Check if it is time for alarm
     func timeToPlayAlarm() {
         // Check only if there are alarms saved
-        if (alarms.isEmpty == false) {
+        if (!alarms.isEmpty) {
             // Verify if alarm can be played - Used to play only once
             if (canPlayAlarmFlag == true) {
                 for i in 0...alarms.count-1 {
@@ -213,7 +206,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         //print(canPlayAlarmFlag)
                         
                         // Trigger notification
-                        //self.alarmNotification(alarmTitle)
+                        self.alarmNotification(alarmTitle)
                         
                         // Play spotify music
                         self.useLoggedInPermissions(playlistURI)
@@ -315,6 +308,21 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         let callback: SPTErrorableOperationCallback = { result -> Void in
         
             print("Callback in.")
+            
+            // Snoozes or Stops alarm - Very early version
+            stopMusicAlert.show(self,
+                                title: "Wake up",
+                                text: "Common, you can do it!",
+                                buttonText: "Im awake",
+                                cancelButtonText: "Snooze",
+                                color: UIColor.whiteColor())
+            
+            stopMusicAlert.addAction({
+                print("Stop")
+                self.player?.setIsPlaying(false, callback: nil)
+                self.player!.stop(nil)
+            })
+
         
             if result != nil {
                 print("What happened")
@@ -335,22 +343,14 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
         }
         
+        
+//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
+//            // Starts playing the music
+            //self.player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: callback)
+//        })
+        
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: callback)
-        
-        // Snoozes or Stops alarm - Very early version
-        stopMusicAlert.show(self,
-            title: "Wake up",
-            text: "Common, you can do it!",
-            buttonText: "Im awake",
-            cancelButtonText: "Snooze",
-            color: UIColor.whiteColor())
-        
-        stopMusicAlert.addAction({
-            print("Stop")
-            self.player!.stop(nil)
-        })
-
         
     }
     
@@ -514,8 +514,11 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         if event!.type == UIEventType.RemoteControl {
             if event!.subtype == UIEventSubtype.RemoteControlPause {
                 print("Pause")
-                player!.stop(nil)
-            } else if (event!.subtype == UIEventSubtype.RemoteControlNextTrack) { 
+                if player?.isPlaying == true {
+                    player?.setIsPlaying(false, callback: nil)
+                    player?.stop(nil)
+                }
+            } else if (event!.subtype == UIEventSubtype.RemoteControlNextTrack) {
                 print("Next")
                 
                 // Goes to next song in the playlist

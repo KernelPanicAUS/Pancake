@@ -58,6 +58,8 @@ class ViewController: UIViewController {
 //        presentViewController(loginViewController, animated: true, completion: {
 //            print("Done")
 //        })
+        
+        
     }
     
     func setProfilePicture(imageURL: NSURL) {

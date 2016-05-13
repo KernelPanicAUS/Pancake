@@ -71,8 +71,8 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/2
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillShow:"), name: UIKeyboardWillShowNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("keyboardWillHide:"), name: UIKeyboardWillHideNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateNewViewController.keyboardWillShow(_:)), name: UIKeyboardWillShowNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(CreateNewViewController.keyboardWillHide(_:)), name: UIKeyboardWillHideNotification, object: nil)
         
         
     }
@@ -203,16 +203,16 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             self.performSegueWithIdentifier("ShowPlaylists", sender: self)
         }
 //        // Checks if alarm info is valid
-        if self.validateAlarm() {
-            // Saves new alarm
-            //self.saveAlarm(title!, time: time!, days: days, meri: meri!)
-            
-            for i in 0 ..< selectedDates.count {
-                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-            }
-            
-
-        }
+//        if self.validateAlarm() {
+//            // Saves new alarm
+//            //self.saveAlarm(title!, time: time!, days: days, meri: meri!)
+//            
+//            for i in 0 ..< selectedDates.count {
+//                self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
+//            }
+//            
+//
+//        }
         //self.performSegueWithIdentifier("ShowPlaylists", sender: self)
     }
     
@@ -288,8 +288,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             let pancakeGrayColor = UIColorFromHex(0x707070)
             bttn.setTitleColor(pancakeGrayColor, forState: UIControlState.Normal)
             bttn.layer.borderColor = pancakeGrayColor.CGColor
-            
-            var to = selectedDates.count
             
             // Removes unselected dates from array
             for i in 0..<selectedDates.count{

@@ -40,6 +40,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     var minutesForAlarm = 0
     var playURI:String?
     
+    // Used to fetch alarms from CoreData
+    var alarms = [NSManagedObject]()
+    
     @IBOutlet weak var playlistCollectionView: UICollectionView!
     
     override func viewDidLoad() {
@@ -61,6 +64,10 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     
+    override func viewWillAppear(animated: Bool) {
+        self.fetchData()
+    }
+    
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
@@ -73,6 +80,8 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         
         // Saves new alarm
         if self.validateAlarm() {
+            var hey = self.alarmExists()
+            print(hey)
             self.saveAlarm(alarmTitle, time: alarmTime, days: alarmDays, meri: alarmMeri, playlistURI: playURI!)
         }
         
@@ -395,6 +404,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     // Checks if user enter all info needed to save alarm
     func validateAlarm() -> Bool{
+        
+        let alarmExistsFlag = self.alarmExists()
+        
         if ((self.playURI == nil)){
             let incompleteInfoAlert = JSSAlertView()
             incompleteInfoAlert.show(self,
@@ -403,8 +415,49 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
                                      buttonText: "OK",
                                      color: UIColor.whiteColor())
             return false
+        } else if (alarmExistsFlag == true) {
+            let alarmAlreadyExistsAlert = JSSAlertView()
+            alarmAlreadyExistsAlert.show(self, title: "Oops...",
+                                         text: "An alarm at that same time already exists; Please select another time.",
+                                         buttonText: "OK",
+                                         color: UIColor.whiteColor())
+            return false
         }
         return true
+    }
+
+    func alarmExists() -> Bool{
+        if (!alarms.isEmpty){
+            for i in 0..<alarms.count {
+                let alarm = alarms[i]
+                let alarmFireTime = alarm.valueForKey("time") as! String
+                let alarmMeridian = alarm.valueForKey("meri") as! String
+                print(alarmFireTime)
+                
+                if (alarmFireTime.rangeOfString(self.alarmTime) != nil && alarmMeridian.rangeOfString(self.alarmMeri) != nil) {
+                    return true
+                }
+            }
+
+        }
+        
+        return false
+    }
+    
+    // Gets Alarms Stored in CoreData
+    func fetchData() {
+        // Application Delegate
+        let appDel:AppDelegate = (UIApplication.sharedApplication().delegate as! AppDelegate)
+        // Manages CoreData
+        let context:NSManagedObjectContext = appDel.managedObjectContext
+        
+        // Feteches saved alarms
+        let fetchRequest = NSFetchRequest(entityName: "Alarm")
+        do {
+            try alarms = context.executeFetchRequest(fetchRequest) as! [NSManagedObject]
+        } catch let error as NSError {
+            print("Could not load data error: \(error), \(error.userInfo)")
+        }
     }
 
     

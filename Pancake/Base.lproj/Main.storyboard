@@ -866,7 +866,7 @@
                                     <constraint firstItem="cjy-QH-fd0" firstAttribute="leading" secondItem="pwA-vp-ZC7" secondAttribute="leading" constant="20" id="pyZ-vI-YTF"/>
                                 </constraints>
                             </view>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdb-Lv-fQT">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="xdb-Lv-fQT">
                                 <rect key="frame" x="0.0" y="60" width="320" height="508"/>
                                 <date key="date" timeIntervalSinceReferenceDate="475364392.92270899">
                                     <!--2016-01-24 21:39:52 +0000-->
