@@ -51,6 +51,7 @@ class TimeSelectorViewController: UIViewController{
         // Displays time in custom format "hh:mm"
         let now = timePicker.date
         print("Selected time is: \(now)")
+        
         let formattedTime = timeFormatter.stringFromDate(now)
         
         // Saves date for use with alarm setup

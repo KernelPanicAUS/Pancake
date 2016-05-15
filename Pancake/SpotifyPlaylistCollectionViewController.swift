@@ -80,8 +80,7 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         
         // Saves new alarm
         if self.validateAlarm() {
-            var hey = self.alarmExists()
-            print(hey)
+            print(self.alarmExists())
             self.saveAlarm(alarmTitle, time: alarmTime, days: alarmDays, meri: alarmMeri, playlistURI: playURI!)
         }
         
@@ -118,18 +117,18 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         // listPage is an array of playlists
         //setupSpotifyPlayer()
         // Callback Method that gets number of playlist that user has
-        let callBack: SPTRequestCallback = { playlist -> Void in
+        let callBack: SPTRequestCallback = { playlists -> Void in
             
-            if (playlist.0 != nil) {
-                print(playlist.0)
+            if (playlists.0 != nil) {
+                print(playlists.0)
             }
             
             // Page 1 of playlists
-            let listPage: SPTListPage = playlist.1 as! SPTListPage
+            let listPage: SPTListPage = playlists.1 as! SPTListPage
             
             
             // Array that will hold playlists
-            var playlist = NSMutableArray()
+            let playlist = NSMutableArray()
             
             // Sets the number of playlist user has
             self.numberOfPlaylists = listPage.items.count

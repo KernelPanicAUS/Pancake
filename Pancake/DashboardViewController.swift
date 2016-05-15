@@ -116,7 +116,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Updates Time and all its elements
     func timeUpdate(){
         print(numberOfSeconds)
-        numberOfSeconds++
+        numberOfSeconds += 1
         
         // Used for debugging purposes only.
         //print("New session saved succesfully.")
@@ -430,19 +430,31 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     }
     
     func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: NSURL!) {
+        
         // Track Info
-        let trackName = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackName] as! String
-        let trackAlbum = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataAlbumName] as! String
-        let trackArtist = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataArtistName] as! String
-        let trackDuration = audioStreaming.currentTrackMetadata[SPTAudioStreamingMetadataTrackDuration]
-      
+        let currentTrackURI = audioStreaming.currentTrackURI
+        let callback:SPTRequestCallback = {result -> Void in
         
-        // Music Info Center
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyArtist : trackArtist, MPMediaItemPropertyAlbumTitle : trackAlbum, MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyPlaybackDuration: trackDuration!, MPNowPlayingInfoPropertyPlaybackRate : 1]
+            let currentSong = result.1 as! SPTTrack
+            let trackName = currentSong.name
+            let albumName = currentSong.album.name
+            guard let artist = currentSong.artists.first as? SPTPartialArtist else {
+                print("No artist name provided.")
+                return
+            }
+            let artistName = artist.name
+            let duration = currentSong.duration
+            
+            print(trackName)
+            print(albumName)
+            print(artistName)
+            
+            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyAlbumTitle : albumName, MPMediaItemPropertyArtist : artistName, MPMediaItemPropertyPlaybackDuration : duration]
+
+        }
         
-        print(trackName)
-        print(trackAlbum)
-        print(trackArtist)
+        SPTTrack.trackWithURI(currentTrackURI, session: session, callback: callback)
+
         print("StartedPlayingTrack")
     }
     
@@ -574,6 +586,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         } else if (segue.identifier == "UserSegue") {
             let userViewController = segue.destinationViewController as! ViewController
             userViewController.session = session
+            userViewController.player = player
         }
     }
     

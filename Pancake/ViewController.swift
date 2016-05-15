@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SPTAudioStreamingDelegate{
 
     var session = SPTSession()
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
@@ -41,10 +41,6 @@ class ViewController: UIViewController {
             
             self.setProfilePicture(bigProfilePicture.imageURL)
             
-            if self.player == nil {
-                self.player = SPTAudioStreamingController(clientId: self.kClientID)
-                self.player!.diskCache = SPTDiskCache(capacity: 1024 * 1024 * 64)
-            }
         }
         
         SPTUser.requestCurrentUserWithAccessToken(session.accessToken, callback: callBack)
@@ -58,8 +54,12 @@ class ViewController: UIViewController {
 //        presentViewController(loginViewController, animated: true, completion: {
 //            print("Done")
 //        })
+        let _ = SPTAudioStreamingController.logout(player!)
         
-        
+    }
+    
+    func audioStreamingDidLogout(audioStreaming: SPTAudioStreamingController!) {
+        self.navigationController?.performSegueWithIdentifier("LogOutSegue", sender: self)
     }
     
     func setProfilePicture(imageURL: NSURL) {
