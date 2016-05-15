@@ -55,11 +55,30 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
 //            print("Done")
 //        })
         let _ = SPTAudioStreamingController.logout(player!)
+        self.deleteSessionData()
+        self.performSegueWithIdentifier("logOutSegue", sender: self)
+    }
+    
+    func deleteSessionData() {
+        
+        player = nil
+        
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        userDefaults.removeObjectForKey("SpotifySession")
+        userDefaults.synchronize()
+        
+        
+        for cookie in NSHTTPCookieStorage.sharedHTTPCookieStorage().cookies! {
+            if (cookie.domain.hasSuffix("spotify.com") || cookie.domain.hasSuffix("facebook.com")) {
+                NSHTTPCookieStorage.sharedHTTPCookieStorage().deleteCookie(cookie)
+            }
+        }
         
     }
     
     func audioStreamingDidLogout(audioStreaming: SPTAudioStreamingController!) {
-        self.navigationController?.performSegueWithIdentifier("LogOutSegue", sender: self)
+        
+        //self.navigationController?.performSegueWithIdentifier("LogOutSegue", sender: self)
     }
     
     func setProfilePicture(imageURL: NSURL) {

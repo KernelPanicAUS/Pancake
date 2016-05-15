@@ -29,14 +29,6 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
 
         // Register to be notified when the user has logged in successfully in order to dismiss the login view
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.dismiss), name: "loginSuccessful", object: nil)
-
-//        // If session data is available, dismiss the loginViewController
-//        let userDefaults = NSUserDefaults.standardUserDefaults()
-//        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") {// Session available
-//            // Used for debugging purposes only
-//            // print session
-//            //print(sessionObj)
-//        }
         
     }
     
@@ -90,7 +82,7 @@ class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStream
         
         // Go to Dashboard
         print("Should dismiss loginViewController");
-        self.navigationController?.popViewControllerAnimated(true);
+        self.navigationController?.popToRootViewControllerAnimated(true);
     }
     
     override func didReceiveMemoryWarning() {

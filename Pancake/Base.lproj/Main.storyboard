@@ -244,6 +244,7 @@
                         <outlet property="backgroundProfilePicture" destination="FA6-Od-HTC" id="TDC-PU-jNE"/>
                         <outlet property="currentUserName" destination="OTl-kH-lC4" id="nWL-aO-wZN"/>
                         <outlet property="smallProfilePicture" destination="hSS-qB-PQ7" id="Nhh-CH-x8P"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="logOutSegue" id="RMl-TJ-uxJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBf-8D-S0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1279,5 +1280,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="I4L-hR-9tE"/>
+        <segue reference="RMl-TJ-uxJ"/>
     </inferredMetricsTieBreakers>
 </document>

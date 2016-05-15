@@ -106,9 +106,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             //print("Player nil")
             self.playUsingSession(auth.session)
         } else {
-            // Used for debugging purposes only
-            //print("Player ok")
+            self.spotifyUserCheck()
         }
+        
+        
     }
     
     // MARK: - Timer
