@@ -25,7 +25,6 @@
 		11A63CAE1C3181B80010CCCB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63CAD1C3181B80010CCCB /* LoginViewController.swift */; };
 		11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C844391C450E5800557CBA /* AlarmsTableViewController.swift */; };
 		11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */; };
-		11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */; };
 		11F1673F1C32DB6F0033D1E3 /* AsyncButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167211C32DB6F0033D1E3 /* AsyncButton.swift */; };
 		11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */; };
 		11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F167231C32DB6F0033D1E3 /* AutoTextView.swift */; };
@@ -117,7 +116,6 @@
 		11A71D071C3D216D00E2AD88 /* pancakeSintaxPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pancakeSintaxPlayground.playground; path = Pancake/pancakeSintaxPlayground.playground; sourceTree = "<group>"; };
 		11C844391C450E5800557CBA /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
 		11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateNewViewController.swift; sourceTree = "<group>"; };
-		11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequestsTableViewController.swift; sourceTree = "<group>"; };
 		11F167211C32DB6F0033D1E3 /* AsyncButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncButton.swift; sourceTree = "<group>"; };
 		11F167221C32DB6F0033D1E3 /* AsyncImageView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AsyncImageView.swift; sourceTree = "<group>"; };
 		11F167231C32DB6F0033D1E3 /* AutoTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AutoTextView.swift; sourceTree = "<group>"; };
@@ -222,7 +220,6 @@
 				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
 				E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */,
 				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
-				11C8443D1C450FF300557CBA /* RequestsTableViewController.swift */,
 				E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */,
 				E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */,
 				E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */,
@@ -580,7 +577,6 @@
 				E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */,
 				11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */,
 				11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */,
-				11C8443E1C450FF300557CBA /* RequestsTableViewController.swift in Sources */,
 				11F167471C32DB6F0033D1E3 /* DesignableTextField.swift in Sources */,
 				11F1674D1C32DB6F0033D1E3 /* LoadingView.swift in Sources */,
 				11F167511C32DB6F0033D1E3 /* Spring.swift in Sources */,
