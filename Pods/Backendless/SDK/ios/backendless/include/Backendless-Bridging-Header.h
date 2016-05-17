@@ -20,3 +20,4 @@
  */
 
 #import "Backendless.h"
+#import <Spotify/Spotify.h>

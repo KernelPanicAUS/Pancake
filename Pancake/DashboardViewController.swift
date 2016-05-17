@@ -57,7 +57,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         super.viewDidLoad()
         
         // Spotify is checking if the user is logged in
-        self.spotifyUserCheck()
+        //self.spotifyUserCheck()
         
         // Get run loop
         //let runLoop = NSRunLoop.currentRunLoop()
@@ -68,10 +68,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 //        self.mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
         
 
-        // Permission for notification
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-        
         // Deprecated code. Left here until final version is released.
         //EZSwipe
         //presentViewController(EZSwipeController(), animated: true, completion: nil)
@@ -101,13 +97,13 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         
         // Initialize Player after first log in
-        if (player == nil && newUser == true){
-            // Used for debugging purposes only.
-            //print("Player nil")
-            self.playUsingSession(auth.session)
-        } else {
-            self.spotifyUserCheck()
-        }
+//        if (player == nil && newUser == true){
+//            // Used for debugging purposes only.
+//            //print("Player nil")
+//            self.playUsingSession(auth.session)
+//        } else {
+//            self.spotifyUserCheck()
+//        }
         
         
     }
@@ -116,19 +112,19 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     // Updates Time and all its elements
     func timeUpdate(){
-        print(numberOfSeconds)
-        numberOfSeconds += 1
+        //print(numberOfSeconds)
+        //numberOfSeconds += 1
         
         // Used for debugging purposes only.
         //print("New session saved succesfully.")
-        if session.isValid() {
-            sessionIsRefreshing = false
-        }
+//        if session.isValid() {
+//            sessionIsRefreshing = false
+//        }
         
-        // Used to leave user logged in
-        if (!session.isValid() && sessionIsRefreshing == false) {
-            self.renewToken(session)
-        }
+//        // Used to leave user logged in
+//        if (!session.isValid() && sessionIsRefreshing == false) {
+//            self.renewToken(session)
+//        }
         
         // Creates a custom Time format
         let timeFormatter = NSDateFormatter()
@@ -174,7 +170,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         
         
         // Checks alarm time with current time - Determines if it has to play or not.
-        self.timeToPlayAlarm()
+       // self.timeToPlayAlarm()
     }
     
     // MARK: - Alarm
@@ -284,6 +280,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
         })
     }
+    
+    
     
     // Manages songs/playlist to be played
     func useLoggedInPermissions(playlistURI: String) {

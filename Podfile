@@ -4,6 +4,8 @@
 use_frameworks!
 
 target 'Pancake' do
+pod 'DZNEmptyDataSet'
+pod 'MBProgressHUD', '~> 0.9.2'
 pod 'Backendless'
 end
 

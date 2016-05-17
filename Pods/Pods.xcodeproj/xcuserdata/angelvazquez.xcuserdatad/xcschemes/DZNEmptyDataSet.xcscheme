@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '459624F3C426582E71963281'
-               BlueprintName = 'Pods-Pancake'
+               BlueprintIdentifier = '7B87088B17F2F5C0D449AFB9'
+               BlueprintName = 'DZNEmptyDataSet'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'Pods_Pancake.framework'>
+               BuildableName = 'DZNEmptyDataSet.framework'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
