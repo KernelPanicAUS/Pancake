@@ -9,7 +9,7 @@
 import UIKit
 
 class ViewController: UIViewController, SPTAudioStreamingDelegate{
-
+    
     var session = SPTSession()
     let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
     var player = SPTAudioStreamingController?()
@@ -20,7 +20,7 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
     @IBOutlet weak var currentUserName: UILabel!
     
     
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -31,15 +31,15 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
     override func viewWillAppear(animated: Bool) {
         
         let callBack: SPTRequestCallback = { userData -> Void in
-        
+            
             if (userData.0 != nil) {
                 print("Error loading user info. \(userData.0)")
             }
             
-            self.currentUserName.text = userData.1.displayName as String
-            let bigProfilePicture = userData.1.largestImage as SPTImage
+            // self.currentUserName.text = userData.1.displayName as String
+            //let bigProfilePicture = userData.1.largestImage as SPTImage
             
-            self.setProfilePicture(bigProfilePicture.imageURL)
+            //self.setProfilePicture(bigProfilePicture.imageURL)
             
         }
         
@@ -47,13 +47,13 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
         
         
     }
-
+    
     @IBAction func logOut(sender: AnyObject) {
-//        let _ = SPTAudioStreamingController.logout(player!)
-//        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC") as! LoginViewController
-//        presentViewController(loginViewController, animated: true, completion: {
-//            print("Done")
-//        })
+        //        let _ = SPTAudioStreamingController.logout(player!)
+        //        let loginViewController = self.storyboard?.instantiateViewControllerWithIdentifier("loginVC") as! LoginViewController
+        //        presentViewController(loginViewController, animated: true, completion: {
+        //            print("Done")
+        //        })
         let _ = SPTAudioStreamingController.logout(player!)
         self.deleteSessionData()
         self.performSegueWithIdentifier("logOutSegue", sender: self)
@@ -105,13 +105,13 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
         print("Cancel")
         self.navigationController?.popViewControllerAnimated(true)
     }
-
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
 }
 

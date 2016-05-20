@@ -32,10 +32,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     var needsSessionRefresh = false
     var sessionIsRefreshing = false
     var session = SPTSession()
-    
-    //Debugging timer function
-    var numberOfSeconds = 0
-    var downloadTask:NSURLSessionDownloadTask?
+    let soundActivator = MMPDeepSleepPreventer()
     
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
@@ -57,20 +54,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         super.viewDidLoad()
         
         // Spotify is checking if the user is logged in
-        //self.spotifyUserCheck()
+        self.spotifyUserCheck()
         
-        // Get run loop
-        //let runLoop = NSRunLoop.currentRunLoop()
+        // Start playing silent.
+        soundActivator.startPreventSleep()
         
-        // Add timer to runLoop
-        //runLoop.addTimer(mainTimer!, forMode: "NSRunLoopCommonModes")
-        //runLoop.addTimer(mainTimer!, forMode: "NSEventTrackingRunLoopMode")
-//        self.mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
+        // Permission for notification
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
         
-
-        // Deprecated code. Left here until final version is released.
-        //EZSwipe
-        //presentViewController(EZSwipeController(), animated: true, completion: nil)
+        // Used for music controls
+         UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         
         // Fast update time
         self.timeUpdate()
@@ -79,24 +73,17 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     
     override func viewWillAppear(animated: Bool) {
-        // Update Time Periodically = _ Stands for timer :P
-        dispatch_async(dispatch_get_main_queue(), {
+        // Update Time Periodically
+        mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
             
-            self.mainTimer = NSTimer.scheduledTimerWithTimeInterval(1, target: self, selector: #selector(DashboardViewController.timeUpdate), userInfo: nil, repeats: true)
-            
-            NSRunLoop.currentRunLoop().addTimer(self.mainTimer!, forMode: NSRunLoopCommonModes)
-        })
-
         // Fetches Alarms.
         self.fetchData()
-//
     }
     
     override func viewDidAppear(animated: Bool) {
         
-        UIApplication.sharedApplication().beginReceivingRemoteControlEvents()
         
-        // Initialize Player after first log in
+//        // Initialize Player after first log in
 //        if (player == nil && newUser == true){
 //            // Used for debugging purposes only.
 //            //print("Player nil")
@@ -104,27 +91,24 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
 //        } else {
 //            self.spotifyUserCheck()
 //        }
-        
-        
+//        
+//        
     }
     
     // MARK: - Timer
     
     // Updates Time and all its elements
     func timeUpdate(){
-        //print(numberOfSeconds)
-        //numberOfSeconds += 1
-        
         // Used for debugging purposes only.
         //print("New session saved succesfully.")
-//        if session.isValid() {
-//            sessionIsRefreshing = false
-//        }
+        if session.isValid() {
+            sessionIsRefreshing = false
+        }
         
-//        // Used to leave user logged in
-//        if (!session.isValid() && sessionIsRefreshing == false) {
-//            self.renewToken(session)
-//        }
+        // Used to leave user logged in
+        if (!session.isValid() && sessionIsRefreshing == false) {
+            self.renewToken(session)
+        }
         
         // Creates a custom Time format
         let timeFormatter = NSDateFormatter()
@@ -133,9 +117,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Displays time in custom format "hh:mm"
         let now = NSDate()
         let formattedTime = timeFormatter.stringFromDate(now)
-        
-        // Prints day of the week
-        //print("\(self.getDayOfWeekString(dayFormatter.stringFromDate(now)))")
         
         // ONLY Used to check if it is AM or PM
         let time = NSDateFormatter.localizedStringFromDate(NSDate(), dateStyle: NSDateFormatterStyle.NoStyle, timeStyle: NSDateFormatterStyle.ShortStyle)
@@ -159,18 +140,13 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Display formatted time
         self.timeDisplay.text = formattedTime
         
-        // For debugging purposes onlye
-        //print(timeDisplay.text)
-        
         // When last alarm finished playing - Let other alarms play
         if (lastAlarmTime.rangeOfString(timeDisplay.text!) == nil) {
             canPlayAlarmFlag = true
         }
         
-        
-        
         // Checks alarm time with current time - Determines if it has to play or not.
-       // self.timeToPlayAlarm()
+        self.timeToPlayAlarm()
     }
     
     // MARK: - Alarm
@@ -198,9 +174,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         
                         // Check the last alarm played in order to reactivate flag
                         lastAlarmTime = alarmTime
-                        
-                        // Used for debugging purposes only
-                        //print(canPlayAlarmFlag)
                         
                         // Trigger notification
                         self.alarmNotification(alarmTitle)
@@ -281,8 +254,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         })
     }
     
-    
-    
     // Manages songs/playlist to be played
     func useLoggedInPermissions(playlistURI: String) {
         do {
@@ -341,12 +312,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             }
             
         }
-        
-        
-//        dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0), {
-//            // Starts playing the music
-            //self.player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: callback)
-//        })
         
         // Starts playing the music
         player!.playURIs([NSURL(string: playlistURI)!], withOptions: nil, callback: callback)
@@ -462,6 +427,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Clears all data in NowPlayingInfoCenter
         MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nil
         print("StoppedPlayingTrack")
+        //soundActivator.startPreventSleep()
+        //print("soundActivator active")
     }
 
     override func didReceiveMemoryWarning() {
@@ -583,9 +550,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             
         } else if (segue.identifier == "UserSegue") {
-            let userViewController = segue.destinationViewController as! ViewController
-            userViewController.session = session
-            userViewController.player = player
+            //let userViewController = segue.destinationViewController as! ViewController
+            //userViewController.session = session
+            //userViewController.player = player
         }
     }
     

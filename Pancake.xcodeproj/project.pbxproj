@@ -14,7 +14,6 @@
 		111A5D451C3C30F40080522C /* ProximaNova-Semibold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3D1C3C02C30080522C /* ProximaNova-Semibold.otf */; };
 		111A5D461C3C30F40080522C /* ProximaNova-Thin.otf in Resources */ = {isa = PBXBuildFile; fileRef = 111A5D3E1C3C02C30080522C /* ProximaNova-Thin.otf */; };
 		11A63C741C317E8F0010CCCB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C731C317E8F0010CCCB /* AppDelegate.swift */; };
-		11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C751C317E8F0010CCCB /* ViewController.swift */; };
 		11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C771C317E8F0010CCCB /* Main.storyboard */; };
 		11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */; };
 		11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 11A63C7D1C317E8F0010CCCB /* Assets.xcassets */; };
@@ -54,15 +53,17 @@
 		11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */; };
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
-		58DCA25D56D485EDB21EED1D /* Pods_Pancake.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50140236FB9DB6B63CFF7DBF /* Pods_Pancake.framework */; };
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
 		E724D7741CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */; };
 		E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
 		E749EF741CE23B8B00ACB625 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E749EF731CE23B8B00ACB625 /* Spotify.framework */; };
+		E750B6901CEEE9CA000AB0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */; };
+		E75ADFED1CBFE563003C7FA2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */; };
 		E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */; };
 		E795119B1C88672800ECA35B /* MMPDeepSleepPreventer.m in Sources */ = {isa = PBXBuildFile; fileRef = E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */; };
+		E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */ = {isa = PBXBuildFile; fileRef = E795119C1C88673D00ECA35B /* MMPSilence.wav */; };
 		E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E795119E1C88679C00ECA35B /* AudioToolbox.framework */; };
 		E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = E7B013C51C6051B10084ECAA /* Alarm.swift */; };
 		E7B013CA1C6055BB0084ECAA /* AlarmTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E7B013C91C6055BB0084ECAA /* AlarmTableViewCell.xib */; };
@@ -97,7 +98,6 @@
 		111A5D3F1C3C2C640080522C /* DashboardViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		11A63C701C317E8F0010CCCB /* Pancake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Pancake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		11A63C731C317E8F0010CCCB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		11A63C751C317E8F0010CCCB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		11A63C781C317E8F0010CCCB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		11A63C7B1C317E8F0010CCCB /* Pancake.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Pancake.xcdatamodel; sourceTree = "<group>"; };
 		11A63C7D1C317E8F0010CCCB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -110,6 +110,7 @@
 		11A63C961C317E8F0010CCCB /* PancakeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PancakeUITests.swift; sourceTree = "<group>"; };
 		11A63C981C317E8F0010CCCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		11A63CA71C317F280010CCCB /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Pancake-Bridging-Header.h"; sourceTree = "<group>"; };
 		11A63CAD1C3181B80010CCCB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		11A71D071C3D216D00E2AD88 /* pancakeSintaxPlayground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = pancakeSintaxPlayground.playground; path = Pancake/pancakeSintaxPlayground.playground; sourceTree = "<group>"; };
 		11C844391C450E5800557CBA /* AlarmsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmsTableViewController.swift; sourceTree = "<group>"; };
@@ -144,18 +145,19 @@
 		11F1673C1C32DB6F0033D1E3 /* TransitionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionManager.swift; sourceTree = "<group>"; };
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
-		1D92CACF3292F181B4957964 /* Pods-Pancake.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pancake.release.xcconfig"; path = "Pods/Target Support Files/Pods-Pancake/Pods-Pancake.release.xcconfig"; sourceTree = "<group>"; };
-		50140236FB9DB6B63CFF7DBF /* Pods_Pancake.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Pancake.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9C230B2879589B0223930258 /* Pods-Pancake.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Pancake.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Pancake/Pods-Pancake.debug.xcconfig"; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
 		E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
 		E749EF731CE23B8B00ACB625 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
+		E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
+		E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBProgressHUD.m; sourceTree = "<group>"; };
 		E765A5711C62D323000AF222 /* Pancake 2.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "Pancake 2.xcdatamodel"; sourceTree = "<group>"; };
 		E78553411C558AB2007C5343 /* TimeSelectorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimeSelectorViewController.swift; sourceTree = "<group>"; };
 		E79511991C88672800ECA35B /* MMPDeepSleepPreventer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MMPDeepSleepPreventer.h; sourceTree = "<group>"; };
 		E795119A1C88672800ECA35B /* MMPDeepSleepPreventer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MMPDeepSleepPreventer.m; sourceTree = "<group>"; };
+		E795119C1C88673D00ECA35B /* MMPSilence.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = MMPSilence.wav; sourceTree = "<group>"; };
 		E795119E1C88679C00ECA35B /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		E7B013C51C6051B10084ECAA /* Alarm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Alarm.swift; path = ../Alarm.swift; sourceTree = "<group>"; };
@@ -176,7 +178,6 @@
 				E795119F1C88679C00ECA35B /* AudioToolbox.framework in Frameworks */,
 				11A63CA81C317F280010CCCB /* AVFoundation.framework in Frameworks */,
 				E749EF741CE23B8B00ACB625 /* Spotify.framework in Frameworks */,
-				58DCA25D56D485EDB21EED1D /* Pods_Pancake.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,9 +214,9 @@
 		111A5D411C3C2C6D0080522C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				11A63C751C317E8F0010CCCB /* ViewController.swift */,
 				11A63CAD1C3181B80010CCCB /* LoginViewController.swift */,
 				111A5D3F1C3C2C640080522C /* DashboardViewController.swift */,
+				E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */,
 				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
 				E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */,
 				11C8443B1C450E8C00557CBA /* CreateNewViewController.swift */,
@@ -235,7 +236,6 @@
 				11A63C8A1C317E8F0010CCCB /* PancakeTests */,
 				11A63C951C317E8F0010CCCB /* PancakeUITests */,
 				11A63C711C317E8F0010CCCB /* Products */,
-				C5F13FC4104F001DE92CC62B /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -262,6 +262,7 @@
 				11A63C7D1C317E8F0010CCCB /* Assets.xcassets */,
 				11A63C821C317E8F0010CCCB /* Info.plist */,
 				11A63C7A1C317E8F0010CCCB /* Pancake.xcdatamodeld */,
+				11A63CA91C3180560010CCCB /* Pancake-Bridging-Header.h */,
 			);
 			path = Pancake;
 			sourceTree = "<group>";
@@ -292,7 +293,6 @@
 				E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */,
 				E795119E1C88679C00ECA35B /* AudioToolbox.framework */,
 				11A63CA71C317F280010CCCB /* AVFoundation.framework */,
-				50140236FB9DB6B63CFF7DBF /* Pods_Pancake.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -342,19 +342,13 @@
 			path = Spring;
 			sourceTree = "<group>";
 		};
-		C5F13FC4104F001DE92CC62B /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				9C230B2879589B0223930258 /* Pods-Pancake.debug.xcconfig */,
-				1D92CACF3292F181B4957964 /* Pods-Pancake.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		E72D5F261C545F2D00F97FDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */,
+				E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */,
 				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
+				E795119C1C88673D00ECA35B /* MMPSilence.wav */,
 				E7CD4CB41C59E83C00D4255E /* DZNEmptyDataSet */,
 				E79511981C88670B00ECA35B /* DeepSleep */,
 			);
@@ -406,12 +400,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 11A63C9B1C317E8F0010CCCB /* Build configuration list for PBXNativeTarget "Pancake" */;
 			buildPhases = (
-				55F42809B812C8D282248379 /* Check Pods Manifest.lock */,
 				11A63C6C1C317E8F0010CCCB /* Sources */,
 				11A63C6D1C317E8F0010CCCB /* Frameworks */,
 				11A63C6E1C317E8F0010CCCB /* Resources */,
-				EE0BA67D921A6FE3097E9191 /* Embed Pods Frameworks */,
-				521B6EE8194093E4521ED159 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -471,11 +462,6 @@
 					11A63C6F1C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = YRPG2DQ2NP;
-						SystemCapabilities = {
-							com.apple.Push = {
-								enabled = 1;
-							};
-						};
 					};
 					11A63C861C317E8F0010CCCB = {
 						CreatedOnToolsVersion = 7.2;
@@ -525,6 +511,7 @@
 				11A63C7E1C317E8F0010CCCB /* Assets.xcassets in Resources */,
 				11A63C791C317E8F0010CCCB /* Main.storyboard in Resources */,
 				11F1674E1C32DB6F0033D1E3 /* LoadingView.xib in Resources */,
+				E795119D1C88673D00ECA35B /* MMPSilence.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,54 +531,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		521B6EE8194093E4521ED159 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pancake/Pods-Pancake-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		55F42809B812C8D282248379 /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		EE0BA67D921A6FE3097E9191 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Pancake/Pods-Pancake-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		11A63C6C1C317E8F0010CCCB /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -608,7 +547,6 @@
 				11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */,
 				11F167551C32DB6F0033D1E3 /* SpringLabel.swift in Sources */,
 				E724D7741CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift in Sources */,
-				11A63C761C317E8F0010CCCB /* ViewController.swift in Sources */,
 				11F167411C32DB6F0033D1E3 /* AutoTextView.swift in Sources */,
 				11F167521C32DB6F0033D1E3 /* SpringAnimation.swift in Sources */,
 				11F1674A1C32DB6F0033D1E3 /* ImageLoader.swift in Sources */,
@@ -622,11 +560,13 @@
 				11F167491C32DB6F0033D1E3 /* DesignableView.swift in Sources */,
 				11F167581C32DB6F0033D1E3 /* SpringView.swift in Sources */,
 				11C8443A1C450E5800557CBA /* AlarmsTableViewController.swift in Sources */,
+				E75ADFED1CBFE563003C7FA2 /* MBProgressHUD.m in Sources */,
 				11A63C7C1C317E8F0010CCCB /* Pancake.xcdatamodeld in Sources */,
 				11C8443C1C450E8C00557CBA /* CreateNewViewController.swift in Sources */,
 				E7DCE9651C983E4F009F79BF /* MainPageViewController.swift in Sources */,
 				11F167401C32DB6F0033D1E3 /* AsyncImageView.swift in Sources */,
 				E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */,
+				E750B6901CEEE9CA000AB0C2 /* ViewController.swift in Sources */,
 				E7CD4CB31C59E77800D4255E /* UIScrollView+EmptyDataSet.m in Sources */,
 				11F167431C32DB6F0033D1E3 /* DesignableButton.swift in Sources */,
 				E7B013C61C6051B10084ECAA /* Alarm.swift in Sources */,
@@ -735,7 +675,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -778,7 +717,6 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = "";
 				"OTHER_LDFLAGS[arch=*]" = "$(inherited)";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -788,12 +726,10 @@
 		};
 		11A63C9C1C317E8F0010CCCB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9C230B2879589B0223930258 /* Pods-Pancake.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -803,25 +739,20 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
-				PRODUCT_NAME = Pancake;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		11A63C9D1C317E8F0010CCCB /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1D92CACF3292F181B4957964 /* Pods-Pancake.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -831,13 +762,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"$(inherited)",
-					"-ObjC",
-				);
+				OTHER_LDFLAGS = "-ObjC";
 				PRODUCT_BUNDLE_IDENTIFIER = com.nutdesigns.Pancake;
-				PRODUCT_NAME = Pancake;
-				PROVISIONING_PROFILE = "";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Pancake/Pancake-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-O";
 			};
 			name = Release;

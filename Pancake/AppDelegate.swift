@@ -10,25 +10,15 @@
 
 import UIKit
 import CoreData
-import MediaPlayer
+
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingPlaybackDelegate{
+class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    // Spotify
-    var player = SPTAudioStreamingController?()
-    let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
-    let auth = SPTAuth.defaultInstance()
-    let kCallbackURL = "pancakeapp://callback"
-    let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
-    let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
-    var session = SPTSession()
-    
-    // Backendless
-    let APP_ID = "B72ECBA0-7200-C279-FFD5-F5B7E7FC2000"
-    let SECRET_KEY = "94F93C32-5C75-4B5A-FF05-AD0BDB13E800"
-    let APP_VERSION = "v1"
-    var backendless = Backendless.sharedInstance()
+    let kClientId = "eb68da6b0f3c4589a25e1c95bd3699f3"
+    let kCallbackUrl = "pancakeapp://callback"
+    let kTokenSwapUrl = "http://localhost:1234/swap"
+    let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
     
     var window: UIWindow?
     
@@ -37,23 +27,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingPlayback
         
         // Removes status bar
         application.statusBarHidden = true
-        
-        // Checks for Spotify User
-        spotifyUserCheck()
-        
-        // Permission for notification
-        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
-        
-        // Register for notifications
-        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
-
-        // Register for push notifications
-        //UIApplication.sharedApplication().registerForRemoteNotificationTypes([.Alert, .Badge, .Sound])
-        
-        // Initial Backendless communication
-        backendless.initApp(APP_ID, secret: SECRET_KEY, version: APP_VERSION)
-        
-        backendless.messaging.registerForRemoteNotifications()
         
         return true
     }
@@ -90,208 +63,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingPlayback
         return false
     }
     
-    //MARK:- Spotify
-    func spotifyUserCheck() {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        // Session is available
-        if let sessionObj: AnyObject = userDefaults.objectForKey("SpotifySession") {
-            
-            // Used for debugging purposes
-            print("Already logged in. ")
-            
-            let sessionObjData = sessionObj as! NSData
-            session = NSKeyedUnarchiver.unarchiveObjectWithData(sessionObjData) as! SPTSession
-            print(sessionObj)
-            
-            // Handles session validity
-            if isSessionValid(session) == false {
-                renewSession(session)
-            } else {
-                playUsingSession(session)
-            }
-            
-            
-        } else {
-            print("New user")
-            
-        }
-    }
-    
-    func playUsingSession(session: SPTSession) {
-        if player == nil {
-            player = SPTAudioStreamingController(clientId: kClientID)
-            player?.playbackDelegate = self
-            player?.diskCache = SPTDiskCache(capacity: 1024 * 1024 * 64)
-            
-            // Don't want same music every time don't we? ;)
-            player?.shuffle = true
-            
-            let callback: SPTErrorableOperationCallback = { error -> Void in
-                
-                if error != nil {
-                    print("Error adjusting bitrate.")
-                }
-            }
-            
-            player?.setTargetBitrate(SPTBitrate.Low, callback: callback)
-        }
-        
-        player?.loginWithSession(session, callback: { error -> Void in
-            
-            if error != nil {
-                print("Error login in with session.")
-            }
-        
-        })
-    }
-    
-    func playTrack() {
-        
-        let callback: SPTErrorableOperationCallback = { error -> Void in
-            if error != nil {
-                print("Error playing track.")
-            }
-        }
-
-        player?.playURI(NSURL(string: "spotify:track:0LQsM0KYkSyCdN6TCo63vp"), callback: callback)
-    }
-    
-    func playAlarm(completionHandler: (UIBackgroundFetchResult) -> Void) {
-        if !session.isValid() {
-            renewSession(session)
-        }
-        
-        print("Play alarm.")
-        
-        playTrack()
-        
-        completionHandler(UIBackgroundFetchResult.NewData)
-    }
-    
-    func renewSession(session: SPTSession) {
-        auth.tokenSwapURL = NSURL(string: kTokenSwapUrl)
-        auth.tokenRefreshURL = NSURL(string: kTokenRefreshServiceUrl)
-        
-        auth.renewSession(session, callback: { (error, session) -> Void in
-        
-            if error == nil {
-                self.saveNewSession(session)
-            } else {
-                print("Error refreshing session.")
-            }
-            
-        })
-        
-    }
-    
-    func saveNewSession(newSession: SPTSession) {
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(newSession)
-        
-        userDefaults.setObject(sessionData, forKey: "SpotifySession")
-        userDefaults.synchronize()
-    }
-    
-    func isSessionValid(session: SPTSession) -> Bool {
-        if !session.isValid() {
-            return false
-        } else {
-            return true
-        }
-    }
-    
-    //MARK:- SPTAudioStreamingPlaybackDelegate
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangePlaybackStatus isPlaying: Bool) {
-        print("PlaybackStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didSeekToOffset offset: NSTimeInterval) {
-        print("SeekToOffset")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeVolume volume: SPTVolume) {
-        print("ChangedVolume")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeShuffleStatus isShuffled: Bool) {
-        print("ChangedShuffleStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeRepeatStatus isRepeated: Bool) {
-        print("ChangedRepeatStatus")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didChangeToTrack trackMetadata: [NSObject : AnyObject]!) {
-        print("ChangedToTrack")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didFailToPlayTrack trackUri: NSURL!) {
-        print("FailToPlayTrack")
-    }
-    
-    func audioStreamingDidSkipToNextTrack(audioStreaming: SPTAudioStreamingController!) {
-        print("NextTrack")
-    }
-    
-    func audioStreamingDidSkipToPreviousTrack(audioStreaming: SPTAudioStreamingController!) {
-        print("PreviousTrack")
-    }
-    
-    func audioStreamingDidBecomeActivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
-        print("ActivePlaybackDevice")
-    }
-    
-    func audioStreamingDidBecomeInactivePlaybackDevice(audioStreaming: SPTAudioStreamingController!) {
-        print("InactivePlaybackDevice")
-    }
-    
-    func audioStreamingDidLosePermissionForPlayback(audioStreaming: SPTAudioStreamingController!) {
-        print("DidLosePermissionForPlayback")
-    }
-    
-    func audioStreamingDidPopQueue(audioStreaming: SPTAudioStreamingController!) {
-        print("DidPopQueue")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStartPlayingTrack trackUri: NSURL!) {
-        
-        // Track Info
-        let currentTrackURI = audioStreaming.currentTrackURI
-        let callback:SPTRequestCallback = {result -> Void in
-            
-            let currentSong = result.1 as! SPTTrack
-            let trackName = currentSong.name
-            let albumName = currentSong.album.name
-            guard let artist = currentSong.artists.first as? SPTPartialArtist else {
-                print("No artist name provided.")
-                return
-            }
-            let artistName = artist.name
-            let duration = currentSong.duration
-            
-            print(trackName)
-            print(albumName)
-            print(artistName)
-            
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyAlbumTitle : albumName, MPMediaItemPropertyArtist : artistName, MPMediaItemPropertyPlaybackDuration : duration]
-            
-        }
-        
-        SPTTrack.trackWithURI(currentTrackURI, session: session, callback: callback)
-        
-        print("StartedPlayingTrack")
-    }
-    
-    func audioStreaming(audioStreaming: SPTAudioStreamingController!, didStopPlayingTrack trackUri: NSURL!) {
-        // Music Info Center
-        // Clears all data in NowPlayingInfoCenter
-        MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = nil
-        print("StoppedPlayingTrack")
-    }
-
-    
-    //MARK:- Application State
     
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
@@ -318,39 +89,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, SPTAudioStreamingPlayback
         self.saveContext()
     }
     
-    //MARK:- Local Notification Setup
     func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
         print("Did receive wake up notification")
     }
     
-    //MARK:- RemoteNotification Setup
-    
-    func application(application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: NSData) {
-        print("Did register for remote notifications.")
-        backendless.messaging.registerDeviceToken(deviceToken)
-        
-        // Used for debugging
-        //self.retreiveDeviceRegistrationAsync(backendless.messaging.currentDevice().deviceId)
-    }
-    
-    func application(application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: NSError) {
-        print(error)
-    }
-    
-    func retreiveDeviceRegistrationAsync(deviceID: String) {
-        backendless.messaging.getRegistrationAsync(deviceID,
-                                                   response:{ ( result : DeviceRegistration!) -> () in
-                                                    print("DeviceRegistration = \(result)")},
-                                                   error: { ( fault : Fault!) -> () in
-                                                    print("Server reported an error: \(fault)")}
-    )}
-
-    func application(application: UIApplication, didReceiveRemoteNotification userInfo: [NSObject : AnyObject], fetchCompletionHandler completionHandler: (UIBackgroundFetchResult) -> Void) {
-        
-        playAlarm(completionHandler)
-        
-    }
-
     // MARK: - Core Data stack
     
     lazy var applicationDocumentsDirectory: NSURL = {
