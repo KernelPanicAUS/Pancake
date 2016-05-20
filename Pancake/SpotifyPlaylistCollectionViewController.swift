@@ -47,20 +47,10 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Basic Setup for App
-        //spotifyAuthenticator.clientID = kClientID
-        //spotifyAuthenticator.requestedScopes = [SPTAuthStreamingScope]
-        //spotifyAuthenticator.redirectURL = NSURL(string: kCallbackURL)
-    
-        // Need to work around this
-        //spotifyAuthenticator.tokenSwapURL = NSURL(string: kTokenSwapURL)
-        //potifyAuthenticator.tokenRefreshURL = NSURL(string: kTokenRefreshURL)
         
+        //
         loginWithSpotifySession(currentSession!)
-//        let progressHUD = MBProgressHUD()
-//        progressHUD.mode = .Determinate
-//        self.view.addSubview(progressHUD)
+
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
     }
     
@@ -105,14 +95,8 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     private
     
-//    func setupSpotifyPlayer() {
-//        player = SPTAudioStreamingController(clientId: spotifyAuthenticator.clientID)
-//        player!.playbackDelegate = self
-//        player!.diskCache = SPTDiskCache(capacity: 1024 * 1024 * 64)
-//    }
-    
     func loginWithSpotifySession(session: SPTSession) {
-        // .0 is NSError .1 is AnyObject
+        // .0 is NSError .1 is SPTListPage
         // listPage contains playlists
         // listPage is an array of playlists
         //setupSpotifyPlayer()
@@ -170,8 +154,6 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
             print(playlist)
             self.getPlaylistInfo(playlist, withSession: session)
         }
-        
-        
     }
     
     func getPlaylistInfo(playlists: NSMutableArray, withSession session: SPTSession){

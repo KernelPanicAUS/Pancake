@@ -36,10 +36,10 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
                 print("Error loading user info. \(userData.0)")
             }
             
-            // self.currentUserName.text = userData.1.displayName as String
-            //let bigProfilePicture = userData.1.largestImage as SPTImage
+            self.currentUserName.text = userData.1.displayName as String
+            let bigProfilePicture = userData.1.largestImage as SPTImage
             
-            //self.setProfilePicture(bigProfilePicture.imageURL)
+            self.setProfilePicture(bigProfilePicture.imageURL)
             
         }
         

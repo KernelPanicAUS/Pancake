@@ -550,9 +550,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
             
         } else if (segue.identifier == "UserSegue") {
-            //let userViewController = segue.destinationViewController as! ViewController
-            //userViewController.session = session
-            //userViewController.player = player
+            let userViewController = segue.destinationViewController as! ViewController
+            userViewController.session = session
+            userViewController.player = player
         }
     }
     

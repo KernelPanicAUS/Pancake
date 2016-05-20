@@ -54,6 +54,7 @@
 		11F1675A1C32DB6F0033D1E3 /* TransitionZoom.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */; };
 		11F1675B1C32DB6F0033D1E3 /* UnwindSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */; };
 		E72265DF1C584E3200056729 /* PhotoLibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */; };
+		E722FAD41CEF036400D0C26D /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = E722FAD31CEF036400D0C26D /* Reachability.swift */; };
 		E724D7741CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */; };
 		E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
@@ -146,6 +147,7 @@
 		11F1673D1C32DB6F0033D1E3 /* TransitionZoom.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TransitionZoom.swift; sourceTree = "<group>"; };
 		11F1673E1C32DB6F0033D1E3 /* UnwindSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnwindSegue.swift; sourceTree = "<group>"; };
 		E72265DE1C584E3200056729 /* PhotoLibraryViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoLibraryViewController.swift; sourceTree = "<group>"; };
+		E722FAD31CEF036400D0C26D /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
@@ -345,6 +347,7 @@
 		E72D5F261C545F2D00F97FDB /* Tools */ = {
 			isa = PBXGroup;
 			children = (
+				E722FAD31CEF036400D0C26D /* Reachability.swift */,
 				E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */,
 				E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */,
 				E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */,
@@ -574,6 +577,7 @@
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
 				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,
 				11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */,
+				E722FAD41CEF036400D0C26D /* Reachability.swift in Sources */,
 				E78553421C558AB2007C5343 /* TimeSelectorViewController.swift in Sources */,
 				11F167451C32DB6F0033D1E3 /* DesignableLabel.swift in Sources */,
 				11F167591C32DB6F0033D1E3 /* TransitionManager.swift in Sources */,

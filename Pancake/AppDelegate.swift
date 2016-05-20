@@ -11,14 +11,14 @@
 import UIKit
 import CoreData
 
-
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+@UIApplicationMain class AppDelegate: UIResponder, UIApplicationDelegate {
     
     let kClientId = "eb68da6b0f3c4589a25e1c95bd3699f3"
     let kCallbackUrl = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
+    
+    var reachability:Reachability?
     
     var window: UIWindow?
     
@@ -28,6 +28,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Removes status bar
         application.statusBarHidden = true
         
+        // Reachability
+        do {
+            try reachability = Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create rechability")
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: nil)
+        
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("Unable to notify network changes. ")
+        }
         return true
     }
     
@@ -170,5 +184,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
+    // MARK: - Reachability
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable() {
+            if reachability.isReachableViaWiFi() {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            print("Network not reachable")
+        }
+    }
 }
 
