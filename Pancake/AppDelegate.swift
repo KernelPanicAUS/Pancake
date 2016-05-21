@@ -17,9 +17,7 @@ import CoreData
     let kCallbackUrl = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
-    
-    var reachability:Reachability?
-    
+    //var reachability: Reachability?
     var window: UIWindow?
     
     
@@ -28,23 +26,22 @@ import CoreData
         // Removes status bar
         application.statusBarHidden = true
         
-        // Reachability
-        do {
-            try reachability = Reachability.reachabilityForInternetConnection()
-        } catch {
-            print("Unable to create rechability")
-        }
+        // Reachability code
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.reachabilityChanged(_:)), name: ReachabilityChangedNotification, object: nil)
+//        do {
+//            reachability = try Reachability.reachabilityForInternetConnection()
+//        } catch {
+//            print("Unable to create Reachability")
+//        }
         
-        do {
-            try reachability?.startNotifier()
-        } catch {
-            print("Unable to notify network changes. ")
-        }
+        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DashboardViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: nil)
+//        do{
+//            try reachability?.startNotifier()
+//        }catch{
+//            print("could not start reachability notifier")
+//        }
         return true
     }
-    
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
         if SPTAuth.defaultInstance().canHandleURL(url){
             SPTAuth.defaultInstance().handleAuthCallbackWithTriggeredAuthURL(url, callback: { (error:NSError!, session: SPTSession!) -> Void in
@@ -184,20 +181,5 @@ import CoreData
         }
     }
     
-    // MARK: - Reachability
-    func reachabilityChanged(note: NSNotification) {
-        
-        let reachability = note.object as! Reachability
-        
-        if reachability.isReachable() {
-            if reachability.isReachableViaWiFi() {
-                print("Reachable via WiFi")
-            } else {
-                print("Reachable via Cellular")
-            }
-        } else {
-            print("Network not reachable")
-        }
-    }
 }
 

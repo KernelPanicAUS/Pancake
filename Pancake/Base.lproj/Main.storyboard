@@ -249,7 +249,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="rBf-8D-S0A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="787" y="-280"/>
+            <point key="canvasLocation" x="1219" y="-384"/>
         </scene>
         <!--DashboardVC-->
         <scene sceneID="MUo-BF-M2H">
@@ -280,7 +280,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="poA-4a-oyA" kind="show" identifier="HomeScreenSegue" id="I4L-hR-9tE"/>
+                                            <action selector="createNewAlarm:" destination="iUf-Wf-7Po" eventType="touchUpInside" id="zcs-kA-hGe"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" alpha="0.5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="EdZ-ch-2pb">
@@ -294,7 +294,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="CkE-5z-ApJ" kind="show" identifier="UserSegue" id="453-Ub-5yA"/>
+                                            <action selector="showUserInfo:" destination="iUf-Wf-7Po" eventType="touchUpInside" id="z5t-oc-NGh"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X2F-ZL-CGg">
@@ -406,6 +406,8 @@
                         <outlet property="timeDisplay" destination="2eP-Ol-c7G" id="y86-kU-hFH"/>
                         <outlet property="userDailyMessage" destination="Xfx-pe-Z25" id="6Lb-Wg-XbS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="newUser" animates="NO" id="Rf9-xI-XW3"/>
+                        <segue destination="poA-4a-oyA" kind="show" identifier="HomeScreenSegue" id="vbj-at-Yfm"/>
+                        <segue destination="CkE-5z-ApJ" kind="show" identifier="UserSegue" id="6aL-uM-q6g"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW2-Cw-po5" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -765,7 +767,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0BA-cF-3AT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="1122"/>
+            <point key="canvasLocation" x="787" y="1122"/>
         </scene>
         <!--Time Selector View Controller-->
         <scene sceneID="fdH-qL-hIJ">
@@ -841,7 +843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UfD-GX-FsL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="1122"/>
+            <point key="canvasLocation" x="1219" y="1122"/>
         </scene>
         <!--Photo Library View Controller-->
         <scene sceneID="9cf-eQ-XOa">
@@ -971,7 +973,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bL3-vN-SMy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="877" y="1852"/>
+            <point key="canvasLocation" x="787" y="1860"/>
         </scene>
         <!--Alarms Table View Controller-->
         <scene sceneID="1Cm-wI-m73">
@@ -1259,7 +1261,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KP1-QN-aaq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1305" y="1852"/>
+            <point key="canvasLocation" x="1219" y="1860"/>
         </scene>
     </scenes>
     <resources>
@@ -1279,7 +1281,7 @@
         <image name="spotifyLogoBtn" width="32" height="32"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="I4L-hR-9tE"/>
+        <segue reference="vbj-at-Yfm"/>
         <segue reference="Rf9-xI-XW3"/>
     </inferredMetricsTieBreakers>
 </document>

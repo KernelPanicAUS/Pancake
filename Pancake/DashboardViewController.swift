@@ -12,6 +12,7 @@ import UIKit
 import MediaPlayer
 import CoreData
 import AVKit
+import SystemConfiguration
 
 class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelegate {
 
@@ -50,8 +51,28 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // Main timer
     var mainTimer = NSTimer?()
     
+    // Network reachability
+    var reachability: Reachability?
+    
+    var isReachable:Bool?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Reachability code
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DashboardViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+        
+        do{
+            try reachability?.startNotifier()
+        }catch{
+            print("could not start reachability notifier")
+        }
         
         // Spotify is checking if the user is logged in
         self.spotifyUserCheck()
@@ -190,7 +211,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     // MARK: - Spotify
     
     // Checks if user is freshly logged in
-    // Needs work with refresh tokens for final app
     func spotifyUserCheck() {
         let userDefaults = NSUserDefaults.standardUserDefaults()
         
@@ -208,7 +228,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             print(sessionObj)
             
             // If session is not valid
-            if !session.isValid(){
+            if !session.isValid() && (isReachable!){
                 print("Session invalid. Needs token Refresh.")
                 needsSessionRefresh = true
                 self.renewToken(session)
@@ -531,11 +551,29 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             print("Could not load data error: \(error), \(error.userInfo)")
         }
     }
-
-
     
     // MARK: - Navigation
     
+    @IBAction func showUserInfo(sender: AnyObject) {
+        if (isReachable == true) {
+            self.performSegueWithIdentifier("UserSegue", sender: nil)
+        } else {
+            self.showNetworkConnectionErrorNotification()
+        }
+    }
+    
+    @IBAction func createNewAlarm(sender: AnyObject) {
+        if (isReachable == true) {
+            self.performSegueWithIdentifier("HomeScreenSegue", sender: nil)
+        } else {
+            self.showNetworkConnectionErrorNotification()
+        }
+    }
+    
+    func showNetworkConnectionErrorNotification() {
+        TSMessage.showNotificationWithTitle("No internet connection.", type: TSMessageNotificationType.Error)
+
+    }
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
@@ -548,7 +586,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             print("View Alarms segue")
             
-            
         } else if (segue.identifier == "UserSegue") {
             let userViewController = segue.destinationViewController as! ViewController
             userViewController.session = session
@@ -556,5 +593,24 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         }
     }
     
+    //MARK: - Reachability
+    
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable() {
+            isReachable = true
+            if reachability.isReachableViaWiFi() {
+                print("Reachable via WiFi")
+            } else {
+                print("Reachable via Cellular")
+            }
+        } else {
+            isReachable = false
+        }
+    }
+    
+
 
 }

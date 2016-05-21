@@ -14,4 +14,8 @@
 
 #import "MBProgressHUD.h"
 
+#import "TSMessage.h"
+
+#import "TSMessageView.h"
+
 #endif
