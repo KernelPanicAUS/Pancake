@@ -274,8 +274,15 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
 
         UIColor *fontColor = [UIColor colorWithHexString:[current valueForKey:@"textColor"]];
 
-
-        self.textSpaceLeft = 2 * padding;
+        if (screenWidth == 320) {
+           self.textSpaceLeft = 5.6 * padding;
+        } else if (screenWidth == 375) {
+            self.textSpaceLeft = 7.5 * padding;
+        } else if (screenWidth == 414) {
+            self.textSpaceLeft = 9 * padding;
+        }
+        
+        //self.textSpaceLeft = 2 * padding;
         if (image) self.textSpaceLeft += image.size.width + 2 * padding;
 
         // Set up title label
@@ -297,7 +304,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         self.titleLabel.numberOfLines = 0;
         self.titleLabel.lineBreakMode = NSLineBreakByWordWrapping;
         [self addSubview:self.titleLabel];
-
+        
         // Set up content label (if set)
         if ([subtitle length])
         {
@@ -455,6 +462,8 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
                                        padding,
                                        screenWidth - padding - self.textSpaceLeft - self.textSpaceRight,
                                        0.0);
+    
+    
     [self.titleLabel sizeToFit];
 
     if ([self.subtitle length])
