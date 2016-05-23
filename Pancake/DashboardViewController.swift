@@ -56,8 +56,12 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     var isReachable:Bool?
     
+    var starBG: UIImage?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        starBG = UIImage(named: "starBG")
         
         // Reachability code
         do {
@@ -590,6 +594,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             let userViewController = segue.destinationViewController as! ViewController
             userViewController.session = session
             userViewController.player = player
+        } else if (segue.identifier == "HomeScreenSegue") {
+            let createAlarmViewController = segue.destinationViewController as! CreateNewViewController
+            createAlarmViewController.backgroundImage = starBG!
         }
     }
     

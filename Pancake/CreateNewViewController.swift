@@ -65,6 +65,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         // Adds Background to view
         self.view.insertSubview(backgroundView, atIndex: 0)
         
+        self.addBackgroundImage()
         // Make corner button round
         for i in 2000...2006{
             let dateButton = self.view.viewWithTag(i) as! UIButton
@@ -114,6 +115,7 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
     func addBackgroundImage() {
         if (firstOpened == true) {
             print("No background image selected.")
+            backgroundView.image = backgroundImage
         } else {
             backgroundView.image = backgroundImage
         }
