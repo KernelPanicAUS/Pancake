@@ -17,7 +17,7 @@ import CoreData
     let kCallbackUrl = "pancakeapp://callback"
     let kTokenSwapUrl = "http://localhost:1234/swap"
     let kTokenRefreshServiceUrl = "http://localhost:1234/refresh"
-    //var reachability: Reachability?
+    
     var window: UIWindow?
     
     
@@ -26,20 +26,9 @@ import CoreData
         // Removes status bar
         application.statusBarHidden = true
         
-        // Reachability code
+        // Enable IQKeyboardManager
+        IQKeyboardManager.sharedManager().enable = true
         
-//        do {
-//            reachability = try Reachability.reachabilityForInternetConnection()
-//        } catch {
-//            print("Unable to create Reachability")
-//        }
-        
-        //NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DashboardViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: nil)
-//        do{
-//            try reachability?.startNotifier()
-//        }catch{
-//            print("could not start reachability notifier")
-//        }
         return true
     }
     func application(application: UIApplication, openURL url: NSURL, sourceApplication: String?, annotation: AnyObject) -> Bool {
