@@ -66,11 +66,6 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
         self.view.insertSubview(backgroundView, atIndex: 0)
         
         self.addBackgroundImage()
-        // Make corner button round
-        for i in 2000...2006{
-            let dateButton = self.view.viewWithTag(i) as! UIButton
-            dateButton.layer.cornerRadius = dateButton.layer.bounds.size.height/2
-        }
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -418,6 +413,9 @@ class CreateNewViewController: UIViewController, UITextFieldDelegate, UIImagePic
             firstOpened = true
         } else if (segue.identifier == "ShowPlaylists") {
             let spotifyPlaylistCollectionViewController = segue.destinationViewController as! SpotifyPlaylistCollectionViewController
+            
+            // Send background image
+            spotifyPlaylistCollectionViewController.backgroundImage = self.backgroundImage
             
             let userDefaults = NSUserDefaults.standardUserDefaults()
             

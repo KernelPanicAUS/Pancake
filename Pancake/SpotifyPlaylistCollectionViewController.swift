@@ -43,12 +43,15 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     // Used to fetch alarms from CoreData
     var alarms = [NSManagedObject]()
     
+    var backgroundImage: UIImage?
     @IBOutlet weak var playlistCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        //
+        self.addBlurredBackgroundImage()
+        
+        // Start loading playlists
         loginWithSpotifySession(currentSession!)
 
         MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -58,15 +61,31 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         self.fetchData()
     }
     
+    // Background setup
+    func addBlurredBackgroundImage() {
+        playlistCollectionView.backgroundColor = UIColor.clearColor()
+        // Create a new image view
+        let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundView.contentMode = .ScaleAspectFill
+        backgroundView.clipsToBounds = true
+        backgroundView.image = backgroundImage
+        
+        // Create a new blur effect with view
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView.frame = self.view.frame
+        blurEffectView.autoresizingMask = [.FlexibleHeight, .FlexibleWidth]
+        
+        // Add blur effect to background image view
+        self.view.insertSubview(backgroundView, atIndex: 0)
+        self.view.insertSubview(blurEffectView, atIndex: 0)
+        
+    }
     @IBAction func cancel(sender: AnyObject) {
         self.navigationController?.popViewControllerAnimated(true)
     }
     
     @IBAction func success(sender: AnyObject) {
-        
-//        for i in 0 ..< selectedDates.count {
-//            self.scheduleNotification(dayOfTheWeek(selectedDates[i]), hour: self.hoursForAlarm, minute: self.minutesForAlarm)
-//        }
         
         // Saves new alarm
         if self.validateAlarm() {
@@ -280,8 +299,8 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
         let playlistTitle = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(503)
         let numberOfSongsInPlaylist = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(504);        let checkmark = collectionView.cellForItemAtIndexPath(indexPath)?.viewWithTag(701)
         
-        playlistTitle!.alpha = 0.5
-        numberOfSongsInPlaylist!.alpha = 0.5
+        playlistTitle!.alpha = 1
+        numberOfSongsInPlaylist!.alpha = 1
         cellImageView?.alpha = 1
         checkmark?.hidden = true
     }
