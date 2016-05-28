@@ -142,6 +142,8 @@ class AlarmsTableViewController: UIViewController, UITableViewDataSource, UITabl
         cell.alarmTime.text = alarm.valueForKey("time") as? String
         cell.meri.text = alarm.valueForKey("meri") as? String
         cell.alarmDate.text = alarm.valueForKey("days") as? String
+        //let cellSwitch = UISwitch.init(frame: CGRectZero)
+        //cell.accessoryView = cellSwitch
 
         return cell
     }

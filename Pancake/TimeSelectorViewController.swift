@@ -55,8 +55,8 @@ class TimeSelectorViewController: UIViewController{
         let formattedTime = timeFormatter.stringFromDate(now)
         
         // Saves date for use with alarm setup
-        let hours = hoursTimeFormatter.stringFromDate(now)
-        let minutes = minutesTimeFormatter.stringFromDate(now)
+        //let hours = hoursTimeFormatter.stringFromDate(now)
+        //let minutes = minutesTimeFormatter.stringFromDate(now)
         
         // Used for debugging purposes only
         //print("Hours: \(hours) + Minutes: \(minutes)")
@@ -81,8 +81,8 @@ class TimeSelectorViewController: UIViewController{
         // Show updated time in Alarm Setup
         firstViewController!.updatedTime = formattedTime
         // Converts String to Int and passes data to CreateNewViewController
-        firstViewController!.hoursForAlarm = Int(hours)!
-        firstViewController!.minutesForAlarm = Int(minutes)!
+        //firstViewController!.hoursForAlarm = Int(hours)!
+        //firstViewController!.minutesForAlarm = Int(minutes)!
         
         // Used for debugging purposes only
         //print("Alarm Time: \(time)")

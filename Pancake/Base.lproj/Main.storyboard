@@ -141,6 +141,89 @@
             </objects>
             <point key="canvasLocation" x="1219" y="374"/>
         </scene>
+        <!--Alarm Control View Controller-->
+        <scene sceneID="tbz-Id-R0u">
+            <objects>
+                <viewController id="73F-e2-818" customClass="AlarmControlViewController" customModule="Pancake" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="X82-oF-vJs"/>
+                        <viewControllerLayoutGuide type="bottom" id="oqB-Mv-Gee"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="BI8-nR-GDJ">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fpY-w9-Cj7">
+                                <rect key="frame" x="88" y="208" width="143" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Stop alarm">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="stopAlarm:" destination="73F-e2-818" eventType="touchUpInside" id="N6q-6U-wLX"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vy1-qh-hCh">
+                                <rect key="frame" x="67" y="260" width="185" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Tap to snooze">
+                                    <color key="titleColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="snoozeAlarm:" destination="73F-e2-818" eventType="touchUpInside" id="Yht-HT-VnM"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Bny-q7-UOr">
+                                <rect key="frame" x="99" y="312" width="121" height="48"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Continue">
+                                    <color key="titleColor" red="0.41568627450980389" green="0.8901960784313725" blue="0.40784313725490196" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="continueToDashboard:" destination="73F-e2-818" eventType="touchUpInside" id="M2y-pA-EZ8"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-OJ-h3t">
+                                <rect key="frame" x="142" y="80" width="35.5" height="21.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="USw-Ha-fLy">
+                                <rect key="frame" x="56" y="109.5" width="208" height="2"/>
+                            </progressView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="USw-Ha-fLy" firstAttribute="leading" secondItem="BI8-nR-GDJ" secondAttribute="leadingMargin" constant="40" id="4sc-W5-wnX"/>
+                            <constraint firstItem="USw-Ha-fLy" firstAttribute="top" secondItem="gEP-OJ-h3t" secondAttribute="bottom" constant="8" id="AKP-KV-xOA"/>
+                            <constraint firstItem="Vy1-qh-hCh" firstAttribute="centerY" secondItem="BI8-nR-GDJ" secondAttribute="centerY" id="FtP-Fp-Nym"/>
+                            <constraint firstItem="Bny-q7-UOr" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="Ivd-Ci-3xd"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="USw-Ha-fLy" secondAttribute="trailing" constant="40" id="Pou-Cg-ML8"/>
+                            <constraint firstItem="fpY-w9-Cj7" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="Xvv-H1-pY1"/>
+                            <constraint firstItem="Bny-q7-UOr" firstAttribute="top" secondItem="Vy1-qh-hCh" secondAttribute="bottom" constant="4" id="f9u-Q9-NDf"/>
+                            <constraint firstItem="USw-Ha-fLy" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="hXO-RT-oMd"/>
+                            <constraint firstItem="Vy1-qh-hCh" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="iUx-bS-dPp"/>
+                            <constraint firstItem="Vy1-qh-hCh" firstAttribute="top" secondItem="fpY-w9-Cj7" secondAttribute="bottom" constant="4" id="qEV-6F-4he"/>
+                            <constraint firstItem="USw-Ha-fLy" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="qhh-Eh-K3O"/>
+                            <constraint firstItem="gEP-OJ-h3t" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="sy7-Lc-938"/>
+                            <constraint firstItem="gEP-OJ-h3t" firstAttribute="top" secondItem="X82-oF-vJs" secondAttribute="bottom" constant="80" id="y5g-To-7YE"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="qhh-Eh-K3O"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="trackName" destination="gEP-OJ-h3t" id="8Tg-hj-SgG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UIH-3d-A0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="787" y="-287"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="VBR-mb-CZu">
             <objects>
@@ -308,7 +391,7 @@
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                         </state>
                                         <connections>
-                                            <segue destination="LPg-SW-PDb" kind="showDetail" identifier="ViewAlarmsSegue" action="showViewController:sender:" id="t11-ZS-rZe"/>
+                                            <segue destination="LPg-SW-PDb" kind="show" identifier="ViewAlarmsSegue" id="t11-ZS-rZe"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -415,7 +498,8 @@
                         <outlet property="userDailyMessage" destination="Xfx-pe-Z25" id="6Lb-Wg-XbS"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="newUser" animates="NO" id="Rf9-xI-XW3"/>
                         <segue destination="poA-4a-oyA" kind="show" identifier="HomeScreenSegue" id="vbj-at-Yfm"/>
-                        <segue destination="CkE-5z-ApJ" kind="show" identifier="UserSegue" id="6aL-uM-q6g"/>
+                        <segue destination="CkE-5z-ApJ" kind="presentation" identifier="UserSegue" modalPresentationStyle="overFullScreen" modalTransitionStyle="coverVertical" id="6aL-uM-q6g"/>
+                        <segue destination="73F-e2-818" kind="presentation" identifier="MusicPlayerSegue" id="ksR-cE-eRC"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WW2-Cw-po5" userLabel="First Responder" sceneMemberID="firstResponder"/>

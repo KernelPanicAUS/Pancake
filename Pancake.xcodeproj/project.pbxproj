@@ -58,6 +58,7 @@
 		E724D7761CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */; };
 		E72D5F251C545F1E00F97FDB /* JSSAlertView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */; };
 		E72E9A6B1C8B3A0D00FEF199 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E79511A01C8A4CD900ECA35B /* SystemConfiguration.framework */; };
+		E743C39A1CF911C6007FB81A /* AlarmControlViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E743C3991CF911C6007FB81A /* AlarmControlViewController.swift */; };
 		E749EF741CE23B8B00ACB625 /* Spotify.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E749EF731CE23B8B00ACB625 /* Spotify.framework */; };
 		E750B6901CEEE9CA000AB0C2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */; };
 		E75ADFED1CBFE563003C7FA2 /* MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E75ADFEC1CBFE563003C7FA2 /* MBProgressHUD.m */; };
@@ -172,6 +173,7 @@
 		E724D7731CBD316A0053DDAB /* SpotifyPlaylistCellCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		E724D7751CBD317E0053DDAB /* SpotifyPlaylistCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SpotifyPlaylistCollectionViewController.swift; sourceTree = "<group>"; };
 		E72D5F241C545F1E00F97FDB /* JSSAlertView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSSAlertView.swift; sourceTree = "<group>"; };
+		E743C3991CF911C6007FB81A /* AlarmControlViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmControlViewController.swift; sourceTree = "<group>"; };
 		E749EF731CE23B8B00ACB625 /* Spotify.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Spotify.framework; sourceTree = "<group>"; };
 		E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E75ADFEB1CBFE563003C7FA2 /* MBProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBProgressHUD.h; sourceTree = "<group>"; };
@@ -266,6 +268,7 @@
 			children = (
 				11A63CAD1C3181B80010CCCB /* LoginViewController.swift */,
 				111A5D3F1C3C2C640080522C /* DashboardViewController.swift */,
+				E743C3991CF911C6007FB81A /* AlarmControlViewController.swift */,
 				E750B68F1CEEE9CA000AB0C2 /* ViewController.swift */,
 				11C844391C450E5800557CBA /* AlarmsTableViewController.swift */,
 				E7DCE9641C983E4F009F79BF /* MainPageViewController.swift */,
@@ -748,6 +751,7 @@
 				E7ACF6141CF3847600C02741 /* IQTitleBarButtonItem.swift in Sources */,
 				11F167541C32DB6F0033D1E3 /* SpringImageView.swift in Sources */,
 				11F167531C32DB6F0033D1E3 /* SpringButton.swift in Sources */,
+				E743C39A1CF911C6007FB81A /* AlarmControlViewController.swift in Sources */,
 				E76BD4B01CEF809A00072DE9 /* Reachability.swift in Sources */,
 				E7ACF6111CF3847600C02741 /* IQTextView.swift in Sources */,
 				11F167461C32DB6F0033D1E3 /* DesignableTabBarController.swift in Sources */,

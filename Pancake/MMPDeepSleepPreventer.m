@@ -126,7 +126,7 @@
 
 #pragma mark -
 #pragma mark Private Methods
-
+//Make sure we can recieve remote control events
 - (void)mmp_playPreventSleepSound
 {
     [self.audioPlayer play];

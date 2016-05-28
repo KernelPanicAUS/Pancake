@@ -58,6 +58,8 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     
     var starBG: UIImage?
     
+    var nameOfSong: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -205,6 +207,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                         
                         // Play spotify music
                         self.useLoggedInPermissions(playlistURI)
+                        
+                        // Show Music Controller View
+                        self.performSegueWithIdentifier("MusicPlayerSegue", sender: nil)
                     }
                 }
 
@@ -304,18 +309,18 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             print("Callback in.")
             
             // Snoozes or Stops alarm - Very early version
-            stopMusicAlert.show(self,
-                                title: "Wake up",
-                                text: "Common, you can do it!",
-                                buttonText: "Im awake",
-                                cancelButtonText: "Snooze",
-                                color: UIColor.whiteColor())
-            
-            stopMusicAlert.addAction({
-                print("Stop")
-                self.player?.setIsPlaying(false, callback: nil)
-                self.player!.stop(nil)
-            })
+//            stopMusicAlert.show(self,
+//                                title: "Wake up",
+//                                text: "Common, you can do it!",
+//                                buttonText: "Im awake",
+//                                cancelButtonText: "Snooze",
+//                                color: UIColor.whiteColor())
+//            
+//            stopMusicAlert.addAction({
+//                print("Stop")
+//                self.player?.setIsPlaying(false, callback: nil)
+//                self.player!.stop(nil)
+//            })
 
         
             if result != nil {
@@ -432,13 +437,33 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             }
             let artistName = artist.name
             let duration = currentSong.duration
-            
+            let imageURL: NSURL = currentSong.album.smallestCover.imageURL
+            let image = imageFromURL("\(imageURL)")
+            //print(image)
             print(trackName)
             print(albumName)
             print(artistName)
             
-            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyAlbumTitle : albumName, MPMediaItemPropertyArtist : artistName, MPMediaItemPropertyPlaybackDuration : duration]
-
+//            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyAlbumTitle : albumName, MPMediaItemPropertyArtist : artistName, MPMediaItemPropertyPlaybackDuration : duration]
+            
+            let musicInfoDictionary: [NSObject : AnyObject]  = ["SongName" : trackName, "SongDuration": duration]
+            
+            // Show Now Playing info
+            TSMessage.showNotificationInViewController(self, title: trackName,
+                                                       subtitle: artistName,
+                                                       image: image,
+                                                       type: TSMessageNotificationType.Message,
+                                                       duration: duration,
+                                                       callback: nil,
+                                                       buttonTitle: "More",
+                                                       buttonCallback: {
+                                                        self.performSegueWithIdentifier("MusicPlayerSegue", sender: nil)
+                                                        },
+                                                       atPosition: TSMessageNotificationPosition.Bottom, canBeDismissedByUser: false)
+            
+                        // Notify Alarm Controller
+            NSNotificationCenter.defaultCenter().postNotificationName("didStartPlaying", object: nil, userInfo: musicInfoDictionary)
+            
         }
         
         SPTTrack.trackWithURI(currentTrackURI, session: session, callback: callback)
@@ -583,10 +608,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
         
-        mainTimer?.invalidate()
-        mainTimer = nil
-        
         if (segue.identifier == "ViewAlarmsSegue") {
+            mainTimer?.invalidate()
+            mainTimer = nil
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             print("View Alarms segue")
             
@@ -597,6 +621,13 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
         } else if (segue.identifier == "HomeScreenSegue") {
             let createAlarmViewController = segue.destinationViewController as! CreateNewViewController
             createAlarmViewController.backgroundImage = starBG!
+        } else if (segue.identifier == "MusicPlayerSegue") {
+            let alarmControlViewController = segue.destinationViewController as! AlarmControlViewController
+            
+            alarmControlViewController.player = self.player
+            alarmControlViewController.session = self.session
+            alarmControlViewController.backgroundImage = starBG
+            //alarmControlViewController.trackName.text = nameOfSong
         }
     }
     

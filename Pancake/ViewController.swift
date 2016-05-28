@@ -103,7 +103,7 @@ class ViewController: UIViewController, SPTAudioStreamingDelegate{
     
     @IBAction func cancel(sender: AnyObject) {
         print("Cancel")
-        self.navigationController?.popViewControllerAnimated(true)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     

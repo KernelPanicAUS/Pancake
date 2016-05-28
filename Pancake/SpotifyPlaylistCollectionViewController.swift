@@ -44,11 +44,16 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     var alarms = [NSManagedObject]()
     
     var backgroundImage: UIImage?
+    
     @IBOutlet weak var playlistCollectionView: UICollectionView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        // CollectionView background = Clear
+        playlistCollectionView.backgroundColor = UIColor.clearColor()
+        
+        // Add background image
         self.addBlurredBackgroundImage()
         
         // Start loading playlists
@@ -63,9 +68,9 @@ class SpotifyPlaylistCollectionViewController: UIViewController, UICollectionVie
     
     // Background setup
     func addBlurredBackgroundImage() {
-        playlistCollectionView.backgroundColor = UIColor.clearColor()
         // Create a new image view
         let backgroundView = UIImageView(frame: UIScreen.mainScreen().bounds)
+        backgroundView.alpha = 0.5
         backgroundView.contentMode = .ScaleAspectFill
         backgroundView.clipsToBounds = true
         backgroundView.image = backgroundImage
