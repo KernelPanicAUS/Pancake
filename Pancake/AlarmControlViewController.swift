@@ -13,6 +13,9 @@ class AlarmControlViewController: UIViewController{
     
     // Music 
     @IBOutlet weak var trackName: UILabel!
+    @IBOutlet weak var trackAlbum: UILabel!
+    @IBOutlet weak var trackArtist: UILabel!
+    
     var player:SPTAudioStreamingController?
     var session: SPTSession?
     var backgroundImage: UIImage?
@@ -44,8 +47,14 @@ class AlarmControlViewController: UIViewController{
     
     
     func updateTrackInfo(notification: NSNotification) {
-        let newTrackName = notification.userInfo!["SongName"] as! String
-        trackName.text = newTrackName
+//        let newTrackName = notification.userInfo!["SongName"] as! String
+//        let newTrackAlbum = notification.userInfo!["SongAlbum"] as! String
+//        let newTrackArtist = notification.userInfo!["SongArtist"] as! String
+//        
+//        trackName.text = newTrackName
+//        trackAlbum.text = newTrackAlbum
+//        trackArtist.text = newTrackArtist
+        
         //print(newTrackName)
     }
 

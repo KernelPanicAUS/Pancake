@@ -283,7 +283,7 @@ canBeDismissedByUser:(BOOL)dismissingEnabled
         }
         
         //self.textSpaceLeft = 2 * padding;
-        if (image) self.textSpaceLeft += image.size.width + 2 * padding;
+        if (image) self.textSpaceLeft += image.size.width;
 
         // Set up title label
         _titleLabel = [[UILabel alloc] init];

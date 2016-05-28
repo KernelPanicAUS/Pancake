@@ -183,42 +183,18 @@
                                     <action selector="continueToDashboard:" destination="73F-e2-818" eventType="touchUpInside" id="M2y-pA-EZ8"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEP-OJ-h3t">
-                                <rect key="frame" x="142" y="80" width="35.5" height="21.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="USw-Ha-fLy">
-                                <rect key="frame" x="56" y="109.5" width="208" height="2"/>
-                            </progressView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="USw-Ha-fLy" firstAttribute="leading" secondItem="BI8-nR-GDJ" secondAttribute="leadingMargin" constant="40" id="4sc-W5-wnX"/>
-                            <constraint firstItem="USw-Ha-fLy" firstAttribute="top" secondItem="gEP-OJ-h3t" secondAttribute="bottom" constant="8" id="AKP-KV-xOA"/>
                             <constraint firstItem="Vy1-qh-hCh" firstAttribute="centerY" secondItem="BI8-nR-GDJ" secondAttribute="centerY" id="FtP-Fp-Nym"/>
                             <constraint firstItem="Bny-q7-UOr" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="Ivd-Ci-3xd"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="USw-Ha-fLy" secondAttribute="trailing" constant="40" id="Pou-Cg-ML8"/>
                             <constraint firstItem="fpY-w9-Cj7" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="Xvv-H1-pY1"/>
                             <constraint firstItem="Bny-q7-UOr" firstAttribute="top" secondItem="Vy1-qh-hCh" secondAttribute="bottom" constant="4" id="f9u-Q9-NDf"/>
-                            <constraint firstItem="USw-Ha-fLy" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="hXO-RT-oMd"/>
                             <constraint firstItem="Vy1-qh-hCh" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="iUx-bS-dPp"/>
                             <constraint firstItem="Vy1-qh-hCh" firstAttribute="top" secondItem="fpY-w9-Cj7" secondAttribute="bottom" constant="4" id="qEV-6F-4he"/>
-                            <constraint firstItem="USw-Ha-fLy" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="qhh-Eh-K3O"/>
-                            <constraint firstItem="gEP-OJ-h3t" firstAttribute="centerX" secondItem="BI8-nR-GDJ" secondAttribute="centerX" id="sy7-Lc-938"/>
-                            <constraint firstItem="gEP-OJ-h3t" firstAttribute="top" secondItem="X82-oF-vJs" secondAttribute="bottom" constant="80" id="y5g-To-7YE"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="qhh-Eh-K3O"/>
-                            </mask>
-                        </variation>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
-                    <connections>
-                        <outlet property="trackName" destination="gEP-OJ-h3t" id="8Tg-hj-SgG"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UIH-3d-A0O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

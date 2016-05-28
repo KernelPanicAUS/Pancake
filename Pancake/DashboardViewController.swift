@@ -59,6 +59,10 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     var starBG: UIImage?
     
     var nameOfSong: String?
+    var songAlbum: String?
+    var songArtist: String?
+    
+    var isDisplayingSongInfo: Bool?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -446,7 +450,7 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             
 //            MPNowPlayingInfoCenter.defaultCenter().nowPlayingInfo = [MPMediaItemPropertyTitle : trackName, MPMediaItemPropertyAlbumTitle : albumName, MPMediaItemPropertyArtist : artistName, MPMediaItemPropertyPlaybackDuration : duration]
             
-            let musicInfoDictionary: [NSObject : AnyObject]  = ["SongName" : trackName, "SongDuration": duration]
+            let musicInfoDictionary: [NSObject : AnyObject]  = ["SongName" : trackName, "SongAlbum" : albumName, "SongArtist" : artistName]
             
             // Show Now Playing info
             TSMessage.showNotificationInViewController(self, title: trackName,
@@ -455,13 +459,14 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
                                                        type: TSMessageNotificationType.Message,
                                                        duration: duration,
                                                        callback: nil,
-                                                       buttonTitle: "More",
+                                                       buttonTitle: "Stop",
                                                        buttonCallback: {
-                                                        self.performSegueWithIdentifier("MusicPlayerSegue", sender: nil)
-                                                        },
+                                                        self.player?.setIsPlaying(false, callback: nil)
+                                                        self.player?.stop(nil)},
                                                        atPosition: TSMessageNotificationPosition.Bottom, canBeDismissedByUser: false)
             
-                        // Notify Alarm Controller
+            
+            // Notify Alarm Controller
             NSNotificationCenter.defaultCenter().postNotificationName("didStartPlaying", object: nil, userInfo: musicInfoDictionary)
             
         }
@@ -627,7 +632,6 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
             alarmControlViewController.player = self.player
             alarmControlViewController.session = self.session
             alarmControlViewController.backgroundImage = starBG
-            //alarmControlViewController.trackName.text = nameOfSong
         }
     }
     
