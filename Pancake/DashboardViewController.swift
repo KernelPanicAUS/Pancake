@@ -612,10 +612,9 @@ class DashboardViewController: UIViewController, SPTAudioStreamingPlaybackDelega
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
-        
+        mainTimer?.invalidate()
+        mainTimer = nil
         if (segue.identifier == "ViewAlarmsSegue") {
-            mainTimer?.invalidate()
-            mainTimer = nil
             // Invalidate timer so that App doesn't crash when an alarm is deleted
             print("View Alarms segue")
             
