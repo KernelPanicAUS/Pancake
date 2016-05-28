@@ -2,57 +2,94 @@
 //  LoginViewController.swift
 //  Pancake
 //
-//  Created by Rudy Rosciglione on 18/12/15.
+//  Modified by Angel Vázquez
+//
+//  Created by Rudy Rosciglione on 28/12/15.
 //  Copyright © 2015 Rudy Rosciglione. All rights reserved.
 //
 
 import UIKit
+import MediaPlayer
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, SPTAuthViewDelegate, SPTAudioStreamingPlaybackDelegate{
     
-    let kClientID = "57fba5f8821f41cfa5bbae644ad46ce7"
-    let kCallbackURL = "pancakeapp://returnAfterLogin"
-    let kTokenSwapURL = "http://localhost:1234/swap"
-    let kTokenRefreshServiceURL = "http://localhost:1234/refresh"
+    let kClientID = "eb68da6b0f3c4589a25e1c95bd3699f3"
+    let kCallbackURL = "pancakeapp://callback"
+    // Using my own service in heroku | https://pancake-spotify-token-swap.herokuapp.com
+    let kTokenSwapUrl = "https://pancake-spotify-token-swap.herokuapp.com/swap"
+    let kTokenRefreshServiceUrl = "https://pancake-spotify-token-swap.herokuapp.com/refresh"
+    let auth = SPTAuth.defaultInstance()
 
+    // Login with Spotify button
     @IBOutlet weak var loginButton: DesignableButton!
-
+    @IBOutlet var loginViewCrontoller: UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        loginButton.hidden = true
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "updateAfterFirstLogin", name: "LoginSuccessFull", object: nil)
 
+        // Register to be notified when the user has logged in successfully in order to dismiss the login view
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LoginViewController.dismiss), name: "loginSuccessful", object: nil)
         
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        if let sessionObj:AnyObject = userDefaults.objectForKey("SpotifySession") { // Session Avaible
-        
-        }else{
-            loginButton.hidden = false
-        }
-
-        
-        // Do any additional setup after loading the view.
     }
     
-    func updateAfterFirstLogin(){
-        loginButton.hidden = true
-    }
-
     @IBAction func loginWithSpotify(sender: AnyObject) {
-        let auth = SPTAuth.defaultInstance()
+        auth.clientID = kClientID
+        auth.requestedScopes = [SPTAuthStreamingScope, SPTAuthUserReadPrivateScope]
+        auth.redirectURL = NSURL(string:kCallbackURL)
+        auth.tokenSwapURL = NSURL(string:kTokenSwapUrl)
+        auth.tokenRefreshURL = NSURL(string:kTokenRefreshServiceUrl)
         
-        let loginURL = auth.loginURL
+        let spotifyAuthenticationViewController = SPTAuthViewController.authenticationViewController()
+        spotifyAuthenticationViewController.delegate = self
         
-        UIApplication.sharedApplication().openURL(loginURL)
+        spotifyAuthenticationViewController.modalPresentationStyle = UIModalPresentationStyle.CurrentContext
+        spotifyAuthenticationViewController.definesPresentationContext = true
+        
+        presentViewController(spotifyAuthenticationViewController, animated: false, completion: nil)
+    }
     
+    // MARK: - PTAuthViewDelegate Protocol
+    func authenticationViewController(authenticationViewController: SPTAuthViewController!, didLoginWithSession session: SPTSession!) {
+        
+        // Save new session data
+        let userDefaults = NSUserDefaults.standardUserDefaults()
+        let sessionData = NSKeyedArchiver.archivedDataWithRootObject(session)
+        
+        userDefaults.setObject(sessionData, forKey: "SpotifySession")
+        userDefaults.synchronize()
+        
+        print("Login was successful");
+        
+        // Spotifiy session data has been received
+        // Post notification to tell LoginViewController to be dismissed
+        NSNotificationCenter.defaultCenter().postNotificationName("loginSuccessful", object: nil)
+        
+    }
+    
+    // Login failed with error
+    func authenticationViewController(authenticationViewController: SPTAuthViewController!, didFailToLogin error: NSError!) {
+        print("Login failed... \(error)")
+        
+    }
+    
+    // User cancel log in
+    func authenticationViewControllerDidCancelLogin(authenticationViewController: SPTAuthViewController!) {
+        print("Did Cancel Login...")
+    }
+    
+    // When login is succesfull go to Dashboard
+    func dismiss() {
+        
+        // Go to Dashboard
+        print("Should dismiss loginViewController");
+        self.navigationController?.popToRootViewControllerAnimated(true);
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
+
 
     /*
     // MARK: - Navigation
